@@ -10,6 +10,7 @@ public class FPSController : MonoBehaviour
     
     
     public float lookSpeed = 2f;
+    public float lookXLimit = 45f;
     
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0f;
@@ -33,7 +34,7 @@ public class FPSController : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         
-        float curSpeedX = walkSpeed * Input.GetAxis("Vertical");
+        float curSpeedX = walkSpeed * Input.GetAxis("Vertical"); 
         float curSpeedY = walkSpeed * Input.GetAxis("Horizontal");
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
@@ -46,6 +47,7 @@ public class FPSController : MonoBehaviour
         if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X")* lookSpeed, 0);
         }
