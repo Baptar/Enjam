@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+interface IInteractable
+{
+    public void Interact();
+}
+
 public class PlayerPickUp : MonoBehaviour
 {
     [SerializeField] private Transform playerCameraTransform;
@@ -12,7 +17,7 @@ public class PlayerPickUp : MonoBehaviour
     private ObjectGrabbable objectGrabbable;
     
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -25,6 +30,10 @@ public class PlayerPickUp : MonoBehaviour
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
                         objectGrabbable.Grab(objectGrabPointTransform);
+                    }
+                    else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
+                    {
+                        interactObject.Interact();
                     }
                 }
             }
