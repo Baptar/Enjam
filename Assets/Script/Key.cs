@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Key : MonoBehaviour, IInteractable
 {
-    public void Interact()
+    public void Interact(PlayerPickUp interactor)
     {
         Debug.Log("Key interacted");
+        interactor.bHasKey = true;
         Destroy(gameObject);
     }
 }
