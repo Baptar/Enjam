@@ -7,6 +7,8 @@ public class FPSController : MonoBehaviour
 {
     public Camera playerCamera;
     public float walkSpeed = 3f;
+    public float gravity = 10f;
+    public bool useGravity = true;
     
     
     public float lookSpeed = 2f;
