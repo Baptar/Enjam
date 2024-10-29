@@ -480,6 +480,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1055524464}
   walkSpeed: 3
   lookSpeed: 2
+  lookXLimit: 45
   canMove: 1
 --- !u!143 &723652704
 CharacterController:
