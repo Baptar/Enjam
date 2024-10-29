@@ -11,33 +11,65 @@ public class Door : MonoBehaviour, IInteractable
         Debug.Log("Door interacted");
         if (interactor.bHasKey)
         {
+            // Get All Child of Start
             for (int i = 0; i < start.transform.childCount; i++)
             {
                 GameObject child = start.transform.GetChild(i).gameObject;
-                //Do something with child
-                child.GetComponent<Renderer>().enabled = false;
+                // remove render
+                if (child.GetComponent<Renderer>())
+                    child.GetComponent<Renderer>().enabled = false;
+                // remove collision
+                if (child.GetComponent<BoxCollider>())
+                    child.GetComponent<BoxCollider>().enabled = false;
+                // remove lights
+                if (child.GetComponent<Light>())
+                    child.GetComponent<Light>().enabled = false;
+                
+                // Do Same on this Child (just one level)
+                for (int j = 0; j < child.transform.childCount; j++)
+                {
+                    GameObject childBis = child.transform.GetChild(j).gameObject;
+                    // remove render
+                    if (childBis.GetComponent<Renderer>())
+                        childBis.GetComponent<Renderer>().enabled = false;
+                    // remove collision
+                    if (childBis.GetComponent<BoxCollider>())
+                        childBis.GetComponent<BoxCollider>().enabled = false;
+                    // remove lights
+                    if (childBis.GetComponent<Light>())
+                        childBis.GetComponent<Light>().enabled = false;
+                }
             }
             
+            // Get All Child of End
             for (int i = 0; i < end.transform.childCount; i++)
             {
                 GameObject child = end.transform.GetChild(i).gameObject;
-                //Do something with child
-                child.GetComponent<Renderer>().enabled = true;
+                // add render
+                if (child.GetComponent<Renderer>())
+                    child.GetComponent<Renderer>().enabled = true;
+                // add collision
+                if (child.GetComponent<BoxCollider>())
+                    child.GetComponent<BoxCollider>().enabled = true;
+                // add lights 
+                if (child.GetComponent<Light>())
+                    child.GetComponent<Light>().enabled = true;
+                
+                // Do Same on this Child (just one level)
+                for (int j = 0; j < child.transform.childCount; j++)
+                {
+                    GameObject childBis = child.transform.GetChild(j).gameObject;
+                    // add render
+                    if (childBis.GetComponent<Renderer>())
+                        childBis.GetComponent<Renderer>().enabled = true;
+                    // add collision
+                    if (childBis.GetComponent<BoxCollider>())
+                        childBis.GetComponent<BoxCollider>().enabled = true;
+                    // add lights
+                    if (childBis.GetComponent<Light>())
+                        childBis.GetComponent<Light>().enabled = true;
+                }
             }
-            
-            //Destroy(gameObject);
         }
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
