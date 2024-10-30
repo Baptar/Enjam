@@ -25,6 +25,7 @@ public class PlayerPickUp : MonoBehaviour
 
     public bool bHasKey = false;
     public bool bHasPile = false;
+    public bool bHasGrabbleObject = false;
 
     private ObjectGrabbable objectGrabbable;
     
@@ -33,65 +34,61 @@ public class PlayerPickUp : MonoBehaviour
     {
         bool displayCanvaInteract = false;
         
-        // we dont grab anything and we can grab something
-        if (objectGrabbable == null) {
-            // test if we are casting something
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward,
-                    out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
+        // test if we are casting something
+        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward,
+            out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
+        {
+            // we can grab something
+            if (raycastHit.transform.TryGetComponent(out objectGrabbable) && !bHasGrabbleObject)
             {
-                // we can grab something
-                if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+                if (objectGrabbable.canTake)
                 {
-                    if (objectGrabbable.canTake)
-                    {
-                        displayCanvaInteract = true;
-                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
+                    displayCanvaInteract = true;
+                    textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
                     
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
-                            objectGrabbable.Grab(objectGrabPointTransform);
-                        }
-                        else
-                        {
-                            objectGrabbable = null; // very quick and dirty solution (don't judge)
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        bHasGrabbleObject = true;
+                        objectGrabbable.Grab(objectGrabPointTransform);
+                        if (objectGrabbable.TryGetComponent(out Pile pile))
+                        { 
+                            bHasPile = true;
+                            Debug.Log("Player found pile");
                         }
                     }
                     else
-                    {
+                    { 
                         objectGrabbable = null; // very quick and dirty solution (don't judge)
                     }
                 }
-                // we can interact with something
-                else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
-                {
-                    displayCanvaInteract = true;
-                    if (interactObject.GetCanTake())
-                    {
-                        //displayCanvaInteract = true;
-                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextInteract();
-
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
-                            interactObject.Interact(this);
-                            interactObject = null;
-                        }
-                    }
-                    else
-                    {
-                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextCantInteract();
-                        interactObject = null;
-                    }
-                    
+                else
+                { 
+                    objectGrabbable = null; // very quick and dirty solution (don't judge)
                 }
             }
-        }
-        // we are grabbing something
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            objectGrabbable.Drop();
-            objectGrabbable = null;
-        }
+            // we can interact with something
+            else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
+            {
+                displayCanvaInteract = true;
+                if (interactObject.GetCanTake())
+                {
+                    //displayCanvaInteract = true;
+                    textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextInteract();
 
+                    if (Input.GetKeyDown(KeyCode.E))
+                    { 
+                        interactObject.Interact(this);
+                        interactObject = null;
+                    }
+                }
+                else
+                {
+                    textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextCantInteract();
+                    interactObject = null;
+                }
+                    
+            }
+        }
         // show press E canvas
         if (displayCanvaInteract)
         {
@@ -102,35 +99,5 @@ public class PlayerPickUp : MonoBehaviour
         {
             pressECanvas.gameObject.SetActive(false);
         }
-        
-
-        
-        // OLD CODE (keep it just in case)
-        /*
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            // we dont grab anything
-            if (objectGrabbable == null)
-            {
-                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
-                {
-                    Debug.Log(raycastHit.transform);
-                    if (raycastHit.transform.TryGetComponent(out objectGrabbable))
-                    {
-                        objectGrabbable.Grab(objectGrabPointTransform);
-                    }
-                    else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
-                    {
-                        interactObject.Interact(this);
-                    }
-                }
-            }
-            // we are Grabbing something
-            else
-            {
-                objectGrabbable.Drop();
-                objectGrabbable = null;
-            }
-        }*/
     }
 }

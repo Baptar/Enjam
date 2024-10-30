@@ -1,19 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Candy : ObjectGrabbable
+public class Pile : ObjectGrabbable
 {
     // Start is called before the first frame update
     void Start()
     {
-        canTake = false;
+        //canTake = false;
     }
 
-    public void OnCandyGive()
+    public void OnPileTaken()
     {
         playerPickUp.bHasGrabbleObject = false;
+        Drop();
         Destroy(gameObject);
     }
 }

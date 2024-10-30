@@ -10,6 +10,7 @@ public class TVController : MonoBehaviour, IInteractable
     public string textInteraction;
     public string textCantInteract;
     public PlayerPickUp playerPickUp;
+    public Pile pile;
 
 
     //public GameObject testParc;
@@ -17,6 +18,8 @@ public class TVController : MonoBehaviour, IInteractable
     public void Interact(PlayerPickUp interactor)
     {
         canTake = false;
+        textCantInteract = "";
+        pile.OnPileTaken();
         Debug.Log("TV Controller interacted");
         if (TV.TryGetComponent(out CaptureIRLVideo tv)) tv.WatchTv();
         //if (testParc.TryGetComponent(out AppearParc parc)) parc.ParcAppear();
@@ -29,7 +32,7 @@ public class TVController : MonoBehaviour, IInteractable
     
     public bool GetCanTake()
     {
-        return playerPickUp.bHasPile;
+        return playerPickUp.bHasPile && canTake;
     }
     
     public string GetTextInteract()
