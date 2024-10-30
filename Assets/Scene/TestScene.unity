@@ -1282,6 +1282,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a701757642fbc0419002b9fbbdf3828, type: 3}
+--- !u!1 &1234055838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8137322656453878303, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+  m_PrefabInstance: {fileID: 8559745879266646591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1245868525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackBoardTV: {fileID: 351043829}
   crosshair: {fileID: 959654779}
+  textInteraction: 
 --- !u!1 &1289748803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,6 +2097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3a8de90fcae534087abc27878f01ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textInteraction: 
   start: {fileID: 392399352}
   end: {fileID: 1099303311}
 --- !u!1 &1635974381
@@ -2661,6 +2668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: textInteractObject
+      value: 
+      objectReference: {fileID: 1234055838}
     - target: {fileID: 7176764397891346396, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.51
