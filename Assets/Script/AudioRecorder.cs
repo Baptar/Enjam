@@ -31,6 +31,8 @@ public class AudioRecorder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("MIC LENGTH: " + Microphone.devices.Length);
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartRecording();

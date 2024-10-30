@@ -469,15 +469,9 @@ MonoBehaviour:
     m_Bits: 128
   groundType: 0
   rate: 0.75
-  FootstepsEvent:
-    Guid:
-      Data1: 580646586
-      Data2: 1134111386
-      Data3: -1517528911
-      Data4: -63546477
-    Path: event:/Player/PL_Footsteps
   player: {fileID: 348066970}
   controller: {fileID: 348066977}
+  lightAudioList: []
 --- !u!1 &392399352
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &424707281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2209,7 +2203,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 158.9, y: 77.9}
+  m_SizeDelta: {x: 185.5, y: 77.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928026961
 MonoBehaviour:
@@ -2233,8 +2227,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press E to interact
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e8d6fe0d82fadc42b9033714aab88bc, type: 2}
+  m_sharedMaterial: {fileID: 6719784684195736571, guid: 9e8d6fe0d82fadc42b9033714aab88bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
