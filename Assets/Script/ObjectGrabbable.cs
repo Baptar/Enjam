@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
+	public string textInteraction;
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
     [SerializeField] private float lerpSpeed = 10.0f;
@@ -31,5 +32,11 @@ public class ObjectGrabbable : MonoBehaviour
             Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             objectRigidBody.MovePosition(newPosition);
         }
+    }
+
+	public string GetText()
+    {
+		if (textInteraction == "") return "Press E to Grab";
+        return textInteraction;
     }
 }

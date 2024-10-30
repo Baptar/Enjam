@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
 {
+	public string textInteraction;
     [SerializeField] private GameObject start;
     [SerializeField] private GameObject end;
     
@@ -24,6 +25,12 @@ public class Door : MonoBehaviour, IInteractable
                 DisplayObject(end.transform.GetChild(i).gameObject, true);
             }
         }
+    }
+
+	public string GetText()
+    {
+		if (textInteraction == "") return "Press E to Interact";
+        return textInteraction;
     }
 
     private void DisplayObject(GameObject gameobject, bool bShow)

@@ -5,6 +5,7 @@ using UnityEngine;
 interface IInteractable
 {
     public void Interact(PlayerPickUp interactor);
+	public string GetText();
 }
 
 public class PlayerPickUp : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayerPickUp : MonoBehaviour
     
     // PRESS E VARIABLES
     [SerializeField] private Canvas pressECanvas;
+	[SerializeField] private GameObject textInteractObject;
 
     public bool bHasKey = false;
 
@@ -24,18 +26,19 @@ public class PlayerPickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool canInteract = false;
+        bool displayCanvaInteract = false;
         
         // we dont grab anything and we can grab something
         if (objectGrabbable == null) {
-            
+            // test if we are casting something
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward,
                     out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
             {
                 // we can grab something
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                 {
-                    canInteract = true;
+                    displayCanvaInteract = true;
+					textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
                     
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -49,7 +52,8 @@ public class PlayerPickUp : MonoBehaviour
                 // we can interact with something
                 else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
                 {
-                    canInteract = true;
+                    displayCanvaInteract = true;
+					textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetText();
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
@@ -70,7 +74,7 @@ public class PlayerPickUp : MonoBehaviour
         }
 
         // show press E canvas
-        if (canInteract)
+        if (displayCanvaInteract)
         {
             pressECanvas.gameObject.SetActive(true);
         }
