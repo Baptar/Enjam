@@ -9,7 +9,6 @@ public class PlayerSounds : MonoBehaviour
     public LayerMask groundLayer;
     private float footstepTime;
     [HideInInspector] public int groundType;
-    [HideInInspector] public bool isWalking = true;
     [SerializeField] float rate;
     [SerializeField] EventReference FootstepsEvent;
     [SerializeField] GameObject player;
@@ -29,7 +28,7 @@ public class PlayerSounds : MonoBehaviour
     void ManageFootSteps()
     {
         footstepTime += Time.deltaTime;
-        if (isWalking)
+        if (controller.isWalking)
         {
             if (footstepTime >= rate)
             {
@@ -48,6 +47,7 @@ public class PlayerSounds : MonoBehaviour
             SoundMaterial soundMaterial = hit.transform.GetComponent<SoundMaterial>();
             if (soundMaterial)
             {
+                Debug.Log("Yes");
                 groundType = ((int)soundMaterial.soundMaterial);
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ground", groundType);
                 FMODUnity.RuntimeManager.PlayOneShotAttached(FootstepsEvent, player);

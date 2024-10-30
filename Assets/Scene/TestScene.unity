@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 348066978}
   - component: {fileID: 348066977}
   - component: {fileID: 348066976}
+  - component: {fileID: 348066979}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -417,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1055524464}
+  isWalking: 1
   lookSpeed: 2
   lookXLimit: 55
   canMove: 1
@@ -449,6 +451,32 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &348066979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348066970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825366e78c48343ff9ae5fc69d712726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundType: 0
+  rate: 0.75
+  FootstepsEvent:
+    Guid:
+      Data1: 580646586
+      Data2: 1134111386
+      Data3: -1517528911
+      Data4: -63546477
+    Path: event:/Player/PL_Footsteps
+  player: {fileID: 348066970}
+  controller: {fileID: 348066977}
 --- !u!1 &392399352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,7 +1907,7 @@ GameObject:
   - component: {fileID: 1801552067}
   - component: {fileID: 1801552066}
   - component: {fileID: 1801552070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2128,8 +2156,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.569
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 3749260278364334185, guid: 9a343dba7467242d3acbae3744bf6734, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 6484086587099896384, guid: 9a343dba7467242d3acbae3744bf6734, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a343dba7467242d3acbae3744bf6734, type: 3}

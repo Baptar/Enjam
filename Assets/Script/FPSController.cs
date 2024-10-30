@@ -6,6 +6,8 @@ using UnityEngine;
 public class FPSController : MonoBehaviour
 {
     public Camera playerCamera;
+
+    [HideInInspector] public bool isWalking;
     
     // Rotation Settings
     public float lookSpeed = 2f;
