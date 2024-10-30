@@ -6,6 +6,7 @@ using UnityEngine;
 public class FPSController : MonoBehaviour
 {
     public Camera playerCamera;
+    
 
     [HideInInspector] public bool isWalking;
     
