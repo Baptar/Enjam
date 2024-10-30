@@ -6,13 +6,19 @@ using UnityEngine.UI;
 public class CaptureIRLVideo : MonoBehaviour
 {
     WebCamTexture webCamTexture;
+    [SerializeField] public int numberDevice;
 
     // Start is called before the first frame update
     void Start()
     {
-        webCamTexture = new WebCamTexture();
+        WebCamDevice device = WebCamTexture.devices[numberDevice];
+        webCamTexture = new WebCamTexture(device.name);
         GetComponent<Renderer>().material.mainTexture = webCamTexture;
         if(!webCamTexture.isPlaying) webCamTexture.Play();
+
+        /*webCamTexture = new WebCamTexture();
+        GetComponent<Renderer>().material.mainTexture = webCamTexture;
+        if(!webCamTexture.isPlaying) webCamTexture.Play();*/
     }
 
     // Update is called once per frame
