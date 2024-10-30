@@ -5,7 +5,10 @@ using UnityEngine;
 interface IInteractable
 {
     public void Interact(PlayerPickUp interactor);
-	public string GetText();
+	public string GetTextInteract();
+    public string GetTextCantInteract();
+    public void SetCanTake(bool canTake);
+    public bool GetCanTake();
 }
 
 public class PlayerPickUp : MonoBehaviour
@@ -14,12 +17,14 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private float pickUpDistance = 2.0f;
+    [SerializeField] private BoxCollider candyBoxCollider;
     
     // PRESS E VARIABLES
     [SerializeField] private Canvas pressECanvas;
 	[SerializeField] private GameObject textInteractObject;
 
     public bool bHasKey = false;
+    public bool bHasPile = false;
 
     private ObjectGrabbable objectGrabbable;
     
@@ -37,12 +42,19 @@ public class PlayerPickUp : MonoBehaviour
                 // we can grab something
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                 {
-                    displayCanvaInteract = true;
-					textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
-                    
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (objectGrabbable.canTake)
                     {
-                        objectGrabbable.Grab(objectGrabPointTransform);
+                        displayCanvaInteract = true;
+                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
+                    
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            objectGrabbable.Grab(objectGrabPointTransform);
+                        }
+                        else
+                        {
+                            objectGrabbable = null; // very quick and dirty solution (don't judge)
+                        }
                     }
                     else
                     {
@@ -53,16 +65,23 @@ public class PlayerPickUp : MonoBehaviour
                 else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
                 {
                     displayCanvaInteract = true;
-					textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetText();
-
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (interactObject.GetCanTake())
                     {
-                        interactObject.Interact(this);
+                        //displayCanvaInteract = true;
+                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextInteract();
+
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            interactObject.Interact(this);
+                            interactObject = null;
+                        }
                     }
                     else
                     {
+                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextCantInteract();
                         interactObject = null;
                     }
+                    
                 }
             }
         }

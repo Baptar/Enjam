@@ -22,7 +22,6 @@ public class FPSController : MonoBehaviour
     public bool useGravity = true;
 
     CharacterController characterController;
-    Vector3 moveDirection = Vector3.zero;
     
     // Start is called before the first frame update
     void Start()
@@ -36,18 +35,14 @@ public class FPSController : MonoBehaviour
     void Update()
     {
         #region Handles Movement
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        Vector3 forward = transform.forward;
         
-        float curSpeedX = walkSpeed * Input.GetAxis("Vertical"); 
-        float curSpeedY = walkSpeed * Input.GetAxis("Horizontal");
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+    	Vector3 moveDirection = new Vector3(walkSpeed * Input.GetAxis("Horizontal"), -9.81f, walkSpeed * Input.GetAxis("Vertical"));
         
         #endregion
         
         #region Handles Rotation
-        characterController.Move(moveDirection * Time.deltaTime);
+        characterController.Move(transform.rotation * moveDirection * Time.deltaTime);
 
         if (canMove)
         {
@@ -56,6 +51,8 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X")* lookSpeed, 0);
         }
+		isWalking = !(Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0);
+		
         
         #endregion
     }

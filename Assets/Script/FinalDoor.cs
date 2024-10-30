@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInteractable
+public class FinalDoor : MonoBehaviour, IInteractable
 {
 	public string textInteraction;
+    public string textCantInteract;
+    public bool canTake = true;
+    public PlayerPickUp playerPickUp;
     [SerializeField] private GameObject start;
     [SerializeField] private GameObject end;
     
@@ -26,8 +29,18 @@ public class Door : MonoBehaviour, IInteractable
             }
         }
     }
+    
+    public void SetCanTake(bool canTake)
+    {
+        this.canTake = canTake;
+    }
+    
+    public bool GetCanTake()
+    {
+        return playerPickUp.bHasKey;
+    }
 
-	public string GetText()
+	public string GetTextInteract()
     {
 		if (textInteraction == "") return "Press E to Interact";
         return textInteraction;
@@ -51,5 +64,10 @@ public class Door : MonoBehaviour, IInteractable
             GameObject child = gameobject.transform.GetChild(i).gameObject;
             DisplayObject(child, bShow);
         }
+    }
+    
+    public string GetTextCantInteract()
+    {
+        return textCantInteract;
     }
 }

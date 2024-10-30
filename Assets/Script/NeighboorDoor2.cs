@@ -1,27 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class TVController : MonoBehaviour, IInteractable
+public class NeighboorDoor2 : MonoBehaviour, IInteractable
 {
-    public GameObject TV;
-    public bool canTake = true;
     public string textInteraction;
     public string textCantInteract;
-    public PlayerPickUp playerPickUp;
-
-
-    //public GameObject testParc;
+    public bool canTake = true;
+    private int actualNumber = 0;
     
     public void Interact(PlayerPickUp interactor)
     {
-        canTake = false;
-        Debug.Log("TV Controller interacted");
-        if (TV.TryGetComponent(out CaptureIRLVideo tv)) tv.WatchTv();
-        //if (testParc.TryGetComponent(out AppearParc parc)) parc.ParcAppear();
+        Debug.Log("NeighboorDoor2 interacted");
+        switch (actualNumber)
+        {
+            
+        }
     }
-    
+
     public void SetCanTake(bool canTake)
     {
         this.canTake = canTake;
@@ -29,9 +25,9 @@ public class TVController : MonoBehaviour, IInteractable
     
     public bool GetCanTake()
     {
-        return playerPickUp.bHasPile;
+        return canTake;
     }
-    
+
     public string GetTextInteract()
     {
         if (textInteraction == "") return "Press E to Interact";

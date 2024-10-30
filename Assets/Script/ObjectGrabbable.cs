@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
+    public bool canTake = true;
 	public string textInteraction;
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
