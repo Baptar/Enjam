@@ -4,7 +4,7 @@ using UnityEngine;
 
 interface IInteractable
 {
-    public void Interact();
+    public void Interact(PlayerPickUp interactor);
 }
 
 public class PlayerPickUp : MonoBehaviour
@@ -13,6 +13,8 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private float pickUpDistance = 2.0f;
+
+    public bool bHasKey = false;
 
     private ObjectGrabbable objectGrabbable;
     
@@ -33,7 +35,7 @@ public class PlayerPickUp : MonoBehaviour
                     }
                     else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
                     {
-                        interactObject.Interact();
+                        interactObject.Interact(this);
                     }
                 }
             }
