@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5068646225951679003}
   - component: {fileID: 1794868141763633223}
   - component: {fileID: 4990302579878414024}
-  - component: {fileID: 7949882022199053441}
   m_Layer: 0
   m_Name: PaperChill
   m_TagString: Untagged
@@ -107,24 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7949882022199053441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2889675882467309055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054a428e4593c4240b5a16ad537d47b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door1: {fileID: 0}
-  door2: {fileID: 0}
-  isDoor1: 1
-  paperText: Chilllll
-  textInteraction: 
-  textCantInteract: 
-  papertextInteraction: va cruncher ptit con
-  papertextCantInteract: Faut que j'aille chiller un max
-  canTake: 1

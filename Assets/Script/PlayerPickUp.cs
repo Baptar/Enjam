@@ -28,12 +28,13 @@ public class PlayerPickUp : MonoBehaviour
 
     public bool bHasKey = false;
     public bool bHasPile = false;
+    public bool bHasPelle = false;
     public bool bHasCandy = false;
     public bool bHasGrabbleObject = false;
     public bool bIsReading = false;
 
-    private int door1number = 1;
-    private int door2number = 1;
+    public int door1number = 1;
+    public int door2number = 1;
     
     public bool isDoor1 = true;
     
@@ -80,6 +81,11 @@ public class PlayerPickUp : MonoBehaviour
                             { 
                                 bHasCandy = true;
                                 Debug.Log("Player found Candy");
+                            }
+                            else if (objectGrabbable.TryGetComponent(out Pelle pelle))
+                            { 
+                                bHasPelle = true;
+                                Debug.Log("Player found Pelle");
                             }
                             
                         }
@@ -129,15 +135,12 @@ public class PlayerPickUp : MonoBehaviour
                     switch (door1number)
                     {
                         case 1:
-                            door1number++;
                             paperCandy.OnStopRead();
                             break;
                         case 2:
-                            door1number++;
                             paperParcFell.OnStopRead();
                             break;
                         case 3:
-                            door1number++;
                             paperChillBeer.OnStopRead(this);
                             break;
                     }
@@ -148,11 +151,9 @@ public class PlayerPickUp : MonoBehaviour
                     switch (door2number)
                     {
                         case 1:
-                            door2number++;
                             paperLookInfo.OnStopRead();
                             break;
                         case 2:
-                            door2number++;
                             paperIndice.OnStopRead();
                             break;
                     }
