@@ -9,15 +9,11 @@ public class CouchePelle : MonoBehaviour, IInteractable
     public bool canTake = true;
     public string textInteraction;
     public string textCantInteract;
+    [SerializeField] private float delayAfterInteractToDestroy = 0.5f;
+    
     public void Interact(PlayerPickUp interactor)
     {
-        pelle.cpt++;
-        if (pelle.cpt == 3)
-        {
-            pelle.Detruit();
-        }
-        
-        Destroy(gameObject);
+        StartCoroutine(DetruitCouche());
     }
     
     public void SetCanTake(bool canTake)
@@ -39,5 +35,16 @@ public class CouchePelle : MonoBehaviour, IInteractable
     public string GetTextCantInteract()
     {
         return textCantInteract;
+    }
+
+    IEnumerator DetruitCouche()
+    {
+        yield return new WaitForSeconds(delayAfterInteractToDestroy);
+        pelle.cpt++;
+        if (pelle.cpt == 3)
+        {
+            pelle.Detruit();
+        }
+        Destroy(gameObject);
     }
 }
