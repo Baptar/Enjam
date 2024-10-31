@@ -38,7 +38,7 @@ public class CaptureIRLVideo : MonoBehaviour
     public void WatchTv()
     {
         GetComponent<Renderer>().material = null;
-        event_fmod.start();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
         StartCoroutine(StartWatchTV());
     }
 

@@ -27,6 +27,8 @@ public class FinalDoor : MonoBehaviour, IInteractable
             {
                 DisplayObject(end.transform.GetChild(i).gameObject, true);
             }
+            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/MX");
         }
     }
     

@@ -20,8 +20,9 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        //event_fmod_littleToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/DoorToc");
-        //event_fmod_hardToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/BigDoorToc");
+        event_fmod_littleToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/DoorToc");
+        event_fmod_hardToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/BigDoorToc");
+        //event_fmod_littleToc.start(); 
         textCandy.GetComponent<Renderer>().enabled = false;
         textFall.GetComponent<Renderer>().enabled = false;
         textChill.GetComponent<Renderer>().enabled = false;
@@ -33,8 +34,8 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
     
     private void Update()
     {
-        //event_fmod_littleToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
-        //event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+        event_fmod_littleToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+        event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
     }
 
     public void Interact(PlayerPickUp interactor)
@@ -119,22 +120,22 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
     public void TocLittle()
     {
         Debug.Log("Toc little Start");
-        event_fmod_littleToc.start(); 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc1ActiveTrig");
         
     }
     
     public void TocHard()
     {
-        event_fmod_hardToc.start();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/BigDoorTocActiveTrig");
     }
 
     public void StopTocLittle()
     {
-        event_fmod_littleToc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc1NoneTrig");
     }
     
     public void StopTocHard()
     {
-        event_fmod_hardToc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/BigDoorTocNoneTrig");
     }
 }

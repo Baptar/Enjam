@@ -91,7 +91,7 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
     public void TocLittle()
     {
         Debug.Log("Toc little Start");
-        event_fmod_littleToc.start(); 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc2ActiveTrig");
     }
     
     public void TocHard()
@@ -101,7 +101,7 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
 
     public void StopTocLittle()
     {
-        event_fmod_littleToc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc2NoneTrig");
     }
     
     public void StopTocHard()
