@@ -1,30 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class TVController : MonoBehaviour, IInteractable
+public class CouchePelle : MonoBehaviour, IInteractable
 {
-    public GameObject TV;
+    [SerializeField] private PlayerPickUp playerPickUp;
+    [SerializeField] private Pelle pelle;
     public bool canTake = true;
     public string textInteraction;
     public string textCantInteract;
-    public PlayerPickUp playerPickUp;
-    public Pile pile;
-
-
-    //public GameObject testParc;
-    
     public void Interact(PlayerPickUp interactor)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/InTeleComd", transform.position);
-        canTake = false;
-        textCantInteract = "";
-        pile.OnPileTaken();
-        Debug.Log("TV Controller interacted");
-        if (TV.TryGetComponent(out CaptureIRLVideo tv)) tv.WatchTv();
+        pelle.cpt++;
+        if (pelle.cpt == 3)
+        {
+            pelle.Detruit();
+        }
         
-        //if (testParc.TryGetComponent(out AppearParc parc)) parc.ParcAppear();
+        Destroy(gameObject);
     }
     
     public void SetCanTake(bool canTake)
@@ -34,7 +27,7 @@ public class TVController : MonoBehaviour, IInteractable
     
     public bool GetCanTake()
     {
-        return playerPickUp.bHasPile && canTake;
+        return canTake && playerPickUp.bHasPelle;
     }
     
     public string GetTextInteract()

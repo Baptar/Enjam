@@ -6,6 +6,7 @@ using UnityEngine;
 public class NeighboorDoor2 : MonoBehaviour, IInteractable
 {
     public string textInteraction;
+    [SerializeField] private PlayerPickUp playerPickUp;
     public string textCantInteract;
     public bool canTake = false;
     private int ActualNumber = 0;
@@ -39,6 +40,7 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
         {
             case 0:
                 ActualNumber++;
+                playerPickUp.door2number = 1;
                 StopTocLittle();
                 paperLookInfo.GetComponent<Renderer>().enabled = true;
                 paperLookInfo.GetComponent<MeshCollider>().enabled = true;
@@ -50,6 +52,7 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
                 break;
             case 1:
                 ActualNumber++;
+                playerPickUp.door2number = 2;
                 StopTocLittle();
                 canTake = false;
                 paperIndice.GetComponent<Renderer>().enabled = true;

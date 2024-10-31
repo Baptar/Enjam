@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4388838605933226050}
   - component: {fileID: 9144065777117995490}
   - component: {fileID: 122138748254563655}
-  - component: {fileID: 1176570866028074145}
   m_Layer: 0
   m_Name: PaperFell
   m_TagString: Untagged
@@ -107,24 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1176570866028074145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475073607484377760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 950f380cc58e4c64abc21e818ba9284a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door1: {fileID: 0}
-  door2: {fileID: 0}
-  isDoor1: 1
-  paperText: Fell
-  textInteraction: Press E to Read fell
-  textCantInteract: 
-  papertextInteraction: Press E to Answer
-  papertextCantInteract: Go see fall to scream in
-  canTake: 1

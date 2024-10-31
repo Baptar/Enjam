@@ -11,6 +11,7 @@ public class AppearParc : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float timeBetweenParc = 2f;
     [SerializeField] private NeighboorDoor1 door1;
+    [SerializeField] private GameObject collider;
 
     private bool move = false;
     private Vector3 newPosition;
@@ -40,5 +41,6 @@ public class AppearParc : MonoBehaviour
         move = false;
         door1.TocHard();
         door1.canTake = true;
+        collider.GetComponent<Collider>().enabled = false;
     }
 }

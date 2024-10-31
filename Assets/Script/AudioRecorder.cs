@@ -43,6 +43,8 @@ public class AudioRecorder : MonoBehaviour
     private bool isRecording = false;
     [SerializeField] private Canvas holdMCanvas;
     private bool displayCanvas;
+
+    [SerializeField] private GameObject parc;
     
     // MAIN LOGIC
     
@@ -54,7 +56,7 @@ public class AudioRecorder : MonoBehaviour
             inTheZone = true;
             displayCanvas = true;
             channel.setPaused(!inTheZone);
-            Debug.Log("IN THE ZONE");
+            //Debug.Log("IN THE ZONE");
             //RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
         }
     }
@@ -67,7 +69,7 @@ public class AudioRecorder : MonoBehaviour
             inTheZone = false;
             displayCanvas = false;
             channel.setPaused(!inTheZone);
-            Debug.Log("Not int The Zone anymore");
+            //Debug.Log("NOT IN THE ZONE");
             //RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
         }
     }
@@ -132,8 +134,13 @@ public class AudioRecorder : MonoBehaviour
             RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
             isRecording = true;
             displayCanvas = false;
+            //Debug.Log("RECORDING STARTS");
+        }
+        
+        // Increase counter if recording
+        if (isRecording)
+        {
             timer += Time.deltaTime;
-            Debug.Log("RECORDING STARTS");
         }
 
         // Stop record when R is released
@@ -141,12 +148,20 @@ public class AudioRecorder : MonoBehaviour
         {
             RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
             isRecording = false;
-            Debug.Log("RECORDING STOPS");
+            //Debug.Log("RECORDING STOPS, Time: " + timer);
             
-            if (!isRecording && timer < 1)
+            
+            if (timer < 1)
             {
                 timer = 0;
                 displayCanvas = true;
+                //Debug.Log("RECORDING CANCELLED");
+            }
+            else
+            {
+                //Debug.Log("RECORDING SAVED");
+                parc.GetComponent<AppearParc>().ParcAppear();
+                this.gameObject.SetActive(false);
             }
         }
         
@@ -164,7 +179,7 @@ public class AudioRecorder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
-            Debug.Log("PLAYING");
+            //Debug.Log("PLAYING");
         }
         
         

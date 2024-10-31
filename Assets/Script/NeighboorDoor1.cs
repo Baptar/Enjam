@@ -44,6 +44,7 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
         {
             case 0:
                 ActualNumber++;
+                playerPickUp.door1number = 1;
                 StopTocLittle();
                 textCandy.GetComponent<Renderer>().enabled = true;
                 textCandy.GetComponent<MeshCollider>().enabled = true;
@@ -56,6 +57,7 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
                 break;
             case 1:
                 ActualNumber++;
+                playerPickUp.door1number = 2;
                 canTake = false;
                 candy.OnCandyGive();
                 textFall.GetComponent<Renderer>().enabled = true;
@@ -66,6 +68,7 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
                 break;
             case 2:
                 ActualNumber++;
+                playerPickUp.door1number = 3;
                 canTake = false;
                 StopTocHard();
                 textChill.GetComponent<Renderer>().enabled = true;
