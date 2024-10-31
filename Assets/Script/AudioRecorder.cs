@@ -40,15 +40,19 @@ public class AudioRecorder : MonoBehaviour
     private bool inTheZone = false;
 
     private float timer = 0;
-
     private bool isRecording = false;
-
+    [SerializeField] private Canvas holdMCanvas;
+    private bool displayCanvas;
+    
+    // MAIN LOGIC
+    
     // When the player enters the zone, the recording will start
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             inTheZone = true;
+            displayCanvas = true;
             channel.setPaused(!inTheZone);
             Debug.Log("IN THE ZONE");
             //RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
@@ -61,6 +65,7 @@ public class AudioRecorder : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             inTheZone = false;
+            displayCanvas = false;
             channel.setPaused(!inTheZone);
             Debug.Log("Not int The Zone anymore");
             //RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
@@ -122,26 +127,38 @@ public class AudioRecorder : MonoBehaviour
     {
         
         // Record when R is pressed
-        if (!isRecording && Input.GetKeyDown(KeyCode.R) && inTheZone)
+        if (!isRecording && Input.GetKeyDown(KeyCode.Space) && inTheZone)
         {
             RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
             isRecording = true;
+            displayCanvas = false;
             timer += Time.deltaTime;
             Debug.Log("RECORDING STARTS");
         }
 
         // Stop record when R is released
-        if (isRecording && (!inTheZone || Input.GetKeyUp(KeyCode.R)))
+        if (isRecording && (!inTheZone || Input.GetKeyUp(KeyCode.Space)))
         {
             RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
             isRecording = false;
             Debug.Log("RECORDING STOPS");
-        }
-
-        if (!isRecording && timer < 1)
-        {
-            timer = 0;
             
+            if (!isRecording && timer < 1)
+            {
+                timer = 0;
+                displayCanvas = true;
+            }
+        }
+        
+        // show press hold M canvas
+        if (displayCanvas)
+        {
+            holdMCanvas.gameObject.SetActive(true);
+        }
+        // don't show hold M canvas
+        else
+        {
+            holdMCanvas.gameObject.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.O))
