@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5399206352075900536, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6213643501107598610, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
@@ -39,6 +43,14 @@ PrefabInstance:
     - target: {fileID: 6602988205195264502, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.478
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634511172688406293, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: lookXBotLimit
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634511172688406293, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: lookXTopLimit
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: textInteractObject

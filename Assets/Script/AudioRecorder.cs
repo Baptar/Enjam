@@ -47,6 +47,7 @@ public class AudioRecorder : MonoBehaviour
             inTheZone = true;
             channel.setPaused(!inTheZone);
             Debug.Log("Recording");
+            RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
         }
     }
    
@@ -58,6 +59,7 @@ public class AudioRecorder : MonoBehaviour
             inTheZone = false;
             channel.setPaused(!inTheZone);
             Debug.Log("Stopped Recording");
+            RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
         }
     }
     
@@ -94,7 +96,7 @@ public class AudioRecorder : MonoBehaviour
         exinfo.numchannels = NumOfChannels;
         exinfo.format = FMOD.SOUND_FORMAT.PCM16;
         exinfo.defaultfrequency = SampleRate;
-        exinfo.length = (uint)SampleRate * sizeof(short) * (uint)NumOfChannels;
+        exinfo.length = (uint)SampleRate * sizeof(short) * (uint)NumOfChannels * 10;
 
 
         //Step 4: Create an FMOD Sound "object". This is what will hold our voice as it is recorded.
@@ -103,17 +105,18 @@ public class AudioRecorder : MonoBehaviour
         RuntimeManager.CoreSystem.createSound(exinfo.userdata, FMOD.MODE.LOOP_NORMAL | FMOD.MODE.OPENUSER, 
             ref exinfo, out sound);
 
+        //RuntimeManager.CoreSystem.createChannelGroup("MyChannelGroup", out channelGroup);
 
         //Step 5: Start recording through our chosen device into our Sound object.
 
 
-        RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
+        //RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
 
 
         // Step 6: Start a Corutine that will tell our Sound object to play after a ceratin amount of time.
 
 
-        StartCoroutine(Wait());
+        //StartCoroutine(Wait());
     }
 
 
@@ -128,6 +131,12 @@ public class AudioRecorder : MonoBehaviour
 
     void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
+            Debug.Log("Playing");
+        }
         
         //Optional
         //Step 8: Set a reverb to the Sound object we're recording into and turn it on or off with a new button.

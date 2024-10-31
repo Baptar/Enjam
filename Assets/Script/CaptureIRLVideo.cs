@@ -14,6 +14,13 @@ public class CaptureIRLVideo : MonoBehaviour
     [SerializeField] private float delayWatchParc = 5f;
     [SerializeField] private float delayWatchIRL = 5f;
     
+    private FMOD.Studio.EventInstance event_fmod;
+
+    void Start()
+    {
+        event_fmod = FMODUnity.RuntimeManager.CreateInstance("event:/Salon/Tele");
+    }
+    
     public void StartTVIRL()
     {
         WebCamDevice device = WebCamTexture.devices[numberDevice];
@@ -30,6 +37,8 @@ public class CaptureIRLVideo : MonoBehaviour
 
     public void WatchTv()
     {
+        GetComponent<Renderer>().material = null;
+        event_fmod.start();
         StartCoroutine(StartWatchTV());
     }
 
@@ -43,5 +52,6 @@ public class CaptureIRLVideo : MonoBehaviour
         yield return new WaitForSeconds(delayWatchIRL);
         blackBoardPlayer.GetComponent<Animator>().SetTrigger("ChangePlayer");
         crosshair.enabled = true;
+        event_fmod.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
