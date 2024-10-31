@@ -20,8 +20,8 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        event_fmod_littleToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/DoorToc");
-        event_fmod_hardToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/BigDoorToc");
+        //event_fmod_littleToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/DoorToc");
+        //event_fmod_hardToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/BigDoorToc");
         textCandy.GetComponent<Renderer>().enabled = false;
         textFall.GetComponent<Renderer>().enabled = false;
         textChill.GetComponent<Renderer>().enabled = false;
@@ -33,8 +33,8 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
     
     private void Update()
     {
-        event_fmod_littleToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
-        event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+        //event_fmod_littleToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+        //event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
     }
 
     public void Interact(PlayerPickUp interactor)
@@ -120,6 +120,7 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
     {
         Debug.Log("Toc little Start");
         event_fmod_littleToc.start(); 
+        
     }
     
     public void TocHard()
