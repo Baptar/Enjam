@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hold SPACE to use microphone
+  m_text: hold SPACE to use microphone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e8d6fe0d82fadc42b9033714aab88bc, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -317,9 +317,12 @@ MonoBehaviour:
   textPaper: {fileID: 0}
   bHasKey: 0
   bHasPile: 0
+  bHasPelle: 0
   bHasCandy: 0
   bHasGrabbleObject: 0
   bIsReading: 0
+  door1number: 1
+  door2number: 1
   isDoor1: 1
   paperCandy: {fileID: 0}
   paperParcFell: {fileID: 0}
