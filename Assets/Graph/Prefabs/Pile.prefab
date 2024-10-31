@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8846111811243101077}
   - component: {fileID: 5796543183028353030}
-  - component: {fileID: 3079270161122295315}
+  - component: {fileID: 902908926931338034}
+  - component: {fileID: 3962105552446379722}
   m_Layer: 0
   m_Name: Pile
   m_TagString: Untagged
@@ -53,9 +54,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.17790702, y: 0.1089481, z: 0.3603201}
-  m_Center: {x: 0.046679273, y: 0.009390347, z: -0.043828487}
---- !u!114 &3079270161122295315
+  m_Size: {x: 0.08978987, y: 0.1089481, z: 0.29286355}
+  m_Center: {x: 0.002620697, y: 0.009390347, z: -0.010100216}
+--- !u!114 &902908926931338034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,12 +65,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 7841497769587172190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
+  m_Script: {fileID: 11500000, guid: 91f739a6fe32d4c4c8ee7af2e5800503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: event:/Park/PickBattery
+  playerPickUp: {fileID: 0}
   canTake: 1
-  textInteraction: 
+  textInteraction: Press E to take Pile
   lerpSpeed: 10
+--- !u!54 &3962105552446379722
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841497769587172190}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &4337205855431103588
 PrefabInstance:
   m_ObjectHideFlags: 0

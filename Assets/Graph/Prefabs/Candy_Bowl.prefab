@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3239819114986581155}
   - component: {fileID: 6472208736748200551}
+  - component: {fileID: 3658960878275172849}
+  - component: {fileID: 6781151030530151274}
   m_Layer: 0
   m_Name: Candy_Bowl
   m_TagString: Untagged
@@ -64,8 +66,52 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.77970344, y: 0.29793885, z: 0.47194663}
-  m_Center: {x: 0.11014806, y: -0.07622242, z: 0.013963159}
+  m_Size: {x: 0.5274525, y: 0.29793885, z: 0.47194663}
+  m_Center: {x: 0.0077508986, y: -0.07622242, z: 0.013963163}
+--- !u!114 &3658960878275172849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676349417333288371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb508651ea5bad646be25d1a092312be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventLocName: Salon/GrabCandy
+  playerPickUp: {fileID: 0}
+  canTake: 0
+  textInteraction: Press E to grab Candy
+  lerpSpeed: 10
+--- !u!54 &6781151030530151274
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676349417333288371}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &403980165444851368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,6 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -366,6 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -479,6 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -597,6 +649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -705,6 +759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -818,6 +874,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -931,6 +989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -1049,6 +1109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -1162,6 +1224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -1275,6 +1339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -1388,6 +1454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
@@ -1496,6 +1564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419640bcccf128d49819bd6730c7153d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventLocName: 
+  playerPickUp: {fileID: 0}
   canTake: 1
   textInteraction: 
   lerpSpeed: 10
