@@ -11,6 +11,7 @@ public class Key : MonoBehaviour, IInteractable
     public void Interact(PlayerPickUp interactor)
     {
         Debug.Log("Key interacted");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/KeyGrab", transform.position);
         interactor.bHasKey = true;
         Destroy(gameObject);
     }

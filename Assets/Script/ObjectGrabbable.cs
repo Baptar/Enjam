@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
+    public string eventLocName;
     public PlayerPickUp playerPickUp;
     public bool canTake = true;
 	public string textInteraction;
@@ -40,5 +41,10 @@ public class ObjectGrabbable : MonoBehaviour
     {
 		if (textInteraction == "") return "Press E to Grab";
         return textInteraction;
+    }
+
+    public void OnTook(PlayerPickUp playerPickUp)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(eventLocName, transform.position);
     }
 }

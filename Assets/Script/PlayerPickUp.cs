@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-interface IInteractable
+public interface IInteractable
 {
     public void Interact(PlayerPickUp interactor);
 	public string GetTextInteract();
@@ -22,10 +22,28 @@ public class PlayerPickUp : MonoBehaviour
     // PRESS E VARIABLES
     [SerializeField] private Canvas pressECanvas;
 	[SerializeField] private GameObject textInteractObject;
+    
+    [SerializeField] public Canvas paperCanvas;
+    [SerializeField] private GameObject textPaper;
 
     public bool bHasKey = false;
     public bool bHasPile = false;
+    public bool bHasCandy = false;
     public bool bHasGrabbleObject = false;
+    public bool bIsReading = false;
+
+    private int door1number = 1;
+    private int door2number = 1;
+    
+    public bool isDoor1 = true;
+    
+    [SerializeField] public PaperCandy paperCandy;
+    [SerializeField] public PaperParcFell paperParcFell;
+    [SerializeField] public PaperChillBeer paperChillBeer;
+    
+    [SerializeField] public PaperIndice paperIndice;
+    [SerializeField] public PaperLookInfo paperLookInfo;
+    
 
     private ObjectGrabbable objectGrabbable;
     
@@ -33,27 +51,41 @@ public class PlayerPickUp : MonoBehaviour
     void Update()
     {
         bool displayCanvaInteract = false;
-        
-        // test if we are casting something
-        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward,
-            out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
+
+        if (!bIsReading)
         {
-            // we can grab something
-            if (raycastHit.transform.TryGetComponent(out objectGrabbable) && !bHasGrabbleObject)
+            // test if we are casting something
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward,
+                out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
             {
-                if (objectGrabbable.canTake)
+                // we can grab something
+                if (raycastHit.transform.TryGetComponent(out objectGrabbable) && !bHasGrabbleObject)
                 {
-                    displayCanvaInteract = true;
-                    textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
-                    
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (objectGrabbable.canTake)
                     {
-                        bHasGrabbleObject = true;
-                        objectGrabbable.Grab(objectGrabPointTransform);
-                        if (objectGrabbable.TryGetComponent(out Pile pile))
+                        displayCanvaInteract = true;
+                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = objectGrabbable.GetText();
+                        
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            bHasGrabbleObject = true;
+                            objectGrabbable.Grab(objectGrabPointTransform);
+                            objectGrabbable.OnTook(this);
+                            if (objectGrabbable.TryGetComponent(out Pile pile))
+                            { 
+                                bHasPile = true;
+                                Debug.Log("Player found pile");
+                            }
+                            else if (objectGrabbable.TryGetComponent(out Candy candy))
+                            { 
+                                bHasCandy = true;
+                                Debug.Log("Player found Candy");
+                            }
+                            
+                        }
+                        else
                         { 
-                            bHasPile = true;
-                            Debug.Log("Player found pile");
+                            objectGrabbable = null; // very quick and dirty solution (don't judge)
                         }
                     }
                     else
@@ -61,34 +93,73 @@ public class PlayerPickUp : MonoBehaviour
                         objectGrabbable = null; // very quick and dirty solution (don't judge)
                     }
                 }
-                else
-                { 
-                    objectGrabbable = null; // very quick and dirty solution (don't judge)
+                // we can interact with something
+                else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
+                {
+                    displayCanvaInteract = true;
+                    if (interactObject.GetCanTake())
+                    {
+                        //displayCanvaInteract = true;
+                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextInteract();
+
+                        if (Input.GetKeyDown(KeyCode.E))
+                        { 
+                            interactObject.Interact(this);
+                            interactObject = null;
+                        }
+                    }
+                    else
+                    {
+                        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextCantInteract();
+                        interactObject = null;
+                    }
+                        
                 }
             }
-            // we can interact with something
-            else if (raycastHit.collider.TryGetComponent(out IInteractable interactObject))
-            {
-                displayCanvaInteract = true;
-                if (interactObject.GetCanTake())
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            { 
+                paperCanvas.gameObject.SetActive(false);
+                bIsReading = false;
+                if (isDoor1)
                 {
-                    //displayCanvaInteract = true;
-                    textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextInteract();
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    { 
-                        interactObject.Interact(this);
-                        interactObject = null;
+                    Debug.Log("doo1");
+                    switch (door1number)
+                    {
+                        case 1:
+                            door1number++;
+                            paperCandy.OnStopRead();
+                            break;
+                        case 2:
+                            door1number++;
+                            paperParcFell.OnStopRead();
+                            break;
+                        case 3:
+                            door1number++;
+                            paperChillBeer.OnStopRead();
+                            break;
                     }
                 }
                 else
                 {
-                    textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = interactObject.GetTextCantInteract();
-                    interactObject = null;
+                    Debug.Log("doo2");
+                    switch (door2number)
+                    {
+                        case 1:
+                            door2number++;
+                            paperLookInfo.OnStopRead();
+                            break;
+                        case 2:
+                            door2number++;
+                            paperIndice.OnStopRead();
+                            break;
+                    }
                 }
-                    
             }
         }
+        
         // show press E canvas
         if (displayCanvaInteract)
         {
@@ -99,5 +170,10 @@ public class PlayerPickUp : MonoBehaviour
         {
             pressECanvas.gameObject.SetActive(false);
         }
+    }
+
+    public void SetPaperText(string _text)
+    {
+        textPaper.GetComponent<TMPro.TextMeshProUGUI>().text = _text;
     }
 }

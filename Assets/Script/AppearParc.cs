@@ -16,6 +16,7 @@ public class AppearParc : MonoBehaviour
     
     public void ParcAppear()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/ParkAppear", transform.position);
         move = true;
         StartCoroutine(StopMovement());
     }
