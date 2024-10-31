@@ -2409,97 +2409,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.049, y: 0.182, z: 0.493}
---- !u!1 &1789066504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1789066508}
-  - component: {fileID: 1789066507}
-  - component: {fileID: 1789066506}
-  - component: {fileID: 1789066505}
-  m_Layer: 0
-  m_Name: Sphere Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1789066505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789066504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74ffa4699df5fe47990cda453e49d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parc: {fileID: 2699075059698761582}
-  highUntilWhere: 10
-  speed: 10
-  timeBetweenParc: 2
-  door1: {fileID: 1736536306}
-  collider: {fileID: 1789066504}
-  invisibleWall: {fileID: 0}
---- !u!114 &1789066506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789066504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 0
-  priority: 0
-  blendDistance: 1
-  weight: 1
-  sharedProfile: {fileID: 0}
---- !u!135 &1789066507
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789066504}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1789066508
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789066504}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.18, y: -0.15, z: 14.7}
-  m_LocalScale: {x: 9.428054, y: 9.428054, z: 9.428054}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1801171191
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,11 +3417,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parc: {fileID: 2699075059698761582}
-  highUntilWhere: 10
+  highUntilWhere: 12.1
   speed: 10
   timeBetweenParc: 2
   door1: {fileID: 1736536306}
-  collider: {fileID: 1789066504}
+  collider: {fileID: 0}
   invisibleWall: {fileID: 1177166453}
 --- !u!114 &2699075059698761584 stripped
 MonoBehaviour:
@@ -3673,7 +3582,6 @@ SceneRoots:
   - {fileID: 2111087148}
   - {fileID: 896944850}
   - {fileID: 62856559}
-  - {fileID: 1789066508}
   - {fileID: 154423159}
   - {fileID: 1114699377}
   - {fileID: 938239039}
