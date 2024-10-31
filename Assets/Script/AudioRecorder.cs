@@ -39,6 +39,10 @@ public class AudioRecorder : MonoBehaviour
     private bool playOkay = false;
     private bool inTheZone = false;
 
+    private float timer = 0;
+
+    private bool isRecording = false;
+
     // When the player enters the zone, the recording will start
     public void OnTriggerEnter(Collider collision)
     {
@@ -46,8 +50,8 @@ public class AudioRecorder : MonoBehaviour
         {
             inTheZone = true;
             channel.setPaused(!inTheZone);
-            Debug.Log("Recording");
-            RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
+            Debug.Log("IN THE ZONE");
+            //RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
         }
     }
    
@@ -58,8 +62,8 @@ public class AudioRecorder : MonoBehaviour
         {
             inTheZone = false;
             channel.setPaused(!inTheZone);
-            Debug.Log("Stopped Recording");
-            RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
+            Debug.Log("Not int The Zone anymore");
+            //RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
         }
     }
     
@@ -102,7 +106,7 @@ public class AudioRecorder : MonoBehaviour
         //Step 4: Create an FMOD Sound "object". This is what will hold our voice as it is recorded.
 
 
-        RuntimeManager.CoreSystem.createSound(exinfo.userdata, FMOD.MODE.LOOP_NORMAL | FMOD.MODE.OPENUSER, 
+        RuntimeManager.CoreSystem.createSound(exinfo.userdata, FMOD.MODE.LOOP_OFF | FMOD.MODE.OPENUSER, 
             ref exinfo, out sound);
 
         //RuntimeManager.CoreSystem.createChannelGroup("MyChannelGroup", out channelGroup);
@@ -111,37 +115,45 @@ public class AudioRecorder : MonoBehaviour
 
 
         //RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
-
-
-        // Step 6: Start a Corutine that will tell our Sound object to play after a ceratin amount of time.
-
-
-        //StartCoroutine(Wait());
-    }
-
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(Latency);
-        RuntimeManager.CoreSystem.playSound(sound, channelGroup, true, out channel);
-        playOkay = true;
-        Debug.Log("Ready To Play");
     }
 
 
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Record when R is pressed
+        if (!isRecording && Input.GetKeyDown(KeyCode.R) && inTheZone)
+        {
+            RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
+            isRecording = true;
+            timer += Time.deltaTime;
+            Debug.Log("RECORDING STARTS");
+        }
+
+        // Stop record when R is released
+        if (isRecording && (!inTheZone || Input.GetKeyUp(KeyCode.R)))
+        {
+            RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
+            isRecording = false;
+            Debug.Log("RECORDING STOPS");
+        }
+
+        if (!isRecording && timer < 1)
+        {
+            timer = 0;
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
         {
             RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
-            Debug.Log("Playing");
+            Debug.Log("PLAYING");
         }
         
+        
+        /*
         //Optional
         //Step 8: Set a reverb to the Sound object we're recording into and turn it on or off with a new button.
-
-
         if (Input.GetKeyDown(ReverbOnOffSwitch))
         {
             FMOD.REVERB_PROPERTIES propOn = FMOD.PRESET.ROOM();
@@ -150,7 +162,7 @@ public class AudioRecorder : MonoBehaviour
             dspEnabled = !dspEnabled;
 
             RuntimeManager.CoreSystem.setReverbProperties(1, ref dspEnabled ? ref propOn : ref propOff);
-        }
+        }*/
 
     }
 }
