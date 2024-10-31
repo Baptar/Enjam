@@ -267,7 +267,6 @@ MonoBehaviour:
   textCandy: {fileID: 6914014810635283090}
   textFall: {fileID: 5683990420463678885}
   textChill: {fileID: 7055368920405817254}
-  textTransform: {fileID: 7500011455743080908}
 --- !u!1 &6890997100478574641
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +474,7 @@ MonoBehaviour:
   doorTextInteraction: Press E to Answer
   doorTextCantInteract: Scream in the fall
   door1: {fileID: 8173619070978696492}
+  door2: {fileID: 0}
   canTake: 1
 --- !u!1001 &1133239365052332839
 PrefabInstance:

@@ -10,6 +10,7 @@ public class AppearParc : MonoBehaviour
     [SerializeField] private float highUntilWhere = 10f;
     [SerializeField] private float speed = 10f;
     [SerializeField] private float timeBetweenParc = 2f;
+    [SerializeField] private NeighboorDoor1 door1;
 
     private bool move = false;
     private Vector3 newPosition;
@@ -37,5 +38,7 @@ public class AppearParc : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenParc); 
         move = false;
+        door1.TocHard();
+        door1.canTake = true;
     }
 }

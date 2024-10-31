@@ -11,6 +11,7 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
     [SerializeField] public string doorTextCantInteract;
     [SerializeField] private NeighboorDoor1 door1;
     [SerializeField] public NeighboorDoor2 door2;
+    [SerializeField] public ObjectGrabbable beerToGrab;
     public bool canTake = true;
    
     public void Interact(PlayerPickUp interactor)
@@ -46,10 +47,14 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
         return textInteraction;
     }
 
-    public void OnStopRead()
+    public void OnStopRead(PlayerPickUp playerPickUp)
     {
         Debug.Log("OnStopRead from base");
         door2.TocLittle();
         door2.canTake = true;
+        
+        playerPickUp.bHasGrabbleObject = true;
+        beerToGrab.Grab(playerPickUp.objectGrabPointTransform);
+        beerToGrab.OnTook(playerPickUp);
     }
 }

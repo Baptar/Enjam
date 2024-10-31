@@ -14,7 +14,7 @@ public interface IInteractable
 public class PlayerPickUp : MonoBehaviour
 {
     [SerializeField] private Transform playerCameraTransform;
-    [SerializeField] private Transform objectGrabPointTransform;
+    [SerializeField] public Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private float pickUpDistance = 2.0f;
     [SerializeField] private BoxCollider candyBoxCollider;
@@ -138,7 +138,7 @@ public class PlayerPickUp : MonoBehaviour
                             break;
                         case 3:
                             door1number++;
-                            paperChillBeer.OnStopRead();
+                            paperChillBeer.OnStopRead(this);
                             break;
                     }
                 }
