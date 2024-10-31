@@ -899,6 +899,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96143dd52f95df44b9d6e113457c36d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &435959792 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5104786006089168475, guid: 785b76bf08f004d46af45e3e0ff5ae69, type: 3}
+  m_PrefabInstance: {fileID: 8652111938290642408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &453202679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1409,6 +1414,10 @@ PrefabInstance:
       propertyPath: parc
       value: 
       objectReference: {fileID: 1467053554}
+    - target: {fileID: 4412162417355888669, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: holdMCanvas
+      value: 
+      objectReference: {fileID: 435959792}
     - target: {fileID: 6483012661070050712, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
       propertyPath: m_Name
       value: RecordingZone
@@ -3744,6 +3753,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1723722749935105371, guid: 785b76bf08f004d46af45e3e0ff5ae69, type: 3}
+      propertyPath: m_text
+      value: Hold SPACE to use microphone
+      objectReference: {fileID: 0}
     - target: {fileID: 2956467710041872819, guid: 785b76bf08f004d46af45e3e0ff5ae69, type: 3}
       propertyPath: lightAudioList.Array.data[0]
       value: 
@@ -3843,6 +3856,10 @@ PrefabInstance:
     - target: {fileID: 4517785471437782670, guid: 785b76bf08f004d46af45e3e0ff5ae69, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272570144806188442, guid: 785b76bf08f004d46af45e3e0ff5ae69, type: 3}
+      propertyPath: m_Name
+      value: HoldSpace
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
