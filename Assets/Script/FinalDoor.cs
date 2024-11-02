@@ -34,6 +34,7 @@ public class FinalDoor : MonoBehaviour, IInteractable
         else
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/DOOR/DOORClose");
+            Debug.Log(UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset.GetType().Name);
         }
     }
     

@@ -1721,6 +1721,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7426911706187229499, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 122053661}
+    - targetCorrespondingSourceObject: {fileID: 7426911706187229499, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 896944858}
   m_SourcePrefab: {fileID: 100100000, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
 --- !u!114 &896944851 stripped
 MonoBehaviour:
@@ -1748,6 +1751,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5399206352075900536, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
   m_PrefabInstance: {fileID: 896944850}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &896944858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122053659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149864f4bed00404588e907c00f8506f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &938239035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2308,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227889827151656, guid: 4f24f31aeb1fb6748b7c42d3b9f46c59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64970931557532390, guid: 4f24f31aeb1fb6748b7c42d3b9f46c59, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 65680862327526002, guid: 4f24f31aeb1fb6748b7c42d3b9f46c59, type: 3}
@@ -4343,7 +4366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7841497769587172190, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8846111811243101077, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5053,6 +5076,7 @@ MonoBehaviour:
   highUntilWhere: 11
   timeBetweenParc: 2.2
   door1: {fileID: 1736536306}
+  cameraShake: {fileID: 896944858}
   invisibleWall: {fileID: 772206831}
   targetPosition: {x: -24.851, y: -0.00199, z: 15.3}
 --- !u!1001 &4511532055683134112
