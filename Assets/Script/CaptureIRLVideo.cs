@@ -39,22 +39,27 @@ public class CaptureIRLVideo : MonoBehaviour
 
     public void WatchTv()
     {
-        GetComponent<Renderer>().material = null;
+        //GetComponent<Renderer>().material = null;
+        StartTVParc();
         FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
-        StartCoroutine(StartWatchTV());
+        blackBoardTV.GetComponent<Animator>().SetTrigger("ChangeTV");
+        crosshair.enabled = false;
     }
 
     IEnumerator StartWatchTV()
     {
-        blackBoardTV.GetComponent<Animator>().SetTrigger("ChangeTV");
-        crosshair.enabled = false;
-        yield return new WaitForSeconds(0.3f);
-        StartTVParc();
+        //StartTVParc();
         yield return new WaitForSeconds(delayWatchParc);
         StartTvirl();
         yield return new WaitForSeconds(delayWatchIrl);
+        
         blackBoardPlayer.GetComponent<Animator>().SetTrigger("ChangePlayer");
         crosshair.enabled = true;
         eventFMOD.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void TurnOnTv()
+    {
+        StartCoroutine(StartWatchTV());
     }
 }

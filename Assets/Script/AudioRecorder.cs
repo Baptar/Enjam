@@ -39,7 +39,8 @@ public class AudioRecorder : MonoBehaviour
 
     private float timer = 0;
     private bool isRecording = false;
-    [SerializeField] private Canvas holdMCanvas;
+    [SerializeField] private GameObject textHold;
+    //[SerializeField] private Canvas holdMCanvas;
     private bool displayCanvas;
 
     [SerializeField] private GameObject parc;
@@ -166,12 +167,15 @@ public class AudioRecorder : MonoBehaviour
         // show press hold M canvas
         if (displayCanvas)
         {
-            holdMCanvas.gameObject.SetActive(true);
+            //holdMCanvas.gameObject.SetActive(true);
+            textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "hold SPACE to use microphone";
+            
         }
         // don't show hold M canvas
         else
         {
-            holdMCanvas.gameObject.SetActive(false);
+            //holdMCanvas.gameObject.SetActive(false);
+            textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "";
         }
 
         if (Input.GetKeyDown(KeyCode.O))
