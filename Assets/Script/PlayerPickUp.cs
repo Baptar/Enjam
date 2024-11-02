@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using Unity.VisualScripting;
 using UnityEngine;
 
 public interface IInteractable
@@ -17,24 +17,22 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField] public Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private float pickUpDistance = 2.0f;
-    [SerializeField] private BoxCollider candyBoxCollider;
     
     // PRESS E VARIABLES
-    [SerializeField] private Canvas pressECanvas;
 	[SerializeField] private GameObject textInteractObject;
     
     [SerializeField] public Canvas paperCanvas;
     [SerializeField] private GameObject textPaper;
 
-    public bool bHasKey = false;
-    public bool bHasPile = false;
-    public bool bHasPelle = false;
-    public bool bHasCandy = false;
-    public bool bHasGrabbleObject = false;
-    public bool bIsReading = false;
+    public bool bHasKey;
+    public bool bHasPile;
+    public bool bHasPelle;
+    public bool bHasCandy;
+    public bool bHasGrabbleObject;
+    public bool bIsReading;
 
-    public int door1number = 1;
-    public int door2number = 1;
+    public int door1Number = 1;
+    public int door2Number = 1;
     
     public bool isDoor1 = true;
     
@@ -72,20 +70,21 @@ public class PlayerPickUp : MonoBehaviour
                             bHasGrabbleObject = true;
                             objectGrabbable.Grab(objectGrabPointTransform);
                             objectGrabbable.OnTook(this);
-                            if (objectGrabbable.TryGetComponent(out Pile pile))
+                            if (objectGrabbable.TryGetComponent(out Pile _))
                             { 
                                 bHasPile = true;
                                 Debug.Log("Player found pile");
                             }
-                            else if (objectGrabbable.TryGetComponent(out Candy candy))
+                            else if (objectGrabbable.TryGetComponent(out Candy _))
                             { 
                                 bHasCandy = true;
                                 Debug.Log("Player found Candy");
                             }
-                            else if (objectGrabbable.TryGetComponent(out Pelle pelle))
+                            else if (objectGrabbable.TryGetComponent(out Pelle _pelle))
                             { 
                                 bHasPelle = true;
                                 Debug.Log("Player found Pelle");
+                                _pelle.PelleAccessible();
                             }
                             
                         }
@@ -132,7 +131,7 @@ public class PlayerPickUp : MonoBehaviour
                 if (isDoor1)
                 {
                     Debug.Log("doo1");
-                    switch (door1number)
+                    switch (door1Number)
                     {
                         case 1:
                             paperCandy.OnStopRead();
@@ -148,7 +147,7 @@ public class PlayerPickUp : MonoBehaviour
                 else
                 {
                     Debug.Log("doo2");
-                    switch (door2number)
+                    switch (door2Number)
                     {
                         case 1:
                             paperLookInfo.OnStopRead();
@@ -162,19 +161,14 @@ public class PlayerPickUp : MonoBehaviour
         }
         
         // show press E canvas
-        if (displayCanvaInteract)
+        if (!displayCanvaInteract)
         {
-            pressECanvas.gameObject.SetActive(true);
-        }
-        // don't show press E canvas
-        else
-        {
-            pressECanvas.gameObject.SetActive(false);
+            textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = "";
         }
     }
 
-    public void SetPaperText(string _text)
+    public void SetPaperText(string text)
     {
-        textPaper.GetComponent<TMPro.TextMeshProUGUI>().text = _text;
+        textPaper.GetComponent<TMPro.TextMeshProUGUI>().text = text;
     }
 }

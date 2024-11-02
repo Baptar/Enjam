@@ -40,6 +40,7 @@ public class CouchePelle : MonoBehaviour, IInteractable
     IEnumerator DetruitCouche()
     {
         yield return new WaitForSeconds(delayAfterInteractToDestroy);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/DigHurt");
         pelle.cpt++;
         if (pelle.cpt == 3)
         {

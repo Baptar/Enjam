@@ -9,11 +9,13 @@ public class PaperLookInfo : MonoBehaviour, IInteractable
     [SerializeField] public string textCantInteract;
     [SerializeField] public string doorTextInteraction;
     [SerializeField] public string doorTextCantInteract;
+    [SerializeField] private Animator paperAnimation;
     [SerializeField] private NeighboorDoor2 door2;
     public bool canTake = true;
     
     public void Interact(PlayerPickUp interactor)
     {
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
         door2.textCantInteract = doorTextCantInteract;
         door2.textInteraction = doorTextInteraction;
             
@@ -27,6 +29,11 @@ public class PaperLookInfo : MonoBehaviour, IInteractable
     public string GetTextCantInteract()
     {
         return textCantInteract;
+    }
+    
+    public void PaperAnimation()
+    {
+        paperAnimation.Play("papierPorte2", 0, 0.0f);
     }
     
     public void SetCanTake(bool canTake)

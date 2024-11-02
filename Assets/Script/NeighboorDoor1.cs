@@ -45,10 +45,12 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
         {
             case 0:
                 ActualNumber++;
-                playerPickUp.door1number = 1;
+                playerPickUp.door1Number = 1;
                 StopTocLittle();
                 textCandy.GetComponent<Renderer>().enabled = true;
                 textCandy.GetComponent<MeshCollider>().enabled = true;
+                textCandy.PaperAnimation();
+                PaperSound();
                 //textCandy.PlayAnimation
                 candy.canTake = true;
                 this.canTake = false;
@@ -58,22 +60,30 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
                 break;
             case 1:
                 ActualNumber++;
-                playerPickUp.door1number = 2;
+                playerPickUp.door1Number = 2;
                 canTake = false;
                 candy.OnCandyGive();
                 textFall.GetComponent<Renderer>().enabled = true;
                 textFall.GetComponent<MeshCollider>().enabled = true;
+                textCandy.GetComponent<Renderer>().enabled = false;
+                textCandy.GetComponent<MeshCollider>().enabled = false;
+                textFall.PaperAnimation();
+                PaperSound();
                 //textFall.PlayAnimation
                 textCantInteract = "";
                 textInteraction = "";
                 break;
             case 2:
                 ActualNumber++;
-                playerPickUp.door1number = 3;
+                playerPickUp.door1Number = 3;
                 canTake = false;
                 StopTocHard();
                 textChill.GetComponent<Renderer>().enabled = true;
                 textChill.GetComponent<MeshCollider>().enabled = true;
+                textFall.GetComponent<Renderer>().enabled = false;
+                textFall.GetComponent<MeshCollider>().enabled = false;
+                textChill.PaperAnimation();
+                PaperSound();
                 //textChill.PlayAnimation
                 textCantInteract = "";
                 textInteraction = "";
@@ -122,6 +132,11 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
         Debug.Log("Toc little Start");
         FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc1ActiveTrig");
         
+    }
+
+    private void PaperSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperAppear");
     }
     
     public void TocHard()

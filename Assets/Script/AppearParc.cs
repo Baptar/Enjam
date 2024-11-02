@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,43 +6,35 @@ public class AppearParc : MonoBehaviour
 {
     [SerializeField] private GameObject parc;
     [SerializeField] private float highUntilWhere = 10f;
-    [SerializeField] private float speed = 10f;
     [SerializeField] private float timeBetweenParc = 2f;
     [SerializeField] private NeighboorDoor1 door1;
-    [SerializeField] private GameObject collider;
+    [SerializeField] private CameraShake cameraShake;
+    float timeElapsed;
     
     [SerializeField] private GameObject invisibleWall;
-
-
-    private bool move = false;
-    private Vector3 newPosition;
+    [SerializeField] private Vector3 targetPosition;
     
     public void ParcAppear()
     {
+        StopAllCoroutines();
+        cameraShake.shakeDuration = timeBetweenParc;
         FMODUnity.RuntimeManager.PlayOneShot("event:/Park/ParkAppear", transform.position);
-        move = true;
-        StartCoroutine(StopMovement());
+        StartCoroutine(MoveParc());
     }
 
-    private void Start()
+    IEnumerator MoveParc()
     {
-        newPosition = parc.transform.position + Vector3.up * highUntilWhere;
-    }
-    private void Update()
-    {
-        if (move)
+        float timeElapsed = 0;
+        Vector3 startPosition = transform.position;
+
+        while (timeElapsed < timeBetweenParc)
         {
-            parc.gameObject.transform.position = Vector3 .MoveTowards(parc.gameObject.transform.position, newPosition, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / timeBetweenParc);
+            timeElapsed += Time.deltaTime;
+            yield return null;
         }
-    }
-
-    IEnumerator StopMovement()
-    {
-        yield return new WaitForSeconds(timeBetweenParc); 
-        move = false;
         door1.TocHard();
         door1.canTake = true;
-        collider.GetComponent<Collider>().enabled = false;
         invisibleWall.SetActive(false);
     }
 }

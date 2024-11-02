@@ -12,8 +12,11 @@ public class PaperCandy : MonoBehaviour, IInteractable
     [SerializeField] public string doorTextCantInteract;
     public bool canTake = true;
     
+    [SerializeField] private Animator paperAnimation;
+    
     public void Interact(PlayerPickUp interactor)
     {
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
         door1.textCantInteract = doorTextCantInteract;
         door1.textInteraction = doorTextInteraction;
             
@@ -22,6 +25,11 @@ public class PaperCandy : MonoBehaviour, IInteractable
         interactor.isDoor1 = true;
         interactor.SetPaperText(paperText);
         interactor.paperCanvas.gameObject.SetActive(true);
+    }
+
+    public void PaperAnimation()
+    {
+        paperAnimation.Play("papierPorte2", 0, 0.0f);
     }
     
     public string GetTextCantInteract()

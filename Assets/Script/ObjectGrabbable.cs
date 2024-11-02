@@ -46,5 +46,6 @@ public class ObjectGrabbable : MonoBehaviour
     public void OnTook(PlayerPickUp playerPickUp)
     {
         FMODUnity.RuntimeManager.PlayOneShot(eventLocName, transform.position);
+        GetComponent<Collider>().enabled = false;
     }
 }

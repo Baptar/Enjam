@@ -7,12 +7,14 @@ public class Key : MonoBehaviour, IInteractable
 	public string textInteraction;
     public string textCantInteract;
     public bool canTake = true;
+    [SerializeField] private FinalDoor finalDoor;
 
     public void Interact(PlayerPickUp interactor)
     {
         Debug.Log("Key interacted");
         FMODUnity.RuntimeManager.PlayOneShot("event:/Park/KeyGrab", transform.position);
         interactor.bHasKey = true;
+        finalDoor.SwitchTextToCanInteract();
         Destroy(gameObject);
     }
     

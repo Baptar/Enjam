@@ -12,10 +12,13 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
     [SerializeField] private NeighboorDoor1 door1;
     [SerializeField] public NeighboorDoor2 door2;
     [SerializeField] public ObjectGrabbable beerToGrab;
+    [SerializeField] private Animator paperAnimation;
     public bool canTake = true;
    
     public void Interact(PlayerPickUp interactor)
     {
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
+        beerToGrab.gameObject.SetActive(true);
         door1.textCantInteract = doorTextCantInteract;
         door1.textInteraction = doorTextInteraction;
             
@@ -24,6 +27,11 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
         interactor.isDoor1 = true;
         interactor.SetPaperText(paperText);
         interactor.paperCanvas.gameObject.SetActive(true);
+    }
+    
+    public void PaperAnimation()
+    {
+        paperAnimation.Play("papierPorte2", 0, 0.0f);
     }
     
     public string GetTextCantInteract()

@@ -6,29 +6,34 @@ public class FinalDoor : MonoBehaviour, IInteractable
 {
 	public string textInteraction;
     public string textCantInteract;
+    public string textDoorInteractable;
     public bool canTake = true;
     public PlayerPickUp playerPickUp;
     [SerializeField] private GameObject start;
     [SerializeField] private GameObject end;
+    [SerializeField] private Animator paperAnimation;
     
     public void Interact(PlayerPickUp interactor)
     {
+        
         Debug.Log("Door interacted");
         if (interactor.bHasKey)
         {
-            // Get All Child of Start
-            for (int i = 0; i < start.transform.childCount; i++)
-            {
-                DisplayObject(start.transform.GetChild(i).gameObject, false);
-            }
+            paperAnimation.Play("Door Opened", 0, 0.0f);
+            canTake = false;
+            GetComponent<BoxCollider>().enabled = false;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/DOOR/DOOROpen");
             
-            // Get All Child of End
-            for (int i = 0; i < end.transform.childCount; i++)
-            {
-                DisplayObject(end.transform.GetChild(i).gameObject, true);
-            }
+            start.gameObject.SetActive(false);
+            end.gameObject.SetActive(true);
+            //DisplayObject(end.gameObject, true);
+            
             
             FMODUnity.RuntimeManager.PlayOneShot("event:/MX");
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/DOOR/DOORClose");
         }
     }
     
@@ -39,27 +44,23 @@ public class FinalDoor : MonoBehaviour, IInteractable
     
     public bool GetCanTake()
     {
-        return playerPickUp.bHasKey;
+        return canTake;
     }
 
 	public string GetTextInteract()
     {
-		if (textInteraction == "") return "Press E to Interact";
+		if (textInteraction == "") return "Press E to open door";
         return textInteraction;
+    }
+
+    public void SwitchTextToCanInteract()
+    {
+        textInteraction = textDoorInteractable;
     }
 
     private void DisplayObject(GameObject gameobject, bool bShow)
     {
-        // remove render of gameobject
-        if (gameobject.GetComponent<Renderer>())
-            gameobject.GetComponent<Renderer>().enabled = bShow;
-        // remove collision of gameobject
-        if (gameobject.GetComponent<BoxCollider>())
-            gameobject.GetComponent<BoxCollider>().enabled = bShow;
-        // remove lights of gameobject
-        if (gameobject.GetComponent<Light>())
-            gameobject.GetComponent<Light>().enabled = bShow;
-            
+        gameobject.SetActive(bShow);
         // do same thing for childs
         for (int i = 0; i < gameobject.transform.childCount; i++)
         {

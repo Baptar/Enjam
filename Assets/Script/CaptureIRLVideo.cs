@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CaptureIRLVideo : MonoBehaviour
@@ -12,21 +12,23 @@ public class CaptureIRLVideo : MonoBehaviour
     [SerializeField] public int numberDevice;
     [SerializeField] private Camera cam;
     [SerializeField] private float delayWatchParc = 5f;
-    [SerializeField] private float delayWatchIRL = 5f;
+    [SerializeField] private float delayWatchIrl = 5f;
     
-    private FMOD.Studio.EventInstance event_fmod;
+    private FMOD.Studio.EventInstance eventFMOD;
 
     void Start()
     {
-        event_fmod = FMODUnity.RuntimeManager.CreateInstance("event:/Salon/Tele");
-    }
-    
-    public void StartTVIRL()
-    {
+        eventFMOD = FMODUnity.RuntimeManager.CreateInstance("event:/Salon/Tele");
+        
         WebCamDevice device = WebCamTexture.devices[numberDevice];
         webCamTexture = new WebCamTexture(device.name);
-        GetComponent<Renderer>().material.mainTexture = webCamTexture;
+    }
+    
+    public void StartTvirl()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
         if(!webCamTexture.isPlaying) webCamTexture.Play();
+        GetComponent<Renderer>().material.mainTexture = webCamTexture;
     }
 
     public void StartTVParc()
@@ -46,12 +48,13 @@ public class CaptureIRLVideo : MonoBehaviour
     {
         blackBoardTV.GetComponent<Animator>().SetTrigger("ChangeTV");
         crosshair.enabled = false;
+        yield return new WaitForSeconds(0.3f);
         StartTVParc();
         yield return new WaitForSeconds(delayWatchParc);
-        StartTVIRL();
-        yield return new WaitForSeconds(delayWatchIRL);
+        StartTvirl();
+        yield return new WaitForSeconds(delayWatchIrl);
         blackBoardPlayer.GetComponent<Animator>().SetTrigger("ChangePlayer");
         crosshair.enabled = true;
-        event_fmod.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        eventFMOD.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

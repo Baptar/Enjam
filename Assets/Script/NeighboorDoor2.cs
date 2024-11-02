@@ -40,11 +40,13 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
         {
             case 0:
                 ActualNumber++;
-                playerPickUp.door2number = 1;
+                playerPickUp.door2Number = 1;
                 StopTocLittle();
                 paperLookInfo.GetComponent<Renderer>().enabled = true;
                 paperLookInfo.GetComponent<MeshCollider>().enabled = true;
+                paperLookInfo.PaperAnimation();
                 //paperLookInfo.PlayAnimation
+                PaperSound();
                 this.canTake = false;
 
                 textCantInteract = "";
@@ -52,12 +54,16 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
                 break;
             case 1:
                 ActualNumber++;
-                playerPickUp.door2number = 2;
+                playerPickUp.door2Number = 2;
                 StopTocLittle();
                 canTake = false;
                 paperIndice.GetComponent<Renderer>().enabled = true;
                 paperIndice.GetComponent<MeshCollider>().enabled = true;
+                paperLookInfo.GetComponent<Renderer>().enabled = false;
+                paperLookInfo.GetComponent<MeshCollider>().enabled = false;
+                paperIndice.PaperAnimation();
                 //paperIndice.PlayAnimation
+                PaperSound();
                 textCantInteract = "";
                 textInteraction = "";
                 break;
@@ -87,6 +93,10 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
         return textCantInteract;
     }
     
+    private void PaperSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperAppear");
+    }
     
     public void TocLittle()
     {

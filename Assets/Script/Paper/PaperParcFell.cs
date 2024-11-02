@@ -12,10 +12,12 @@ public class PaperParcFell : MonoBehaviour, IInteractable
     [SerializeField] private NeighboorDoor1 door1;
     [SerializeField] public NeighboorDoor2 door2;
     [SerializeField] public GameObject parcTrigger;
+    [SerializeField] private Animator paperAnimation;
     public bool canTake = true;
     
     public void Interact(PlayerPickUp interactor)
     {
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
         door1.textCantInteract = doorTextCantInteract;
         door1.textInteraction = doorTextInteraction;
             
@@ -29,6 +31,11 @@ public class PaperParcFell : MonoBehaviour, IInteractable
     public string GetTextCantInteract()
     {
         return textCantInteract;
+    }
+    
+    public void PaperAnimation()
+    {
+        paperAnimation.Play("papierPorte2", 0, 0.0f);
     }
     
     public void SetCanTake(bool canTake)
