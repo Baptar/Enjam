@@ -372,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
-      value: You shouldnt be outside.. Have you watched the news ?
+      value: You shouldn't be outside.. Have you watched the news?
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperAnimation
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
-      value: People keep letting there stuff in the parc, I understand why he keeps
+      value: People keep letting their stuff in the park, I understand why he keeps
         leaving.
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
@@ -825,6 +825,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1278824353687792909, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249981009402269135, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: parc
+      value: 
+      objectReference: {fileID: 2699075059698761582}
+    - target: {fileID: 3249981009402269135, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: textHold
+      value: 
+      objectReference: {fileID: 1519578256}
     - target: {fileID: 4412162417355888669, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
       propertyPath: parc
       value: 
@@ -1744,6 +1756,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6463811782752856522, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_text
+      value: SCREAM IN THE HOLE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463811782752856522, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6719784684195736571, guid: 9e8d6fe0d82fadc42b9033714aab88bc, type: 2}
+    - target: {fileID: 6463811782752856522, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6481302964877472754, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2016,8 +2040,8 @@ Transform:
   m_GameObject: {fileID: 938239035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.04, y: 0.48, z: -1.41}
-  m_LocalScale: {x: 2.594068, y: 2.594068, z: 2.594068}
+  m_LocalPosition: {x: -12.14, y: 0.48, z: -1.28}
+  m_LocalScale: {x: 2.71, y: 2.594068, z: 2.93}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3454,7 +3478,7 @@ PrefabInstance:
       objectReference: {fileID: 100661549}
     - target: {fileID: 5683990420463678885, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
       propertyPath: paperText
-      value: I would love to go to the parc but he felt in a hole again.. Go yell
+      value: I would love to go to the park but he fell in a hole again.. Go yell
         at him to make him come back
       objectReference: {fileID: 0}
     - target: {fileID: 5683990420463678885, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
@@ -4517,7 +4541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door1: {fileID: 1736536306}
-  paperText: I'm starving, can you get me some candies ?
+  paperText: I'm starving, can you get me some candies?
   textInteraction: 
   textCantInteract: 
   doorTextInteraction: Press E to give Candies
