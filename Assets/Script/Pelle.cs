@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mail;
 using UnityEngine;
 
 public class Pelle : ObjectGrabbable
 {
     public int cpt = 0;
+    [SerializeField] private Camera playerCamera;
     public bool startRotation;
     public void Detruit()
     {
@@ -17,7 +19,8 @@ public class Pelle : ObjectGrabbable
     {
         if (startRotation)
         {
-            transform.rotation = playerPickUp.transform.rotation;
+            //transform.rotation = Quaternion.Euler(-50, 0, 0);
+            //startRotation = false;
         }
     }
 

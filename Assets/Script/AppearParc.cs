@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class AppearParc : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class AppearParc : MonoBehaviour
     [SerializeField] private float timeBetweenParc = 2f;
     [SerializeField] private NeighboorDoor1 door1;
     [SerializeField] private CameraShake cameraShake;
-    float timeElapsed;
     
     [SerializeField] private GameObject invisibleWall;
     [SerializeField] private Vector3 targetPosition;

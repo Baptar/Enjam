@@ -178,7 +178,7 @@ public class AudioRecorder : MonoBehaviour
             textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "";
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
             //Debug.Log("PLAYING");

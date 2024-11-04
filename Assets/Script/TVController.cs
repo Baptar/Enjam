@@ -14,6 +14,7 @@ public class TVController : MonoBehaviour, IInteractable
     
     [SerializeField] private GameObject[] objectToSpawn;
     [SerializeField] private GameObject objectToDespawn;
+    [SerializeField] private GameObject Banc;
     
     
     public void Interact(PlayerPickUp interactor)
@@ -30,6 +31,7 @@ public class TVController : MonoBehaviour, IInteractable
             objectToSpawn[i].SetActive(true);
         }
         objectToDespawn.SetActive(false);
+        Banc.layer = LayerMask.NameToLayer("Ignore Raycast");   
     }
     
     public void SetCanTake(bool canTake)

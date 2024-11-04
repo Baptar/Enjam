@@ -61,7 +61,7 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
         door2.TocLittle();
         door2.canTake = true;
 
-        playerPickUp.bHasPile = true;
+        playerPickUp.bHasBeer = true;
         playerPickUp.bHasGrabbleObject = true;
         beerToGrab.Grab(playerPickUp.objectGrabPointTransform);
         beerToGrab.OnTook(playerPickUp);

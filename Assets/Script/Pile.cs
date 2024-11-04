@@ -16,4 +16,9 @@ public class Pile : ObjectGrabbable
         Drop();
         Destroy(gameObject);
     }
+
+    public void OnGrabPile()
+    {
+        playerPickUp.OnPileTaken();
+    }
 }
