@@ -372,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
-      value: You shouldnt be outside.. Have you watched the news ?
+      value: You shouldn't be outside.. Have you watched the news?
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperAnimation
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
-      value: People keep letting there stuff in the parc, I understand why he keeps
+      value: People keep letting their stuff in the park, I understand why he keeps
         leaving.
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
@@ -955,6 +955,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3249981009402269135, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: parc
+      value: 
+      objectReference: {fileID: 2699075059698761582}
+    - target: {fileID: 3249981009402269135, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: textHold
+      value: 
+      objectReference: {fileID: 1519578256}
     - target: {fileID: 4412162417355888669, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
       propertyPath: parc
       value: 
@@ -1952,7 +1960,7 @@ PrefabInstance:
       objectReference: {fileID: 100661551}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: timeToShrink
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: fpsController
@@ -3742,8 +3750,8 @@ PrefabInstance:
       objectReference: {fileID: 100661549}
     - target: {fileID: 5683990420463678885, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
       propertyPath: paperText
-      value: I would love to go to the parc but he felt in a hole again.. Go yell
-        at him to make him come back
+      value: I would love to go to the park but he fell in a hole again.. Go yell
+        at him to make him come back.
       objectReference: {fileID: 0}
     - target: {fileID: 5683990420463678885, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
       propertyPath: parcTrigger
@@ -4844,7 +4852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door1: {fileID: 1736536306}
-  paperText: I'm starving, can you get me some candies ?
+  paperText: I'm starving, can you get me some candies?
   textInteraction: 
   textCantInteract: 
   doorTextInteraction: Press E to give Candies
@@ -5497,7 +5505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parc: {fileID: 2699075059698761582}
-  highUntilWhere: 11
   timeBetweenParc: 2.2
   door1: {fileID: 1736536306}
   cameraShake: {fileID: 896944858}
@@ -5591,6 +5598,10 @@ PrefabInstance:
       propertyPath: blackBoardTV
       value: 
       objectReference: {fileID: 583828322}
+    - target: {fileID: 6532695994310284017, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 782048758}
     - target: {fileID: 6532695994310284017, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: blackBoardPlayer
       value: 

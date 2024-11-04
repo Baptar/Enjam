@@ -15,6 +15,7 @@ public class Pile : ObjectGrabbable
         playerPickUp.bHasGrabbleObject = false;
         Drop();
         Destroy(gameObject);
+        playerPickUp.fpsController.canMove = false;
     }
 
     public void OnGrabPile()

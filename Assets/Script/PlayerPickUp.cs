@@ -15,7 +15,7 @@ public interface IInteractable
 
 public class PlayerPickUp : MonoBehaviour
 {
-    [SerializeField] private FPSController fpsController;
+    [SerializeField] public FPSController fpsController;
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] public Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;

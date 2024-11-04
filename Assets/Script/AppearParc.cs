@@ -4,7 +4,6 @@ using UnityEngine;
 public class AppearParc : MonoBehaviour
 {
     [SerializeField] private GameObject parc;
-    [SerializeField] private float highUntilWhere = 10f;
     [SerializeField] private float timeBetweenParc = 2f;
     [SerializeField] private NeighboorDoor1 door1;
     [SerializeField] private CameraShake cameraShake;

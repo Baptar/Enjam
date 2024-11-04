@@ -13,6 +13,7 @@ public class CaptureIRLVideo : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float delayWatchParc = 5f;
     [SerializeField] private float delayWatchIrl = 5f;
+    [SerializeField] private FPSController fpsController;
     
     private FMOD.Studio.EventInstance eventFMOD;
 
@@ -55,6 +56,7 @@ public class CaptureIRLVideo : MonoBehaviour
         
         blackBoardPlayer.GetComponent<Animator>().SetTrigger("ChangePlayer");
         crosshair.enabled = true;
+        fpsController.canMove = true;
         eventFMOD.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 

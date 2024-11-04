@@ -43,7 +43,8 @@ public class FPSController : MonoBehaviour
         #endregion
         
         #region Handles Rotation
-        characterController.Move(transform.rotation * moveDirection * Time.deltaTime);
+        if (canMove)
+            characterController.Move(transform.rotation * moveDirection * Time.deltaTime);
 
         if (canMove)
         {
