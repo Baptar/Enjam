@@ -189,6 +189,37 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!1 &1383250426872312182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865451216870853834}
+  m_Layer: 0
+  m_Name: DarkAMBTrig
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865451216870853834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383250426872312182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1569846229675525106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450870200379457206
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,8 +323,7 @@ Transform:
   - {fileID: 694154094421376170}
   - {fileID: 5724414033285289588}
   - {fileID: 6721695865706603299}
-  - {fileID: 8280005478876628274}
-  - {fileID: 5357632782551263224}
+  - {fileID: 1569846229675525106}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2458221360394086489
@@ -307,9 +337,8 @@ GameObject:
   - component: {fileID: 4032854027029333375}
   - component: {fileID: 2925559664375925673}
   - component: {fileID: 4706586725496552990}
-  - component: {fileID: 2050382114408777039}
   m_Layer: 0
-  m_Name: Light1
+  m_Name: CODELight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 2458221360394086489}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.22, y: 0.01999855, z: 40.62}
+  m_LocalPosition: {x: -7.1, y: 1, z: 40.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,37 +411,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &2050382114408777039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2458221360394086489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1671969712
-      Data2: 1173952462
-      Data3: -443786839
-      Data4: 1319802771
-    Path: event:/DarkAMB
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &3734572818696303141
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,9 +422,8 @@ GameObject:
   - component: {fileID: 8415030469022083529}
   - component: {fileID: 9004048787146569124}
   - component: {fileID: 3341038296797136305}
-  - component: {fileID: 2428987412954030247}
   m_Layer: 0
-  m_Name: Light3
+  m_Name: CODELight3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 3734572818696303141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.59, y: -0.15299988, z: -7.4}
+  m_LocalPosition: {x: -11.9, y: 1, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -499,37 +496,39 @@ MonoBehaviour:
       Data3: -1517528911
       Data4: -63546477
     Path: event:/Player/PL_Footsteps
---- !u!114 &2428987412954030247
-MonoBehaviour:
+--- !u!1 &3794225272882023060
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3734572818696303141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1671969712
-      Data2: 1173952462
-      Data3: -443786839
-      Data4: 1319802771
-    Path: event:/DarkAMB
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569846229675525106}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1569846229675525106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3794225272882023060}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8280005478876628274}
+  - {fileID: 1865451216870853834}
+  m_Father: {fileID: 6113257982680195738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4366315300720117354
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,8 +542,9 @@ GameObject:
   - component: {fileID: 4419610955383197042}
   - component: {fileID: 6657008184650075099}
   - component: {fileID: 5303300011333406930}
+  - component: {fileID: 6129044573249135418}
   m_Layer: 0
-  m_Name: CorridorIn
+  m_Name: CorridorFilter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,13 +558,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4366315300720117354}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.13, y: 1.39, z: -2.73}
-  m_LocalScale: {x: 2.7283, y: 2.9567, z: 0.061757}
+  m_LocalRotation: {x: -0, y: -0.014979346, z: -0, w: 0.9998878}
+  m_LocalPosition: {x: -11.97, y: 1.39, z: -5.79}
+  m_LocalScale: {x: 2.180594, y: 2.9567, z: 10.420869}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6113257982680195738}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1569846229675525106}
+  m_LocalEulerAnglesHint: {x: 0, y: -1.717, z: 0}
 --- !u!33 &7275907730465097899
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -652,6 +652,22 @@ MonoBehaviour:
   Parameter: InCorridor
   TriggerEvent: 3
   Value: 1
+--- !u!114 &6129044573249135418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366315300720117354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Parameter: InCorridor
+  TriggerEvent: 4
+  Value: 0
 --- !u!1 &4394828993872381339
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,9 +742,8 @@ GameObject:
   - component: {fileID: 597673797780280388}
   - component: {fileID: 8030006561274331943}
   - component: {fileID: 5540749977749475252}
-  - component: {fileID: 1879339754903167932}
   m_Layer: 0
-  m_Name: Light2
+  m_Name: CODELight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +758,7 @@ Transform:
   m_GameObject: {fileID: 4589329779192173610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.64, y: 0.01999998, z: 14.66}
+  m_LocalPosition: {x: 6.12, y: 1, z: 14.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -801,37 +816,6 @@ MonoBehaviour:
       Data3: -1517528911
       Data4: -63546477
     Path: event:/Player/PL_Footsteps
---- !u!114 &1879339754903167932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4589329779192173610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1671969712
-      Data2: 1173952462
-      Data3: -443786839
-      Data4: 1319802771
-    Path: event:/DarkAMB
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &5307217484680405464
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +878,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 50
 --- !u!1 &6136456491649035248
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,9 +891,8 @@ GameObject:
   - component: {fileID: 8590235573699696967}
   - component: {fileID: 1806046919563972041}
   - component: {fileID: 656867960772774193}
-  - component: {fileID: 1221611665776444407}
   m_Layer: 0
-  m_Name: Light4
+  m_Name: CODELight4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -924,7 +907,7 @@ Transform:
   m_GameObject: {fileID: 6136456491649035248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.24, y: 0.23500013, z: 14.8}
+  m_LocalPosition: {x: -24.84, y: 1, z: 15.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1013,159 +996,6 @@ MonoBehaviour:
       Data3: -1517528911
       Data4: -63546477
     Path: event:/Player/PL_Footsteps
---- !u!114 &1221611665776444407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6136456491649035248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1671969712
-      Data2: 1173952462
-      Data3: -443786839
-      Data4: 1319802771
-    Path: event:/DarkAMB
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!1 &7139141402127530882
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5357632782551263224}
-  - component: {fileID: 4684942948960888067}
-  - component: {fileID: 5952784204265303933}
-  - component: {fileID: 3223229729802108469}
-  - component: {fileID: 1455501398876458739}
-  m_Layer: 0
-  m_Name: CorridorOut
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5357632782551263224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139141402127530882}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.13, y: 1.39, z: -1.99}
-  m_LocalScale: {x: 2.7283, y: 2.9567, z: 0.061757}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6113257982680195738}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4684942948960888067
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139141402127530882}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5952784204265303933
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139141402127530882}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3223229729802108469
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139141402127530882}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1455501398876458739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139141402127530882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  Parameter: InCorridor
-  TriggerEvent: 3
-  Value: 0
 --- !u!1 &7636679231721376338
 GameObject:
   m_ObjectHideFlags: 0
