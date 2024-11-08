@@ -1,5 +1,6 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public interface IInteractable
@@ -9,34 +10,44 @@ public interface IInteractable
     public string GetTextCantInteract();
     public void SetCanTake(bool canTake);
     public bool GetCanTake();
+    
 }
 
 public class PlayerPickUp : MonoBehaviour
 {
+    [SerializeField] public FPSController fpsController;
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] public Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private float pickUpDistance = 2.0f;
-    [SerializeField] private BoxCollider candyBoxCollider;
+    [SerializeField] private float timeToShrink = 2.0f;
+    [SerializeField] private Vector3 shrinkScale;
+    [SerializeField] private float shrinkSpeed = 0.5f;
+    [SerializeField] private Pile pile;
+
+    [SerializeField] private Beer beer;
     
     // PRESS E VARIABLES
-    [SerializeField] private Canvas pressECanvas;
 	[SerializeField] private GameObject textInteractObject;
     
     [SerializeField] public Canvas paperCanvas;
     [SerializeField] private GameObject textPaper;
 
-    public bool bHasKey = false;
-    public bool bHasPile = false;
-    public bool bHasPelle = false;
-    public bool bHasCandy = false;
-    public bool bHasGrabbleObject = false;
-    public bool bIsReading = false;
+    public bool bHasKey;
+    public bool bHasBeer;
+    public bool bHasPile;
+    public bool bHasPelle;
+    public bool bHasCandy;
+    public bool bHasGrabbleObject;
+    public bool bIsReading;
+    public bool bInBancZone;
 
-    public int door1number = 1;
-    public int door2number = 1;
+    public int door1Number = 1;
+    public int door2Number = 1;
     
     public bool isDoor1 = true;
+
+    private float startSpeed;
     
     [SerializeField] public PaperCandy paperCandy;
     [SerializeField] public PaperParcFell paperParcFell;
@@ -47,6 +58,12 @@ public class PlayerPickUp : MonoBehaviour
     
 
     private ObjectGrabbable objectGrabbable;
+
+
+    void Start()
+    {
+        startSpeed = fpsController.walkSpeed;
+    }
     
     // Update is called once per frame
     void Update()
@@ -72,20 +89,27 @@ public class PlayerPickUp : MonoBehaviour
                             bHasGrabbleObject = true;
                             objectGrabbable.Grab(objectGrabPointTransform);
                             objectGrabbable.OnTook(this);
-                            if (objectGrabbable.TryGetComponent(out Pile pile))
+                            if (objectGrabbable.TryGetComponent(out Pile _pile))
                             { 
                                 bHasPile = true;
+                                _pile.OnGrabPile(); 
                                 Debug.Log("Player found pile");
                             }
-                            else if (objectGrabbable.TryGetComponent(out Candy candy))
+                            else if (objectGrabbable.TryGetComponent(out Candy _))
                             { 
                                 bHasCandy = true;
                                 Debug.Log("Player found Candy");
                             }
-                            else if (objectGrabbable.TryGetComponent(out Pelle pelle))
+                            else if (objectGrabbable.TryGetComponent(out Pelle _pelle))
                             { 
                                 bHasPelle = true;
                                 Debug.Log("Player found Pelle");
+                                _pelle.PelleAccessible();
+                            }
+                            else if (objectGrabbable.TryGetComponent(out Beer _))
+                            {
+                                bHasBeer = true;
+                                Debug.Log("Player found beer");
                             }
                             
                         }
@@ -132,7 +156,7 @@ public class PlayerPickUp : MonoBehaviour
                 if (isDoor1)
                 {
                     Debug.Log("doo1");
-                    switch (door1number)
+                    switch (door1Number)
                     {
                         case 1:
                             paperCandy.OnStopRead();
@@ -148,7 +172,7 @@ public class PlayerPickUp : MonoBehaviour
                 else
                 {
                     Debug.Log("doo2");
-                    switch (door2number)
+                    switch (door2Number)
                     {
                         case 1:
                             paperLookInfo.OnStopRead();
@@ -162,19 +186,96 @@ public class PlayerPickUp : MonoBehaviour
         }
         
         // show press E canvas
-        if (displayCanvaInteract)
+        if (!displayCanvaInteract)
         {
-            pressECanvas.gameObject.SetActive(true);
-        }
-        // don't show press E canvas
-        else
-        {
-            pressECanvas.gameObject.SetActive(false);
+            textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = "";
         }
     }
 
-    public void SetPaperText(string _text)
+    public void SetPaperText(string text)
     {
-        textPaper.GetComponent<TMPro.TextMeshProUGUI>().text = _text;
+        textPaper.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+    }
+
+
+
+    public void MoveVision(Transform newTransform, float timeBetweenChangeVision)
+    {
+        DisableCollision();
+        fpsController.canMove = false;
+        Debug.Log("Move VIsion");
+        StopAllCoroutines();
+        StartCoroutine(MovePlayer(newTransform, timeBetweenChangeVision));
+    }
+    
+    
+    IEnumerator MovePlayer(Transform newTransform, float timeBetweenChangeVision)
+    {
+        float timeElapsed = 0;
+        Vector3 startPosition = transform.position;
+        Quaternion startRotation = transform.rotation;
+        Quaternion cameraRot = fpsController.playerCamera.transform.localRotation;
+
+        while (timeElapsed < timeBetweenChangeVision)
+        {
+            transform.position = Vector3.Lerp(startPosition, newTransform.position, timeElapsed / timeBetweenChangeVision);
+            transform.rotation = Quaternion.Lerp(startRotation, newTransform.rotation, timeElapsed / timeBetweenChangeVision);
+            fpsController.playerCamera.transform.localRotation = Quaternion.Lerp(cameraRot, Quaternion.Euler(30, 0, 0), timeElapsed / timeBetweenChangeVision);
+            //fpsController.playerCamera.transform.rotation = Quaternion.LookRotation(newTransform.forward, Vector3.up);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        beer.BeerAnimation();
+    }
+
+    public void DisableCollision()
+    {
+        GetComponent<Collider>().enabled = false;
+    }
+
+    public void OnBeerDrunken()
+    {
+        Debug.Log("Beer Drunken");
+        fpsController.canMove = true;
+        StartCoroutine(Shrink());
+    }
+
+    IEnumerator Shrink()
+    {
+        float timeElapsed = 0;
+        Vector3 startScale = transform.localScale;
+        float walkSpeedStart = fpsController.walkSpeed;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/GoLittle");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MX");
+
+        while (timeElapsed < timeToShrink)
+        {
+            transform.localScale = Vector3.Lerp(startScale, shrinkScale, timeElapsed / timeToShrink);
+            fpsController.walkSpeed = Mathf.Lerp(walkSpeedStart, shrinkSpeed, timeElapsed / timeToShrink);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        pile.gameObject.SetActive(true);
+    }
+
+    public void OnPileTaken()
+    {
+        StartCoroutine(Grow());
+    }
+    
+    IEnumerator Grow()
+    {
+        float timeElapsed = 0;
+        Vector3 startScale = transform.localScale;
+        float walkSpeedStart = fpsController.walkSpeed;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/GoBig");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MXStop");
+        while (timeElapsed < timeToShrink)
+        {
+            transform.localScale = Vector3.Lerp(startScale, Vector3.one, timeElapsed / timeToShrink);
+            fpsController.walkSpeed = Mathf.Lerp(walkSpeedStart, startSpeed, timeElapsed / timeToShrink);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 }
