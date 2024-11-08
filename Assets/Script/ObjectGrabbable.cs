@@ -18,6 +18,7 @@ public class ObjectGrabbable : MonoBehaviour
     }
     public void Grab(Transform objectGrabPointTransform)
     {
+        Debug.Log("Grab");
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidBody.isKinematic = true;
     }
@@ -26,6 +27,7 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = null;
         objectRigidBody.isKinematic = false;
+        playerPickUp.bHasGrabbleObject = false;
     }
 
     private void FixedUpdate()
@@ -45,6 +47,8 @@ public class ObjectGrabbable : MonoBehaviour
 
     public void OnTook(PlayerPickUp playerPickUp)
     {
-        FMODUnity.RuntimeManager.PlayOneShot(eventLocName, transform.position);
+        if (eventLocName !="")
+            FMODUnity.RuntimeManager.PlayOneShot(eventLocName, transform.position);
+        GetComponent<Collider>().enabled = false;
     }
 }

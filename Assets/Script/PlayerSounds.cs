@@ -49,7 +49,6 @@ public class PlayerSounds : MonoBehaviour
             SoundMaterial soundMaterial = hit.transform.GetComponent<SoundMaterial>();
             if (soundMaterial)
             {
-                Debug.Log("Yes");
                 if (lightAudioList.Count == 0) return;
                 LightAudioDistance closestLightAudio = lightAudioList[0];
                 float minDistance = 10000.0f;

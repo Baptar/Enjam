@@ -11,9 +11,11 @@ public class TVController : MonoBehaviour, IInteractable
     public string textCantInteract;
     public PlayerPickUp playerPickUp;
     public Pile pile;
-
-
-    //public GameObject testParc;
+    
+    [SerializeField] private GameObject[] objectToSpawn;
+    [SerializeField] private GameObject objectToDespawn;
+    [SerializeField] private GameObject Banc;
+    
     
     public void Interact(PlayerPickUp interactor)
     {
@@ -23,8 +25,13 @@ public class TVController : MonoBehaviour, IInteractable
         pile.OnPileTaken();
         Debug.Log("TV Controller interacted");
         if (TV.TryGetComponent(out CaptureIRLVideo tv)) tv.WatchTv();
-        
-        //if (testParc.TryGetComponent(out AppearParc parc)) parc.ParcAppear();
+
+        for (int i = 0; i < objectToSpawn.Length; i++)
+        {
+            objectToSpawn[i].SetActive(true);
+        }
+        objectToDespawn.SetActive(false);
+        Banc.layer = LayerMask.NameToLayer("Ignore Raycast");   
     }
     
     public void SetCanTake(bool canTake)
