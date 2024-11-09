@@ -19,7 +19,8 @@ public class TVController : MonoBehaviour, IInteractable
     
     public void Interact(PlayerPickUp interactor)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/InTeleComd", transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/InTeleComd");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/ParkNightTrig");
         canTake = false;
         textCantInteract = "";
         pile.OnPileTaken();

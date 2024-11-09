@@ -16,7 +16,7 @@ public class PaperCandy : MonoBehaviour, IInteractable
     
     public void Interact(PlayerPickUp interactor)
     {
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
         door1.textCantInteract = doorTextCantInteract;
         door1.textInteraction = doorTextInteraction;
             

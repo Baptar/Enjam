@@ -28,8 +28,6 @@ public class FinalDoor : MonoBehaviour, IInteractable
             end.gameObject.SetActive(true);
             //DisplayObject(end.gameObject, true);
             
-            
-            FMODUnity.RuntimeManager.PlayOneShot("event:/MXEND");
         }
         else
         {

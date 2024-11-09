@@ -15,7 +15,7 @@ public class PaperIndice : MonoBehaviour, IInteractable
     
     public void Interact(PlayerPickUp interactor)
     {
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
         door2.textCantInteract = doorTextCantInteract;
         door2.textInteraction = doorTextInteraction;
             

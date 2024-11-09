@@ -25,6 +25,7 @@ public class Banc : MonoBehaviour, IInteractable
     {
         canTake = false;
         Debug.Log("Interact with banc");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/SitBanc");
         interactor.MoveVision(playerNewTransform, timeBetweenChangeVision);
     }
     
