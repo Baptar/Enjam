@@ -23,7 +23,10 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField] private float timeToShrink = 2.0f;
     [SerializeField] private Vector3 shrinkScale;
     [SerializeField] private float shrinkSpeed = 0.5f;
+    [SerializeField] private float gravityShrink = 4.0f;
     [SerializeField] private Pile pile;
+    [SerializeField] private GameObject banc;
+    [SerializeField] private GameObject rain;
 
     [SerializeField] private Beer beer;
     
@@ -98,6 +101,7 @@ public class PlayerPickUp : MonoBehaviour
                             else if (objectGrabbable.TryGetComponent(out Candy _))
                             { 
                                 bHasCandy = true;
+                                rain.SetActive(true);
                                 Debug.Log("Player found Candy");
                             }
                             else if (objectGrabbable.TryGetComponent(out Pelle _pelle))
@@ -245,6 +249,7 @@ public class PlayerPickUp : MonoBehaviour
         float timeElapsed = 0;
         Vector3 startScale = transform.localScale;
         float walkSpeedStart = fpsController.walkSpeed;
+        float gravityStart = fpsController.gravityScale;
         FMODUnity.RuntimeManager.PlayOneShot("event:/Park/GoLittle");
         FMODUnity.RuntimeManager.PlayOneShot("event:/MX");
 
@@ -252,6 +257,7 @@ public class PlayerPickUp : MonoBehaviour
         {
             transform.localScale = Vector3.Lerp(startScale, shrinkScale, timeElapsed / timeToShrink);
             fpsController.walkSpeed = Mathf.Lerp(walkSpeedStart, shrinkSpeed, timeElapsed / timeToShrink);
+            fpsController.gravityScale = Mathf.Lerp(gravityStart, gravityShrink, timeElapsed / timeToShrink);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -260,6 +266,7 @@ public class PlayerPickUp : MonoBehaviour
 
     public void OnPileTaken()
     {
+        banc.GetComponent<Collider>().enabled = false;
         StartCoroutine(Grow());
     }
     
@@ -268,12 +275,14 @@ public class PlayerPickUp : MonoBehaviour
         float timeElapsed = 0;
         Vector3 startScale = transform.localScale;
         float walkSpeedStart = fpsController.walkSpeed;
+        float gravityStart = fpsController.gravityScale;
         FMODUnity.RuntimeManager.PlayOneShot("event:/Park/GoBig");
         FMODUnity.RuntimeManager.PlayOneShot("event:/MXStop");
         while (timeElapsed < timeToShrink)
         {
             transform.localScale = Vector3.Lerp(startScale, Vector3.one, timeElapsed / timeToShrink);
             fpsController.walkSpeed = Mathf.Lerp(walkSpeedStart, startSpeed, timeElapsed / timeToShrink);
+            fpsController.gravityScale = Mathf.Lerp(gravityStart, 9.81f, timeElapsed / timeToShrink);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

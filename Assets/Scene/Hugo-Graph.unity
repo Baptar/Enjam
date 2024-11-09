@@ -2051,6 +2051,10 @@ PrefabInstance:
       value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: banc
+      value: 
+      objectReference: {fileID: 1798639546}
+    - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: beer
       value: 
       objectReference: {fileID: 1047169000}
@@ -2059,7 +2063,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1298742}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: rain
+      value: 
+      objectReference: {fileID: 1542491175}
+    - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: bHasBeer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: bHasPelle
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
@@ -2100,15 +2112,15 @@ PrefabInstance:
       objectReference: {fileID: 1736536308}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: shrinkScale.x
-      value: 0.01
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: shrinkScale.y
-      value: 0.01
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: shrinkScale.z
-      value: 0.01
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: paperChillBeer
@@ -2117,6 +2129,10 @@ PrefabInstance:
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: pickUpDistance
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: bHasGrabbleObject
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: textInteractObject
@@ -2548,7 +2564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63f4f0d76e7dc249ab41682461e72ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventLocName: 
+  eventLocName: event:/Hall/BereGrab
   playerPickUp: {fileID: 896944851}
   canTake: 1
   textInteraction: Press E to take Beer
@@ -3934,6 +3950,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1542491175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3841693065952327138, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546307096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6116425870802805663, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -5661,7 +5682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3841693065952327138, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4068983069674890987, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_Layer

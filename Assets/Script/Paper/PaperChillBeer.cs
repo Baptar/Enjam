@@ -65,5 +65,6 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
         playerPickUp.bHasGrabbleObject = true;
         beerToGrab.Grab(playerPickUp.objectGrabPointTransform);
         beerToGrab.OnTook(playerPickUp);
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/BereGrab");
     }
 }

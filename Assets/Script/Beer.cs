@@ -9,7 +9,6 @@ public class Beer : ObjectGrabbable
     void Start()
     {
         canTake = true;
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/BereGrab");
     }
     
     public void BeerAnimation()

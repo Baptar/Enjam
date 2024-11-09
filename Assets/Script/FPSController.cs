@@ -17,6 +17,7 @@ public class FPSController : MonoBehaviour
     float rotationX = 0f;
     
     // Movement Settings
+    public float gravityScale = 9.81f;
     public bool canMove = true;
     public float walkSpeed = 3f;
     public float gravity = 10f;
@@ -38,7 +39,7 @@ public class FPSController : MonoBehaviour
         #region Handles Movement
         Vector3 forward = transform.forward;
         
-    	Vector3 moveDirection = new Vector3(walkSpeed * Input.GetAxis("Horizontal"), -9.81f, walkSpeed * Input.GetAxis("Vertical"));
+    	Vector3 moveDirection = new Vector3(walkSpeed * Input.GetAxis("Horizontal"), -gravityScale, walkSpeed * Input.GetAxis("Vertical"));
         
         #endregion
         
