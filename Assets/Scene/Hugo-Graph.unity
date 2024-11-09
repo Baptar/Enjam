@@ -975,6 +975,10 @@ PrefabInstance:
       propertyPath: holdMCanvas
       value: 
       objectReference: {fileID: 975917758}
+    - target: {fileID: 6438590509682515346, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
+      propertyPath: RecordingDeviceIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6483012661070050712, guid: 6dae76c7eb78b2b45a3e973a6f0c337a, type: 3}
       propertyPath: m_Name
       value: RecordingZone
