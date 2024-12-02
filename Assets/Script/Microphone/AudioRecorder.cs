@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using FMODUnity;
 
@@ -30,6 +31,11 @@ public class AudioRecorder : MonoBehaviour
     private FMOD.SPEAKERMODE FMODSpeakerMode;
     private int NumOfChannels = 0;
     private FMOD.DRIVER_STATE driverState;
+    
+    // Test new Logic
+    private AudioClip recordedClip;
+    [SerializeField] AudioSource audioSource;
+
 
     
     void Start()
@@ -65,12 +71,13 @@ public class AudioRecorder : MonoBehaviour
         RuntimeManager.CoreSystem.createSound(exinfo.userdata, FMOD.MODE.LOOP_OFF | FMOD.MODE.OPENUSER, 
             ref exinfo, out sound);
         
-        StartRecording();
+        //StartRecording();
     }
 
     public void StartRecording()
     {
         RuntimeManager.CoreSystem.recordStart(RecordingDeviceIndex, sound, true);
+        StartCoroutine(StopRec());
     }
     
     public void StopRecording()
@@ -81,5 +88,12 @@ public class AudioRecorder : MonoBehaviour
     public void PlayRecording()
     {
         RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
+    }
+    
+    IEnumerator StopRec()
+    {
+        yield return new WaitForSeconds(5.0f);
+
+        StopRecording();
     }
 }

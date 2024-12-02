@@ -9,7 +9,6 @@ public class RecordingZone : MonoBehaviour
     
     private bool displayCanvas; // If the canvas should be displayed
     [SerializeField] private GameObject textHold; // Text to display on the canvas
-    //[SerializeField] private Canvas holdMCanvas; // Old canvas 
 
     [SerializeField] private GameObject parc; // Parc to appear when recording is saved
     [SerializeField] private GameObject dspCapture; // DSPCapture to get loudness
@@ -41,15 +40,15 @@ public class RecordingZone : MonoBehaviour
     {
         if (timer >= 0)
         {
-
             // Start record when the player is in the zone and speaks louder than 5 dB
-            if (!isRecording && dspCapture.GetComponent<DSPCapture>().GetLoudness() > 5 && inTheZone)
+            if (!isRecording && dspCapture.GetComponent<DSPCapture>().GetLoudness() > 3 && inTheZone)
             {
                 isRecording = true;
                 displayCanvas = false;
                 dspCapture.SetActive(false);
-                audioRecorder.SetActive(true);
-                //Debug.Log("RECORDING STARTS");
+                //audioRecorder.SetActive(true);
+                audioRecorder.GetComponent<AudioRecorder>().StartRecording();
+                Debug.Log("RECORDING STARTS");
             }
 
             // Increase timer if recording
@@ -58,36 +57,29 @@ public class RecordingZone : MonoBehaviour
                 timer += Time.deltaTime;
             }
 
-            // Stop record after 1 second
+            // Appear Parc after 1.5 second
             if (isRecording && timer > 1.5f)
             {
                 isRecording = false;
-                timer = -1;
-                audioRecorder.GetComponent<AudioRecorder>().StopRecording();
+                // Make Parc appears
                 parc.GetComponent<AppearParc>().ParcAppear();
+                // Remove Parc collision
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-                //Debug.Log("RECORDING STOPS, Time: " + timer);
+                Debug.Log("RECORDING STOPS, Time: " + timer);
+                timer = -1;
             }
 
             // show press hold M canvas
             if (displayCanvas)
             {
-                //holdMCanvas.gameObject.SetActive(true);
                 textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "SCREAM IN THE HOLE!";
 
             }
             // don't show hold M canvas
             else
             {
-                //holdMCanvas.gameObject.SetActive(false);
                 textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "";
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            audioRecorder.GetComponent<AudioRecorder>().PlayRecording();
-            //Debug.Log("PLAYING");
         }
     }
 }

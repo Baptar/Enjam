@@ -17,7 +17,7 @@ public class PaperChillBeer : MonoBehaviour, IInteractable
    
     public void Interact(PlayerPickUp interactor)
     {
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperGrab");
         beerToGrab.gameObject.SetActive(true);
         door1.textCantInteract = doorTextCantInteract;
         door1.textInteraction = doorTextInteraction;

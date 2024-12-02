@@ -24,7 +24,6 @@ public class TVController : MonoBehaviour, IInteractable
         canTake = false;
         textCantInteract = "";
         pile.OnPileTaken();
-        Debug.Log("TV Controller interacted");
         if (TV.TryGetComponent(out CaptureIRLVideo tv)) tv.WatchTv();
 
         for (int i = 0; i < objectToSpawn.Length; i++)

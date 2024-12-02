@@ -27,6 +27,7 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField] private Pile pile;
     [SerializeField] private GameObject banc;
     [SerializeField] private GameObject rain;
+    [SerializeField] private AudioRecorder audioRecorder;
 
     [SerializeField] private Beer beer;
     
@@ -96,24 +97,20 @@ public class PlayerPickUp : MonoBehaviour
                             { 
                                 bHasPile = true;
                                 _pile.OnGrabPile(); 
-                                Debug.Log("Player found pile");
                             }
                             else if (objectGrabbable.TryGetComponent(out Candy _))
                             { 
                                 bHasCandy = true;
                                 rain.SetActive(true);
-                                Debug.Log("Player found Candy");
                             }
                             else if (objectGrabbable.TryGetComponent(out Pelle _pelle))
                             { 
                                 bHasPelle = true;
-                                Debug.Log("Player found Pelle");
                                 _pelle.PelleAccessible();
                             }
                             else if (objectGrabbable.TryGetComponent(out Beer _))
                             {
                                 bHasBeer = true;
-                                Debug.Log("Player found beer");
                             }
                             
                         }
@@ -159,7 +156,6 @@ public class PlayerPickUp : MonoBehaviour
                 bIsReading = false;
                 if (isDoor1)
                 {
-                    Debug.Log("doo1");
                     switch (door1Number)
                     {
                         case 1:
@@ -175,7 +171,6 @@ public class PlayerPickUp : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("doo2");
                     switch (door2Number)
                     {
                         case 1:
@@ -194,6 +189,13 @@ public class PlayerPickUp : MonoBehaviour
         {
             textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = "";
         }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("try PLAYING MY RECORD");
+            audioRecorder.PlayRecording();
+            Debug.Log("PLAYING MY RECORD");
+        }
     }
 
     public void SetPaperText(string text)
@@ -207,7 +209,6 @@ public class PlayerPickUp : MonoBehaviour
     {
         DisableCollision();
         fpsController.canMove = false;
-        Debug.Log("Move VIsion");
         StopAllCoroutines();
         StartCoroutine(MovePlayer(newTransform, timeBetweenChangeVision));
     }
@@ -239,7 +240,6 @@ public class PlayerPickUp : MonoBehaviour
 
     public void OnBeerDrunken()
     {
-        Debug.Log("Beer Drunken");
         fpsController.canMove = true;
         StartCoroutine(Shrink());
     }

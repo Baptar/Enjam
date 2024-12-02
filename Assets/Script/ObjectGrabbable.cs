@@ -18,7 +18,6 @@ public class ObjectGrabbable : MonoBehaviour
     }
     public void Grab(Transform objectGrabPointTransform)
     {
-        Debug.Log("Grab");
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidBody.isKinematic = true;
     }
