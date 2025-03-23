@@ -10,9 +10,12 @@ public class AppearParc : MonoBehaviour
     
     [SerializeField] private GameObject invisibleWall;
     [SerializeField] private Vector3 targetPosition;
+
+    [HideInInspector] public bool isParcAppear;
     
     public void ParcAppear()
     {
+        isParcAppear = true;
         StopAllCoroutines();
         cameraShake.shakeDuration = timeBetweenParc;
         FMODUnity.RuntimeManager.PlayOneShot("event:/Park/ParkAppear", transform.position);

@@ -47,7 +47,7 @@ public class DSPCapture : MonoBehaviour
         }
         else
         {
-            Debug.Log("<color=#FF00FF>You have " + numOfDriversConnected + " microphones available to record with</color>");
+            //Debug.Log("<color=#FF00FF>You have " + numOfDriversConnected + " microphones available to record with</color>");
         }
 
         // Get information about the recording device
@@ -84,7 +84,7 @@ public class DSPCapture : MonoBehaviour
         RuntimeManager.CoreSystem.playSound(sound, channelGroup, true, out channel);
 
 
-        Debug.Log("Ready to play");
+        //Debug.Log("Ready to play");
     }
 
     public void PlayBackSound(bool play,float volume)

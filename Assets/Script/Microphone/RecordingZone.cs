@@ -13,6 +13,8 @@ public class RecordingZone : MonoBehaviour
     [SerializeField] private GameObject parc; // Parc to appear when recording is saved
     [SerializeField] private GameObject dspCapture; // DSPCapture to get loudness
     [SerializeField] private GameObject audioRecorder; // AudioRecorder to record audio
+
+    private bool shouldSpawnParc;
     
     // When the player enters the zone
     public void OnTriggerEnter(Collider collision)
@@ -35,13 +37,13 @@ public class RecordingZone : MonoBehaviour
             //Debug.Log("NOT IN THE ZONE");
         }
     }
-
+    
     void Update()
     {
         if (timer >= 0)
         {
             // Start record when the player is in the zone and speaks louder than 5 dB
-            if (!isRecording && dspCapture.GetComponent<DSPCapture>().GetLoudness() > 3 && inTheZone)
+            if (!isRecording && dspCapture.GetComponent<DSPCapture>().GetLoudness() > 2.5f && inTheZone)
             {
                 isRecording = true;
                 displayCanvas = false;

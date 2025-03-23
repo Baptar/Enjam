@@ -54,7 +54,7 @@ public class PaperLookInfo : MonoBehaviour, IInteractable
 
     public void OnStopRead()
     {
-        Debug.Log("OnStopRead from base");
+//        Debug.Log("OnStopRead from base");
     }
     
 }

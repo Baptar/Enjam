@@ -28,6 +28,7 @@ public class PlayerPickUp : MonoBehaviour
     [SerializeField] private GameObject banc;
     [SerializeField] private GameObject rain;
     [SerializeField] private AudioRecorder audioRecorder;
+    public GameObject parcExtCollider;
 
     [SerializeField] private Beer beer;
     
@@ -240,6 +241,7 @@ public class PlayerPickUp : MonoBehaviour
 
     public void OnBeerDrunken()
     {
+        parcExtCollider.SetActive(true);
         fpsController.canMove = true;
         StartCoroutine(Shrink());
     }
@@ -266,6 +268,7 @@ public class PlayerPickUp : MonoBehaviour
 
     public void OnPileTaken()
     {
+        parcExtCollider.SetActive(false);
         banc.GetComponent<Collider>().enabled = false;
         StartCoroutine(Grow());
     }

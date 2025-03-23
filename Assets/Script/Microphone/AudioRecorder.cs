@@ -82,6 +82,7 @@ public class AudioRecorder : MonoBehaviour
     
     public void StopRecording()
     {
+        Debug.Log("STOP RECORDED IN THE MIC");
         RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
     }
     
@@ -90,7 +91,7 @@ public class AudioRecorder : MonoBehaviour
         RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
     }
     
-    IEnumerator StopRec()
+    public IEnumerator StopRec()
     {
         yield return new WaitForSeconds(5.0f);
 

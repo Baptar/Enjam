@@ -21,7 +21,10 @@ public class CaptureIRLVideo : MonoBehaviour
     {
         eventFMOD = FMODUnity.RuntimeManager.CreateInstance("event:/Salon/Tele");
         
+        //if (WebCamTexture.devices.Length < numberDevice + 1) return;
+        
         WebCamDevice device = WebCamTexture.devices[numberDevice];
+        Debug.Log("Webcam détectée : " + WebCamTexture.devices[0].name);
         webCamTexture = new WebCamTexture(device.name);
     }
     
@@ -51,8 +54,11 @@ public class CaptureIRLVideo : MonoBehaviour
     {
         //StartTVParc();
         yield return new WaitForSeconds(delayWatchParc);
-        StartTvirl();
-        yield return new WaitForSeconds(delayWatchIrl);
+        if (WebCamTexture.devices.Length <= 0)
+        {
+            StartTvirl();
+            yield return new WaitForSeconds(delayWatchIrl);
+        }
         
         blackBoardPlayer.GetComponent<Animator>().SetTrigger("ChangePlayer");
         crosshair.enabled = true;

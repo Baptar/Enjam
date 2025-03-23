@@ -15,12 +15,13 @@ public class TVController : MonoBehaviour, IInteractable
     [SerializeField] private GameObject[] objectToSpawn;
     [SerializeField] private GameObject objectToDespawn;
     [SerializeField] private GameObject Banc;
-    
+    [SerializeField] private AudioRecorder audioRecorder;
     
     public void Interact(PlayerPickUp interactor)
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/InTeleComd");
         FMODUnity.RuntimeManager.PlayOneShot("event:/Park/ParkNightTrig");
+        audioRecorder.PlayRecording();
         canTake = false;
         textCantInteract = "";
         pile.OnPileTaken();

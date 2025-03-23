@@ -16,7 +16,7 @@ public class FinalDoor : MonoBehaviour, IInteractable
     public void Interact(PlayerPickUp interactor)
     {
         
-        Debug.Log("Door interacted");
+        //Debug.Log("Door interacted");
         if (interactor.bHasKey)
         {
             paperAnimation.Play("Door Opened", 0, 0.0f);
@@ -32,7 +32,7 @@ public class FinalDoor : MonoBehaviour, IInteractable
         else
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/DOOR/DOORClose");
-            Debug.Log(UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset.GetType().Name);
+            //Debug.Log(UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset.GetType().Name);
         }
     }
     
