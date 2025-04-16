@@ -71,7 +71,7 @@ public class PlayerPickUp : MonoBehaviour
     }
     
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         bool displayCanvaInteract = false;
 
@@ -112,8 +112,7 @@ public class PlayerPickUp : MonoBehaviour
                             else if (objectGrabbable.TryGetComponent(out Beer _))
                             {
                                 bHasBeer = true;
-                            }
-                            
+                            }                 
                         }
                         else
                         { 
@@ -197,14 +196,12 @@ public class PlayerPickUp : MonoBehaviour
             audioRecorder.PlayRecording();
             Debug.Log("PLAYING MY RECORD");
         }
-    }
+    }*/
 
     public void SetPaperText(string text)
     {
         textPaper.GetComponent<TMPro.TextMeshProUGUI>().text = text;
     }
-
-
 
     public void MoveVision(Transform newTransform, float timeBetweenChangeVision)
     {
@@ -289,5 +286,64 @@ public class PlayerPickUp : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void Interact(GameObject target)
+    {
+        #region Grabbable
+        
+        // we can grab something
+        if (target.TryGetComponent(out objectGrabbable) && !bHasGrabbleObject)
+        {
+            if (objectGrabbable.canTake)
+            {
+                bHasGrabbleObject = true;
+                objectGrabbable.Grab(objectGrabPointTransform);
+                objectGrabbable.OnTook(this);
+                if (objectGrabbable.TryGetComponent(out Pile _pile))
+                { 
+                    bHasPile = true;
+                    _pile.OnGrabPile(); 
+                }
+                else if (objectGrabbable.TryGetComponent(out Candy _))
+                { 
+                    bHasCandy = true; 
+                    rain.SetActive(true);
+                }
+                else if (objectGrabbable.TryGetComponent(out Pelle _pelle))
+                { 
+                    bHasPelle = true;
+                    _pelle.PelleAccessible();
+                }
+                else if (objectGrabbable.TryGetComponent(out Beer _))
+                {
+                    bHasBeer = true;
+                }                 
+            }
+            else
+            { 
+                objectGrabbable = null; // very quick and dirty solution (don't judge)
+            }
+        }
+        
+        #endregion
+
+        #region Interactable
+        // we can interact with something
+        else if (target.TryGetComponent(out IInteractable interactObject))
+        {
+            ///////////SEBBBBBBBBBBBBBBBBB
+            if (interactObject.GetCanTake())
+            {
+                interactObject.Interact(this);
+                interactObject = null;
+            }
+        }
+        #endregion
+    }
+
+    private void ShowCanvaInteract(string text)
+    {
+        textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = text;
     }
 }
