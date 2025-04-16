@@ -27,9 +27,9 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
         textFall.GetComponent<Renderer>().enabled = false;
         textChill.GetComponent<Renderer>().enabled = false;
         
-        textCandy.GetComponent<MeshCollider>().enabled = false;
-        textFall.GetComponent<MeshCollider>().enabled = false;
-        textChill.GetComponent<MeshCollider>().enabled = false;
+        textCandy.GetComponent<Collider>().enabled = false;
+        textFall.GetComponent<Collider>().enabled = false;
+        textChill.GetComponent<Collider>().enabled = false;
     }
     
     private void Update()
@@ -48,7 +48,7 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
                 playerPickUp.door1Number = 1;
                 StopTocLittle();
                 textCandy.GetComponent<Renderer>().enabled = true;
-                textCandy.GetComponent<MeshCollider>().enabled = true;
+                textCandy.GetComponent<Collider>().enabled = true;
                 textCandy.PaperAnimation();
                 PaperSound();
                 //textCandy.PlayAnimation
@@ -64,9 +64,9 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
                 canTake = false;
                 candy.OnCandyGive();
                 textFall.GetComponent<Renderer>().enabled = true;
-                textFall.GetComponent<MeshCollider>().enabled = true;
+                textFall.GetComponent<Collider>().enabled = true;
                 textCandy.GetComponent<Renderer>().enabled = false;
-                textCandy.GetComponent<MeshCollider>().enabled = false;
+                textCandy.GetComponent<Collider>().enabled = false;
                 textFall.PaperAnimation();
                 PaperSound();
                 //textFall.PlayAnimation
@@ -79,9 +79,9 @@ public class NeighboorDoor1 : MonoBehaviour, IInteractable
                 canTake = false;
                 StopTocHard();
                 textChill.GetComponent<Renderer>().enabled = true;
-                textChill.GetComponent<MeshCollider>().enabled = true;
+                textChill.GetComponent<Collider>().enabled = true;
                 textFall.GetComponent<Renderer>().enabled = false;
-                textFall.GetComponent<MeshCollider>().enabled = false;
+                textFall.GetComponent<Collider>().enabled = false;
                 textChill.PaperAnimation();
                 PaperSound();
                 //textChill.PlayAnimation

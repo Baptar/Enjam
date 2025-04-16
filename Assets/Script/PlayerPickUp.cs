@@ -342,7 +342,7 @@ public class PlayerPickUp : MonoBehaviour
         #endregion
     }
 
-    private void ShowCanvaInteract(string text)
+    public void ShowCanvaInteract(string text)
     {
         textInteractObject.GetComponent<TMPro.TextMeshProUGUI>().text = text;
     }

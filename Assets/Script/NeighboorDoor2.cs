@@ -23,8 +23,8 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
         paperIndice.GetComponent<Renderer>().enabled = false;
         paperLookInfo.GetComponent<Renderer>().enabled = false;
         
-        paperIndice.GetComponent<MeshCollider>().enabled = false;
-        paperLookInfo.GetComponent<MeshCollider>().enabled = false;
+        paperIndice.GetComponent<Collider>().enabled = false;
+        paperLookInfo.GetComponent<Collider>().enabled = false;
     }
     
     private void Update()
@@ -43,7 +43,7 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
                 playerPickUp.door2Number = 1;
                 StopTocLittle();
                 paperLookInfo.GetComponent<Renderer>().enabled = true;
-                paperLookInfo.GetComponent<MeshCollider>().enabled = true;
+                paperLookInfo.GetComponent<Collider>().enabled = true;
                 paperLookInfo.PaperAnimation();
                 //paperLookInfo.PlayAnimation
                 PaperSound();
@@ -58,9 +58,9 @@ public class NeighboorDoor2 : MonoBehaviour, IInteractable
                 StopTocLittle();
                 canTake = false;
                 paperIndice.GetComponent<Renderer>().enabled = true;
-                paperIndice.GetComponent<MeshCollider>().enabled = true;
+                paperIndice.GetComponent<Collider>().enabled = true;
                 paperLookInfo.GetComponent<Renderer>().enabled = false;
-                paperLookInfo.GetComponent<MeshCollider>().enabled = false;
+                paperLookInfo.GetComponent<Collider>().enabled = false;
                 paperIndice.PaperAnimation();
                 //paperIndice.PlayAnimation
                 PaperSound();
