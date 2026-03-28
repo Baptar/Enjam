@@ -4,17 +4,11 @@ using FMODUnity;
 
 public class AudioRecorder : MonoBehaviour
 {
-   // FMOD Code from : https://scottgamesounds.com/c-scripts/
-   
     //public variables
     [Header("Choose A Microphone")]
     public int RecordingDeviceIndex = 0;
     [TextArea] public string RecordingDeviceName = null;
-    [Header("How Long In Seconds Before Recording Plays")]
-    public float Latency = 1f;
     
-    public KeyCode ReverbOnOffSwitch;
-
     //FMOD Objects
     private FMOD.Sound sound;
     private FMOD.CREATESOUNDEXINFO exinfo;
@@ -52,7 +46,6 @@ public class AudioRecorder : MonoBehaviour
 
         //Step 2: Get all of the information we can about the recording device (or driver) that we're
         //        going to use to record with.
-        
         RuntimeManager.CoreSystem.getRecordDriverInfo(RecordingDeviceIndex, out RecordingDeviceName, 50,
             out MicGUID, out SampleRate, out FMODSpeakerMode, out NumOfChannels, out driverState);
         
@@ -70,8 +63,6 @@ public class AudioRecorder : MonoBehaviour
 
         RuntimeManager.CoreSystem.createSound(exinfo.userdata, FMOD.MODE.LOOP_OFF | FMOD.MODE.OPENUSER, 
             ref exinfo, out sound);
-        
-        //StartRecording();
     }
 
     public void StartRecording()
@@ -80,7 +71,7 @@ public class AudioRecorder : MonoBehaviour
         StartCoroutine(StopRec());
     }
     
-    public void StopRecording()
+    private void StopRecording()
     {
         Debug.Log("STOP RECORDED IN THE MIC");
         RuntimeManager.CoreSystem.recordStop(RecordingDeviceIndex);
@@ -91,7 +82,7 @@ public class AudioRecorder : MonoBehaviour
         RuntimeManager.CoreSystem.playSound(sound, channelGroup, false, out channel);
     }
     
-    public IEnumerator StopRec()
+    private IEnumerator StopRec()
     {
         yield return new WaitForSeconds(5.0f);
 

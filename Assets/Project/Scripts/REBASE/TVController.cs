@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+/*public class TVController : MonoBehaviour, IInteractable
+{
+    public GameObject TV;
+    public bool canTake = true;
+    public string textInteraction;
+    public string textCantInteract;
+    public PlayerPickUp playerPickUp;
+    public Pile pile;
+    
+    [SerializeField] private GameObject[] objectToSpawn;
+    [SerializeField] private GameObject objectToDespawn;
+    [SerializeField] private GameObject Banc;
+    [SerializeField] private AudioRecorder audioRecorder;
+    
+    public void Interact(PlayerPickUp interactor)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/InTeleComd");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/ParkNightTrig");
+        audioRecorder.PlayRecording();
+        canTake = false;
+        textCantInteract = "";
+        pile.OnPileTaken();
+        if (TV.TryGetComponent(out CaptureIRLVideo tv)) tv.WatchTv();
+
+        for (int i = 0; i < objectToSpawn.Length; i++)
+        {
+            objectToSpawn[i].SetActive(true);
+        }
+        objectToDespawn.SetActive(false);
+        Banc.layer = LayerMask.NameToLayer("Ignore Raycast");   
+    }
+   
+    
+    
+    
+    
+    
+    
+    
+    public bool GetCanTake()
+    {
+        return playerPickUp.bHasPile && canTake;
+    }
+
+     
+    public void SetCanTake(bool canTake)
+    {
+        this.canTake = canTake;
+    }
+
+    
+    public string GetTextInteract()
+    {
+        if (textInteraction == "") return "Press E to Interact";
+        return textInteraction;
+    }
+    
+    public string GetTextCantInteract()
+    {
+        return textCantInteract;
+    }
+}*/

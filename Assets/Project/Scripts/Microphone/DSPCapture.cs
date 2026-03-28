@@ -10,11 +10,6 @@ public class DSPCapture : MonoBehaviour
     [TextArea] public string RecordingDeviceName = null;
     [Header("How Long In Seconds Before Recording Plays")]
     public float Latency = 1f;
-    [Header("Choose A Key To Play/Pause/Add To Reverb To Recording")]
-    public KeyCode PlayAndPause;
-    public KeyCode ReverbOnOffSwitch;
-    [Header("Volume")]
-    public float volume;
 
     // FMOD Objects
     private FMOD.Sound sound;
@@ -44,10 +39,6 @@ public class DSPCapture : MonoBehaviour
         {
             Debug.Log("<color=#FF00FF>Hey! Plug a Mic in ya dummy</color>");
             return;
-        }
-        else
-        {
-            //Debug.Log("<color=#FF00FF>You have " + numOfDriversConnected + " microphones available to record with</color>");
         }
 
         // Get information about the recording device
@@ -82,9 +73,6 @@ public class DSPCapture : MonoBehaviour
 
         RuntimeManager.CoreSystem.createChannelGroup("Recording", out channelGroup);
         RuntimeManager.CoreSystem.playSound(sound, channelGroup, true, out channel);
-
-
-        //Debug.Log("Ready to play");
     }
 
     public void PlayBackSound(bool play,float volume)
@@ -101,8 +89,7 @@ public class DSPCapture : MonoBehaviour
 
         // Get the current audio data
         float rms = 0f;
-        IntPtr soundData;
-        sound.@lock(0, exinfo.length, out soundData, out IntPtr _, out uint len1, out uint _);
+        sound.@lock(0, exinfo.length, out var soundData, out IntPtr _, out uint len1, out uint _);
 
         // Calculate RMS (Root Mean Square) for loudness
         short[] buffer = new short[len1 / sizeof(short)];
@@ -117,10 +104,5 @@ public class DSPCapture : MonoBehaviour
         sound.unlock(soundData, IntPtr.Zero, len1, 0);
 
         return rms * 100f; // Scale to a more usable range
-    }
-    
-    void Update()
-    {
-        //Debug.Log("Loudness: " + GetLoudness());
     }
 }

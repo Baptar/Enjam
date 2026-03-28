@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RecordingZone : MonoBehaviour
+/*public class RecordingZone : MonoBehaviour
 {
     private bool inTheZone = false; // If the player is in the recording zone
 
@@ -23,7 +23,6 @@ public class RecordingZone : MonoBehaviour
         {
             inTheZone = true;
             displayCanvas = true;
-            //Debug.Log("IN THE ZONE");
         }
     }
    
@@ -34,7 +33,6 @@ public class RecordingZone : MonoBehaviour
         {
             inTheZone = false;
             displayCanvas = false;
-            //Debug.Log("NOT IN THE ZONE");
         }
     }
     
@@ -84,4 +82,4 @@ public class RecordingZone : MonoBehaviour
             }
         }
     }
-}
+}*/
