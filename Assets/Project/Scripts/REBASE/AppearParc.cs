@@ -38,5 +38,4 @@ using UnityEngine;
         door1.canTake = true;
         invisibleWall.SetActive(false);
     }
-}
-*/
+}*/

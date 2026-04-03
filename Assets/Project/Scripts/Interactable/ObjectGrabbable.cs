@@ -1,24 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectGrabbable : ObjectInteractable
 {
-    [SerializeField] protected float lerpSpeed = 10.0f;
+    [Space(5)]
+    [Header("Grab setting")]
+    [SerializeField] protected float lerpSpeed = 20.0f;
+    [SerializeField] protected bool blockYOnGrabbed = true;
+    [SerializeField] private UnityEvent OnDropEvent;
+
     
-    private Rigidbody objectRigidBody;
-    private Transform objectGrabPointTransform;
+    protected Rigidbody objectRigidBody;
+    protected Transform objectGrabPointTransform;
 
     // Get Rigidbody Component
-    private void Awake() => objectRigidBody = GetComponent<Rigidbody>();
+    protected virtual void Awake()
+    {
+        objectRigidBody = GetComponent<Rigidbody>();
+    }
+    
     
     // Move Grabbed element
-    private void FixedUpdate()
+    protected virtual void Update()
     {
         if (objectGrabPointTransform == null) return;
-        
-        Vector3 newPosition = Vector3.Lerp(transform.localPosition, objectGrabPointTransform.localPosition, Time.deltaTime * lerpSpeed);
+
+        Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
         objectRigidBody.MovePosition(newPosition);
+        
+        Vector3 targetRotationEuler = objectGrabPointTransform.rotation.eulerAngles;
+        targetRotationEuler.x = 0.0f;
+        targetRotationEuler.z = 0.0f;
+        Quaternion targetRotation = blockYOnGrabbed ? Quaternion.Euler(targetRotationEuler) : objectGrabPointTransform.rotation;
+        Quaternion newRotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * lerpSpeed);
+        objectRigidBody.MoveRotation(newRotation);
     }
 
     // Interact with element
@@ -28,7 +46,7 @@ public class ObjectGrabbable : ObjectInteractable
         if (GetInteractable())
         {
             SetInteractable(false);
-            if (eventSoundOnInteract != "") PlaySound(eventSoundOnInteract);
+            if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
             eventOnInteract?.Invoke();
             Grab();
         }
@@ -37,13 +55,23 @@ public class ObjectGrabbable : ObjectInteractable
     }
     
     // Grab this Object
-    public void Grab()
+    protected virtual void Grab()
     {
-        objectGrabPointTransform = MainManager.instance.Player.GetObjectGrabPointTransform();
-        objectRigidBody.isKinematic = true;
+        SetObjectGrabPointTransform(MainManager.instance.Player.GetObjectGrabPointTransform());
+        if (objectRigidBody) objectRigidBody.isKinematic = true;
         GetComponent<Collider>().enabled = false;
-        MainManager.instance.Player.SetIsGrabbingObject(true);
+        MainManager.instance.Player.SetGrabbedObject(this);
     }
 
-    public override bool GetInteractable() => !MainManager.instance.Player.GetIsGrabbingObject() && bInteractable;
+    public virtual void Drop()
+    {
+        OnDropEvent?.Invoke();
+    }
+
+    public override bool GetInteractable() => !MainManager.instance.Player.GetGrabbedObject() && bInteractable;
+
+    protected virtual void SetObjectGrabPointTransform(Transform newObjectGrabPoint)
+    {
+        objectGrabPointTransform = newObjectGrabPoint;
+    }
 }

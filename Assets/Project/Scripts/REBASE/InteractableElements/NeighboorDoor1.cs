@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* class NeighboorDoor1 : MonoBehaviour, IInteractable
+/*class NeighboorDoor1 : MonoBehaviour
 {
     public string textInteraction;
     public string textCantInteract;
@@ -22,7 +22,6 @@ using UnityEngine;
     {
         event_fmod_littleToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/DoorToc");
         event_fmod_hardToc = FMODUnity.RuntimeManager.CreateInstance("event:/Hall/BigDoorToc");
-        //event_fmod_littleToc.start(); 
         textCandy.GetComponent<Renderer>().enabled = false;
         textFall.GetComponent<Renderer>().enabled = false;
         textChill.GetComponent<Renderer>().enabled = false;
@@ -38,9 +37,8 @@ using UnityEngine;
         event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
     }
 
-    public void Interact(PlayerPickUp interactor)
+    public void Interact()
     {
-        Debug.Log("NeighboorDoor1 interacted");
         switch (ActualNumber)
         {
             case 0:
@@ -51,7 +49,6 @@ using UnityEngine;
                 textCandy.GetComponent<MeshCollider>().enabled = true;
                 textCandy.PaperAnimation();
                 PaperSound();
-                //textCandy.PlayAnimation
                 candy.canTake = true;
                 this.canTake = false;
 
@@ -69,7 +66,6 @@ using UnityEngine;
                 textCandy.GetComponent<MeshCollider>().enabled = false;
                 textFall.PaperAnimation();
                 PaperSound();
-                //textFall.PlayAnimation
                 textCantInteract = "";
                 textInteraction = "";
                 break;
@@ -91,66 +87,5 @@ using UnityEngine;
             case 3 :
                 break;
         }
-    }
-    
-    public void SetCanTake(bool canTake)
-    {
-        this.canTake = canTake;
-    }
-    
-    public bool GetCanTake()
-    {
-        //return canTake;
-        switch (ActualNumber)
-        {
-            case 0:
-                return true;
-            case 1:
-                return playerPickUp.bHasCandy;
-            case 2:
-                return canTake;
-            case 3:
-                return playerPickUp.bHasKey;
-            default:
-                return true;
-        }
-    }
-
-    public string GetTextInteract()
-    {
-        if (textInteraction == "") return "Press E to Interact";
-        return textInteraction;
-    }
-    
-    public string GetTextCantInteract()
-    {
-        return textCantInteract;
-    }
-
-    public void TocLittle()
-    {
-        Debug.Log("Toc little Start");
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc1ActiveTrig");
-        
-    }
-
-    private void PaperSound()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/PaperAppear");
-    }
-    
-    public void TocHard()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/BigDoorTocActiveTrig");
-    }
-
-    public void StopTocLittle()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/DoorToc1NoneTrig");
-    }
-    
-    public void StopTocHard()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/BigDoorTocNoneTrig");
     }
 }*/

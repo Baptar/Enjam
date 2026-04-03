@@ -1,6 +1,7 @@
+using TMPro;
 using UnityEngine;
 
-/*public class RecordingZone : MonoBehaviour
+public class RecordingZone : MonoBehaviour
 {
     private bool inTheZone = false; // If the player is in the recording zone
 
@@ -8,11 +9,11 @@ using UnityEngine;
     private bool isRecording = false; // If the audio is being recorded
     
     private bool displayCanvas; // If the canvas should be displayed
-    [SerializeField] private GameObject textHold; // Text to display on the canvas
+    [SerializeField] private TMP_Text textHold; // Text to display on the canvas
 
-    [SerializeField] private GameObject parc; // Parc to appear when recording is saved
-    [SerializeField] private GameObject dspCapture; // DSPCapture to get loudness
-    [SerializeField] private GameObject audioRecorder; // AudioRecorder to record audio
+    [SerializeField] private ParcObj parc; // Parc to appear when recording is saved
+    [SerializeField] private DSPCapture dspCapture; // DSPCapture to get loudness
+    [SerializeField] private AudioRecorder audioRecorder; // AudioRecorder to record audio
 
     private bool shouldSpawnParc;
     
@@ -41,13 +42,13 @@ using UnityEngine;
         if (timer >= 0)
         {
             // Start record when the player is in the zone and speaks louder than 5 dB
-            if (!isRecording && dspCapture.GetComponent<DSPCapture>().GetLoudness() > 2.5f && inTheZone)
+            if (!isRecording && dspCapture.GetLoudness() > 2.5f && inTheZone)
             {
                 isRecording = true;
                 displayCanvas = false;
-                dspCapture.SetActive(false);
+                dspCapture.gameObject.SetActive(false);
                 //audioRecorder.SetActive(true);
-                audioRecorder.GetComponent<AudioRecorder>().StartRecording();
+                audioRecorder.StartRecording();
                 Debug.Log("RECORDING STARTS");
             }
 
@@ -62,9 +63,9 @@ using UnityEngine;
             {
                 isRecording = false;
                 // Make Parc appears
-                parc.GetComponent<AppearParc>().ParcAppear();
+                parc.MakeParcAppear();
                 // Remove Parc collision
-                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 Debug.Log("RECORDING STOPS, Time: " + timer);
                 timer = -1;
             }
@@ -72,14 +73,27 @@ using UnityEngine;
             // show press hold M canvas
             if (displayCanvas)
             {
-                textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "SCREAM IN THE HOLE!";
+                textHold.text = "SCREAM IN THE HOLE!";
 
             }
             // don't show hold M canvas
             else
             {
-                textHold.GetComponent<TMPro.TextMeshProUGUI>().text = "";
+                textHold.text = "";
             }
         }
     }
-}*/
+
+
+    [ContextMenu("Start Parc event")]
+    public void StartParcEvent()
+    {
+        isRecording = false;
+        // Make Parc appears
+        parc.MakeParcAppear();
+        // Remove Parc collision
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        Debug.Log("RECORDING STOPS, Time: " + timer);
+        timer = -1;
+    }
+}

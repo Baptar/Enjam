@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PaperManager : MonoBehaviour
@@ -9,56 +10,50 @@ public class PaperManager : MonoBehaviour
    // TODO : WHEN "REMOVE PAPER" THEN CALL ON THE PAPER "ON REMOVED"
    
    
-   public enum EPaperEvent
-   {
-      None,
-      Candy,
-      ParcFell,
-      ChillBeer,
-      WatchTV,
-   }
-   private EPaperEvent paperEvent = EPaperEvent.None;
+   [SerializeField] private PaperInteract paperCandy;
+   [SerializeField] private PaperInteract paperWatchTV;
+   [SerializeField] private PaperInteract paperChillBear;
+   [SerializeField] private PaperInteract paperUnderstandParc;
+   [SerializeField] private PaperInteract paperYellAtParc;
+   
+   private PaperInteract currentPaperInteract;
 
    private void Start()
    {
-      // TODO : deactivate each paper
+      paperCandy.SetInteractable(false);
+      paperCandy.gameObject.SetActive(false);
+      
+      paperWatchTV?.SetInteractable(false);
+      paperWatchTV?.gameObject.SetActive(false);
+      
+      paperChillBear?.SetInteractable(false);
+      paperChillBear?.gameObject.SetActive(false);
+      
+      paperUnderstandParc?.SetInteractable(false);
+      paperUnderstandParc?.gameObject.SetActive(false);
+      
+      paperYellAtParc?.SetInteractable(false);
+      paperYellAtParc?.gameObject.SetActive(false);
    }
    
-   // TODO
-   public void AppearPaper(EPaperEvent paper)
-   {
-      switch (paper)
-      {
-         case EPaperEvent.Candy:
-            break;
-         
-         case EPaperEvent.ParcFell:
-            break;
-         
-         case EPaperEvent.ChillBeer:
-            break;
-         
-         case EPaperEvent.WatchTV:
-            break;
-      }
-   }
+   public void AppearPaperCandy() => paperCandy.MakePaperAppear();
+   public void AppearPaperWatchTV() => paperWatchTV.MakePaperAppear();
+   public void AppearPaperChillBeer() => paperChillBear.MakePaperAppear();
+   public void AppearPaperUnderstandParc() => paperUnderstandParc.MakePaperAppear();
+   public void AppearPaperYellAtParc() => paperYellAtParc.MakePaperAppear();
    
 
    public void RemovePaper()
    {
-      switch (paperEvent)
-      {
-         case EPaperEvent.Candy:
-            break;
-         
-         case EPaperEvent.ParcFell:
-            break;
-         
-         case EPaperEvent.ChillBeer:
-            break;
-         
-         case EPaperEvent.WatchTV:
-            break;
-      }
+      if (!currentPaperInteract) return;
+      
+      currentPaperInteract.MakePaperDisappear();
+      currentPaperInteract = null;
+   }
+
+   public void SetCurrentPaperRead(PaperInteract paper)
+   {
+      
+      currentPaperInteract = paper;
    }
 }

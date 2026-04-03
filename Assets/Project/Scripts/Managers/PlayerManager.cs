@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class PlayerManager : MonoBehaviour
@@ -26,7 +27,8 @@ public class PlayerManager : MonoBehaviour
     [Space(5)]
     [Header("Grabbable Settings")]
     [SerializeField] private Transform objectGrabPointTransform;
-    private bool bIsGrabbingObject = false;
+    [SerializeField] private Transform objectGrabPointPaperTransform;
+    private ObjectGrabbable grabbedObject = null;
     
     [Space(10)]
     [Header("DEBUG")]
@@ -40,44 +42,39 @@ public class PlayerManager : MonoBehaviour
    [HideInInspector] public bool bIsWalking;
     
     private CharacterController characterController;
+    private PlayerInputController playerInputController;
+    private ObjectInteractable objectInteractable;
     private bool bIsReading = false;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        playerInputController = MainManager.instance.PlayerInputManager;
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        //MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
     }
 
     // Update is called once per frame
     void Update()
     {
         #region Handles Movement
-        Vector3 moveDirection = new Vector3(walkSpeed * Input.GetAxis("Horizontal"), -gravityScale, walkSpeed * Input.GetAxis("Vertical"));
-        bIsWalking = !(Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0);
+
+        Vector2 playerMovementInput = playerInputController.Move;
+        Vector3 moveDirection = new Vector3(walkSpeed * playerMovementInput.x, -gravityScale, walkSpeed * playerMovementInput.y);
+        bIsWalking = playerMovementInput is not { x: 0, y: 0 };
         if (!canMove) return; 
         characterController.Move(transform.rotation * moveDirection * Time.deltaTime);
         #endregion
         
         #region Handles Rotation
-        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+        //Vector2 playerRotationInput = playerInputController.Look;
+        rotationX += -/*playerRotationInput.y*/Input.GetAxis("Mouse Y") * lookSpeed;
         rotationX = Mathf.Clamp(rotationX, -lookXBotLimit, lookXTopLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X")* lookSpeed, 0);
-        #endregion
-
-        #region Handles ReadPaper
-        if (bIsReading)
-        {
-            // TODO CHANGE LATER FOR NEW INPUT SYSTEM
-            if (!Input.GetKeyDown(KeyCode.E)) return;
-            
-            bIsReading = false;
-            MainManager.instance.PaperManager.RemovePaper();
-            return;
-        }
+        transform.rotation *= Quaternion.Euler(0, /*playerRotationInput.x*/Input.GetAxis("Mouse X")* lookSpeed, 0);
         #endregion
         
         #region Raycast
@@ -86,31 +83,53 @@ public class PlayerManager : MonoBehaviour
                 out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
         {
             MainManager.instance.UIManager.SetCanvaTextInteract("");
+            objectInteractable = null;
             return;
         }
         
         // Check if it's an interactable element
-        if (!raycastHit.collider.TryGetComponent(out ObjectInteractable objectInteractable))
+        if (!raycastHit.collider.TryGetComponent(out objectInteractable))
         {
             MainManager.instance.UIManager.SetCanvaTextInteract("");
+            objectInteractable = null;
             return;
         }
         
         // Get Text to display
         string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
         MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
-        
-        // Manager Input to interact (TODO Change later for new input system)
-        if (Input.GetKeyDown(KeyCode.E)) objectInteractable.Interact();
         #endregion
     }
 
-    public void EnableCollision(bool value) => GetComponent<Collider>().enabled = value;
+    private void OnInteract()
+    {
+        if (bIsReading)
+        {
+            MainManager.instance.PaperManager.RemovePaper();
+            SetIsReading(false);
+            SetGrabbedObject(null);
+            return;
+        }
+        if (objectInteractable) 
+        {
+            objectInteractable.Interact(); 
+        }
+    }
+
+    public void Drop()
+    {
+        if (GetGrabbedObject())
+        {
+            GetGrabbedObject().Drop();
+            SetGrabbedObject(null);
+        }
+    }
 
     #region Getter
     // Component
     public Camera GetPlayerCamera() => playerCamera;
     public Transform GetObjectGrabPointTransform() => objectGrabPointTransform;
+    public Transform GetObjectGrabPointPaperTransform() => objectGrabPointPaperTransform;
     
     // Movement
     public bool GetCanMove() => canMove;
@@ -118,21 +137,25 @@ public class PlayerManager : MonoBehaviour
     
     // Inventory
     public bool GetHasBeer() => bHasBeer;
-    public bool GetIsGrabbingObject() => bIsGrabbingObject;
+    public ObjectGrabbable GetGrabbedObject() => grabbedObject;
     
     //Zone
     public bool GetInBenchZone() => bIsInBenchZone;
+    public bool GetIsReading() => bIsReading;
     #endregion
     
     #region Setter
+    public void EnableCollision(bool value) => GetComponent<Collider>().enabled = value;
+    
     // Movement
     public void SetCanMove(bool value) => canMove = value;
     
     // Inventory
     public void SetHasBeer(bool value) => bHasBeer = value;
-    public void SetIsGrabbingObject(bool value) => bIsGrabbingObject = value;
+    public void SetGrabbedObject(ObjectGrabbable value) => grabbedObject = value;
     
     // Zone
     public void SetInBenchZone(bool value) => bIsInBenchZone = value;
+    public void SetIsReading(bool value) => bIsReading = value;
     #endregion
 }
