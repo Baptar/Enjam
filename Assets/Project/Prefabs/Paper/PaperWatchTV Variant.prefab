@@ -8,17 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1391083762440150535, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_text
+      value: You shouldn't be outside.. Have you watched the news?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: paperText
+      value: You shouldn't be outside.. Have you watched the news?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5000001
+      objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8188
+      value: 16.753235
       objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6862009
+      value: -3.3884017
       objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1956997
+      value: 10.430953
       objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalRotation.w

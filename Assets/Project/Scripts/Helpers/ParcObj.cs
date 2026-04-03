@@ -19,6 +19,7 @@ public class ParcObj : MonoBehaviour
     [Header("Event")]
     [SerializeField] private UnityEvent onParcAppear;
     
+    [ContextMenu("Appear")]
     public void MakeParcAppear()
     {
         MainManager.instance.AudioManager.PlaySound("event:/Park/ParkAppear", transform);

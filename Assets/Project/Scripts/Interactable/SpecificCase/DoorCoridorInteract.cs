@@ -60,13 +60,18 @@ public class DoorCoridorInteract : ObjectInteractable
                     MainManager.instance.PaperManager.AppearPaperChillBeer();
                     break;
             
+                // never Called
                 case EDoorEvent.ChillBeer:
                     break;
             
                 case EDoorEvent.WatchTV:
+                    MainManager.instance.AudioManager.StopSoundTocLittle(transform);
+                    MainManager.instance.PaperManager.AppearPaperWatchTV();
                     break;
                 
                 case EDoorEvent.UnderstandParc:
+                    MainManager.instance.AudioManager.StopSoundTocLittle(transform);
+                    MainManager.instance.PaperManager.AppearPaperUnderstandParc();
                     break;
             }
             
@@ -131,15 +136,16 @@ public class DoorCoridorInteract : ObjectInteractable
                 break;
             
             case EDoorEvent.ChillBeer:
-                newTextInteract = "";
+                newTextInteract = "Answer";
                 newTextCantInteract = "Chill Dude";
                 newIsInteractable = false;
                 break;
             
             case EDoorEvent.WatchTV:
-                newTextInteract = "";
+                MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
+                newTextInteract = "Answer";
                 newTextCantInteract = "Find a way to watch TV";
-                newIsInteractable = false;
+                newIsInteractable = true;
                 break;
             
             case EDoorEvent.UnderstandParc:
@@ -161,4 +167,5 @@ public class DoorCoridorInteract : ObjectInteractable
     public void SetParcFellEvent() => SetCurrentDoorEvent(EDoorEvent.ParcFell);
     public void SetChillBeerEvent() => SetCurrentDoorEvent(EDoorEvent.ChillBeer);
     public void SetWatchTVEvent() => SetCurrentDoorEvent(EDoorEvent.WatchTV);
+    public void SetUnderstandParc() => SetCurrentDoorEvent(EDoorEvent.UnderstandParc);
 }

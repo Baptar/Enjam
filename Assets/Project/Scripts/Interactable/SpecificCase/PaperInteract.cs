@@ -1,6 +1,9 @@
+using System.Numerics;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class PaperInteract : ObjectGrabbable
 {
@@ -89,6 +92,10 @@ public class PaperInteract : ObjectGrabbable
     public void MakePaperDisappear()
     {
         Drop();
+        //Sequence seq = DOTween.Sequence();
+        //seq.Append(transform.DOShakePosition(1.0f, 0.1f).SetEase(Ease.InOutFlash))
+        //    .Insert(0f, transform.DOScale(Vector3.zero, 1.0f).SetEase(Ease.InOutFlash))
+        //    .OnComplete(() => gameObject.SetActive(false));
         gameObject.SetActive(false);
     }
     

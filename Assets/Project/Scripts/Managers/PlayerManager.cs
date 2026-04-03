@@ -105,9 +105,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (bIsReading)
         {
-            MainManager.instance.PaperManager.RemovePaper();
             SetIsReading(false);
             SetGrabbedObject(null);
+            MainManager.instance.PaperManager.RemovePaper();
             return;
         }
         if (objectInteractable) 
