@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float lookSpeed = 2f;
     [SerializeField] private float lookXTopLimit = 45f;
     [SerializeField] private float lookXBotLimit = 55f;
-    private float rotationX = 0f;
+    private float rotationY = 0f;
     
     [Space(5)]
     [Header("Movement Settings")]
@@ -60,8 +60,31 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Handles Movement
+        #region Raycast
+        // Raycast Elements
+        if (!Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
+                out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
+        {
+            MainManager.instance.UIManager.SetCanvaTextInteract("");
+            objectInteractable = null;
+        }
+        
+        // Check if it's an interactable element
+        else if (!raycastHit.collider.TryGetComponent(out objectInteractable))
+        {
+            MainManager.instance.UIManager.SetCanvaTextInteract("");
+            objectInteractable = null;
+        }
 
+        else
+        {
+            // Get Text to display
+            string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
+            MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
+        }
+        #endregion
+        
+        #region Handles Movement
         Vector2 playerMovementInput = playerInputController.Move;
         Vector3 moveDirection = new Vector3(walkSpeed * playerMovementInput.x, -gravityScale, walkSpeed * playerMovementInput.y);
         bIsWalking = playerMovementInput is not { x: 0, y: 0 };
@@ -71,33 +94,10 @@ public class PlayerManager : MonoBehaviour
         
         #region Handles Rotation
         //Vector2 playerRotationInput = playerInputController.Look;
-        rotationX += -/*playerRotationInput.y*/Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXBotLimit, lookXTopLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        rotationY += -/*playerRotationInput.y*/Input.GetAxis("Mouse Y") * lookSpeed;
+        rotationY = Mathf.Clamp(rotationY, -lookXBotLimit, lookXTopLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationY, 0, 0);
         transform.rotation *= Quaternion.Euler(0, /*playerRotationInput.x*/Input.GetAxis("Mouse X")* lookSpeed, 0);
-        #endregion
-        
-        #region Raycast
-        // Raycast Elements
-        if (!Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
-                out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
-        {
-            MainManager.instance.UIManager.SetCanvaTextInteract("");
-            objectInteractable = null;
-            return;
-        }
-        
-        // Check if it's an interactable element
-        if (!raycastHit.collider.TryGetComponent(out objectInteractable))
-        {
-            MainManager.instance.UIManager.SetCanvaTextInteract("");
-            objectInteractable = null;
-            return;
-        }
-        
-        // Get Text to display
-        string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
-        MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
         #endregion
     }
 
@@ -133,7 +133,11 @@ public class PlayerManager : MonoBehaviour
     
     // Movement
     public bool GetCanMove() => canMove;
+    public float GetWalkSpeed() => walkSpeed;
+
     public bool GetIsWalking() => bIsWalking;
+    public float GetGravityScale() => gravityScale;
+    public float GetPlayerRotationY() => rotationY;
     
     // Inventory
     public bool GetHasBeer() => bHasBeer;
@@ -149,6 +153,9 @@ public class PlayerManager : MonoBehaviour
     
     // Movement
     public void SetCanMove(bool value) => canMove = value;
+    public void SetWalkSpeed(float value) => walkSpeed = value;
+    public void SetGravityScale(float value) => gravityScale = value;
+    public void SetPlayerRotationY(float value) => rotationY = value;
     
     // Inventory
     public void SetHasBeer(bool value) => bHasBeer = value;

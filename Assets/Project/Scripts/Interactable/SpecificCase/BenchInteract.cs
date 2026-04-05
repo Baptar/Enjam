@@ -6,13 +6,11 @@ using UnityEngine;
 public class BenchInteract : ObjectInteractable
 {
     // Bench
-    [SerializeField] private Transform playerSitTransform;
     [SerializeField] private Ease easeSitOnBench = Ease.InOutElastic;
     [SerializeField] private float timeBetweenChangeVision = 1f;
     
     // Beer
-    [SerializeField] private Animator beerAnimation;
-    [SerializeField] private float drinkDuration = 3.0f;
+    [SerializeField] private BeerInteractable beerObj;
     
     private PlayerManager playerManager;
 
@@ -20,63 +18,30 @@ public class BenchInteract : ObjectInteractable
     
     public override bool GetInteractable() => playerManager.GetInBenchZone() && playerManager.GetHasBeer() && bInteractable;
 
-    public override void Interact() => SitOnBench(playerSitTransform);
+    private void OnTriggerEnter(Collider other) => playerManager.SetInBenchZone(other.CompareTag("Player"));
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerManager.SetInBenchZone(false);
+    }
     
-    private void SitOnBench(Transform sitTransform)
+    public void SitOnBench(Transform sitTransform)
     {
         playerManager.EnableCollision(false);
+        float camX = playerManager.GetPlayerCamera().transform.localEulerAngles.x;
+        if (camX > 180f) camX -= 360f;
+        playerManager.SetPlayerRotationY(camX);
         playerManager.SetCanMove(false);
          
          Sequence sequence = DOTween.Sequence();
-         sequence.Append(transform.DOMove(sitTransform.position, timeBetweenChangeVision).SetEase(easeSitOnBench))
+         sequence.Append(playerManager.transform.DOMove(sitTransform.position, timeBetweenChangeVision).SetEase(easeSitOnBench))
              .Insert(0.0f,
-                 transform.DORotateQuaternion(sitTransform.rotation, timeBetweenChangeVision).SetEase(easeSitOnBench))
+                 playerManager.transform.DORotateQuaternion(sitTransform.rotation, timeBetweenChangeVision).SetEase(easeSitOnBench))
              .Insert(0.0f,
                  playerManager.GetPlayerCamera().transform
                      .DOLocalRotateQuaternion(Quaternion.Euler(30, 0, 0), timeBetweenChangeVision)
                      .SetEase(easeSitOnBench))
-             .OnComplete(()=> StartCoroutine(DrinkBeer()));
+             .OnComplete(()=> beerObj.StartDrinkBeer());
     }
-
-    // TODO
-    IEnumerator DrinkBeer()
-    {
-        beerAnimation.Play("glouglouMieux", 0, 0.0f);
-        PlaySound("event:/Park/BeerDrunk");
-        yield return new WaitForSeconds(drinkDuration);
-        /*
-        Drop();
-        canTake = false;
-        playerPickUp.OnBeerDrunken();
-         */
-    }
-    
-    /*
-      public void OnBeerDrunken()
-    {
-        parcExtCollider.SetActive(true);
-        fpsController.canMove = true;
-        StartCoroutine(Shrink());
-    }
-
-    IEnumerator Shrink()
-    {
-        float timeElapsed = 0;
-        Vector3 startScale = transform.localScale;
-        float walkSpeedStart = fpsController.walkSpeed;
-        float gravityStart = fpsController.gravityScale;
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Park/GoLittle");
-        FMODUnity.RuntimeManager.PlayOneShot("event:/MX");
-
-        while (timeElapsed < timeToShrink)
-        {
-            transform.localScale = Vector3.Lerp(startScale, shrinkScale, timeElapsed / timeToShrink);
-            fpsController.walkSpeed = Mathf.Lerp(walkSpeedStart, shrinkSpeed, timeElapsed / timeToShrink);
-            fpsController.gravityScale = Mathf.Lerp(gravityStart, gravityShrink, timeElapsed / timeToShrink);
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-        pile.gameObject.SetActive(true);
-    }
-     */
 }

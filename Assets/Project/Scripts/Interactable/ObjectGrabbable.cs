@@ -63,9 +63,15 @@ public class ObjectGrabbable : ObjectInteractable
         MainManager.instance.Player.SetGrabbedObject(this);
     }
 
+    [ContextMenu("Drop Object")]
     public virtual void Drop()
     {
         OnDropEvent?.Invoke();
+        if (!objectRigidBody) return;
+        
+        GetComponent<Collider>().enabled = true;
+        objectGrabPointTransform = null;
+        objectRigidBody.isKinematic = false;
     }
 
     public override bool GetInteractable() => !MainManager.instance.Player.GetGrabbedObject() && bInteractable;
