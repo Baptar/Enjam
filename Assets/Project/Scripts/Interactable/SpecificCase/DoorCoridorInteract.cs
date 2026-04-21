@@ -11,18 +11,26 @@ public class DoorCoridorInteract : ObjectInteractable
         None, 
         Start,
         Candy, 
+        BeforeJudas,
+        Judas,
         ParcFell,
         ChillBeer,
-        WatchTV,
         UnderstandParc
     }
     
+    [Header("Judas")]
+    [SerializeField] private string judasSceneName;
+    [SerializeField] private Transform judasWorldPosition;
+    [SerializeField] private float judasCamFOV = 1;
+    
+    
+    [Space(10)]
+    [Header("Debug")]
+    public EDoorEvent currentDoorEvent = EDoorEvent.None;
     
     private FMOD.Studio.EventInstance event_fmod_littleToc;
     private FMOD.Studio.EventInstance event_fmod_hardToc;
     
-    [Header("Debug")]
-    public EDoorEvent currentDoorEvent = EDoorEvent.None;
     
     private void Start()
     {
@@ -41,7 +49,10 @@ public class DoorCoridorInteract : ObjectInteractable
         if (GetInteractable())
         {
             eventOnInteract?.Invoke();
-            SetInteractable(false);
+            
+            bool nextStateInteractable = false;
+            EDoorEvent nextDoorEvent = EDoorEvent.None;
+            bool setNextDoorEvent = true;
             
             switch (currentDoorEvent)
             {
@@ -52,7 +63,17 @@ public class DoorCoridorInteract : ObjectInteractable
             
                 case EDoorEvent.Candy:
                     MainManager.instance.Player.Drop();
-                    MainManager.instance.PaperManager.AppearPaperYellAtParc();
+                    MainManager.instance.PaperManager.AppearPaperParcFell();
+                    break;
+                
+                case EDoorEvent.BeforeJudas:
+                    MainManager.instance.AudioManager.StopSoundTocLittle(transform);
+                    MainManager.instance.PaperManager.AppearPaperJudas();
+                    break;
+                
+                case EDoorEvent.Judas:
+                    LookJudas();
+                    setNextDoorEvent = false;
                     break;
             
                 case EDoorEvent.ParcFell:
@@ -63,11 +84,6 @@ public class DoorCoridorInteract : ObjectInteractable
                 // never Called
                 case EDoorEvent.ChillBeer:
                     break;
-            
-                case EDoorEvent.WatchTV:
-                    MainManager.instance.AudioManager.StopSoundTocLittle(transform);
-                    MainManager.instance.PaperManager.AppearPaperWatchTV();
-                    break;
                 
                 case EDoorEvent.UnderstandParc:
                     MainManager.instance.AudioManager.StopSoundTocLittle(transform);
@@ -75,7 +91,8 @@ public class DoorCoridorInteract : ObjectInteractable
                     break;
             }
             
-            SetCurrentDoorEvent(EDoorEvent.None);
+            SetInteractable(nextStateInteractable);
+            if (setNextDoorEvent) SetCurrentDoorEvent(nextDoorEvent);
         }
         else
         {
@@ -98,7 +115,7 @@ public class DoorCoridorInteract : ObjectInteractable
                 case EDoorEvent.ChillBeer:
                     break;
             
-                case EDoorEvent.WatchTV:
+                case EDoorEvent.BeforeJudas:
                     break;
                 
                 case EDoorEvent.UnderstandParc:
@@ -129,9 +146,22 @@ public class DoorCoridorInteract : ObjectInteractable
                 newIsInteractable = false;
                 break;
             
+            case EDoorEvent.BeforeJudas:
+                MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
+                newTextInteract = "Answer";
+                newTextCantInteract = "";
+                newIsInteractable = true;
+                break;
+            
+            case EDoorEvent.Judas:
+                newTextInteract = "Look through the peephole";
+                newTextCantInteract = "";
+                newIsInteractable = true;
+                break;
+            
             case EDoorEvent.ParcFell:
                 newTextInteract = "Answer";
-                newTextCantInteract = "Scream in the fall";
+                newTextCantInteract = "";
                 newIsInteractable = false;
                 break;
             
@@ -139,13 +169,6 @@ public class DoorCoridorInteract : ObjectInteractable
                 newTextInteract = "Answer";
                 newTextCantInteract = "Chill Dude";
                 newIsInteractable = false;
-                break;
-            
-            case EDoorEvent.WatchTV:
-                MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
-                newTextInteract = "Answer";
-                newTextCantInteract = "Find a way to watch TV";
-                newIsInteractable = true;
                 break;
             
             case EDoorEvent.UnderstandParc:
@@ -159,13 +182,24 @@ public class DoorCoridorInteract : ObjectInteractable
         SetTextCantInteract(newTextCantInteract);
         SetInteractable(newIsInteractable);
     }
+
+    private void LookJudas()
+    {
+        MainManager.instance.JudasManager.OnInteractJudas(this, judasTransformCam : judasWorldPosition, judasSceneName : judasSceneName, fovCam : judasCamFOV);
+    }
     
 
+    [ContextMenu("SetNoneEvent")]
     public void SetNoneEvent() => SetCurrentDoorEvent(EDoorEvent.None);
+    [ContextMenu("SetStartEvent")]
     public void SetStartEvent() => SetCurrentDoorEvent(EDoorEvent.Start);
+    [ContextMenu("SetCandyEvent")]
     public void SetCandyEvent() => SetCurrentDoorEvent(EDoorEvent.Candy);
+    [ContextMenu("SetJudasEvent")]
+    public void SetJudasEvent() => SetCurrentDoorEvent(EDoorEvent.Judas);
+    [ContextMenu("SetParcFellEvent")]
     public void SetParcFellEvent() => SetCurrentDoorEvent(EDoorEvent.ParcFell);
     public void SetChillBeerEvent() => SetCurrentDoorEvent(EDoorEvent.ChillBeer);
-    public void SetWatchTVEvent() => SetCurrentDoorEvent(EDoorEvent.WatchTV);
+    public void SetBeforeJudasEvent() => SetCurrentDoorEvent(EDoorEvent.BeforeJudas);
     public void SetUnderstandParc() => SetCurrentDoorEvent(EDoorEvent.UnderstandParc);
 }

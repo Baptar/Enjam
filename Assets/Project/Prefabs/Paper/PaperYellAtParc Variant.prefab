@@ -10,13 +10,83 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1391083762440150535, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_text
-      value: I would love to go to the park but he fell in a hole again.. Go yell
-        at him to make him come back.
+      value: 'I would love to go to the park but he fell in a hole again.. '
       objectReference: {fileID: 0}
     - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: paperText
-      value: I would love to go to the park but he fell in a hole again.. Go yell
-        at him to make him come back.
+      value: 'I would love to go to the park but he fell in a hole again.. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: eventSoundOnInteract.Path
+      value: event:/Hall/PaperGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data1
+      value: 297058600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data2
+      value: 1151305787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data3
+      value: -1956109649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data4
+      value: 1909421314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetParcFellEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetWatchTVEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalPosition.x

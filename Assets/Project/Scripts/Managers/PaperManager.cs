@@ -37,10 +37,10 @@ public class PaperManager : MonoBehaviour
    }
    
    public void AppearPaperCandy() => paperCandy.MakePaperAppear();
-   public void AppearPaperWatchTV() => paperWatchTV.MakePaperAppear();
+   public void AppearPaperJudas() => paperWatchTV.MakePaperAppear();
    public void AppearPaperChillBeer() => paperChillBear.MakePaperAppear();
    public void AppearPaperUnderstandParc() => paperUnderstandParc.MakePaperAppear();
-   public void AppearPaperYellAtParc() => paperYellAtParc.MakePaperAppear();
+   public void AppearPaperParcFell() => paperYellAtParc.MakePaperAppear();
    
 
    public void RemovePaper()

@@ -815,37 +815,6 @@ Transform:
   - {fileID: 8881082504797003072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8259431947348913977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4174287943059106922}
-  m_Layer: 0
-  m_Name: PaperGrabPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4174287943059106922
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8259431947348913977}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.6321657, y: 0.101171404, z: 0.119237885, w: 0.75888956}
-  m_LocalPosition: {x: 0.25999996, y: -0.059999883, z: 0.5800009}
-  m_LocalScale: {x: 1.2500001, y: 1.2499998, z: 1.2500001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839718560956174982}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8411639768471339749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,10 +1547,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8613229607327819758, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
     - {fileID: 7113123366916977326, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5399206352075900536, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 4174287943059106922}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       insertIndex: 5
@@ -1611,28 +1577,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 518818062223850107}
+  cameraRoot: {fileID: 0}
   lookSpeed: 2
   lookXTopLimit: 45
   lookXBotLimit: 55
+  peepholeSensitivity: 0.5
+  peepholeMaxOffset: 0.3
+  peepholeSmoothing: 8
+  peepholeMaxAngle: 40
   gravityScale: 9.81
-  canMove: 1
   walkSpeed: 3
+  canMove: 1
+  acceleration: 8
+  deceleration: 12
+  bobFrequency: 2
+  bobAmplitudeY: 0.035
+  bobAmplitudeX: 0.018
+  bobSmoothing: 10
+  breathFrequency: 0.5
+  breathPitchAmount: 0.4
+  breathRollAmount: 0.15
+  breathWalkMult: 1.8
+  breathSmoothing: 3
+  swayRollAmount: 2.5
+  swayPitchAmount: 1.2
+  swaySmoothing: 5
   raycastDistance: 2
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   objectGrabPointTransform: {fileID: 1938822518863172872}
+  objectGrabPointPaperTransform: {fileID: 0}
+  lookMode: 0
   bHasBeer: 0
   bIsInBenchZone: 0
   bIsWalking: 0
 --- !u!20 &518818062223850107 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5078270651642719877, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
-  m_PrefabInstance: {fileID: 4704733320135316734}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &839718560956174982 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5399206352075900536, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
   m_PrefabInstance: {fileID: 4704733320135316734}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1938822518863172872 stripped
