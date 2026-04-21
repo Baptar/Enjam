@@ -1552,6 +1552,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       insertIndex: 5
       addedObject: {fileID: 1362361829937640904}
+    - targetCorrespondingSourceObject: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8939393202456944289}
+    - targetCorrespondingSourceObject: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4218417589841504236}
     - targetCorrespondingSourceObject: {fileID: 7426911706187229499, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2628143188295359012}
@@ -1577,44 +1583,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 518818062223850107}
-  cameraRoot: {fileID: 0}
-  lookSpeed: 2
-  lookXTopLimit: 45
+  cameraRoot: {fileID: 1147826577151514634}
+  lookSpeed: 1
+  lookXTopLimit: 75
   lookXBotLimit: 55
   peepholeSensitivity: 0.5
   peepholeMaxOffset: 0.3
-  peepholeSmoothing: 8
-  peepholeMaxAngle: 40
+  peepholeSmoothing: 2
+  peepholeMaxAngle: 15
   gravityScale: 9.81
   walkSpeed: 3
   canMove: 1
   acceleration: 8
   deceleration: 12
+  enableHeadBob: 1
   bobFrequency: 2
-  bobAmplitudeY: 0.035
+  bobAmplitudeY: 0.03
   bobAmplitudeX: 0.018
-  bobSmoothing: 10
+  bobSmoothing: 8
+  enableBreath: 1
   breathFrequency: 0.5
   breathPitchAmount: 0.4
   breathRollAmount: 0.15
   breathWalkMult: 1.8
   breathSmoothing: 3
-  swayRollAmount: 2.5
-  swayPitchAmount: 1.2
+  enableSway: 1
+  swayRollAmount: 0.8333333
+  swayPitchAmount: 0.4
   swaySmoothing: 5
-  raycastDistance: 2
+  raycastDistance: 3
   raycastLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   objectGrabPointTransform: {fileID: 1938822518863172872}
-  objectGrabPointPaperTransform: {fileID: 0}
+  objectGrabPointPaperTransform: {fileID: 4174287943059106922}
   lookMode: 0
   bHasBeer: 0
   bIsInBenchZone: 0
   bIsWalking: 0
+--- !u!114 &8939393202456944289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366842933757269188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b859ca4bea954ac489d0b46ee36f7c6b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Input
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &4218417589841504236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366842933757269188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9760c4d0a9ca746995076a97e64810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &518818062223850107 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5078270651642719877, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+  m_PrefabInstance: {fileID: 4704733320135316734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1147826577151514634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5667626439520963828, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
   m_PrefabInstance: {fileID: 4704733320135316734}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1938822518863172872 stripped
@@ -1777,6 +1833,11 @@ MonoBehaviour:
   shakeDuration: 0
   shakeAmount: 0.7
   decreaseFactor: 1
+--- !u!4 &4174287943059106922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8693247744068286612, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+  m_PrefabInstance: {fileID: 4704733320135316734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4767816653573131498
 PrefabInstance:
   m_ObjectHideFlags: 0

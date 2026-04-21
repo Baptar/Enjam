@@ -502,7 +502,7 @@ MonoBehaviour:
   FisheyeVolume: {fileID: 1081568597289103570}
   vignetteRadius: 0.614
   vignetteSoftness: 0.16
-  fisheyeStrength: 0.348
+  fisheyeStrength: 1
 --- !u!1 &4302684400373453927
 GameObject:
   m_ObjectHideFlags: 0
