@@ -75,7 +75,7 @@ public class PlayerManager : MonoBehaviour
         Cursor.visible        = false;
         FisheyePostProcess.GlobalStrengthOverride = false;
         
-        //MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
+        MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
     }
 
     // Update is called once per frame
@@ -130,24 +130,25 @@ public class PlayerManager : MonoBehaviour
 
     private void HandleNormalRotation()
     {
-        //Vector2 playerRotationInput = playerInputController.Look;
-        rotationY += -/*playerRotationInput.y*/Input.GetAxis("Mouse Y") * lookSpeed;
+        Vector2 delta = playerInputController.Look;
+
+        rotationY -= delta.y * lookSpeed;
         rotationY = Mathf.Clamp(rotationY, -lookXBotLimit, lookXTopLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationY, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, /*playerRotationInput.x*/Input.GetAxis("Mouse X")* lookSpeed, 0);
+
+        cameraRoot.localRotation = Quaternion.Euler(rotationY, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, delta.x * lookSpeed, 0);
     }
 
     private void HandlePeepholeRotation()
     {
         if (peepholeRoot == null) return;
 
-        //Vector2 look = playerInputController.Look;
-        Vector2 look = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 look = playerInputController.Look;
 
         // get target rotation
         peepholeOffset += look * peepholeSensitivity;
-        peepholeOffset.x = Mathf.Clamp(peepholeOffset.x, -peepholeMaxAngle, peepholeMaxAngle); // left and right
-        peepholeOffset.y = Mathf.Clamp(peepholeOffset.y, -peepholeMaxAngle, peepholeMaxAngle); // up and down
+        peepholeOffset.x = Mathf.Clamp(peepholeOffset.x, -peepholeMaxAngle, peepholeMaxAngle);
+        peepholeOffset.y = Mathf.Clamp(peepholeOffset.y, -peepholeMaxAngle, peepholeMaxAngle);
 
         // smooth
         peepholeCurrentOffset = Vector2.Lerp(

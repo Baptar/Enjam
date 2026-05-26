@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a714934c4ebba0b4cb373b02a29fa9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bInteractable: 0
+  bInteractable: 1
   textInteraction: 
   textCantInteract: 
   eventSoundOnInteract:
@@ -1776,6 +1776,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &922799920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 839718560956174982, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+  m_PrefabInstance: {fileID: 7810806128490278733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &925376339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 520514109001647151, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
@@ -2764,6 +2769,7 @@ MonoBehaviour:
   interactionText: {fileID: 1123557108}
   fadeImage: {fileID: 986150813}
   crosshairImage: {fileID: 716466832}
+  delayShowCrosshair: 1.5
 --- !u!1 &1337240955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: b859ca4bea954ac489d0b46ee36f7c6b, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -3202,10 +3208,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
+  - {fileID: 1246644538}
   - {fileID: 1961884446}
   - {fileID: 190590704}
-  - {fileID: 1246644538}
   - {fileID: 807362571}
+  blinkCount: 3
+  lightChangePerBlink: 3
+  blinkDuration: 0.05
+  startLightsOff: 1
+  startDelay: 1
+  turnOnStartDuration: 4
+  startEase: 35
+  delayBetweenEachLight: 1
 --- !u!4 &1636972967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7402115583597552738, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
@@ -5474,9 +5488,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
-      propertyPath: walkSpeed
-      value: 10
+      propertyPath: canMove
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: cameraRoot
+      value: 
+      objectReference: {fileID: 922799920}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: lookXTopLimit
       value: 75
@@ -5501,6 +5519,10 @@ PrefabInstance:
       propertyPath: objectGrabPointPaperTransform
       value: 
       objectReference: {fileID: 1233082123}
+    - target: {fileID: 2229746828564670094, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: m_Intensity
+      value: 8251.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2441011488534052063, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: banc
       value: 
@@ -5668,6 +5690,10 @@ PrefabInstance:
     - target: {fileID: 7750702493870953461, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909962157284886789, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: m_Intensity
+      value: 1606.3418
       objectReference: {fileID: 0}
     - target: {fileID: 8638804744066981981, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: m_sharedMaterial
