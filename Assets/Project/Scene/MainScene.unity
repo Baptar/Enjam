@@ -1902,7 +1902,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  lerpSpeed: 20
+  lerpSpeed: 7
   blockYOnGrabbed: 1
   OnDropEvent:
     m_PersistentCalls:
@@ -1938,10 +1938,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &955851914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3217,7 +3217,7 @@ MonoBehaviour:
   blinkDuration: 0.05
   startLightsOff: 1
   startDelay: 1
-  turnOnStartDuration: 4
+  turnOnStartDuration: 1
   startEase: 35
   delayBetweenEachLight: 1
 --- !u!4 &1636972967 stripped
@@ -5134,7 +5134,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  lerpSpeed: 10
+  lerpSpeed: 7
   blockYOnGrabbed: 1
   OnDropEvent:
     m_PersistentCalls:
@@ -5496,8 +5496,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 922799920}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: enableSway
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: enableBreath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: enableHeadBob
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: lookXTopLimit
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: breathWalkMult
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: swayRollAmount
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: breathFrequency
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: raycastDistance

@@ -32,10 +32,42 @@ public class PlayerManager : MonoBehaviour
     private bool              isInJudasMode;
     
     [Space(5)]
+    [Header("Head Bob")]
+    [SerializeField] private bool enableHeadBob  = true;
+    [SerializeField] private float bobFrequency  = 2.0f;
+    [SerializeField] private float bobAmplitudeY = 0.035f;
+    [SerializeField] private float bobAmplitudeX = 0.018f;
+    [SerializeField] private float bobSmoothing  = 10f;
+    private float   _bobTimer;
+    private Vector3 _bobPosCurrent;
+
+    [Space(5)]
+    [Header("Breath")]
+    [SerializeField] private bool enableBreath       = true;
+    [SerializeField] private float breathFrequency   = 0.5f;
+    [SerializeField] private float breathPitchAmount = 0.4f;
+    [SerializeField] private float breathRollAmount  = 0.15f;
+    [SerializeField] private float breathWalkMult    = 1.8f;
+    [SerializeField] private float breathSmoothing   = 3f;
+    private Quaternion _breathCurrent = Quaternion.identity;
+
+    [Space(5)]
+    [Header("Sway")]
+    [SerializeField] private bool enableSway       = true;
+    [SerializeField] private float swayRollAmount  = 2.5f;
+    [SerializeField] private float swayPitchAmount = 1.2f;
+    [SerializeField] private float swaySmoothing   = 5f;
+    private Quaternion _swayCurrent = Quaternion.identity;
+    private Vector3    _cameraInitialLocalPos;
+    
+    [Space(10)]
     [Header("Movement Settings")]
     [SerializeField] private float gravityScale = 9.81f;
     [SerializeField] private float walkSpeed    = 3f;
     [SerializeField] private bool canMove       = true;
+    [SerializeField] private float acceleration = 8f;
+    [SerializeField] private float deceleration = 12f;
+    private float _currentSpeed = 0f;
     
     [Space(5)]
     [Header("Raycast Settings")]
@@ -74,6 +106,8 @@ public class PlayerManager : MonoBehaviour
         Cursor.lockState      = CursorLockMode.Locked;
         Cursor.visible        = false;
         FisheyePostProcess.GlobalStrengthOverride = false;
+        _cameraInitialLocalPos = playerCamera.transform.localPosition;
+        _swayCurrent           = Quaternion.identity;
         
         MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
     }
@@ -117,6 +151,25 @@ public class PlayerManager : MonoBehaviour
         bIsWalking = playerMovementInput is not { x: 0, y: 0 };
         if (!canMove) return; 
         characterController.Move(transform.rotation * moveDirection * Time.deltaTime);
+        /*
+         *
+         Vector2 playerMovementInput = playerInputController.Move;
+
+        float targetSpeed = playerMovementInput.magnitude > 0.01f ? 1f : 0f;
+        float accelRate   = targetSpeed > _currentSpeed ? acceleration : deceleration;
+        _currentSpeed     = Mathf.MoveTowards(_currentSpeed, targetSpeed, accelRate * Time.deltaTime);
+        bIsWalking        = _currentSpeed > 0.05f;
+        
+        if (canMove)
+        {
+            Vector3 moveDirection = new Vector3(
+                walkSpeed * playerMovementInput.x,
+                -gravityScale,
+                walkSpeed * playerMovementInput.y
+            );
+            characterController.Move(transform.rotation * moveDirection * _currentSpeed * Time.deltaTime);
+        }
+         */
         #endregion
         
         #region Handles Rotation
@@ -125,6 +178,13 @@ public class PlayerManager : MonoBehaviour
           case ELookMode.Normal: HandleNormalRotation(); break;
           case ELookMode.Peephole: HandlePeepholeRotation(); break;
         }
+        #endregion
+        
+        #region Camera Feel
+        if (enableHeadBob) HandleBob();
+        if (enableBreath) HandleBreath();
+        if (enableSway) HandleSway();
+        ApplyCameraFeel();
         #endregion
     }
 
@@ -135,7 +195,6 @@ public class PlayerManager : MonoBehaviour
         rotationY -= delta.y * lookSpeed;
         rotationY = Mathf.Clamp(rotationY, -lookXBotLimit, lookXTopLimit);
 
-        cameraRoot.localRotation = Quaternion.Euler(rotationY, 0, 0);
         transform.rotation *= Quaternion.Euler(0, delta.x * lookSpeed, 0);
     }
 
@@ -160,6 +219,49 @@ public class PlayerManager : MonoBehaviour
         // local rotation
         peepholeRoot.PeepholeCamera.transform.rotation = 
             peepholeBaseRotation * Quaternion.Euler(-peepholeCurrentOffset.y, peepholeCurrentOffset.x, 0f);
+    }
+    
+    private void HandleBob()
+    {
+        Vector3 targetPos = Vector3.zero;
+
+        if (bIsWalking && canMove)
+        {
+            _bobTimer += Time.deltaTime * bobFrequency;
+            targetPos.y = Mathf.Sin(_bobTimer) * bobAmplitudeY;
+            targetPos.x = Mathf.Sin(_bobTimer * 2f) * bobAmplitudeX;
+        }
+
+        _bobPosCurrent = Vector3.Lerp(_bobPosCurrent, targetPos, Time.deltaTime * bobSmoothing);
+    }
+
+    private void HandleBreath()
+    {
+        float pitch = Mathf.Sin(Time.time * breathFrequency * Mathf.PI * 2f) * breathPitchAmount;
+        float roll  = Mathf.Sin(Time.time * breathFrequency * Mathf.PI * 2f * 0.5f) * breathRollAmount;
+
+        Quaternion breathTarget = Quaternion.Euler(pitch, 0f, roll);
+        _breathCurrent = Quaternion.Slerp(_breathCurrent, breathTarget, Time.deltaTime * breathSmoothing);
+    }
+
+    private void HandleSway()
+    {
+        Vector2 look = playerInputController.Look;
+
+        Quaternion targetRoll  = Quaternion.AngleAxis(-look.x * swayRollAmount,  Vector3.forward);
+        Quaternion targetPitch = Quaternion.AngleAxis(-look.y * swayPitchAmount, Vector3.right);
+        _swayCurrent = Quaternion.Slerp(_swayCurrent, targetRoll * targetPitch, Time.deltaTime * swaySmoothing);
+    }
+
+    private void ApplyCameraFeel()
+    {
+        if (enableHeadBob) playerCamera.transform.localPosition = _cameraInitialLocalPos + _bobPosCurrent;
+
+        Quaternion verticalRotation = Quaternion.Euler(rotationY, 0, 0);
+        Quaternion breathValue      = enableBreath ? _breathCurrent : Quaternion.identity;
+        Quaternion swayValue        = enableSway   ? _swayCurrent   : Quaternion.identity;
+
+        playerCamera.transform.localRotation = verticalRotation * swayValue * breathValue;
     }
 
     private void OnInteract()
