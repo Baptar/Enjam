@@ -114,6 +114,17 @@
                 },
                 {
                     "name": "",
+                    "id": "876908d2-fc5b-4c8c-82db-cde4bdef660d",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=0.05,y=0.05)",
+                    "groups": ";Keyboard Mouse",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6127b524-4fa5-48cb-8372-92b6b9181e91",
                     "path": "<Keyboard>/e",
                     "interactions": "",

@@ -26,6 +26,11 @@ public class PlayerInputController : MonoBehaviour
         _lookAction = actions["Look"];
         _interactAction = actions["Interact"];
     }
+    
+    private void Update()
+    {
+        Look = _lookAction.ReadValue<Vector2>();
+    }
 
     private void OnEnable()
     {
@@ -34,12 +39,6 @@ public class PlayerInputController : MonoBehaviour
             _moveAction.performed += OnMove;
             _moveAction.canceled += OnMove;
         }
-        if (_lookAction != null)
-        {
-            _lookAction.performed += OnLook;
-            _lookAction.canceled += OnLook;
-        }
-        
 
         // One-shot inputs
         if (_interactAction != null)
@@ -54,11 +53,6 @@ public class PlayerInputController : MonoBehaviour
         {
             _moveAction.performed -= OnMove;
             _moveAction.canceled -= OnMove;
-        }
-        if (_lookAction != null)
-        {
-            _lookAction.performed -= OnLook;
-            _lookAction.canceled -= OnLook;
         }
 
         // One-shot inputs

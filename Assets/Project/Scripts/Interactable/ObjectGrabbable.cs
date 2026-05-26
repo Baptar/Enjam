@@ -27,16 +27,28 @@ public class ObjectGrabbable : ObjectInteractable
     protected virtual void Update()
     {
         if (objectGrabPointTransform == null) return;
-
-        Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+        
+        // position
+        /*  Vector3 newPosition = Vector3.MoveTowards(
+            transform.position,
+            objectGrabPointTransform.position,
+            Vector3.Distance(transform.position, objectGrabPointTransform.position) * lerpSpeed * Time.deltaTime
+        );
         objectRigidBody.MovePosition(newPosition);
         
+        // rotation
         Vector3 targetRotationEuler = objectGrabPointTransform.rotation.eulerAngles;
         targetRotationEuler.x = 0.0f;
         targetRotationEuler.z = 0.0f;
         Quaternion targetRotation = blockYOnGrabbed ? Quaternion.Euler(targetRotationEuler) : objectGrabPointTransform.rotation;
-        Quaternion newRotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * lerpSpeed);
-        objectRigidBody.MoveRotation(newRotation);
+        objectRigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * lerpSpeed));*/
+        
+        
+        transform.position = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+    
+        Vector3 targetEuler = objectGrabPointTransform.rotation.eulerAngles;
+        if (blockYOnGrabbed) { targetEuler.x = 0f; targetEuler.z = 0f; }
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetEuler), Time.deltaTime * lerpSpeed);
     }
 
     // Interact with element
