@@ -11,4 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scene/JudasScenes/JudasTestScene.unity
     guid: fa2fc000f6898d9419f509892a553ec5
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 4ce4aefa2e04208439d4e4375398cd88, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 260f482c6940b074e8409d60617ea37c, type: 2}
