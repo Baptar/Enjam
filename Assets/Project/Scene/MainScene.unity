@@ -299,6 +299,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &53739782 stripped
 GameObject:
@@ -692,6 +697,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &290164982 stripped
 GameObject:
@@ -937,6 +947,11 @@ MonoBehaviour:
   judasSceneName: JudasTestScene
   judasWorldPosition: {fileID: 647242321}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 1
+  shakeStrength: 0.06
+  shakeVibrato: 150
+  shakeRandomness: 90
   currentDoorEvent: 4
 --- !u!1001 &542283008
 PrefabInstance:
@@ -1104,6 +1119,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &552828869
 GameObject:
@@ -1593,6 +1613,7 @@ MonoBehaviour:
   paperChillBear: {fileID: 5018586436179841246}
   paperUnderstandParc: {fileID: 933514885}
   paperYellAtParc: {fileID: 680336630}
+  easeLookAtPoint: 0
 --- !u!108 &807362571 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8267830065643243408, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -1892,6 +1913,11 @@ MonoBehaviour:
   judasSceneName: JudasTestScene
   judasWorldPosition: {fileID: 1814812923}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!4 &918350096 stripped
 Transform:
@@ -2282,7 +2308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1123557107
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3430,6 +3456,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &1490902995 stripped
 GameObject:
@@ -4869,6 +4900,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1814409599}
     m_Modifications:
+    - target: {fileID: 1960590893257317758, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960590893257317758, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960590893257317758, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 666.66656
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960590893257317758, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.49997
+      objectReference: {fileID: 0}
     - target: {fileID: 4818288512372991058, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4949,9 +4996,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6973816086571492114, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973816086571492114, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973816086571492114, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 399.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973816086571492114, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.49997
+      objectReference: {fileID: 0}
     - target: {fileID: 8440608011170638964, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
       propertyPath: m_Name
       value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440608011170638964, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809519524249836545, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809519524249836545, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809519524249836545, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 133.33331
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809519524249836545, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.49997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6177,6 +6260,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4841898745130404104, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: bInteractable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841898745130404104, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: textInteraction
+      value: Open Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841898745130404104, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 1962155742}
@@ -6265,6 +6356,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1814409599}
     m_Modifications:
+    - target: {fileID: 1749988962289765230, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749988962289765230, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749988962289765230, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 399.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749988962289765230, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.49997
+      objectReference: {fileID: 0}
     - target: {fileID: 6331092935766508534, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6348,6 +6455,10 @@ PrefabInstance:
     - target: {fileID: 7540965898498325176, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540965898498325176, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

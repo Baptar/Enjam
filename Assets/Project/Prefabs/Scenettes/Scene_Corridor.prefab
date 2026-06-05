@@ -8996,7 +8996,7 @@ PrefabInstance:
     - target: {fileID: 5683990420463678885, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
       propertyPath: paperAnimation
       value: 
-      objectReference: {fileID: 2362055504979511426}
+      objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
       propertyPath: m_Name
       value: Door4
@@ -9051,100 +9051,13 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1646600299079884780, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7880922596036019147, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 892034749119877704}
-    - targetCorrespondingSourceObject: {fileID: 1157063820676253623, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2362055504979511426}
-    - targetCorrespondingSourceObject: {fileID: 2855321563317980888, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 339262451379232298}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
---- !u!1 &2730462002885883916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7880922596036019147, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-  m_PrefabInstance: {fileID: 5240542764791593927}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &892034749119877704
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2730462002885883916}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef0a4af6c508cba47af2a43a34668657, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &3484373044176575777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8710207092133340902, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
   m_PrefabInstance: {fileID: 5240542764791593927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6391894897254218864 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1157063820676253623, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-  m_PrefabInstance: {fileID: 5240542764791593927}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2362055504979511426
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6391894897254218864}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef0a4af6c508cba47af2a43a34668657, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!1 &8005718109769020703 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2855321563317980888, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-  m_PrefabInstance: {fileID: 5240542764791593927}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &339262451379232298
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8005718109769020703}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef0a4af6c508cba47af2a43a34668657, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5378738524561796606
 PrefabInstance:
   m_ObjectHideFlags: 0

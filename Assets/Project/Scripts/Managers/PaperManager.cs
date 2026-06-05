@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class PaperManager : MonoBehaviour
 {
-   // TODO : APPEAR PAPER CALL ON THE CORRESPONDING PAPER "APPEAR" -> REF ON EACH PAPER
-   // TODO : INTERACT WITH PAPER ASSIGN ITSELF HERE,
-   // TODO : WHEN "REMOVE PAPER" THEN CALL ON THE PAPER "ON REMOVED"
-   
-   
+   [Header("Paper ref")]
    [SerializeField] private PaperInteract paperCandy;
    [SerializeField] private PaperInteract paperWatchTV;
    [SerializeField] private PaperInteract paperChillBear;
    [SerializeField] private PaperInteract paperUnderstandParc;
    [SerializeField] private PaperInteract paperYellAtParc;
+   
+   [Space(10)]
+   [Header("Parameters")]
+   [SerializeField] private Ease easeLookAtPoint;
    
    private PaperInteract currentPaperInteract;
 
@@ -36,11 +37,11 @@ public class PaperManager : MonoBehaviour
       paperYellAtParc?.gameObject.SetActive(false);
    }
    
-   public void AppearPaperCandy() => paperCandy.MakePaperAppear();
-   public void AppearPaperJudas() => paperWatchTV.MakePaperAppear();
-   public void AppearPaperChillBeer() => paperChillBear.MakePaperAppear();
-   public void AppearPaperUnderstandParc() => paperUnderstandParc.MakePaperAppear();
-   public void AppearPaperParcFell() => paperYellAtParc.MakePaperAppear();
+   public void AppearPaperCandy() => paperCandy.MakePaperAppear(easeLookAtPoint);
+   public void AppearPaperJudas() => paperWatchTV.MakePaperAppear(easeLookAtPoint);
+   public void AppearPaperChillBeer() => paperChillBear.MakePaperAppear(easeLookAtPoint);
+   public void AppearPaperUnderstandParc() => paperUnderstandParc.MakePaperAppear(easeLookAtPoint);
+   public void AppearPaperParcFell() => paperYellAtParc.MakePaperAppear(easeLookAtPoint);
    
 
    public void RemovePaper()

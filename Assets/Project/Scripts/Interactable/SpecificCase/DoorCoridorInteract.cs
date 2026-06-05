@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class DoorCoridorInteract : ObjectInteractable
@@ -22,6 +21,14 @@ public class DoorCoridorInteract : ObjectInteractable
     [SerializeField] private string judasSceneName;
     [SerializeField] private Transform judasWorldPosition;
     [SerializeField] private float judasCamFOV = 1;
+    
+    [Space(5)]
+    [Header("Shake")]
+    [SerializeField] private GameObject goShakeDoor;
+    [SerializeField] private float shakeDuration = 0.5f;
+    [SerializeField] private float shakeStrength = 1f;
+    [SerializeField] private int shakeVibrato = 10;
+    [SerializeField] private float shakeRandomness = 90f;
     
     
     [Space(10)]
@@ -186,6 +193,16 @@ public class DoorCoridorInteract : ObjectInteractable
     private void LookJudas()
     {
         MainManager.instance.JudasManager.OnInteractJudas(this, judasTransformCam : judasWorldPosition, judasSceneName : judasSceneName, fovCam : judasCamFOV);
+    }
+
+    [ContextMenu("Shake Door")]
+    public void ShakeDoor()
+    {
+        goShakeDoor.transform.DOShakePosition(
+            shakeDuration, 
+            shakeStrength,
+            shakeVibrato,
+            shakeRandomness);
     }
     
 

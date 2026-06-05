@@ -35,7 +35,7 @@ public class LigthsManager : MonoBehaviour
         
         yield return new WaitForSeconds(startDelay);
 
-        SwitchLightsSequence(true);
+        SwitchLightsSequenceIntro(true);
     }
 
     #region Switch Lights
@@ -148,7 +148,7 @@ public class LigthsManager : MonoBehaviour
     }
     #endregion
 
-    private void SwitchLightsSequence(bool enable)
+    private void SwitchLightsSequenceIntro(bool enable)
     {
         switchOnStartSequence?.Kill(complete: true);
         switchOnStartSequence = DOTween.Sequence();

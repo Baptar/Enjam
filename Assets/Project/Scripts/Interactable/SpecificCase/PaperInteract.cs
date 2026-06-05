@@ -74,10 +74,11 @@ public class PaperInteract : ObjectGrabbable
         MainManager.instance.Player.SetGrabbedObject(this);
     }
 
-    public void MakePaperAppear()
+    public void MakePaperAppear(Ease easeLookAtPoint = Ease.InOutFlash)
     {
         gameObject.SetActive(true);
         MovePaper();
+        MainManager.instance.Player.LookPoint(paperEndTransform.position, 0.4f, easeLookAtPoint);
     }
 
     private void MovePaper()
