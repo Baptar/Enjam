@@ -21,7 +21,6 @@ public class PortalTeleporter : MonoBehaviour
         Vector3 portalToPlayer = player.position - transform.position;
         float dotProduct = Vector3.Dot(transform.forward, portalToPlayer);
 
-        // ✅ TP uniquement si le joueur est entré par l'avant
         if (dotProductOnEnter > 0f && dotProduct < 0f)
         {
             float rotationDiff = -Quaternion.Angle(transform.rotation, receiver.rotation);
@@ -29,10 +28,9 @@ public class PortalTeleporter : MonoBehaviour
 
             Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
 
-            controller.enabled = false;
             player.position = receiver.position + positionOffset;
             player.Rotate(Vector3.up, rotationDiff);
-            controller.enabled = true;
+            Physics.SyncTransforms();
 
             playerIsOverlapping = false;
         }

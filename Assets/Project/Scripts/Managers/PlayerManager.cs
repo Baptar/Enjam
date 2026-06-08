@@ -90,6 +90,8 @@ public class PlayerManager : MonoBehaviour
     [Space(2)]
     [Header("Inventory")]
     [SerializeField] private bool bHasBeer = false;
+    [SerializeField] private bool bHasRadio = false;
+    [SerializeField] private bool bHasJuda = false;
     [Space(2)]
     [Header("Zone")]
     [SerializeField] private bool bInBenchZone = false;
@@ -327,6 +329,8 @@ public class PlayerManager : MonoBehaviour
     
     // Inventory
     public bool GetHasBeer() => bHasBeer;
+    public bool GetHasRadio() => bHasRadio;
+    public bool GetHasJuda() => bHasJuda;
     public ObjectGrabbable GetGrabbedObject() => grabbedObject;
     
     //Zone
@@ -358,6 +362,8 @@ public class PlayerManager : MonoBehaviour
     
     // Inventory
     public void SetHasBeer(bool value) => bHasBeer = value;
+    public void SetHasRadio(bool value) => bHasRadio = value;
+    public void SetHasJuda(bool value) => bHasJuda = value;
     public void SetGrabbedObject(ObjectGrabbable value) => grabbedObject = value;
     public void SetObjectInteractable(ObjectInteractable value) => objectInteractable = value;
     
