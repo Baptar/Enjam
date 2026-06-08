@@ -11,15 +11,19 @@ public class ObjectGrabbable : ObjectInteractable
     [SerializeField] protected float lerpSpeed = 20.0f;
     [SerializeField] protected bool blockYOnGrabbed = true;
     [SerializeField] private UnityEvent OnDropEvent;
+    [SerializeField] private float xValue = 0.0f;
+    [SerializeField] private float zValue = 0.0f;
 
     
     protected Rigidbody objectRigidBody;
     protected Transform objectGrabPointTransform;
+    protected Collider objectCollider;
 
     // Get Rigidbody Component
     protected virtual void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
+        objectCollider = GetComponent<Collider>();
     }
     
     
@@ -29,9 +33,9 @@ public class ObjectGrabbable : ObjectInteractable
         if (objectGrabPointTransform == null) return;
         
         transform.position = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
-    
+            
         Vector3 targetEuler = objectGrabPointTransform.rotation.eulerAngles;
-        if (blockYOnGrabbed) { targetEuler.x = 0f; targetEuler.z = 0f; }
+        if (blockYOnGrabbed) { targetEuler.x = xValue; targetEuler.z = zValue; }
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetEuler), Time.deltaTime * lerpSpeed);
     }
 
@@ -54,8 +58,12 @@ public class ObjectGrabbable : ObjectInteractable
     protected virtual void Grab()
     {
         SetObjectGrabPointTransform(MainManager.instance.Player.GetObjectGrabPointTransform());
-        if (objectRigidBody) objectRigidBody.isKinematic = true;
-        GetComponent<Collider>().enabled = false;
+        if (objectRigidBody)
+        {
+            objectRigidBody.isKinematic = true;
+            objectRigidBody.freezeRotation = true;
+        }
+        objectCollider.enabled = false;
         MainManager.instance.Player.SetGrabbedObject(this);
     }
 
@@ -65,8 +73,9 @@ public class ObjectGrabbable : ObjectInteractable
         OnDropEvent?.Invoke();
         if (!objectRigidBody) return;
         
-        GetComponent<Collider>().enabled = true;
+        objectCollider.enabled = true;
         objectGrabPointTransform = null;
+        objectRigidBody.freezeRotation = false;
         objectRigidBody.isKinematic = false;
     }
 
