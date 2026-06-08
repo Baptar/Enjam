@@ -58,6 +58,30 @@ MonoBehaviour:
     m_Localized: Appuyez sur E pour interagir
     m_Metadata:
       m_Items: []
+  - m_Id: 47063484596224
+    m_Localized: Prendre les bonbons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48041466265600
+    m_Localized: "Allumer la t\xE9l\xE9vision"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48447047073792
+    m_Localized: Trouver une pile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50175976931328
+    m_Localized: "Prendre la bi\xE8re"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51210430709760
+    m_Localized: "Prendre la cl\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52309225111552
+    m_Localized: S'asseoir et chill
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

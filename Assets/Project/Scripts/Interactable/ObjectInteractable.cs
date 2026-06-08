@@ -1,11 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization;
 
 public class ObjectInteractable : MonoBehaviour
 {
     [SerializeField] protected bool bInteractable = true;
-    [SerializeField] protected string textInteraction = "Press E to Interact";
-    [SerializeField] protected string textCantInteract;
+    [SerializeField] protected LocalizedString localizedTextInteraction = new LocalizedString { TableReference = "InteractionsTable", TableEntryReference = "interaction_default" };
+    [SerializeField] protected LocalizedString localizedTextCantInteract;
+    private string textInteraction = "";
+    private string textCantInteract = "";
     [SerializeField] protected FMODUnity.EventReference eventSoundOnInteract; // test later with EventReference
     
     [SerializeField] protected UnityEvent eventOnStart;
@@ -26,9 +30,9 @@ public class ObjectInteractable : MonoBehaviour
     }
 
     #region Getter
-    public string GetTextInteract() => textInteraction == "" ? "Press E to Interact" : textInteraction;
+    public string GetTextInteract() => textInteraction == "" ? localizedTextInteraction.GetLocalizedString() : textInteraction;
 
-    public string GetTextCantInteract() => textCantInteract;
+    public string GetTextCantInteract() => localizedTextCantInteract.IsEmpty ? textCantInteract : localizedTextCantInteract.GetLocalizedString();
 
     public virtual bool GetInteractable() => bInteractable;
     #endregion

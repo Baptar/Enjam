@@ -278,8 +278,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -306,81 +323,81 @@ MonoBehaviour:
   shakeRandomness: 90
   start:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 51842121728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candy:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 244834631680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candyCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1605114527744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   beforeJudas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 934269157376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   judas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1018465615872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   parkFell:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1036492734464
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeer:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1068411387904
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeerCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1798258032640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   understandPark:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1098371301376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -912,8 +929,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -940,81 +974,81 @@ MonoBehaviour:
   shakeRandomness: 90
   start:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 51842121728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candy:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 244834631680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candyCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1605114527744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   beforeJudas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 934269157376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   judas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1018465615872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   parkFell:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1036492734464
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeer:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1068411387904
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeerCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1798258032640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   understandPark:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1098371301376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1339,8 +1373,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -1379,72 +1430,72 @@ MonoBehaviour:
   shakeRandomness: 90
   start:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 51842121728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candy:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 244834631680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candyCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1605114527744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   beforeJudas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 934269157376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   judas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1018465615872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   parkFell:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1036492734464
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeer:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1068411387904
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeerCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1798258032640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1607,8 +1658,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -1635,81 +1703,81 @@ MonoBehaviour:
   shakeRandomness: 90
   start:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 51842121728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candy:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 244834631680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candyCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1605114527744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   beforeJudas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 934269157376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   judas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1018465615872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   parkFell:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1036492734464
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeer:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1068411387904
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeerCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1798258032640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   understandPark:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1098371301376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2503,8 +2571,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
-  textInteraction: Open Door
-  textCantInteract: Closed
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -2641,6 +2726,9 @@ MonoBehaviour:
           m_StringArgument: event:/DOOR/DOORClose
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &739392658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,8 +2742,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
-  textInteraction: Interact
-  textCantInteract: 
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -2674,6 +2779,9 @@ MonoBehaviour:
       m_Calls: []
   animator: {fileID: 2129467486}
   animatorEndDoor: {fileID: 1122539750}
+  references:
+    version: 2
+    RefIds: []
 --- !u!65 &739392659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3202,8 +3310,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
-  textInteraction: Sit and Chill
-  textCantInteract: 
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 52309225111552
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -3247,6 +3372,9 @@ MonoBehaviour:
   easeSitOnBench: 35
   timeBetweenChangeVision: 1
   beerObj: {fileID: 955851910}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &858981154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3445,8 +3573,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -3485,81 +3630,81 @@ MonoBehaviour:
   shakeRandomness: 90
   start:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 51842121728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candy:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 244834631680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candyCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1605114527744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   beforeJudas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 934269157376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   judas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1018465615872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   parkFell:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1036492734464
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeer:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1068411387904
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeerCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1798258032640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   understandPark:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1098371301376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -3685,8 +3830,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
-  textInteraction: Take Beer
-  textCantInteract: 
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 50175976931328
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 507107268
@@ -3728,6 +3890,9 @@ MonoBehaviour:
   onShrinkEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!54 &955851912
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3869,8 +4034,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 507107268
@@ -3924,6 +4106,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1053614270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4335137705014785701, guid: b1a48ea6993eda043a514497ea92ef34, type: 3}
@@ -5236,6 +5421,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: textInteraction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -5677,8 +5866,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textInteraction: 
-  textCantInteract: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -5705,81 +5911,81 @@ MonoBehaviour:
   shakeRandomness: 90
   start:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 51842121728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candy:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 244834631680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   candyCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1605114527744
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   beforeJudas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 934269157376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   judas:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1018465615872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   parkFell:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1036492734464
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeer:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1068411387904
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   chillBeerCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1798258032640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   understandPark:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1098371301376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -5889,8 +6095,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
-  textInteraction: Switch ON TV
-  textCantInteract: Finds Batteries
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 48041466265600
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 48447047073792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -5907,6 +6130,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1510310238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6148786328586362027, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -7046,6 +7272,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852441729}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1862909800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 566886354175473034, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+  m_PrefabInstance: {fileID: 2699075059698761581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4d266ea1de76144ac7783f067b9e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1901781391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7548,8 +7785,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 1
-  textInteraction: Press E to pick up the key
-  textCantInteract: Can't take key
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 51210430709760
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -7602,6 +7856,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1940033962
 GameObject:
   m_ObjectHideFlags: 0
@@ -7718,54 +7975,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1540298270876495928, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
   m_PrefabInstance: {fileID: 2699075059698761581}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1955140990 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 5710411847224794666, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-  m_PrefabInstance: {fileID: 2699075059698761581}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1955140992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955140989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f7dac32b01efe44a0070e56178589a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bInteractable: 1
-  textInteraction: Press E to Interact
-  textCantInteract: 
-  eventSoundOnInteract:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  eventOnStart:
-    m_PersistentCalls:
-      m_Calls: []
-  eventOnInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1955140990}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  eventOnInteractButNotInteractable:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!108 &1961884446 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3143469127138933269, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
@@ -8884,22 +9093,6 @@ PrefabInstance:
       propertyPath: playerPickUp
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4366022688483367830, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366022688483367830, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.460764
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366022688483367830, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8346523
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366022688483367830, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4799902046681948348, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9001,9 +9194,7 @@ PrefabInstance:
     - {fileID: 7026235771610548335, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
     - {fileID: 171747338488190433, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
     - {fileID: 7046991998137445298, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 6712403373882124461, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-    - {fileID: 5745595642410274111, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7054786562451796536, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       insertIndex: -1
@@ -9024,9 +9215,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2788989109524849965, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2699075059698761583}
-    - targetCorrespondingSourceObject: {fileID: 1540298270876495928, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1955140992}
   m_SourcePrefab: {fileID: 100100000, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
 --- !u!4 &2699075059698761582 stripped
 Transform:
@@ -9046,8 +9234,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
-  textInteraction: Sit and Chill
-  textCantInteract: 
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 52309225111552
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -9091,6 +9296,9 @@ MonoBehaviour:
   easeSitOnBench: 35
   timeBetweenChangeVision: 1
   beerObj: {fileID: 1047169010}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &3341038298288714322 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5184338190896981136, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -9133,7 +9341,7 @@ PrefabInstance:
     - target: {fileID: 1721040672925388026, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: audioRecorder
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1862909800}
     - target: {fileID: 1721040672925388026, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: objectToDespawn
       value: 
@@ -9260,8 +9468,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
-  textInteraction: Grab Candies
-  textCantInteract: 
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 47063484596224
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  textInteraction: 
   eventSoundOnInteract:
     Guid:
       Data1: -660268396
@@ -9319,6 +9544,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &5018586436179841244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9751,7 +9979,7 @@ PrefabInstance:
     - target: {fileID: 2441011488534052063, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: audioRecorder
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1862909800}
     - target: {fileID: 2441011488534052063, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: paperLookInfo
       value: 
