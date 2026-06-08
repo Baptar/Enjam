@@ -299,6 +299,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &53739782 stripped
 GameObject:
@@ -648,6 +653,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colliderTag: Player
+--- !u!95 &213618156 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1459895620966381101, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+  m_PrefabInstance: {fileID: 7810806128490278733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246300680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7817518853614202973, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
@@ -692,6 +702,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &290164982 stripped
 GameObject:
@@ -937,6 +952,11 @@ MonoBehaviour:
   judasSceneName: JudasTestScene
   judasWorldPosition: {fileID: 647242321}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 4
 --- !u!1001 &542283008
 PrefabInstance:
@@ -1104,6 +1124,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &552828869
 GameObject:
@@ -1593,6 +1618,7 @@ MonoBehaviour:
   paperChillBear: {fileID: 5018586436179841246}
   paperUnderstandParc: {fileID: 933514885}
   paperYellAtParc: {fileID: 680336630}
+  easeLookAtPoint: 0
 --- !u!108 &807362571 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8267830065643243408, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -1892,6 +1918,11 @@ MonoBehaviour:
   judasSceneName: JudasTestScene
   judasWorldPosition: {fileID: 1814812923}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!4 &918350096 stripped
 Transform:
@@ -2353,9 +2384,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3982518488378840217, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982518488378840217, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982518488378840217, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982518488378840217, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430465024235412989, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430465024235412989, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430465024235412989, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430465024235412989, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4466817168593479070, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
       propertyPath: m_Name
       value: Menus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084211830399722385, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084211830399722385, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084211830399722385, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084211830399722385, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5126059720986557639, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
       propertyPath: m_Alpha
@@ -2367,6 +2446,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126059720986557639, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
       propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631818894374362242, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631818894374362242, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631818894374362242, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631818894374362242, guid: e20955626ca12324eafa1a65a5068f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3539,6 +3634,11 @@ MonoBehaviour:
   judasSceneName: 
   judasWorldPosition: {fileID: 0}
   judasCamFOV: 1
+  goShakeDoor: {fileID: 0}
+  shakeDuration: 0.5
+  shakeStrength: 1
+  shakeVibrato: 10
+  shakeRandomness: 90
   currentDoorEvent: 0
 --- !u!1 &1490902995 stripped
 GameObject:
@@ -4170,6 +4270,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4d266ea1de76144ac7783f067b9e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1888598015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2992651854945949662, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+  m_PrefabInstance: {fileID: 7810806128490278733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888598016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888598015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f1c7f536f22824da1332c9cd3023c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bInteractable: 1
+  textInteraction: Interact
+  textCantInteract: 
+  eventSoundOnInteract:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  eventOnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOnInteractButNotInteractable:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 213618156}
 --- !u!1001 &1901781391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6183,6 +6320,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4841898745130404104, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841898745130404104, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: bInteractable
       value: 1
       objectReference: {fileID: 0}
@@ -6270,6 +6411,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 366842933757269188, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458681255}
+    - targetCorrespondingSourceObject: {fileID: 2992651854945949662, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1888598016}
   m_SourcePrefab: {fileID: 100100000, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
 --- !u!1001 &8565943291144711043
 PrefabInstance:

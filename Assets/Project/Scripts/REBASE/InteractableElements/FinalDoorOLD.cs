@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinalDoor : MonoBehaviour
+public class FinalDoorOLD : MonoBehaviour
 {
 	public string textInteraction;
     public string textCantInteract;
