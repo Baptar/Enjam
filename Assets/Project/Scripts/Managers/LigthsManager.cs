@@ -31,7 +31,10 @@ public class LigthsManager : MonoBehaviour
         if (!startLightsOff) yield break;
         
         foreach (var light in lights)
-            light.intensity = 0.0f;
+        {
+            light.DOIntensity(0.0f, 0.1f);
+            //light.gameObject.SetActive(false);
+        }
         
         yield return new WaitForSeconds(startDelay);
 

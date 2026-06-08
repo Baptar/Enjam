@@ -10,14 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Settings Table_fr-FR
+  m_Name: MainMenuTable_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: fr-FR
-  m_SharedData: {fileID: 11400000, guid: fd608931c1b05d549a587c93a38b95a8, type: 2}
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 5e410f8a0d000b34eae58042a8f2f2ce, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 9546760192
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62277550080
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109060816896
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
