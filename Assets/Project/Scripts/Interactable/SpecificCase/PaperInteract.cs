@@ -2,15 +2,13 @@ using System.Numerics;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class PaperInteract : ObjectGrabbable
 {
     [Header("References")]
-    [SerializeField] private string paperText;
-    [SerializeField] private TMP_Text textPaperRef;
-    
     [Space(5)]
     [Header("Paper Animation Settings")]
     [SerializeField] private Transform paperEndTransform; 
@@ -26,12 +24,6 @@ public class PaperInteract : ObjectGrabbable
     private Quaternion swayRotationOffset;
     private Vector3 lastCameraEuler;
     private bool bUpdateTransform;
-    
-    private void OnValidate()
-    {
-        if (!textPaperRef) return;
-        textPaperRef.text = paperText;
-    }
     
     protected void Start()
     {

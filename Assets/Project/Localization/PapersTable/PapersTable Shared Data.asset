@@ -14,7 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: PapersTable
   m_TableCollectionNameGuidString: 0d9b4e1b58ec46a45a88b00750fd1b56
-  m_Entries: []
+  m_Entries:
+  - m_Id: 2135316496384
+    m_Key: paper_candy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2225863131136
+    m_Key: paper_parkFell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2267831336960
+    m_Key: paper_judas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2285875232768
+    m_Key: paper_beer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2318523695104
+    m_Key: paper_understandPark
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
