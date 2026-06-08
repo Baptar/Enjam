@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: EnviroTable
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 570bf233634f4c84088962a0ff0874c1, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 3ee40b6bcccde3f43ac81c6d25b0095f, type: 2}
+  - {fileID: 11400000, guid: 25947221e3379fe4a89773ad11f2e923, type: 2}
+  - {fileID: 11400000, guid: 4b3c67a6a0f25a64c9b1100e0f377038, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

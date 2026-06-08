@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class DoorCoridorInteract : ObjectInteractable
 {
@@ -29,6 +30,18 @@ public class DoorCoridorInteract : ObjectInteractable
     [SerializeField] private float shakeStrength = 1f;
     [SerializeField] private int shakeVibrato = 10;
     [SerializeField] private float shakeRandomness = 90f;
+    
+    [Space(5)]
+    [Header("Localization")]
+    [SerializeField] private LocalizedString start;
+    [SerializeField] private LocalizedString candy;
+    [SerializeField] private LocalizedString candyCantInteract;
+    [SerializeField] private LocalizedString beforeJudas;
+    [SerializeField] private LocalizedString judas;
+    [SerializeField] private LocalizedString parkFell;
+    [SerializeField] private LocalizedString chillBeer;
+    [SerializeField] private LocalizedString chillBeerCantInteract;
+    [SerializeField] private LocalizedString understandPark;
     
     
     [Space(10)]
@@ -142,44 +155,44 @@ public class DoorCoridorInteract : ObjectInteractable
         {
             case EDoorEvent.Start:
                 MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
-                newTextInteract = "Answer";
+                newTextInteract = start.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
                 break;
             
             case EDoorEvent.Candy:
-                newTextInteract = "Give Candies";
-                newTextCantInteract = "Search Candies";
+                newTextInteract = candy.GetLocalizedString();
+                newTextCantInteract = candyCantInteract.GetLocalizedString();
                 newIsInteractable = false;
                 break;
             
             case EDoorEvent.BeforeJudas:
                 MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
-                newTextInteract = "Answer";
+                newTextInteract = beforeJudas.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
                 break;
             
             case EDoorEvent.Judas:
-                newTextInteract = "Look through the peephole";
+                newTextInteract = judas.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
                 break;
             
             case EDoorEvent.ParcFell:
-                newTextInteract = "Answer";
+                newTextInteract = parkFell.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = false;
                 break;
             
             case EDoorEvent.ChillBeer:
-                newTextInteract = "Answer";
-                newTextCantInteract = "Chill Dude";
+                newTextInteract = chillBeer.GetLocalizedString();
+                newTextCantInteract = chillBeerCantInteract.GetLocalizedString();
                 newIsInteractable = false;
                 break;
             
             case EDoorEvent.UnderstandParc:
-                newTextInteract = "Answer";
+                newTextInteract = understandPark.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
                 break;

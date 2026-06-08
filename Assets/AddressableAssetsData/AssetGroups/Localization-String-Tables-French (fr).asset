@@ -29,9 +29,24 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fr
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25947221e3379fe4a89773ad11f2e923
+    m_Address: EnviroTable_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b62c337821f2c5142920370fc417f455
     m_Address: SettingsTable_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f81b969ad0e0e324ba9f9999ddb845d8
+    m_Address: InteractionsTable_fr
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fr

@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 570bf233634f4c84088962a0ff0874c1
+    m_Address: Assets/Project/Localization/EnviroTable/EnviroTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5e410f8a0d000b34eae58042a8f2f2ce
     m_Address: Assets/Project/Localization/MainMenuTable/MainMenuTable Shared Data.asset
     m_ReadOnly: 1
@@ -29,6 +34,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ccb13842025a3a4c97493b40e11bb76
     m_Address: Assets/Project/Localization/SettingsTable/SettingsTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8689efe4747f6714e8deeb74ddc6f862
+    m_Address: Assets/Project/Localization/InteractionsTable/InteractionsTable Shared
+      Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
