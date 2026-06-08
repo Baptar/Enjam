@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: MainMenuTable
+  m_Name: PapersTable
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 5e410f8a0d000b34eae58042a8f2f2ce, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 0d9b4e1b58ec46a45a88b00750fd1b56, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 74f0a41665e3c1b4882e8ce2bfea9ce8, type: 2}
-  - {fileID: 11400000, guid: 0a0db40a0608b6149956a206946d106c, type: 2}
-  - {fileID: 11400000, guid: 421ed3293487f5a4c9e61bd4603b8561, type: 2}
+  - {fileID: 11400000, guid: 4fc0db0a458b48048af9a5df7e655931, type: 2}
+  - {fileID: 11400000, guid: 0d0159e7990d9b340af3c4cca0523a80, type: 2}
+  - {fileID: 11400000, guid: 97fe984a90e17504e8ec3d4af41b0bec, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:

@@ -40,6 +40,14 @@ PrefabInstance:
       propertyPath: eventSoundOnInteract.Guid.Data4
       value: 1909421314
       objectReference: {fileID: 0}
+    - target: {fileID: 2900311965027628102, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2285875232768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900311965027628102, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:0d9b4e1b58ec46a45a88b00750fd1b56
+      objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8188

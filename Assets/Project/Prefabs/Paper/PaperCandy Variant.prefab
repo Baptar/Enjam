@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1391083762440150535, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_text
-      value: Candyyy
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: lerpSpeed
@@ -41,8 +41,16 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: paperText.m_TableEntryReference.m_KeyId
+      value: 2135316496384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: paperText.m_TableReference.m_TableCollectionName
+      value: GUID:0d9b4e1b58ec46a45a88b00750fd1b56
       objectReference: {fileID: 0}
     - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -115,6 +123,14 @@ PrefabInstance:
     - target: {fileID: 2722164677688110340, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900311965027628102, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 2135316496384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900311965027628102, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:0d9b4e1b58ec46a45a88b00750fd1b56
       objectReference: {fileID: 0}
     - target: {fileID: 4867518244935150984, guid: 7f21f80ecef6e28478ce66487283a63e, type: 3}
       propertyPath: m_LocalPosition.x
