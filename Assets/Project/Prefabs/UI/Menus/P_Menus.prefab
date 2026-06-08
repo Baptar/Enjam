@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 8654237846301593909}
   - component: {fileID: 8779328473163977354}
   - component: {fileID: 4871735772041383857}
+  - component: {fileID: 8877788845031881187}
   m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
@@ -130,10 +131,23 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!114 &8877788845031881187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260470857795167663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61cf930578d35cf44952784292bb7212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultSelected: {fileID: 0}
 --- !u!1001 &2758814796746834051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,6 +172,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3556360718793326623, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 8877788845031881187}
     - target: {fileID: 4818288512372991058, guid: 7476a14c95a70934987d17353dfebd52, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
