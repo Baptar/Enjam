@@ -43,6 +43,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97fe984a90e17504e8ec3d4af41b0bec
     m_Address: PapersTable_es

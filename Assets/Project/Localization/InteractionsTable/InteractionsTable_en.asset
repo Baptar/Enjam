@@ -58,6 +58,30 @@ MonoBehaviour:
     m_Localized: Press E to interact
     m_Metadata:
       m_Items: []
+  - m_Id: 47063484596224
+    m_Localized: Take candies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48041466265600
+    m_Localized: Turn on the television
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48447047073792
+    m_Localized: Search a battery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50175976931328
+    m_Localized: Take beer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51210430709760
+    m_Localized: Take key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52309225111552
+    m_Localized: Sit and chill
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
