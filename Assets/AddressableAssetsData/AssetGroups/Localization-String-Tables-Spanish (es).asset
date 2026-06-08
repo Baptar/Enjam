@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-String-Tables-English (en)
+  m_Name: Localization-String-Tables-Spanish (es)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-String-Tables-English (en)
+  m_GroupName: Localization-String-Tables-Spanish (es)
   m_Data:
     m_SerializedData: []
-  m_GUID: c4454489753b845409531da34cfb63a9
+  m_GUID: 209a63721fc97f24bb1daabb06b839d3
   m_SerializeEntries:
-  - m_GUID: 1cbe9d76b999b68408ed7822b20bd461
-    m_Address: SettingsTable_en
+  - m_GUID: 3e9d251254e13084287d1c9f72e0efc5
+    m_Address: SettingsTable_es
     m_ReadOnly: 1
     m_SerializedLabels:
-    - Locale-en
+    - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4fc0db0a458b48048af9a5df7e655931
-    m_Address: PapersTable_en
+  - m_GUID: 421ed3293487f5a4c9e61bd4603b8561
+    m_Address: MainMenuTable_es
     m_ReadOnly: 1
     m_SerializedLabels:
-    - Locale-en
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 74f0a41665e3c1b4882e8ce2bfea9ce8
-    m_Address: MainMenuTable_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
+    - Locale-es
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97fe984a90e17504e8ec3d4af41b0bec
+    m_Address: PapersTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: fde9355d6d441824c912d2fa0bf73a50, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 26fae32986aacf44faa7b15bd2bb3f7f, type: 2}
-    - {fileID: 11400000, guid: 1d58721aaf4247c41baf8c7d97e93f49, type: 2}
+    - {fileID: 11400000, guid: 4582bb8732ab7da498ee392fe8926849, type: 2}
+    - {fileID: 11400000, guid: 501d313284ebb76419c5be1d1ab528af, type: 2}
