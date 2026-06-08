@@ -28,22 +28,6 @@ public class ObjectGrabbable : ObjectInteractable
     {
         if (objectGrabPointTransform == null) return;
         
-        // position
-        /*  Vector3 newPosition = Vector3.MoveTowards(
-            transform.position,
-            objectGrabPointTransform.position,
-            Vector3.Distance(transform.position, objectGrabPointTransform.position) * lerpSpeed * Time.deltaTime
-        );
-        objectRigidBody.MovePosition(newPosition);
-        
-        // rotation
-        Vector3 targetRotationEuler = objectGrabPointTransform.rotation.eulerAngles;
-        targetRotationEuler.x = 0.0f;
-        targetRotationEuler.z = 0.0f;
-        Quaternion targetRotation = blockYOnGrabbed ? Quaternion.Euler(targetRotationEuler) : objectGrabPointTransform.rotation;
-        objectRigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * lerpSpeed));*/
-        
-        
         transform.position = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
     
         Vector3 targetEuler = objectGrabPointTransform.rotation.eulerAngles;

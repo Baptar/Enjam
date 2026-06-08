@@ -11,7 +11,8 @@ public class PlayerManager : MonoBehaviour
     public enum ELookMode
     {
         Normal, 
-        Peephole
+        Peephole,
+        CantLook
     }
     
     [Header("Rotation Normal Settings")]
@@ -99,8 +100,7 @@ public class PlayerManager : MonoBehaviour
     private PlayerInputController playerInputController;
     private ObjectInteractable objectInteractable;
     private bool bReading = false;
-    private bool bLookingAtPoint = false;
-    
+    public bool bInInteractionZone = false;
     
     // Start is called before the first frame update
     void Start()
@@ -126,26 +126,29 @@ public class PlayerManager : MonoBehaviour
             MainManager.instance.UIManager.SetCanvaTextInteract("");
             objectInteractable = null;
         }
-        
-        else if (!Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
-                out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
-        {
-            MainManager.instance.UIManager.SetCanvaTextInteract("");
-            objectInteractable = null;
-        }
-        
-        // Check if it's an interactable element
-        else if (!raycastHit.collider.TryGetComponent(out objectInteractable))
-        {
-            MainManager.instance.UIManager.SetCanvaTextInteract("");
-            objectInteractable = null;
-        }
 
-        else
+        else if (!GetIsInInteractionZone())
         {
-            // Get Text to display
-            string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
-            MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
+            if (!Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
+                    out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
+            {
+                MainManager.instance.UIManager.SetCanvaTextInteract("");
+                objectInteractable = null;
+            }
+        
+            // Check if it's an interactable element
+            else if (!raycastHit.collider.TryGetComponent(out objectInteractable))
+            {
+                MainManager.instance.UIManager.SetCanvaTextInteract("");
+                objectInteractable = null;
+            }
+
+            else
+            {
+                // Get Text to display
+                string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
+                MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
+            }
         }
         #endregion
         
@@ -160,13 +163,11 @@ public class PlayerManager : MonoBehaviour
         #endregion
         
         #region Handles Rotation
-        if (!bLookingAtPoint)
+        switch (lookMode)
         {
-            switch (lookMode)
-            {
-                case ELookMode.Normal: HandleNormalRotation(); break;
-                case ELookMode.Peephole: HandlePeepholeRotation(); break;
-            }
+            case ELookMode.CantLook: return;
+            case ELookMode.Normal: HandleNormalRotation(); break;
+            case ELookMode.Peephole: HandlePeepholeRotation(); break;
         }
         #endregion
         
@@ -281,16 +282,17 @@ public class PlayerManager : MonoBehaviour
 
     public void Drop()
     {
-        if (GetGrabbedObject())
-        {
-            GetGrabbedObject().Drop();
-            SetGrabbedObject(null);
-        }
+        if (!GetGrabbedObject()) return;
+        
+        GetGrabbedObject().Drop();
+        SetGrabbedObject(null);
     }
 
     public void LookPoint(Vector3 targetPoint, float duration = 0.5f, Ease ease = Ease.InOutFlash)
     {
         SetCanMove(false);
+        ELookMode previousLookMode = GetLookMode();
+        SetLookMode(ELookMode.CantLook);
         
         Vector3 direction = (targetPoint - playerCamera.transform.position).normalized;
         float targetBodyY = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
@@ -301,7 +303,11 @@ public class PlayerManager : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DORotate(targetRotation, duration).SetEase(ease))
             .Join( DOTween.To(() => rotationY, x => rotationY = x, targetRotationY, duration).SetEase(ease))
-            .OnComplete(() => { SetCanMove(true); });
+            .OnComplete(() =>
+            {
+                SetCanMove(true);
+                SetLookMode(previousLookMode);
+            });
     }
     
     #region Getter
@@ -326,6 +332,7 @@ public class PlayerManager : MonoBehaviour
     //Zone
     public bool GetInBenchZone() => bInBenchZone;
     public bool GetIsReading() => bReading;
+    public bool GetIsInInteractionZone() => bInInteractionZone;
     #endregion
     
     #region Setter
@@ -352,9 +359,15 @@ public class PlayerManager : MonoBehaviour
     // Inventory
     public void SetHasBeer(bool value) => bHasBeer = value;
     public void SetGrabbedObject(ObjectGrabbable value) => grabbedObject = value;
+    public void SetObjectInteractable(ObjectInteractable value) => objectInteractable = value;
     
     // Zone
     public void SetInBenchZone(bool value) => bInBenchZone = value;
     public void SetIsReading(bool value) => bReading = value;
+
+    public void SetIsInInteractionZone(bool value)
+    {
+        bInInteractionZone = value;   
+    }
     #endregion
 }
