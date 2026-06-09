@@ -31,6 +31,8 @@ public class ParcObj : MonoBehaviour
             .Insert(0.0f, playerCam.transform.DOShakePosition(durationParcAppear, shakeStrengthPosition)).SetEase(easeParcAppear)
             //.Insert(0.0f, playerCam.transform.DOShakeRotation(durationParcAppear, shakeStrengthPosition)).SetEase(easeParcAppear)
             .OnComplete(()=> onParcAppear?.Invoke());
+        
+        GamepadVibration.Vibrate(0.5f, 0.7f, durationParcAppear / 2);
     }
     
     
