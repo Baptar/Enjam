@@ -37,4 +37,9 @@ public class FinalDoor : ObjectInteractable
         float angleDiff = Vector3.Angle(playerCameraTransform.forward, targetTransform.forward);
         return angleDiff <= 90.0f;
     }
+
+    public void DoorClosedVibration()
+    {
+        GamepadVibration.Vibrate(0.5f, 0.5f, 0.15f);
+    }
 }

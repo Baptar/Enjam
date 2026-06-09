@@ -2679,6 +2679,18 @@ MonoBehaviour:
           m_StringArgument: DoorClose
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 739392658}
+        m_TargetAssemblyTypeName: FinalDoor, Assembly-CSharp
+        m_MethodName: DoorClosedVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DoorClose
+          m_BoolArgument: 0
+        m_CallState: 2
   animator: {fileID: 2129467486}
   animatorEndDoor: {fileID: 1122539750}
   references:
