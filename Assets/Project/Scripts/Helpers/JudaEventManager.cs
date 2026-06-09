@@ -9,6 +9,7 @@ public class JudaEventManager : MonoBehaviour
 {
     [Header("References")] 
     [SerializeField] private DoorCoridorInteract[] doors;
+    [SerializeField] private ObjectGrabbable judasObject;
     
     [Space(10)]
     [Header("Debug")]
@@ -21,6 +22,7 @@ public class JudaEventManager : MonoBehaviour
 
     private String currentJudasSceneName;
 
+    [ContextMenu("Start Judas Event")]
     public void StartJudasEvent()
     {
         foreach (DoorCoridorInteract door in doors)
@@ -39,7 +41,7 @@ public class JudaEventManager : MonoBehaviour
         
         uiManager.EnableCrosshair(false);
         uiManager.EnableInteractionText(false);
-        currentDoorLooking =  judasDoor;
+        currentDoorLooking = judasDoor;
         
         // set player cant move
         player.SetCanMove(false);
@@ -49,17 +51,26 @@ public class JudaEventManager : MonoBehaviour
         camLocalRotationBeforeJudas = playerCamera.transform.localRotation;
         fovBeforeJudas = playerCamera.fieldOfView;
         
-        // make screen black
-        uiManager.FadeScreen(true, 1.0f);
-        
-        // move playerCamToJudasTransform and change fov
-        Sequence camSequence = DOTween.Sequence();
-        camSequence.Append(playerCamera.transform.DOMove(judasTransformCam.position, 1.0f).SetEase(Ease.InOutFlash))
-            .Join(playerCamera.transform.DORotateQuaternion(judasTransformCam.rotation, 1.0f).SetEase(Ease.InOutFlash))
-            .Join(playerCamera.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+        // Move Juda
+        judasObject.bFollowTargetPoint = false;
+        Sequence sequenceMoveJuda = DOTween.Sequence();
+        sequenceMoveJuda.Append(judasObject.transform.DOMove(judasTransformCam.position, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(judasObject.transform.DORotateQuaternion(judasTransformCam.rotation, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(judasObject.transform.DOScale(judasTransformCam.localScale, 1.0f).SetEase(Ease.InOutFlash))
             .OnComplete(() =>
             {
-                StartCoroutine(LoadJudasSceneAndSwitch(judasSceneName));
+                // make screen black
+                uiManager.FadeScreen(true, 1.0f);
+        
+                // move playerCamToJudasTransform and change fov
+                Sequence camSequence = DOTween.Sequence();
+                camSequence.Append(playerCamera.transform.DOMove(judasTransformCam.position, 1.0f).SetEase(Ease.InOutFlash))
+                    .Join(playerCamera.transform.DORotateQuaternion(judasTransformCam.rotation, 1.0f).SetEase(Ease.InOutFlash))
+                    .Join(playerCamera.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+                    .OnComplete(() =>
+                    {
+                        StartCoroutine(LoadJudasSceneAndSwitch(judasSceneName));
+                    });
             });
     }
     

@@ -18,6 +18,7 @@ public class ObjectGrabbable : ObjectInteractable
     protected Rigidbody objectRigidBody;
     protected Transform objectGrabPointTransform;
     protected Collider objectCollider;
+    public bool bFollowTargetPoint = true;
 
     // Get Rigidbody Component
     protected virtual void Awake()
@@ -30,7 +31,7 @@ public class ObjectGrabbable : ObjectInteractable
     // Move Grabbed element
     protected virtual void Update()
     {
-        if (objectGrabPointTransform == null) return;
+        if (objectGrabPointTransform == null || !bFollowTargetPoint) return;
         
         transform.position = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             
