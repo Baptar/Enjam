@@ -32,7 +32,6 @@ public class BeerInteractable : ObjectGrabbable
         animator.Play("glouglouMieux", 0, 0.0f);
         PlaySound("event:/Park/BeerDrunk");
         yield return new WaitForSeconds(duration);
-        MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.Normal);
         Drop();
     }
 
@@ -51,7 +50,11 @@ public class BeerInteractable : ObjectGrabbable
             x => player.SetPlayerRotationY(x), 
             camX, 
             0.3f
-        ).OnComplete(() => player.SetCanMove(true));
+        ).OnComplete(() =>
+        {
+            MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.Normal);
+            player.SetCanMove(true);
+        });
         
         Sequence seq = DOTween.Sequence();
         seq.Append(player.transform.DOScale(shrinkScale, shrinkDuration)).SetEase(Ease.InOutFlash)

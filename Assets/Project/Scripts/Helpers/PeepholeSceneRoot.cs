@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// à dans chaque scène additive, sur un GameObject racine
 public class PeepholeSceneRoot : MonoBehaviour
 {
     [Header("Ref")]

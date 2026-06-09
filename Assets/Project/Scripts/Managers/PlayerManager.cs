@@ -12,7 +12,8 @@ public class PlayerManager : MonoBehaviour
     {
         Normal, 
         Peephole,
-        CantLook
+        CantLook,
+        TargetPoint
     }
     
     [Header("Rotation Normal Settings")]
@@ -167,7 +168,8 @@ public class PlayerManager : MonoBehaviour
         #region Handles Rotation
         switch (lookMode)
         {
-            case ELookMode.CantLook: break;
+            case ELookMode.TargetPoint: break;
+            case ELookMode.CantLook: return;
             case ELookMode.Normal: HandleNormalRotation(); break;
             case ELookMode.Peephole: HandlePeepholeRotation(); return;
         }
@@ -294,7 +296,7 @@ public class PlayerManager : MonoBehaviour
     {
         SetCanMove(false);
         ELookMode previousLookMode = GetLookMode();
-        SetLookMode(ELookMode.CantLook);
+        SetLookMode(ELookMode.TargetPoint);
         
         Vector3 direction = (targetPoint - playerCamera.transform.position).normalized;
         float targetBodyY = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
