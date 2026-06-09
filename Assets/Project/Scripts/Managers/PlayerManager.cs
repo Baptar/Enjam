@@ -169,7 +169,7 @@ public class PlayerManager : MonoBehaviour
         {
             case ELookMode.CantLook: break;
             case ELookMode.Normal: HandleNormalRotation(); break;
-            case ELookMode.Peephole: HandlePeepholeRotation(); break;
+            case ELookMode.Peephole: HandlePeepholeRotation(); return;
         }
         #endregion
         

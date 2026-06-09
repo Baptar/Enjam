@@ -22,7 +22,6 @@ public class PeepholeSceneRoot : MonoBehaviour
         _judasForward = PeepholeCamera.transform.forward;
         _initialized  = true;
 
-        // Pousser les valeurs directement dans les statics du shader
         FisheyePostProcess.GlobalStrength        = fisheyeStrength;
         FisheyePostProcess.GlobalVignetteRadius   = vignetteRadius;
         FisheyePostProcess.GlobalVignetteSoftness = vignetteSoftness;

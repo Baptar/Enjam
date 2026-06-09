@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -313,8 +313,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: 
+  judasSceneName: Judas3
   judasWorldPosition: {fileID: 1704747504}
+  cameraJudaTarget: {fileID: 1806704714}
   judasCamFOV: 1
   goShakeDoor: {fileID: 4085715}
   shakeDuration: 0.5
@@ -978,8 +979,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: 
+  judasSceneName: Judas1
   judasWorldPosition: {fileID: 76334963100526909}
+  cameraJudaTarget: {fileID: 76334963100526911}
   judasCamFOV: 1
   goShakeDoor: {fileID: 1691022509}
   shakeDuration: 0.5
@@ -1216,11 +1218,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398240547}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &458308436 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2747540947047686268, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-  m_PrefabInstance: {fileID: 1246675798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &462957855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8354147638643632948, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -1447,13 +1444,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: JudasTestScene
-  judasWorldPosition: {fileID: 647242321}
+  judasSceneName: Judas1
+  judasWorldPosition: {fileID: 1626557179}
+  cameraJudaTarget: {fileID: 1012029915}
   judasCamFOV: 1
-  goShakeDoor: {fileID: 0}
-  shakeDuration: 0.5
-  shakeStrength: 1
-  shakeVibrato: 10
+  goShakeDoor: {fileID: 1228821786}
+  shakeDuration: 1
+  shakeStrength: 0.06
+  shakeVibrato: 150
   shakeRandomness: 90
   start:
     m_TableReference:
@@ -1511,9 +1509,9 @@ MonoBehaviour:
     m_LocalVariables: []
   parkFellCantInteract:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 72502066864128
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1729,8 +1727,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: 
+  judasSceneName: Judas5
   judasWorldPosition: {fileID: 128841791}
+  cameraJudaTarget: {fileID: 734758729}
   judasCamFOV: 1
   goShakeDoor: {fileID: 1013983693}
   shakeDuration: 0.5
@@ -2244,37 +2243,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6132733868959194031, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
   m_PrefabInstance: {fileID: 2699075059698761581}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &647242320
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 647242321}
-  m_Layer: 0
-  m_Name: JudasCamTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &647242321
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647242320}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071069, y: -2.512148e-15, z: 2.512148e-15, w: 0.70710677}
-  m_LocalPosition: {x: 0, y: 0.34634015, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 458308436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &680336629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2975111674662256449, guid: 70d71d9c470f11541b9c10d6f3ee612b, type: 3}
@@ -2572,6 +2540,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730190254}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &734758729 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6528503114896258039, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 542283008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &739392655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,8 +3500,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: JudasTestScene
+  judasSceneName: Judas4
   judasWorldPosition: {fileID: 76334963100526908}
+  cameraJudaTarget: {fileID: 76334963100526910}
   judasCamFOV: 1
   goShakeDoor: {fileID: 1069446673}
   shakeDuration: 0.5
@@ -3939,6 +3913,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986150811}
   m_CullTransparentMesh: 1
+--- !u!4 &1012029915 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6525744154138828781, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
+  m_PrefabInstance: {fileID: 1246675798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1013983693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
@@ -4771,6 +4750,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6928808977469234768, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
   m_PrefabInstance: {fileID: 199467013}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1228821786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6890997100478574641, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
+  m_PrefabInstance: {fileID: 1246675798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1233082123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4174287943059106922, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
@@ -4943,11 +4927,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2747540947047686268, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 647242321}
+    m_RemovedGameObjects:
+    - {fileID: 3272684556166003398, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4194492658811072261, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
       insertIndex: -1
@@ -5052,6 +5034,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 955851910}
   m_SourcePrefab: {fileID: 100100000, guid: 293ec170ec9912240b5765c4cf87f845, type: 3}
+--- !u!4 &1281294734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6528503114896258039, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 1482175804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1299777004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5948,8 +5935,9 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: 
+  judasSceneName: Judas2
   judasWorldPosition: {fileID: 635087081}
+  cameraJudaTarget: {fileID: 1281294734}
   judasCamFOV: 1
   goShakeDoor: {fileID: 327033745}
   shakeDuration: 0.5
@@ -6421,6 +6409,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 858981152}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &1626557179 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 304593380082050006, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
+  m_PrefabInstance: {fileID: 1246675798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1631970874
 GameObject:
   m_ObjectHideFlags: 0
@@ -7073,6 +7066,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801171191}
   m_CullTransparentMesh: 1
+--- !u!4 &1806704714 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6528503114896258039, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 4085713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1814409595
 GameObject:
   m_ObjectHideFlags: 0
@@ -9186,6 +9184,16 @@ Transform:
 --- !u!4 &76334963100526909 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1269884721668224114, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &76334963100526910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1308925002156057642, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &76334963100526911 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5400921102056219966, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
   m_PrefabInstance: {fileID: 76334963100526906}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &656867962243448530 stripped

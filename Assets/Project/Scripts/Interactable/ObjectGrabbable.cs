@@ -41,6 +41,7 @@ public class ObjectGrabbable : ObjectInteractable
     }
 
     // Interact with element
+    [ContextMenu("Interact")]
     public override void Interact()
     {
         // Interactable

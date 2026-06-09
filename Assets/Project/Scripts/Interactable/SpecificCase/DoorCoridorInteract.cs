@@ -21,6 +21,7 @@ public class DoorCoridorInteract : ObjectInteractable
     [Header("Judas")]
     [SerializeField] private string judasSceneName;
     [SerializeField] private Transform judasWorldPosition;
+    [SerializeField] private Transform cameraJudaTarget;
     [SerializeField] private float judasCamFOV = 1;
     
     [Space(5)]
@@ -212,7 +213,12 @@ public class DoorCoridorInteract : ObjectInteractable
 
     private void LookJudas()
     {
-        MainManager.instance.JudasManager.OnInteractJudas(this, judasTransformCam : judasWorldPosition, judasSceneName : judasSceneName, fovCam : judasCamFOV);
+        MainManager.instance.JudasManager.OnInteractJudas(
+            this, 
+            camJudaTarget : cameraJudaTarget, 
+            judasTransformTarget : judasWorldPosition, 
+            judasSceneName : judasSceneName, 
+            fovCam : judasCamFOV);
     }
 
     [ContextMenu("Shake Door")]
