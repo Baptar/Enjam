@@ -39,6 +39,7 @@ public class DoorCoridorInteract : ObjectInteractable
     [SerializeField] private LocalizedString beforeJudas;
     [SerializeField] private LocalizedString judas;
     [SerializeField] private LocalizedString parkFell;
+    [SerializeField] private LocalizedString parkFellCantInteract;
     [SerializeField] private LocalizedString chillBeer;
     [SerializeField] private LocalizedString chillBeerCantInteract;
     [SerializeField] private LocalizedString understandPark;
@@ -62,6 +63,12 @@ public class DoorCoridorInteract : ObjectInteractable
     {
         event_fmod_littleToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
         event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+    }
+
+    public override bool GetInteractable()
+    {
+        if (currentDoorEvent != EDoorEvent.Judas) return bInteractable;
+        return bInteractable && MainManager.instance.Player.GetHasJuda();
     }
 
     public override void Interact()
@@ -181,7 +188,7 @@ public class DoorCoridorInteract : ObjectInteractable
             
             case EDoorEvent.ParcFell:
                 newTextInteract = parkFell.GetLocalizedString();
-                newTextCantInteract = "";
+                newTextCantInteract = parkFellCantInteract.GetLocalizedString();
                 newIsInteractable = false;
                 break;
             

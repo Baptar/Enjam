@@ -63,7 +63,7 @@ public class ObjectGrabbable : ObjectInteractable
             objectRigidBody.isKinematic = true;
             objectRigidBody.freezeRotation = true;
         }
-        objectCollider.enabled = false;
+        if (objectCollider) objectCollider.enabled = false;
         MainManager.instance.Player.SetGrabbedObject(this);
     }
 

@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4533955067904
-    m_Localized: Appuyez sur E pour interagir
+    m_Localized: "Int\xE9ragir"
     m_Metadata:
       m_Items: []
   - m_Id: 47063484596224
@@ -80,6 +80,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 52309225111552
     m_Localized: S'asseoir et chill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72502066864128
+    m_Localized: Va voir le trou
     m_Metadata:
       m_Items: []
   references:

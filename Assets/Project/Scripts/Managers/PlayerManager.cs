@@ -167,7 +167,7 @@ public class PlayerManager : MonoBehaviour
         #region Handles Rotation
         switch (lookMode)
         {
-            case ELookMode.CantLook: return;
+            case ELookMode.CantLook: break;
             case ELookMode.Normal: HandleNormalRotation(); break;
             case ELookMode.Peephole: HandlePeepholeRotation(); break;
         }

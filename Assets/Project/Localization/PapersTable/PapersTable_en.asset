@@ -19,12 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: Candyyy
+    m_Localized: I'm starving, can you get me some candies ?
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: I would love to go to the park but he fell in a hole again.. They
-      may have talked about it on TV?
+    m_Localized: I would love to go to the park but he fell in a hole again..
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960

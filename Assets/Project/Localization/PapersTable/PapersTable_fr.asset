@@ -19,23 +19,25 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: Bonbonnns
+    m_Localized: J'ai une faim de loup, tu peux m'acheter des bonbons ?
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
-    m_Localized: Placeholder
+    m_Localized: "Tu ne devrais pas \xEAtre dehors\u2026 As-tu entendu les news\_?"
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: Placeholder
+    m_Localized: "J'adorerais aller au parc, mais il est encore tomb\xE9 dans un
+      trou\u2026"
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
-    m_Localized: Placeholder
+    m_Localized: "Mec, je pense que tu devrais chill un peu. Tiens, prends \xE7a."
     m_Metadata:
       m_Items: []
   - m_Id: 2318523695104
-    m_Localized: Placeholder
+    m_Localized: "Les gens n'arr\xEAtent pas de laisser leurs affaires dans le parc,
+      je comprends pourquoi il continue de partir."
     m_Metadata:
       m_Items: []
   references:

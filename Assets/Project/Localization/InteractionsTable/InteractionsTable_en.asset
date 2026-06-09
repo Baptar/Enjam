@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4533955067904
-    m_Localized: Press E to interact
+    m_Localized: Interact
     m_Metadata:
       m_Items: []
   - m_Id: 47063484596224
@@ -80,6 +80,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 52309225111552
     m_Localized: Sit and chill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72502066864128
+    m_Localized: Go checkhole
     m_Metadata:
       m_Items: []
   references:

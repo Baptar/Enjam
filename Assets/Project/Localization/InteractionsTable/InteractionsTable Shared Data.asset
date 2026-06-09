@@ -79,6 +79,10 @@ MonoBehaviour:
     m_Key: interaction_bench
     m_Metadata:
       m_Items: []
+  - m_Id: 72502066864128
+    m_Key: interaction_doorParkFellCantInteract
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
