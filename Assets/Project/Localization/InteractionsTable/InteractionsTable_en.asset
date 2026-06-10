@@ -86,6 +86,18 @@ MonoBehaviour:
     m_Localized: Go checkhole
     m_Metadata:
       m_Items: []
+  - m_Id: 723364709298176
+    m_Localized: Open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723552727363584
+    m_Localized: Closed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723702510153728
+    m_Localized: Look through
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class FinalDoor : ObjectInteractable
 {
@@ -12,9 +13,21 @@ public class FinalDoor : ObjectInteractable
     [SerializeField] private Transform cameraJudaTarget;
     [SerializeField] private float judasCamFOV = 1;
     
+    [Space(5)]
+    [Header("Localization")]
+    [SerializeField] private LocalizedString finalDoorCantOpen;
+    [SerializeField] private LocalizedString finalDoorCanOpen;
+    [SerializeField] private LocalizedString finalDoorLookJuda;
+    
     private Transform playerCameraTransform;
     private Transform targetTransform;
 
+    protected override void Start()
+    {
+        base.Start();
+        SetTextCantInteract(finalDoorCantOpen.GetLocalizedString());
+    }
+    
     public override void Interact()
     {
         if (GetInteractable())
@@ -48,7 +61,7 @@ public class FinalDoor : ObjectInteractable
     public override bool GetInteractable()
     {
         bool playerHasJuda = MainManager.instance.Player.GetHasJuda();
-        string textInteraction = playerHasJuda ? "Regarder à travers" : "Ouvrir";
+        string textInteraction = playerHasJuda ? finalDoorLookJuda.GetLocalizedString() : finalDoorCanOpen.GetLocalizedString();
         SetTextInteract(textInteraction);
         
         return playerHasJuda || bInteractable;

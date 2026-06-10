@@ -86,6 +86,18 @@ MonoBehaviour:
     m_Localized: Va voir le trou
     m_Metadata:
       m_Items: []
+  - m_Id: 723364709298176
+    m_Localized: Ouvrir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723552727363584
+    m_Localized: "Ferm\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723702510153728
+    m_Localized: "Regarder \xE0 travers"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

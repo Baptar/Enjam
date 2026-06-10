@@ -8,14 +8,14 @@ public class DoorCoridorInteract : ObjectInteractable
     [Serializable]
     public enum EDoorEvent
     {
-        None,
-        Start,
-        Candy,
-        BeforeJudas,
-        Judas,
-        ParcFell,
-        ChillBeer,
-        UnderstandParc
+        None,           
+        Start,          // paper :                |  interact : interact       |  cantInteract : 
+        Candy,          // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
+        ParcFell,       // paper : parc fell      |  interact :                |  cantInteract : go see hole
+        BeforeJudas,    // paper : outside        |  interact :                |  cantInteract : 
+        Judas,          // paper :                |  interact : regarder juda  |  cantInteract : 
+        ChillBeer,      // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
+        UnderstandParc  // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
     }
     
     [Header("Judas")]
@@ -23,6 +23,7 @@ public class DoorCoridorInteract : ObjectInteractable
     [SerializeField] private Transform judasWorldPosition;
     [SerializeField] private Transform cameraJudaTarget;
     [SerializeField] private float judasCamFOV = 1;
+    [SerializeField] private PaperInteract paperAfterJuda;
     
     [Space(5)]
     [Header("Shake")]
@@ -101,16 +102,16 @@ public class DoorCoridorInteract : ObjectInteractable
                 
                 case EDoorEvent.Judas:
                     LookJudas();
-                    setNextDoorEvent = false;
+                        setNextDoorEvent = false;
                     break;
             
                 case EDoorEvent.ParcFell:
-                    MainManager.instance.AudioManager.StopSoundTocHard(transform);
-                    MainManager.instance.PaperManager.AppearPaperChillBeer();
                     break;
             
-                // never Called
+                
                 case EDoorEvent.ChillBeer:
+                    MainManager.instance.AudioManager.StopSoundTocHard(transform);
+                    MainManager.instance.PaperManager.AppearPaperChillBeer();
                     break;
                 
                 case EDoorEvent.UnderstandParc:
@@ -162,7 +163,7 @@ public class DoorCoridorInteract : ObjectInteractable
         switch (newDoorEvent)
         {
             case EDoorEvent.Start:
-                MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
+                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor1(gameObject.transform);
                 newTextInteract = start.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
@@ -175,7 +176,7 @@ public class DoorCoridorInteract : ObjectInteractable
                 break;
             
             case EDoorEvent.BeforeJudas:
-                MainManager.instance.AudioManager.PlayerSoundTocLittle(transform);
+                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor2(gameObject.transform);
                 newTextInteract = beforeJudas.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
@@ -196,7 +197,7 @@ public class DoorCoridorInteract : ObjectInteractable
             case EDoorEvent.ChillBeer:
                 newTextInteract = chillBeer.GetLocalizedString();
                 newTextCantInteract = chillBeerCantInteract.GetLocalizedString();
-                newIsInteractable = false;
+                newIsInteractable = true;
                 break;
             
             case EDoorEvent.UnderstandParc:
@@ -234,6 +235,8 @@ public class DoorCoridorInteract : ObjectInteractable
     public string GetJudasSceneName() => judasSceneName; 
 
     public void SetRadioDoor() => SetJudasSceneName("JudasRadio");
+
+    public void MakePaperJudaAppear() => paperAfterJuda.MakePaperAppear();
     
 
     [ContextMenu("SetNoneEvent")]

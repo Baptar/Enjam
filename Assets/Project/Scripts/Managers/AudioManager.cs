@@ -14,9 +14,14 @@ public class AudioManager : MonoBehaviour
         if (!eventLocName.IsNull) FMODUnity.RuntimeManager.PlayOneShot(eventLocName, soundTransform.position);
     }
     
-    public void PlayerSoundTocLittle(Transform soundTransform)
+    public void PlayerSoundTocLittleDoor1(Transform soundTransform)
     {
         PlaySound("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+    }
+    
+    public void PlayerSoundTocLittleDoor2(Transform soundTransform)
+    {
+        PlaySound("event:/Hall/DoorToc2ActiveTrig", soundTransform);
     }
 
     private void PlayerSoundPaperSound(Transform soundTransform)
@@ -32,6 +37,7 @@ public class AudioManager : MonoBehaviour
     public void StopSoundTocLittle(Transform soundTransform)
     {
         PlaySound("event:/Hall/DoorToc1NoneTrig", soundTransform);
+        PlaySound("event:/Hall/DoorToc2NoneTrig", soundTransform);
     }
     
     public void StopSoundTocHard(Transform soundTransform)

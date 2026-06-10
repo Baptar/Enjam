@@ -1335,7 +1335,7 @@ Transform:
   m_GameObject: {fileID: 8140354741000437384}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.71767557, z: -0, w: -0.69637764}
-  m_LocalPosition: {x: -2.521097, y: 1.136, z: -0.9945252}
+  m_LocalPosition: {x: -2.54, y: 1.136, z: -1.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2596,21 +2596,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &1936118872028680171
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740585461365521054}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.71767557, z: -0, w: -0.69637764}
-  m_LocalPosition: {x: 0.066016294, y: 1.044, z: -1.8598322}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5758834042095831465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1971989674332013809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3319,23 +3304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2911102666293348105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2371491096986239824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5655787037638385322}
-  - component: {fileID: 5531476953672836476}
-  m_Layer: 0
-  m_Name: BigDoorToc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &2374055237478609506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4242,25 +4210,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &3081956846513200461
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7512474123719617167}
-  - component: {fileID: 6523197309627412864}
-  - component: {fileID: 6915667235854043291}
-  - component: {fileID: 7512474123719617168}
-  m_Layer: 2
-  m_Name: Box Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!23 &3089437729222376304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4631,37 +4580,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3364929863609156016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6699508600819668924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1471525550
-      Data2: 1154326702
-      Data3: 134436789
-      Data4: -357202084
-    Path: event:/Hall/DoorToc4
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!33 &3406107896217798206
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6038,37 +5956,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4343952805015265208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923051002227276179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1638738103
-      Data2: 1249668920
-      Data3: -1047417719
-      Data4: 651579497
-    Path: event:/Hall/DoorToc1
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &4362279785936002334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,7 +6305,6 @@ Transform:
   - {fileID: 1783305779946477031}
   - {fileID: 5221697394457097850}
   - {fileID: 2610163222121685953}
-  - {fileID: 7512474123719617167}
   - {fileID: 5758834042095831465}
   m_Father: {fileID: 4704811536404951332}
   m_LocalEulerAnglesHint: {x: 0, y: 268.274, z: 0}
@@ -6989,21 +6875,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8719544951755452473}
   m_Mesh: {fileID: 7629811779324647873, guid: 64a1bfde81580464e80e20a28777dc08, type: 3}
---- !u!4 &5043946531597723254
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923051002227276179}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.71767557, z: -0, w: -0.69637764}
-  m_LocalPosition: {x: -4.2174144, y: 1.044, z: 0.08305073}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5758834042095831465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5080529386630842331
 Transform:
   m_ObjectHideFlags: 0
@@ -7398,37 +7269,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5531476953672836476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371491096986239824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1488468624
-      Data2: 1312423973
-      Data3: 1752651708
-      Data4: -1600199610
-    Path: event:/Hall/BigDoorToc
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 50
 --- !u!1 &5543154700731261313
 GameObject:
   m_ObjectHideFlags: 0
@@ -7599,21 +7439,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5080529386630842331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &5655787037638385322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371491096986239824}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.71767557, z: -0, w: -0.69637764}
-  m_LocalPosition: {x: -4.0117826, y: 1.03, z: 0.10086584}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5758834042095831465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5698765829431947829
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7751,10 +7576,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 922919602115864448}
-  - {fileID: 5043946531597723254}
-  - {fileID: 1936118872028680171}
-  - {fileID: 6987778673634343262}
-  - {fileID: 5655787037638385322}
   - {fileID: 800725758557275587}
   m_Father: {fileID: 4604212132459111085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8679,27 +8500,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6523197309627412864
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081956846513200461}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &6526143661113155945
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8848,23 +8648,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &6699508600819668924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6987778673634343262}
-  - component: {fileID: 3364929863609156016}
-  m_Layer: 0
-  m_Name: DoorToc4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &6700169064973584606
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,6 +8745,7 @@ MonoBehaviour:
   judasWorldPosition: {fileID: 1005959225198726851}
   cameraJudaTarget: {fileID: 6007759292042605304}
   judasCamFOV: 1
+  paperAfterJuda: {fileID: 0}
   goShakeDoor: {fileID: 6228053731607518500}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -9061,23 +8845,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
---- !u!1 &6740585461365521054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1936118872028680171}
-  - component: {fileID: 6876876317277975974}
-  m_Layer: 0
-  m_Name: DoorToc2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!33 &6748172096014425001
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9352,37 +9119,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6876876317277975974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6740585461365521054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -112412012
-      Data2: 1209497893
-      Data3: 1466716826
-      Data4: 939197819
-    Path: event:/Hall/DoorToc2
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!4 &6883388372148887816
 Transform:
   m_ObjectHideFlags: 0
@@ -9455,23 +9191,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6283120119293805785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6915667235854043291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081956846513200461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 0
-  priority: 0
-  blendDistance: 1
-  weight: 1
-  sharedProfile: {fileID: 0}
 --- !u!33 &6926469681216789953
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9511,21 +9230,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7722048708050546462}
   m_Mesh: {fileID: 4300004, guid: 670e9ab602834f049b0dac77d6a298d8, type: 3}
---- !u!4 &6987778673634343262
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6699508600819668924}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.71767557, z: -0, w: -0.69637764}
-  m_LocalPosition: {x: -0.03723372, y: 1.044, z: -1.8997409}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5758834042095831465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7001091917475245315
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10122,64 +9826,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6283120119293805785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &7512474123719617167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081956846513200461}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.71767557, z: -0, w: -0.69637764}
-  m_LocalPosition: {x: -1.487349, y: 0.61600006, z: -0.88560843}
-  m_LocalScale: {x: 2.594068, y: 2.594068, z: 10.568727}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4604212132459111085}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7512474123719617168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081956846513200461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2967a27200958c245a703742bee65c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onZoneEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6523197309627412864}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6714691590655910205}
-        m_TargetAssemblyTypeName: DoorCoridorInteract, Assembly-CSharp
-        m_MethodName: SetStartEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onZoneExit:
-    m_PersistentCalls:
-      m_Calls: []
-  colliderTag: Player
 --- !u!33 &7514648500669516305
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10606,6 +10252,7 @@ MonoBehaviour:
   judasWorldPosition: {fileID: 5830591454599783072}
   cameraJudaTarget: {fileID: 830360273181946860}
   judasCamFOV: 1
+  paperAfterJuda: {fileID: 0}
   goShakeDoor: {fileID: 1062378787312939050}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -10828,23 +10475,6 @@ GameObject:
   - component: {fileID: 8525344937945802459}
   m_Layer: 7
   m_Name: Mod_Moquette (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &7923051002227276179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5043946531597723254}
-  - component: {fileID: 4343952805015265208}
-  m_Layer: 0
-  m_Name: DoorToc1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11250,6 +10880,7 @@ MonoBehaviour:
   judasWorldPosition: {fileID: 2739516113011085464}
   cameraJudaTarget: {fileID: 9036704848908517844}
   judasCamFOV: 1
+  paperAfterJuda: {fileID: 0}
   goShakeDoor: {fileID: 8669579411107316242}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -12180,6 +11811,7 @@ MonoBehaviour:
   judasWorldPosition: {fileID: 4762326375453033851}
   cameraJudaTarget: {fileID: 1836143559658968119}
   judasCamFOV: 1
+  paperAfterJuda: {fileID: 0}
   goShakeDoor: {fileID: 8779618975284644037}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -12468,6 +12100,7 @@ MonoBehaviour:
   judasWorldPosition: {fileID: 3418336675398685641}
   cameraJudaTarget: {fileID: 8366627447303963269}
   judasCamFOV: 1
+  paperAfterJuda: {fileID: 0}
   goShakeDoor: {fileID: 8152747816884601155}
   shakeDuration: 0.5
   shakeStrength: 1

@@ -16,7 +16,7 @@ public class ObjectInteractable : MonoBehaviour
     [SerializeField] protected UnityEvent eventOnInteract;
     [SerializeField] protected UnityEvent eventOnInteractButNotInteractable;
 
-    private void Start() => eventOnStart?.Invoke();
+    protected virtual void Start() => eventOnStart?.Invoke();
 
     public virtual void Interact()
     {

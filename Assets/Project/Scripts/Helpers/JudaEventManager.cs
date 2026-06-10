@@ -53,12 +53,6 @@ public class JudaEventManager : MonoBehaviour
             judasFound.Add(judasDoor.gameObject);
             judasDoor.SetJudasSceneName(sceneNames[judasFound.Count - 1]);
         }
-
-        if (judasFound.Count >= doors.Length - 1)
-        {
-            DoorCoridorInteract door = GetDoorNotLooked();
-            if (door) door.SetRadioDoor();
-        }
         
         PlayerManager player = MainManager.instance.Player;
         Camera playerCamera = MainManager.instance.PlayerCamera;
@@ -146,24 +140,26 @@ public class JudaEventManager : MonoBehaviour
 
     public IEnumerator ExitJudas()
     {
+        // get managers ref
+        UIManager uiManager = MainManager.instance.UIManager;
+        PlayerManager player = MainManager.instance.Player;
+        Camera cam = MainManager.instance.PlayerCamera;
+        
+        // drop juda and active the others
         if (judasFound.Count >= doors.Length)
         {
             judasObject.gameObject.SetActive(false);
+            player.SetGrabbedObject(null);
             foreach (var juda in judasOnDoor)
             {
                 juda.SetActive(true);
             }
         }
         
-        // get managers ref
-        UIManager uiManager = MainManager.instance.UIManager;
-        PlayerManager player = MainManager.instance.Player;
-        Camera cam = MainManager.instance.PlayerCamera;
-        
         // change screen look mode
         player.SetCanMove(false);
         player.SetLookMode(PlayerManager.ELookMode.CantLook);
-        MainManager.instance.Player.SetIsInJudasMode(false);
+        player.SetIsInJudasMode(false);
         
         // fade screen
         uiManager.FadeScreen(true, 0.5f);
@@ -197,7 +193,7 @@ public class JudaEventManager : MonoBehaviour
                 }
                 else
                 {
-                    MainManager.instance.Player.SetHasJuda(false);
+                    player.SetHasJuda(false);
                 }
                 
                 player.SetLookMode(PlayerManager.ELookMode.Normal);
@@ -205,7 +201,7 @@ public class JudaEventManager : MonoBehaviour
             });
         
         yield return new WaitForSeconds(1.0f);
-        if (judasFound.Count >= doors.Length) OnAllJudasLooked();
+        if (judasFound.Count >= doors.Length) OnAllJudasLooked(currentDoorLooking);
 
         yield return new WaitForSeconds(0.3f);
         uiManager.EnableCrosshair(true);
@@ -215,9 +211,14 @@ public class JudaEventManager : MonoBehaviour
         currentDoorLooking = null;
     }
 
-    private void OnAllJudasLooked()
+    private void OnAllJudasLooked(DoorCoridorInteract door)
     {
         Debug.Log("All judas looked");
+        
+        door.MakePaperJudaAppear();
+        return;
+        
+        
         enabled = false;
         
         //TODO jouer son radio + papier sort "jette moi cette radio de con"
@@ -284,4 +285,6 @@ public class JudaEventManager : MonoBehaviour
         
         return null;
     }
+    
+    public ObjectGrabbable GetJudasObjectGrabbable() => judasObject;
 }

@@ -83,6 +83,18 @@ MonoBehaviour:
     m_Key: interaction_doorParkFellCantInteract
     m_Metadata:
       m_Items: []
+  - m_Id: 723364709298176
+    m_Key: interaction_finaldoorOpened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723552727363584
+    m_Key: interaction_finaldoorClosed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 723702510153728
+    m_Key: interaction_finaldoorJuda
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ParcInteractable : ZoneInteractable
 {
-    [SerializeField] private ObjectGrabbable judaGrabbable;
+    [Space(10)]
+    [Header("DEBUG")]
+    [SerializeField] private bool bGaveJuda;
     
     private void Start()
     {
@@ -13,9 +13,9 @@ public class ParcInteractable : ZoneInteractable
     
     public override bool GetInteractable()
     {
-        return GetHasJuda() ? 
+        return bGaveJuda ? 
             bInteractable && MainManager.instance.Player.GetHasRadio() && bInInteractionZone : 
-            bInteractable;
+            bInteractable && bInInteractionZone;
     }
 
     public override void Interact()
@@ -28,7 +28,7 @@ public class ParcInteractable : ZoneInteractable
             if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
             eventOnInteract?.Invoke();
 
-            if (!GetHasJuda()) TalkToParc();
+            if (!bGaveJuda) TalkToParc();
             else ThrowRadio();
         }
         else eventOnInteractButNotInteractable?.Invoke();
@@ -37,20 +37,20 @@ public class ParcInteractable : ZoneInteractable
     private void TalkToParc()
     {
         Debug.Log("TalkToParc");
+
+        bGaveJuda = true;
         SetTextInteract("Throw radio");
-        // TODO : dialog with parc and then call function MainManager.instance.Player.SetHasJuda(true)
-        
-        judaGrabbable.gameObject.SetActive(true);
-        judaGrabbable.Interact();
+        MainManager.instance.JudasManager.GetJudasObjectGrabbable().gameObject.SetActive(true);
+        MainManager.instance.JudasManager.GetJudasObjectGrabbable().Interact();
     }
 
     private void ThrowRadio()
     {
         Debug.Log("Throw Radio");
+        MainManager.instance.Player.Drop();
+        bInInteractionZone = false;
+        enabled = false;
     }
 
-    private bool GetHasJuda()
-    {
-        return MainManager.instance.Player.GetHasJuda();
-    }
+    private bool GetHasJuda() => MainManager.instance.Player.GetHasJuda();
 }

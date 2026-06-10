@@ -12,6 +12,7 @@ public class PaperManager : MonoBehaviour
    [SerializeField] private PaperInteract paperChillBear;
    [SerializeField] private PaperInteract paperUnderstandParc;
    [SerializeField] private PaperInteract paperYellAtParc;
+   [SerializeField] private PaperInteract[] paperThrowRadio;
    
    [Space(10)]
    [Header("Parameters")]
@@ -35,6 +36,12 @@ public class PaperManager : MonoBehaviour
       
       paperYellAtParc?.SetInteractable(false);
       paperYellAtParc?.gameObject.SetActive(false);
+
+      foreach (PaperInteract paper in paperThrowRadio)
+      {
+         paper?.SetInteractable(false);
+         paper?.gameObject.SetActive(false);
+      }
    }
    
    public void AppearPaperCandy() => paperCandy.MakePaperAppear(easeLookAtPoint);

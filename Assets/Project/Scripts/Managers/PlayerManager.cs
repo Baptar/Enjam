@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 
 public class PlayerManager : MonoBehaviour
@@ -312,6 +311,62 @@ public class PlayerManager : MonoBehaviour
                 SetCanMove(true);
                 SetLookMode(previousLookMode);
             });
+    }
+    
+    public void FocusTarget(Transform target, float holdDuration = 2f, float transitionDuration = 0.5f)
+    {
+        StartCoroutine(FocusTargetCoroutine(target, holdDuration, transitionDuration));
+    }
+
+    private IEnumerator FocusTargetCoroutine(Transform target, float holdDuration, float transitionDuration)
+    {
+        SetCanMove(false);
+        SetLookMode(ELookMode.TargetPoint);
+
+        float elapsed           = 0f;
+        Quaternion startBodyRot = transform.rotation;
+        float startRotationY    = rotationY;
+
+        while (elapsed < transitionDuration)
+        {
+            float t      = elapsed / transitionDuration;
+            float smooth = Mathf.SmoothStep(0f, 1f, t);
+
+            Vector3 dir              = (target.position - playerCamera.transform.position).normalized;
+            float targetBodyY        = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            float targetRotationY    = Mathf.Clamp(-Mathf.Asin(dir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
+
+            transform.rotation = Quaternion.Slerp(startBodyRot, Quaternion.Euler(0f, targetBodyY, 0f), smooth);
+            rotationY          = Mathf.Lerp(startRotationY, targetRotationY, smooth);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        elapsed = 0f;
+        while (elapsed < holdDuration)
+        {
+            Vector3 dir           = (target.position - playerCamera.transform.position).normalized;
+            float targetBodyY     = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            float targetRotationY = Mathf.Clamp(-Mathf.Asin(dir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
+
+            transform.rotation = Quaternion.Euler(0f, targetBodyY, 0f);
+            rotationY          = targetRotationY;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        
+        ResetCamLook(target);
+        SetCanMove(true);
+        SetLookMode(ELookMode.Normal);
+    }
+
+    private void ResetCamLook(Transform target)
+    {
+        Vector3 finalDir      = (target.position - playerCamera.transform.position).normalized;
+        transform.rotation    = Quaternion.Euler(0f, Mathf.Atan2(finalDir.x, finalDir.z) * Mathf.Rad2Deg, 0f);
+        rotationY             = Mathf.Clamp(-Mathf.Asin(finalDir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
     }
     
     #region Getter

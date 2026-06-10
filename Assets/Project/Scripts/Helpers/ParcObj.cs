@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class ParcObj : MonoBehaviour
 {
+    public static ParcObj instance;
+    
     [Header("Settings")]
     [SerializeField] private Transform targetParcTransform;
     [SerializeField] private float durationParcAppear = 2.0f;
@@ -19,20 +21,22 @@ public class ParcObj : MonoBehaviour
     [Header("Event")]
     [SerializeField] private UnityEvent onParcAppear;
     
+    private void Awake() => instance = this;
+    
     [ContextMenu("Appear")]
     public void MakeParcAppear()
     {
         MainManager.instance.AudioManager.PlaySound("event:/Park/ParkAppear", transform);
         MainManager.instance.AudioManager.PlaySound("event:/Park/RainNoneTrig", transform);
         Camera playerCam = MainManager.instance.Player.GetPlayerCamera();
+        GamepadVibration.Vibrate(0.5f, 0.7f, durationParcAppear / 1.5f);
+        
         // Shake cam    
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOMove(targetParcTransform.position, durationParcAppear).SetEase(easeParcAppear))
             .Insert(0.0f, playerCam.transform.DOShakePosition(durationParcAppear, shakeStrengthPosition)).SetEase(easeParcAppear)
-            //.Insert(0.0f, playerCam.transform.DOShakeRotation(durationParcAppear, shakeStrengthPosition)).SetEase(easeParcAppear)
             .OnComplete(()=> onParcAppear?.Invoke());
         
-        GamepadVibration.Vibrate(0.5f, 0.7f, durationParcAppear / 1.5f);
     }
     
     

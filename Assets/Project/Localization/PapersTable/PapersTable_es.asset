@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Placeholder
     m_Metadata:
       m_Items: []
+  - m_Id: 700201984225280
+    m_Localized: PlaceHolder
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

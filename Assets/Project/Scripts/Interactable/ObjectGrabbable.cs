@@ -10,7 +10,7 @@ public class ObjectGrabbable : ObjectInteractable
     [Header("Grab setting")]
     [SerializeField] protected float lerpSpeed = 20.0f;
     [SerializeField] protected bool blockYOnGrabbed = true;
-    [SerializeField] private UnityEvent OnDropEvent;
+    [SerializeField] protected UnityEvent OnDropEvent;
     [SerializeField] private float xValue = 0.0f;
     [SerializeField] private float zValue = 0.0f;
 
