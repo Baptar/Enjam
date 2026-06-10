@@ -8,9 +8,9 @@ public class DoorCoridorInteract : ObjectInteractable
     [Serializable]
     public enum EDoorEvent
     {
-        None, 
+        None,
         Start,
-        Candy, 
+        Candy,
         BeforeJudas,
         Judas,
         ParcFell,
@@ -217,7 +217,6 @@ public class DoorCoridorInteract : ObjectInteractable
             this, 
             camJudaTarget : cameraJudaTarget, 
             judasTransformTarget : judasWorldPosition, 
-            judasSceneName : judasSceneName, 
             fovCam : judasCamFOV);
     }
 
@@ -230,6 +229,11 @@ public class DoorCoridorInteract : ObjectInteractable
             shakeVibrato,
             shakeRandomness);
     }
+
+    public void SetJudasSceneName(string text) => judasSceneName = text; 
+    public string GetJudasSceneName() => judasSceneName; 
+
+    public void SetRadioDoor() => SetJudasSceneName("JudasRadio");
     
 
     [ContextMenu("SetNoneEvent")]

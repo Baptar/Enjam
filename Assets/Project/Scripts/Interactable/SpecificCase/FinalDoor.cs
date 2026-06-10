@@ -1,11 +1,16 @@
-using System;
-using DG.Tweening;
 using UnityEngine;
 
 public class FinalDoor : ObjectInteractable
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Animator animatorEndDoor;
+    
+    [Space(10)]
+    [Header("Judas")]
+    [SerializeField] private string judasSceneName;
+    [SerializeField] private Transform judasWorldPosition;
+    [SerializeField] private Transform cameraJudaTarget;
+    [SerializeField] private float judasCamFOV = 1;
     
     private Transform playerCameraTransform;
     private Transform targetTransform;
@@ -14,6 +19,17 @@ public class FinalDoor : ObjectInteractable
     {
         if (GetInteractable())
         {
+            // look in juda
+            if (MainManager.instance.Player.GetHasJuda())
+            {
+                MainManager.instance.JudasManager.OnInteractJudas(
+                    camJudaTarget : cameraJudaTarget, 
+                    judasTransformTarget : judasWorldPosition, 
+                    judasSceneName : judasSceneName, 
+                    fovCam : judasCamFOV);
+                return;
+            }
+            
             SetInteractable(false);
             if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
             
@@ -27,6 +43,15 @@ public class FinalDoor : ObjectInteractable
             eventOnInteract?.Invoke();
         }
         else eventOnInteractButNotInteractable?.Invoke();
+    }
+
+    public override bool GetInteractable()
+    {
+        bool playerHasJuda = MainManager.instance.Player.GetHasJuda();
+        string textInteraction = playerHasJuda ? "Regarder à travers" : "Ouvrir";
+        SetTextInteract(textInteraction);
+        
+        return playerHasJuda || bInteractable;
     }
 
     private bool CheckIsInFront()

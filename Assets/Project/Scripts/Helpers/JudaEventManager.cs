@@ -10,10 +10,10 @@ public class JudaEventManager : MonoBehaviour
     [Header("References")] 
     [SerializeField] private DoorCoridorInteract[] doors;
     [SerializeField] private ObjectGrabbable judasObject;
+    [SerializeField] private GameObject[] judasOnDoor;
+    [SerializeField] private string[] sceneNames = new string[5];
     
-    [Space(10)]
-    [Header("Debug")]
-    [SerializeField] private List<GameObject> judasFound = new List<GameObject>();
+    private List<GameObject> judasFound = new List<GameObject>();
     
     private Vector3 camLocalPositionBeforeJudas;
     private Quaternion camLocalRotationBeforeJudas;
@@ -26,7 +26,17 @@ public class JudaEventManager : MonoBehaviour
 
     private void Start()
     {
+        foreach (var juda in judasOnDoor)
+        {
+            juda.SetActive(false);
+        }
+        
         judaScaleStart = judasObject.transform.localScale;
+        if (sceneNames.Length != doors.Length)
+        {
+            Debug.LogError("sceneNames.Length != doors.Length");
+            enabled = false;
+        }
     }
     
     [ContextMenu("Start Judas Event")]
@@ -36,10 +46,19 @@ public class JudaEventManager : MonoBehaviour
             door.SetJudasEvent();
     }
     
-    public void OnInteractJudas(DoorCoridorInteract judasDoor, Transform camJudaTarget, Transform judasTransformTarget, String judasSceneName, float fovCam)
+    public void OnInteractJudas(DoorCoridorInteract judasDoor, Transform camJudaTarget, Transform judasTransformTarget, float fovCam)
     {
         if (!judasFound.Contains(judasDoor.gameObject))
+        {
             judasFound.Add(judasDoor.gameObject);
+            judasDoor.SetJudasSceneName(sceneNames[judasFound.Count - 1]);
+        }
+
+        if (judasFound.Count >= doors.Length - 1)
+        {
+            DoorCoridorInteract door = GetDoorNotLooked();
+            if (door) door.SetRadioDoor();
+        }
         
         PlayerManager player = MainManager.instance.Player;
         Camera playerCamera = MainManager.instance.PlayerCamera;
@@ -74,12 +93,134 @@ public class JudaEventManager : MonoBehaviour
                 Sequence camSequence = DOTween.Sequence();
                 camSequence.Append(playerCamera.transform.DOMove(camJudaTarget.position, 1.0f).SetEase(Ease.InOutFlash))
                     .Join(playerCamera.transform.DORotateQuaternion(camJudaTarget.rotation, 1.0f).SetEase(Ease.InOutFlash))
+                    .Join(playerCamera.DOFieldOfView(fovCam, 1.0f).SetEase(Ease.InOutFlash))
+                    .OnComplete(() =>
+                    {
+                        StartCoroutine(LoadJudasSceneAndSwitch(judasDoor.GetJudasSceneName()));
+                    });
+            });
+    }
+    
+    // Used by final door not others doors
+    public void OnInteractJudas(Transform camJudaTarget, Transform judasTransformTarget, String judasSceneName, float fovCam)
+    {
+        PlayerManager player = MainManager.instance.Player;
+        Camera playerCamera = MainManager.instance.PlayerCamera;
+        UIManager uiManager = MainManager.instance.UIManager;
+        if (!player || !playerCamera) return;
+        
+        uiManager.EnableCrosshair(false);
+        uiManager.EnableInteractionText(false);
+        camJudaTransformTarget = camJudaTarget;
+        
+        // set player cant move
+        player.SetCanMove(false);
+        
+        // save previous Cam settings
+        camLocalPositionBeforeJudas = playerCamera.transform.localPosition;
+        camLocalRotationBeforeJudas = playerCamera.transform.localRotation;
+        fovBeforeJudas = playerCamera.fieldOfView;
+        
+        // Move Juda
+        judasObject.bFollowTargetPoint = false;
+        Sequence sequenceMoveJuda = DOTween.Sequence();
+        sequenceMoveJuda.Append(judasObject.transform.DOMove(judasTransformTarget.position, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(judasObject.transform.DORotateQuaternion(judasTransformTarget.rotation, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(judasObject.transform.DOScale(judasTransformTarget.localScale, 1.0f).SetEase(Ease.InOutFlash))
+            .InsertCallback(0.75f,()=> 
+            {
+                // make screen black
+                uiManager.FadeScreen(true, 1.0f);
+        
+                // move playerCamToJudasTransform and change fov
+                Sequence camSequence = DOTween.Sequence();
+                camSequence.Append(playerCamera.transform.DOMove(camJudaTarget.position, 1.0f).SetEase(Ease.InOutFlash))
+                    .Join(playerCamera.transform.DORotateQuaternion(camJudaTarget.rotation, 1.0f).SetEase(Ease.InOutFlash))
                     .Join(playerCamera.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
                     .OnComplete(() =>
                     {
                         StartCoroutine(LoadJudasSceneAndSwitch(judasSceneName));
                     });
             });
+    }
+
+    public IEnumerator ExitJudas()
+    {
+        if (judasFound.Count >= doors.Length)
+        {
+            judasObject.gameObject.SetActive(false);
+            foreach (var juda in judasOnDoor)
+            {
+                juda.SetActive(true);
+            }
+        }
+        
+        // get managers ref
+        UIManager uiManager = MainManager.instance.UIManager;
+        PlayerManager player = MainManager.instance.Player;
+        Camera cam = MainManager.instance.PlayerCamera;
+        
+        // change screen look mode
+        player.SetCanMove(false);
+        player.SetLookMode(PlayerManager.ELookMode.CantLook);
+        MainManager.instance.Player.SetIsInJudasMode(false);
+        
+        // fade screen
+        uiManager.FadeScreen(true, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        FisheyePostProcess.GlobalStrengthOverride = false;
+
+        // swap cam
+        PeepholeSceneRoot root = FindRootInScene(SceneManager.GetSceneByName(currentJudasSceneName));
+        root.PeepholeCamera.gameObject.SetActive(false);
+        cam.gameObject.SetActive(true);
+
+        // unload scene
+        yield return SceneManager.UnloadSceneAsync(currentJudasSceneName);
+
+        cam.transform.position = camJudaTransformTarget.position;
+        cam.transform.rotation = camJudaTransformTarget.rotation;
+        
+        uiManager.FadeScreen(false, 0.5f);
+        
+        // move back player cam
+        Sequence camSequence = DOTween.Sequence();
+        camSequence.Append(cam.transform.DOLocalMove(camLocalPositionBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(cam.transform.DOLocalRotateQuaternion(camLocalRotationBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(cam.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+            .OnComplete(() =>
+            {
+                if (judasFound.Count < doors.Length)
+                {
+                    judasObject.bFollowTargetPoint = true;
+                    judasObject.transform.DOScale(judaScaleStart, 1.0f).SetEase(Ease.InOutFlash);
+                }
+                else
+                {
+                    MainManager.instance.Player.SetHasJuda(false);
+                }
+                
+                player.SetLookMode(PlayerManager.ELookMode.Normal);
+                player.SetCanMove(true);
+            });
+        
+        yield return new WaitForSeconds(1.0f);
+        if (judasFound.Count >= doors.Length) OnAllJudasLooked();
+
+        yield return new WaitForSeconds(0.3f);
+        uiManager.EnableCrosshair(true);
+        uiManager.EnableInteractionText(true);
+        
+        if (currentDoorLooking) currentDoorLooking.SetInteractable(true);
+        currentDoorLooking = null;
+    }
+
+    private void OnAllJudasLooked()
+    {
+        Debug.Log("All judas looked");
+        enabled = false;
+        
+        //TODO jouer son radio + papier sort "jette moi cette radio de con"
     }
     
     private IEnumerator LoadJudasSceneAndSwitch(string judasSceneName)
@@ -129,63 +270,18 @@ public class JudaEventManager : MonoBehaviour
         return null;
     }
 
-    public IEnumerator ExitJudas()
+    private DoorCoridorInteract GetDoorNotLooked()
     {
-        // get managers ref
-        UIManager uiManager = MainManager.instance.UIManager;
-        PlayerManager player = MainManager.instance.Player;
-        Camera cam = MainManager.instance.PlayerCamera;
-        
-        // change screen look mode
-        player.SetCanMove(false);
-        player.SetLookMode(PlayerManager.ELookMode.CantLook);
-        MainManager.instance.Player.SetIsInJudasMode(false);
-        
-        // fade screen
-        uiManager.FadeScreen(true, 0.5f);
-        yield return new WaitForSeconds(0.5f);
-        FisheyePostProcess.GlobalStrengthOverride = false;
+        if (judasFound.Count == 0) return null;
 
-        // swap cam
-        PeepholeSceneRoot root = FindRootInScene(SceneManager.GetSceneByName(currentJudasSceneName));
-        root.PeepholeCamera.gameObject.SetActive(false);
-        cam.gameObject.SetActive(true);
-
-        // unload scene
-        yield return SceneManager.UnloadSceneAsync(currentJudasSceneName);
-
-        cam.transform.position = camJudaTransformTarget.position;
-        cam.transform.rotation = camJudaTransformTarget.rotation;
-        
-        uiManager.FadeScreen(false, 0.5f);
-        
-        // move back player cam
-        Sequence camSequence = DOTween.Sequence();
-        camSequence.Append(cam.transform.DOLocalMove(camLocalPositionBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
-            .Join(cam.transform.DOLocalRotateQuaternion(camLocalRotationBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
-            .Join(cam.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
-            .OnComplete(() =>
+        foreach (var door in doors)
+        {
+            if (!judasFound.Contains(door.gameObject))
             {
-                judasObject.bFollowTargetPoint = true;
-                judasObject.transform.DOScale(judaScaleStart, 1.0f).SetEase(Ease.InOutFlash);
-                player.SetLookMode(PlayerManager.ELookMode.Normal);
-                player.SetCanMove(true);
-            });
+                return door;
+            }
+        }
         
-        yield return new WaitForSeconds(1.0f);
-        if (judasFound.Count >= doors.Length) OnAllJudasLooked();
-
-        yield return new WaitForSeconds(0.3f);
-        uiManager.EnableCrosshair(true);
-        uiManager.EnableInteractionText(true);
-        
-        if (currentDoorLooking) currentDoorLooking.SetInteractable(true);
-        currentDoorLooking = null;
-    }
-
-    private void OnAllJudasLooked()
-    {
-        Debug.Log("All judas looked");
-        enabled = false;
+        return null;
     }
 }

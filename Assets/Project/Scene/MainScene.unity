@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: paperAnimation
       value: 
       objectReference: {fileID: 7789319231079767093, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - target: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_Name
       value: Door3
@@ -313,7 +317,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: Judas3
+  judasSceneName: 
   judasWorldPosition: {fileID: 1704747504}
   cameraJudaTarget: {fileID: 1806704714}
   judasCamFOV: 1
@@ -416,6 +420,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &4085717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 4085713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &53739782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4945556693246007898, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -732,7 +741,18 @@ MonoBehaviour:
   - {fileID: 918350092}
   - {fileID: 542283011}
   judasObject: {fileID: 2040379531}
-  judasFound: []
+  judasOnDoor:
+  - {fileID: 553090997}
+  - {fileID: 1482175808}
+  - {fileID: 4085717}
+  - {fileID: 553090996}
+  - {fileID: 542283012}
+  sceneNames:
+  - Judas1
+  - Judas2
+  - Judas3
+  - Judas4
+  - JudasRadio
 --- !u!1001 &199467013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -979,7 +999,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: Judas1
+  judasSceneName: 
   judasWorldPosition: {fileID: 76334963100526909}
   cameraJudaTarget: {fileID: 76334963100526911}
   judasCamFOV: 1
@@ -1444,7 +1464,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: Judas1
+  judasSceneName: Judas2
   judasWorldPosition: {fileID: 1626557179}
   cameraJudaTarget: {fileID: 1012029915}
   judasCamFOV: 1
@@ -1596,6 +1616,10 @@ PrefabInstance:
       propertyPath: paperAnimation
       value: 
       objectReference: {fileID: 7789319231079767093, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - target: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_Name
       value: Door5
@@ -1727,7 +1751,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: Judas5
+  judasSceneName: 
   judasWorldPosition: {fileID: 128841791}
   cameraJudaTarget: {fileID: 734758729}
   judasCamFOV: 1
@@ -1830,6 +1854,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &542283012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 542283008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547392266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +2008,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12886c0a9360ca845a9a0da1b6766704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &553090996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6634805442684706980, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &553090997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4891053251618238557, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &560112543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560112544}
+  m_Layer: 0
+  m_Name: JudasTargetPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &560112544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560112543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.589, z: 0.0394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129467485}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &571204303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,7 +2663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f1c7f536f22824da1332c9cd3023c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bInteractable: 0
+  bInteractable: 1
   localizedTextInteraction:
     m_TableReference:
       m_TableCollectionName: InteractionsTable
@@ -2666,6 +2736,10 @@ MonoBehaviour:
         m_CallState: 2
   animator: {fileID: 2129467486}
   animatorEndDoor: {fileID: 1122539750}
+  judasSceneName: JudasFinalDoor
+  judasWorldPosition: {fileID: 560112544}
+  cameraJudaTarget: {fileID: 1538234626}
+  judasCamFOV: 1
   references:
     version: 2
     RefIds: []
@@ -3500,7 +3574,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: Judas4
+  judasSceneName: 
   judasWorldPosition: {fileID: 76334963100526908}
   cameraJudaTarget: {fileID: 76334963100526910}
   judasCamFOV: 1
@@ -5802,6 +5876,10 @@ PrefabInstance:
       propertyPath: paperAnimation
       value: 
       objectReference: {fileID: 7789319231079767093, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - target: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_Name
       value: Door2
@@ -5935,7 +6013,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  judasSceneName: Judas2
+  judasSceneName: 
   judasWorldPosition: {fileID: 635087081}
   cameraJudaTarget: {fileID: 1281294734}
   judasCamFOV: 1
@@ -6038,6 +6116,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &1482175808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 1482175804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1487746716
 GameObject:
   m_ObjectHideFlags: 0
@@ -6202,6 +6285,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9999999, y: 3, z: 0.038447503}
   m_Center: {x: 0.999999, y: 1.5, z: 0.01922089}
+--- !u!1 &1538234625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538234626}
+  m_Layer: 3
+  m_Name: CameraJudaTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538234626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538234625}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.589, z: 0.06499863}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129467485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1542491175 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3841693065952327138, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -8917,6 +9031,8 @@ Transform:
   m_LocalScale: {x: 2.0004, y: 1.4285712, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1538234626}
+  - {fileID: 560112544}
   - {fileID: 739392656}
   - {fileID: 1352398280}
   m_Father: {fileID: 87949127}
@@ -8995,11 +9111,19 @@ PrefabInstance:
       propertyPath: playerPickUp
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4891053251618238557, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5184338190896981136, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 896944852}
     - target: {fileID: 5749890029599155960, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634805442684706980, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -9114,6 +9238,7 @@ PrefabInstance:
     - {fileID: 1514515054298619343, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
     - {fileID: 7336588792189092097, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
     - {fileID: 4395762401958079503, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - {fileID: 870717587663704668, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9119956294095549567, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       insertIndex: 1

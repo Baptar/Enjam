@@ -12,7 +12,10 @@ public class LightAudioDistance : MonoBehaviour
 
     void Update() => LightAudio();
 
-    private void LightAudio() => distLight = Vector3.Distance(gameObject.transform.position, player.position);
+    private void LightAudio()
+    {
+        if (player) distLight = Vector3.Distance(gameObject.transform.position, player.position);
+    }
     
     public void PlayAudio(int groundType)
     {
