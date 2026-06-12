@@ -2019,7 +2019,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  currentDoorEvent: 4
+  currentDoorEvent: 5
   references:
     version: 2
     RefIds: []
@@ -3151,7 +3151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f1c7f536f22824da1332c9cd3023c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bInteractable: 1
+  bInteractable: 0
   localizedTextInteraction:
     m_TableReference:
       m_TableCollectionName: InteractionsTable
@@ -3172,29 +3172,17 @@ MonoBehaviour:
     m_LocalVariables: []
   eventSoundOnInteract:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1424259363
+      Data2: 1340082236
+      Data3: -1067560546
+      Data4: -742352588
+    Path: event:/DOOR/DoorOpen
   eventOnStart:
     m_PersistentCalls:
       m_Calls: []
   eventOnInteract:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 739392658}
-        m_TargetAssemblyTypeName: ObjectInteractable, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DoorOpen
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls:
@@ -3207,7 +3195,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DoorClose
+          m_StringArgument: event:/DOOR/DoorClose
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 739392658}
@@ -9359,10 +9347,10 @@ MonoBehaviour:
   bInteractable: 0
   localizedTextInteraction:
     m_TableReference:
-      m_TableCollectionName: InteractionsTable
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
     m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: interaction_default
+      m_KeyId: 4533955067904
+      m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -9391,6 +9379,24 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  judasLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 1117333551636480
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  radioLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
+    m_TableEntryReference:
+      m_KeyId: 1117492738056192
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   bGaveJuda: 0
   references:
     version: 2
@@ -11236,23 +11242,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
@@ -11265,19 +11271,19 @@ PrefabInstance:
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 918350092}
+      objectReference: {fileID: 504758791}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 504758791}
+      objectReference: {fileID: 1047169010}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1047169010}
+      objectReference: {fileID: 494829575}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 286239712}
+      objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -11312,19 +11318,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetChillBeerEvent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetUnderstandParc
+      value: SetInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -11336,19 +11342,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorCoridorInteract, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ObjectGrabbable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ObjectInteractable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: DoorCoridorInteract, Assembly-CSharp
+      value: ObjectInteractable, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
@@ -11697,7 +11703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: walkSpeed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: cameraRoot

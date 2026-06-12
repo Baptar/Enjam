@@ -98,6 +98,14 @@ MonoBehaviour:
     m_Localized: Look through
     m_Metadata:
       m_Items: []
+  - m_Id: 1117492738056192
+    m_Localized: Throw radio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117333551636480
+    m_Localized: Talk to hole
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

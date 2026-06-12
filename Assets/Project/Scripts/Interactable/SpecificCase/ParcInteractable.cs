@@ -1,13 +1,19 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class ParcInteractable : ZoneInteractable
 {
+    [SerializeField] private LocalizedString judasLocalizedString;
+    [SerializeField] private LocalizedString radioLocalizedString;
+    
     [Space(10)]
     [Header("DEBUG")]
     [SerializeField] private bool bGaveJuda;
     
     private void Start()
     {
+        SetTextInteract(judasLocalizedString.GetLocalizedString());
+        
         SetTextInteract("Talk to hole");
     }
     
@@ -37,9 +43,9 @@ public class ParcInteractable : ZoneInteractable
     private void TalkToParc()
     {
         Debug.Log("TalkToParc");
-
+        
         bGaveJuda = true;
-        SetTextInteract("Throw radio");
+        SetTextInteract(radioLocalizedString.GetLocalizedString());
         MainManager.instance.JudasManager.GetJudasObjectGrabbable().gameObject.SetActive(true);
         MainManager.instance.JudasManager.GetJudasObjectGrabbable().Interact();
     }
@@ -49,6 +55,7 @@ public class ParcInteractable : ZoneInteractable
         Debug.Log("Throw Radio");
         MainManager.instance.Player.Drop();
         bInInteractionZone = false;
+        MainManager.instance.Player.bInInteractionZone = false;
         enabled = false;
     }
 
