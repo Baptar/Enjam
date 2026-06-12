@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class BeerInteractable : ObjectGrabbable
 {
+    [Space(5)]
+    [Header("Beer setting")]
     [SerializeField] private float drinkEffectDelay = 0.5f;
     [SerializeField] private float shrinkScale = 0.3f;
     [SerializeField] private float shrinkGravity = 0.3f;

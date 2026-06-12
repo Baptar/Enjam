@@ -5,6 +5,8 @@ using UnityEngine.Localization;
 
 public class ObjectInteractable : MonoBehaviour
 {
+    [Space(5)]
+    [Header("Global Settings")]
     [SerializeField] protected bool bInteractable = true;
     [SerializeField] protected LocalizedString localizedTextInteraction = new LocalizedString { TableReference = "InteractionsTable", TableEntryReference = "interaction_default" };
     [SerializeField] protected LocalizedString localizedTextCantInteract;
