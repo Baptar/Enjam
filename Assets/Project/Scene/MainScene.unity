@@ -3968,17 +3968,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2509190216785840930, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
   m_PrefabInstance: {fileID: 7810806128490278733}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &896944858 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5423397371656225748, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
-  m_PrefabInstance: {fileID: 7810806128490278733}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149864f4bed00404588e907c00f8506f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &896944861 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 518818062223850107, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
@@ -10755,7 +10744,7 @@ PrefabInstance:
     - target: {fileID: 171747338488190433, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: cameraShake
       value: 
-      objectReference: {fileID: 896944858}
+      objectReference: {fileID: 0}
     - target: {fileID: 807346482931598533, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_Size.y
       value: 0.29
@@ -11711,11 +11700,11 @@ PrefabInstance:
       objectReference: {fileID: 922799920}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableSway
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableBreath
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableHeadBob
@@ -11917,6 +11906,10 @@ PrefabInstance:
       propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[8].m_Target
       value: 
       objectReference: {fileID: 2096995007}
+    - target: {fileID: 5423397371656225748, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7050977251827949695, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -11969,6 +11962,7 @@ PrefabInstance:
     - {fileID: 138152595810363233, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
     - {fileID: 2114465062829683691, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
     - {fileID: 2441011488534052063, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+    - {fileID: 5423397371656225748, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3945932510771999504, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
     - {fileID: 2593077248449963600, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}

@@ -30,6 +30,9 @@ public class LigthsManager : MonoBehaviour
     {
         if (!startLightsOff) yield break;
         
+        MainManager.instance.Player.SetCanMove(false);
+        MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.CantLook);
+        
         foreach (var light in lights)
         {
             light.DOIntensity(0.0f, 0.1f);
@@ -37,6 +40,9 @@ public class LigthsManager : MonoBehaviour
         }
         
         yield return new WaitForSeconds(startDelay);
+        
+        MainManager.instance.Player.SetCanMove(true);
+        MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.Normal);
 
         SwitchLightsSequenceIntro(true);
     }

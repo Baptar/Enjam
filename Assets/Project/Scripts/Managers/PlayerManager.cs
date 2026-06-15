@@ -112,7 +112,7 @@ public class PlayerManager : MonoBehaviour
         Cursor.lockState      = CursorLockMode.Locked;
         Cursor.visible        = false;
         FisheyePostProcess.GlobalStrengthOverride = false;
-        _cameraInitialLocalPos = playerCamera.transform.localPosition;
+        _cameraInitialLocalPos = GetPlayerCamera().transform.localPosition;
         _swayCurrent           = Quaternion.identity;
         
         MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
@@ -131,7 +131,7 @@ public class PlayerManager : MonoBehaviour
 
         else if (!GetIsInInteractionZone())
         {
-            if (!Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
+            if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
                     out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
             {
                 MainManager.instance.UIManager.SetCanvaTextInteract("");
@@ -252,13 +252,13 @@ public class PlayerManager : MonoBehaviour
     
     private void ApplyCameraFeel()
     {
-        if (enableHeadBob) playerCamera.transform.localPosition = _cameraInitialLocalPos + _bobPosCurrent;
+        if (enableHeadBob) GetPlayerCamera().transform.localPosition = _cameraInitialLocalPos + _bobPosCurrent;
 
         Quaternion verticalRotation = Quaternion.Euler(rotationY, 0, 0);
         Quaternion breathValue      = enableBreath ? _breathCurrent : Quaternion.identity;
         Quaternion swayValue        = enableSway   ? _swayCurrent   : Quaternion.identity;
 
-        playerCamera.transform.localRotation = verticalRotation * swayValue * breathValue;
+        GetPlayerCamera().transform.localRotation = verticalRotation * swayValue * breathValue;
     }
     #endregion
 
@@ -297,7 +297,7 @@ public class PlayerManager : MonoBehaviour
         ELookMode previousLookMode = GetLookMode();
         SetLookMode(ELookMode.TargetPoint);
         
-        Vector3 direction = (targetPoint - playerCamera.transform.position).normalized;
+        Vector3 direction = (targetPoint - GetPlayerCamera().transform.position).normalized;
         float targetBodyY = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         float targetRotationY = Mathf.Clamp(-Mathf.Asin(direction.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
         
@@ -332,7 +332,7 @@ public class PlayerManager : MonoBehaviour
             float t      = elapsed / transitionDuration;
             float smooth = Mathf.SmoothStep(0f, 1f, t);
 
-            Vector3 dir              = (target.position - playerCamera.transform.position).normalized;
+            Vector3 dir              = (target.position - GetPlayerCamera().transform.position).normalized;
             float targetBodyY        = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
             float targetRotationY    = Mathf.Clamp(-Mathf.Asin(dir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
 
@@ -346,7 +346,7 @@ public class PlayerManager : MonoBehaviour
         elapsed = 0f;
         while (elapsed < holdDuration)
         {
-            Vector3 dir           = (target.position - playerCamera.transform.position).normalized;
+            Vector3 dir           = (target.position - GetPlayerCamera().transform.position).normalized;
             float targetBodyY     = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
             float targetRotationY = Mathf.Clamp(-Mathf.Asin(dir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
 
@@ -364,7 +364,7 @@ public class PlayerManager : MonoBehaviour
 
     private void ResetCamLook(Transform target)
     {
-        Vector3 finalDir      = (target.position - playerCamera.transform.position).normalized;
+        Vector3 finalDir      = (target.position - GetPlayerCamera().transform.position).normalized;
         transform.rotation    = Quaternion.Euler(0f, Mathf.Atan2(finalDir.x, finalDir.z) * Mathf.Rad2Deg, 0f);
         rotationY             = Mathf.Clamp(-Mathf.Asin(finalDir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
     }

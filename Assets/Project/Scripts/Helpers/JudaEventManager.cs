@@ -24,8 +24,12 @@ public class JudaEventManager : MonoBehaviour
     private Vector3 judaScaleStart;
     private Transform camJudaTransformTarget;
 
+    private Camera playerCamera;
+
     private void Start()
     {
+        playerCamera = MainManager.instance.PlayerCamera;
+        
         foreach (var juda in judasOnDoor)
         {
             juda.SetActive(false);
@@ -55,7 +59,6 @@ public class JudaEventManager : MonoBehaviour
         }
         
         PlayerManager player = MainManager.instance.Player;
-        Camera playerCamera = MainManager.instance.PlayerCamera;
         UIManager uiManager = MainManager.instance.UIManager;
         if (!player || !playerCamera) return;
         
@@ -66,6 +69,7 @@ public class JudaEventManager : MonoBehaviour
         
         // set player cant move
         player.SetCanMove(false);
+        player.SetLookMode(PlayerManager.ELookMode.CantLook);
         
         // save previous Cam settings
         camLocalPositionBeforeJudas = playerCamera.transform.localPosition;
@@ -87,7 +91,7 @@ public class JudaEventManager : MonoBehaviour
                 Sequence camSequence = DOTween.Sequence();
                 camSequence.Append(playerCamera.transform.DOMove(camJudaTarget.position, 1.0f).SetEase(Ease.InOutFlash))
                     .Join(playerCamera.transform.DORotateQuaternion(camJudaTarget.rotation, 1.0f).SetEase(Ease.InOutFlash))
-                    .Join(playerCamera.DOFieldOfView(fovCam, 1.0f).SetEase(Ease.InOutFlash))
+                    //.Join(playerCamera.DOFieldOfView(fovCam, 1.0f).SetEase(Ease.InOutFlash))
                     .OnComplete(() =>
                     {
                         StartCoroutine(LoadJudasSceneAndSwitch(judasDoor.GetJudasSceneName()));
@@ -99,7 +103,6 @@ public class JudaEventManager : MonoBehaviour
     public void OnInteractJudas(Transform camJudaTarget, Transform judasTransformTarget, String judasSceneName, float fovCam)
     {
         PlayerManager player = MainManager.instance.Player;
-        Camera playerCamera = MainManager.instance.PlayerCamera;
         UIManager uiManager = MainManager.instance.UIManager;
         if (!player || !playerCamera) return;
         
@@ -109,6 +112,8 @@ public class JudaEventManager : MonoBehaviour
         
         // set player cant move
         player.SetCanMove(false);
+        player.SetLookMode(PlayerManager.ELookMode.CantLook);
+
         
         // save previous Cam settings
         camLocalPositionBeforeJudas = playerCamera.transform.localPosition;
@@ -143,7 +148,6 @@ public class JudaEventManager : MonoBehaviour
         // get managers ref
         UIManager uiManager = MainManager.instance.UIManager;
         PlayerManager player = MainManager.instance.Player;
-        Camera cam = MainManager.instance.PlayerCamera;
         
         // drop juda and active the others
         if (judasFound.Count >= doors.Length)
@@ -169,21 +173,21 @@ public class JudaEventManager : MonoBehaviour
         // swap cam
         PeepholeSceneRoot root = FindRootInScene(SceneManager.GetSceneByName(currentJudasSceneName));
         root.PeepholeCamera.gameObject.SetActive(false);
-        cam.gameObject.SetActive(true);
+        playerCamera.gameObject.SetActive(true);
 
         // unload scene
         yield return SceneManager.UnloadSceneAsync(currentJudasSceneName);
 
-        cam.transform.position = camJudaTransformTarget.position;
-        cam.transform.rotation = camJudaTransformTarget.rotation;
+        playerCamera.transform.position = camJudaTransformTarget.position;
+        playerCamera.transform.rotation = camJudaTransformTarget.rotation;
         
         uiManager.FadeScreen(false, 0.5f);
         
         // move back player cam
         Sequence camSequence = DOTween.Sequence();
-        camSequence.Append(cam.transform.DOLocalMove(camLocalPositionBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
-            .Join(cam.transform.DOLocalRotateQuaternion(camLocalRotationBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
-            .Join(cam.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+        camSequence.Append(playerCamera.transform.DOLocalMove(camLocalPositionBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(playerCamera.transform.DOLocalRotateQuaternion(camLocalRotationBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
+            .Join(playerCamera.DOFieldOfView(fovBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
             .OnComplete(() =>
             {
                 if (judasFound.Count < doors.Length)
