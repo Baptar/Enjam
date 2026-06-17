@@ -55,8 +55,14 @@ public class ParcInteractable : ZoneInteractable
         Debug.Log("Throw Radio");
         MainManager.instance.Player.Drop();
         bInInteractionZone = false;
-        MainManager.instance.Player.bInInteractionZone = false;
+        
         enabled = false;
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        MainManager.instance.Player.bInInteractionZone = false;
     }
 
     private bool GetHasJuda() => MainManager.instance.Player.GetHasJuda();

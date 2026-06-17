@@ -6,7 +6,7 @@ public class ZoneInteractable : ObjectInteractable
     
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!enabled || !other.CompareTag("Player")) return;
         bInInteractionZone = true;
         MainManager.instance.Player.SetIsInInteractionZone(true);
         
@@ -16,7 +16,7 @@ public class ZoneInteractable : ObjectInteractable
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!enabled || !other.CompareTag("Player")) return;
         bInInteractionZone = false;
         MainManager.instance.Player.SetIsInInteractionZone(false);
         
