@@ -486,7 +486,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e4d21fa46abd58d4a811082bcf5a1a44, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: d391729293e23cd4aa61d9ba53411b5e, type: 3}
+      objectReference: {fileID: 2100000, guid: 309226137ff5b28468c43990b962970a, type: 2}
     - target: {fileID: 919132149155446097, guid: e4d21fa46abd58d4a811082bcf5a1a44, type: 3}
       propertyPath: m_Name
       value: PaperBase
@@ -542,11 +542,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.21, y: 0.01, z: 0.27948314}
+  m_Size: {x: 0.3, y: 0.1, z: 0.37}
   m_Center: {x: 0, y: -0.000000039115548, z: 0}
 --- !u!114 &2722164677688110340
 MonoBehaviour:
@@ -561,8 +561,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
-  textInteraction: Read
-  textCantInteract: 
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -584,12 +600,22 @@ MonoBehaviour:
   OnDropEvent:
     m_PersistentCalls:
       m_Calls: []
+  xValue: 0
+  zValue: 0
+  bShouldFall: 1
+  bFollowTargetPoint: 1
+  paperTextRef: {fileID: 1391083762440150535}
   paperEndTransform: {fileID: 6024299573100958359}
   paperEase: 35
   moveDuration: 0.25
   swayPositionAmount: 0.03
   swayRotationAmount: 4
   swaySpeed: 4
+  durationDissolve: 0.5
+  easeDissolve: 35
+  references:
+    version: 2
+    RefIds: []
 --- !u!54 &-7088123189480910448
 Rigidbody:
   m_ObjectHideFlags: 0

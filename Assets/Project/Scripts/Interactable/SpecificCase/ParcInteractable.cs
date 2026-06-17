@@ -13,8 +13,6 @@ public class ParcInteractable : ZoneInteractable
     private void Start()
     {
         SetTextInteract(judasLocalizedString.GetLocalizedString());
-        
-        SetTextInteract("Talk to hole");
     }
     
     public override bool GetInteractable()

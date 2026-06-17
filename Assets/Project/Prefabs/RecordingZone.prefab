@@ -47,9 +47,6 @@ MonoBehaviour:
   RecordingDeviceIndex: 0
   RecordingDeviceName: 
   Latency: 1
-  PlayAndPause: 0
-  ReverbOnOffSwitch: 0
-  volume: 0
 --- !u!1 &1278824353687792909
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,8 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecordingDeviceIndex: 0
   RecordingDeviceName: 
-  Latency: 1
-  ReverbOnOffSwitch: 0
+  audioSource: {fileID: 0}
 --- !u!1 &6483012661070050712
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,5 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textHold: {fileID: 0}
   parc: {fileID: 0}
-  dspCapture: {fileID: 226306418048288927}
-  audioRecorder: {fileID: 1278824353687792909}
+  dspCapture: {fileID: 6438590509682515346}
+  audioRecorder: {fileID: 5423891503433412650}

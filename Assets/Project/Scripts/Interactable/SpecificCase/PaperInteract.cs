@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
@@ -6,6 +7,8 @@ using Vector3 = UnityEngine.Vector3;
 public class PaperInteract : ObjectGrabbable
 {
     [Header("References")]
+    [SerializeField] private TMP_Text paperTextRef;
+    
     [Space(5)]
     [Header("Paper Animation Settings")]
     [SerializeField] private Transform paperEndTransform; 
@@ -21,6 +24,11 @@ public class PaperInteract : ObjectGrabbable
     private Quaternion swayRotationOffset;
     private Vector3 lastCameraEuler;
     private bool bUpdateTransform;
+    
+    [Space(5)]
+    [Header("Paper Drop Settings")]
+    [SerializeField] private float durationDissolve = 0.5f;
+    [SerializeField] private Ease easeDissolve = Ease.InOutFlash;
     
     protected void Start()
     {
@@ -63,6 +71,14 @@ public class PaperInteract : ObjectGrabbable
         MainManager.instance.Player.SetGrabbedObject(this);
     }
 
+    public override void Drop()
+    {
+        //base.Drop();
+        FadeText();
+        OnDropEvent?.Invoke();
+        MainManager.instance.Player.SetGrabbedObject(null);
+    }
+
     public void MakePaperAppear(Ease easeLookAtPoint = Ease.InOutFlash)
     {
         gameObject.SetActive(true);
@@ -86,7 +102,7 @@ public class PaperInteract : ObjectGrabbable
         //seq.Append(transform.DOShakePosition(1.0f, 0.1f).SetEase(Ease.InOutFlash))
         //    .Insert(0f, transform.DOScale(Vector3.zero, 1.0f).SetEase(Ease.InOutFlash))
         //    .OnComplete(() => gameObject.SetActive(false));
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     
     protected override void SetObjectGrabPointTransform(Transform newObjectGrabPoint)
@@ -106,5 +122,16 @@ public class PaperInteract : ObjectGrabbable
                 bUpdateTransform = true;
                 MainManager.instance.Player.SetIsReading(true);
             });
+    }
+
+    public void FadeText()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(paperTextRef.DOColor(Color.clear, durationDissolve).SetEase(easeDissolve))
+            .InsertCallback(durationDissolve / 4.0f, () =>
+            {
+                FadeOut(GetComponent<Renderer>().material);
+            })
+        ;
     }
 }

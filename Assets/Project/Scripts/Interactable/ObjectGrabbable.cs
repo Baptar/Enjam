@@ -14,11 +14,14 @@ public class ObjectGrabbable : ObjectInteractable
     [SerializeField] private float xValue = 0.0f;
     [SerializeField] private float zValue = 0.0f;
 
+    [Space(5)]
+    [Header("Drop setting")]
+    [SerializeField] private bool bShouldFall = true;
     
     protected Rigidbody objectRigidBody;
     protected Transform objectGrabPointTransform;
     protected Collider objectCollider;
-    public bool bFollowTargetPoint = true;
+    [HideInInspector] public bool bFollowTargetPoint = true;
 
     // Get Rigidbody Component
     protected virtual void Awake()
@@ -73,10 +76,12 @@ public class ObjectGrabbable : ObjectInteractable
     public virtual void Drop()
     {
         OnDropEvent?.Invoke();
+        
+        objectGrabPointTransform = null;
         if (!objectRigidBody) return;
         
+        if (!bShouldFall) return;
         objectCollider.enabled = true;
-        objectGrabPointTransform = null;
         objectRigidBody.freezeRotation = false;
         objectRigidBody.isKinematic = false;
     }
@@ -86,5 +91,28 @@ public class ObjectGrabbable : ObjectInteractable
     protected virtual void SetObjectGrabPointTransform(Transform newObjectGrabPoint)
     {
         objectGrabPointTransform = newObjectGrabPoint;
+    }
+
+    public void FadeOut(Material mat)
+    {
+        float valFloat = 0.0f;
+        
+        DOTween.To(() => valFloat, x => valFloat = x, 1.0f, 1f)
+            .OnUpdate(() =>
+            {
+                mat.SetFloat("_Fade", valFloat);
+            })
+            /*.OnComplete(()=> gameObject.SetActive(false))*/;
+    }
+
+    public void InitDissolveMaterial(Material mat)
+    {
+        mat.SetFloat("_Fade", 0.0f);
+    }
+
+    public void MoveToActorAndDiseaper(GameObject actor)
+    {
+        gameObject.transform.DOMove(actor.transform.position, 0.5f).SetEase(Ease.InOutFlash)
+            .OnComplete(()=>gameObject.SetActive(false));
     }
 }
