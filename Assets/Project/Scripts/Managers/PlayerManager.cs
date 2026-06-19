@@ -66,11 +66,14 @@ public class PlayerManager : MonoBehaviour
     
     [Space(10)]
     [Header("Movement Settings")]
+    [SerializeField] private GameObject playerRoot;
     [SerializeField] private float gravityScale = 9.81f;
     [SerializeField] private float walkSpeed    = 3f;
     [SerializeField] private bool canMove       = true;
     [SerializeField] private float acceleration = 8f;
     [SerializeField] private float deceleration = 12f;
+    [HideInInspector] public float baseGravityScale;
+    [HideInInspector] public float baseWalkSpeed;
     private float _currentSpeed = 0f;
     
     [Space(5)]
@@ -82,16 +85,17 @@ public class PlayerManager : MonoBehaviour
     [Header("Grabbable Settings")]
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private Transform objectGrabPointPaperTransform;
-    private ObjectGrabbable grabbedObject = null;
     
     [Space(10)]
     [Header("DEBUG")]
     [SerializeField] private ELookMode lookMode = ELookMode.Normal;
     [Space(2)]
     [Header("Inventory")]
+    [SerializeField] private ObjectGrabbable grabbedObject = null;
     [SerializeField] private bool bHasBeer = false;
     [SerializeField] private bool bHasRadio = false;
     [SerializeField] private bool bHasJuda = false;
+    [SerializeField] private bool bHasPile = false;
     [Space(2)]
     [Header("Zone")]
     [SerializeField] private bool bInBenchZone = false;
@@ -114,6 +118,8 @@ public class PlayerManager : MonoBehaviour
         FisheyePostProcess.GlobalStrengthOverride = false;
         _cameraInitialLocalPos = GetPlayerCamera().transform.localPosition;
         _swayCurrent           = Quaternion.identity;
+        baseGravityScale       = gravityScale;
+        baseWalkSpeed          = walkSpeed;
         
         MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
     }
@@ -156,7 +162,7 @@ public class PlayerManager : MonoBehaviour
         
         #region Handles Movement
         Vector2 playerMovementInput = playerInputController.Move;
-        Vector3 moveDirection = new Vector3(walkSpeed * playerMovementInput.x, -gravityScale, walkSpeed * playerMovementInput.y);
+        Vector3 moveDirection = new Vector3(GetWalkSpeed() * playerMovementInput.x, -GetGravityScale(), GetWalkSpeed() * playerMovementInput.y);
         bWalking = playerMovementInput is not { x: 0, y: 0 };
         if (canMove)
         {
@@ -222,7 +228,7 @@ public class PlayerManager : MonoBehaviour
     {
         Vector3 targetPos = Vector3.zero;
 
-        if (bWalking && canMove)
+        if (GetIsWalking() && GetCanMove())
         {
             _bobTimer += Time.deltaTime * bobFrequency;
             targetPos.y = Mathf.Sin(_bobTimer) * bobAmplitudeY;
@@ -357,14 +363,14 @@ public class PlayerManager : MonoBehaviour
             yield return null;
         }
         
-        ResetCamLook(target);
+        ResetCamLook(target.position);
         SetCanMove(true);
         SetLookMode(ELookMode.Normal);
     }
 
-    private void ResetCamLook(Transform target)
+    public void ResetCamLook(Vector3 target)
     {
-        Vector3 finalDir      = (target.position - GetPlayerCamera().transform.position).normalized;
+        Vector3 finalDir      = (target - GetPlayerCamera().transform.position).normalized;
         transform.rotation    = Quaternion.Euler(0f, Mathf.Atan2(finalDir.x, finalDir.z) * Mathf.Rad2Deg, 0f);
         rotationY             = Mathf.Clamp(-Mathf.Asin(finalDir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
     }
@@ -376,6 +382,7 @@ public class PlayerManager : MonoBehaviour
     public Transform GetObjectGrabPointPaperTransform() => objectGrabPointPaperTransform;
     
     // Movement
+    public GameObject GetPlayerRoot() => playerRoot;
     public bool GetCanMove() => canMove;
     public float GetWalkSpeed() => walkSpeed;
     public ELookMode GetLookMode() => lookMode;
@@ -388,6 +395,7 @@ public class PlayerManager : MonoBehaviour
     public bool GetHasBeer() => bHasBeer;
     public bool GetHasRadio() => bHasRadio;
     public bool GetHasJuda() => bHasJuda;
+    public bool GetHasPile() => bHasPile;
     public ObjectGrabbable GetGrabbedObject() => grabbedObject;
     
     //Zone
@@ -421,6 +429,7 @@ public class PlayerManager : MonoBehaviour
     public void SetHasBeer(bool value) => bHasBeer = value;
     public void SetHasRadio(bool value) => bHasRadio = value;
     public void SetHasJuda(bool value) => bHasJuda = value;
+    public void SetHasPile(bool value) => bHasPile = value;
     public void SetGrabbedObject(ObjectGrabbable value) => grabbedObject = value;
     public void SetObjectInteractable(ObjectInteractable value) => objectInteractable = value;
     

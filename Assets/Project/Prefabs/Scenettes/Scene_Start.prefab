@@ -196,8 +196,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bInteractable: 0
-  textInteraction: Press E to open Door
-  textCantInteract: Closed
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   eventSoundOnInteract:
     Guid:
       Data1: 0
@@ -334,6 +350,9 @@ MonoBehaviour:
           m_StringArgument: event:/DOOR/DOORClose
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2993170606982338730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176764397891346396, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 0.010000229
       objectReference: {fileID: 0}
     - target: {fileID: 7176764397891346396, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1528,6 +1547,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8338173491694463207, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8613229607327819758, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1585,23 +1608,29 @@ MonoBehaviour:
   peepholeMaxOffset: 0.3
   peepholeSmoothing: 8
   peepholeMaxAngle: 40
-  gravityScale: 9.81
-  walkSpeed: 3
-  canMove: 1
-  acceleration: 8
-  deceleration: 12
+  enableHeadBob: 1
   bobFrequency: 2
   bobAmplitudeY: 0.035
   bobAmplitudeX: 0.018
   bobSmoothing: 10
+  enableBreath: 1
   breathFrequency: 0.5
   breathPitchAmount: 0.4
   breathRollAmount: 0.15
   breathWalkMult: 1.8
   breathSmoothing: 3
+  enableSway: 1
   swayRollAmount: 2.5
   swayPitchAmount: 1.2
   swaySmoothing: 5
+  playerRoot: {fileID: 0}
+  gravityScale: 9.81
+  walkSpeed: 3
+  canMove: 1
+  acceleration: 8
+  deceleration: 12
+  baseGravityScale: 0
+  baseWalkSpeed: 0
   raycastDistance: 2
   raycastLayerMask:
     serializedVersion: 2
@@ -1609,9 +1638,14 @@ MonoBehaviour:
   objectGrabPointTransform: {fileID: 1938822518863172872}
   objectGrabPointPaperTransform: {fileID: 0}
   lookMode: 0
+  grabbedObject: {fileID: 0}
   bHasBeer: 0
-  bIsInBenchZone: 0
-  bIsWalking: 0
+  bHasRadio: 0
+  bHasJuda: 0
+  bHasPile: 0
+  bInBenchZone: 0
+  bWalking: 0
+  bInInteractionZone: 0
 --- !u!20 &518818062223850107 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5078270651642719877, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}

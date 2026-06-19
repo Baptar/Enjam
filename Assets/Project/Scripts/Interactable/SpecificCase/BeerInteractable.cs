@@ -34,7 +34,8 @@ public class BeerInteractable : ObjectGrabbable
         animator.Play("glouglouMieux", 0, 0.0f);
         PlaySound("event:/Park/BeerDrunk");
         yield return new WaitForSeconds(duration);
-        Drop();
+        MainManager.instance.Player.Drop();
+        MainManager.instance.Player.SetHasBeer(false);
     }
 
     private void OnBeerDrunken()
@@ -43,7 +44,7 @@ public class BeerInteractable : ObjectGrabbable
         MainManager.instance.AudioManager.PlaySound("event:/Park/GoLittle", transform);
         MainManager.instance.AudioManager.PlaySound("event:/MX", transform);
         
-        MainManager.instance.Player.EnableCollision(true);
+        player.EnableCollision(true);
         float camX = player.GetPlayerCamera().transform.localEulerAngles.x;
         if (camX > 180f) camX -= 360f;
     
@@ -54,14 +55,16 @@ public class BeerInteractable : ObjectGrabbable
             0.3f
         ).OnComplete(() =>
         {
-            MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.Normal);
+            player.SetLookMode(PlayerManager.ELookMode.Normal);
             player.SetCanMove(true);
         });
         
         Sequence seq = DOTween.Sequence();
+        // modif scale
         seq.Append(player.transform.DOScale(shrinkScale, shrinkDuration)).SetEase(Ease.InOutFlash)
-            .InsertCallback(0.0f, () =>
+            .JoinCallback(() =>
             {
+                // modif gravity
                 float valGravityScale = player.GetGravityScale();
                 DOTween.To(() => valGravityScale, x => valGravityScale = x, shrinkGravity, shrinkDuration).SetEase(Ease.InOutFlash)
                     .OnUpdate(() =>
@@ -69,8 +72,9 @@ public class BeerInteractable : ObjectGrabbable
                         player.SetGravityScale(valGravityScale);
                     });
             })
-            .InsertCallback(0.0f, () =>
+            .JoinCallback(() =>
             {
+                // modif walk speed
                 float valWalkSpeed = player.GetWalkSpeed();
                 DOTween.To(() => valWalkSpeed, x => valWalkSpeed = x, shrinkWalkSpeed, shrinkDuration).SetEase(Ease.InOutFlash)
                     .OnUpdate(() =>
