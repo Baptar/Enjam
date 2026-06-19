@@ -34,7 +34,8 @@ public class BeerInteractable : ObjectGrabbable
         animator.Play("glouglouMieux", 0, 0.0f);
         PlaySound("event:/Park/BeerDrunk");
         yield return new WaitForSeconds(duration);
-        MainManager.instance.Player.Drop();
+        Drop();
+        MainManager.instance.Player.SetGrabbedObject(null);
         MainManager.instance.Player.SetHasBeer(false);
     }
 

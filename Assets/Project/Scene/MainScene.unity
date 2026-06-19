@@ -6672,11 +6672,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6928808977469234768, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
   m_PrefabInstance: {fileID: 199467013}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1223623388 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9034306726559705281, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
-  m_PrefabInstance: {fileID: 7810806128490278733}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1228821786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6890997100478574641, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
@@ -12896,7 +12891,7 @@ PrefabInstance:
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: playerRoot
       value: 
-      objectReference: {fileID: 1223623388}
+      objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableBreath
       value: 0

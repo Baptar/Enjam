@@ -5,13 +5,13 @@ public class PileInteract : ObjectGrabbable
 {
     [SerializeField] private float playerGrowDuration = 2.0f;
     
-    private Vector3 playerLocalScaleStart;
+    private float playerLocalScaleStart;
     private PlayerManager player; 
     
     protected override void Start()
     {
         player = MainManager.instance.Player;
-        playerLocalScaleStart = player.transform.localScale;
+        playerLocalScaleStart = player.baseScale;
         base.Start();
     }
 

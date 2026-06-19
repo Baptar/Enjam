@@ -74,6 +74,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float deceleration = 12f;
     [HideInInspector] public float baseGravityScale;
     [HideInInspector] public float baseWalkSpeed;
+    [HideInInspector] public float baseScale;
     private float _currentSpeed = 0f;
     
     [Space(5)]
@@ -120,6 +121,7 @@ public class PlayerManager : MonoBehaviour
         _swayCurrent           = Quaternion.identity;
         baseGravityScale       = gravityScale;
         baseWalkSpeed          = walkSpeed;
+        baseScale              = transform.localScale.x;
         
         MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
     }
