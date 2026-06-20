@@ -63,6 +63,10 @@ public class BeerInteractable : ObjectGrabbable
         Sequence seq = DOTween.Sequence();
         // modif scale
         seq.Append(player.transform.DOScale(shrinkScale, shrinkDuration)).SetEase(Ease.InOutFlash)
+            .OnUpdate(() =>
+            {
+                Physics.SyncTransforms();
+            })
             .JoinCallback(() =>
             {
                 // modif gravity

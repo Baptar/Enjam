@@ -66,7 +66,6 @@ public class PlayerManager : MonoBehaviour
     
     [Space(10)]
     [Header("Movement Settings")]
-    [SerializeField] private GameObject playerRoot;
     [SerializeField] private float gravityScale = 9.81f;
     [SerializeField] private float walkSpeed    = 3f;
     [SerializeField] private bool canMove       = true;
@@ -74,7 +73,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float deceleration = 12f;
     [HideInInspector] public float baseGravityScale;
     [HideInInspector] public float baseWalkSpeed;
-    [HideInInspector] public float baseScale;
+    [HideInInspector] public Vector3 baseScale;
+    [HideInInspector] public float repereY;
     private float _currentSpeed = 0f;
     
     [Space(5)]
@@ -121,7 +121,7 @@ public class PlayerManager : MonoBehaviour
         _swayCurrent           = Quaternion.identity;
         baseGravityScale       = gravityScale;
         baseWalkSpeed          = walkSpeed;
-        baseScale              = transform.localScale.x;
+        baseScale              = transform.localScale;
         
         MainManager.instance.PlayerInputManager.OnInteractPressed += OnInteract;
     }
@@ -384,7 +384,6 @@ public class PlayerManager : MonoBehaviour
     public Transform GetObjectGrabPointPaperTransform() => objectGrabPointPaperTransform;
     
     // Movement
-    public GameObject GetPlayerRoot() => playerRoot;
     public bool GetCanMove() => canMove;
     public float GetWalkSpeed() => walkSpeed;
     public ELookMode GetLookMode() => lookMode;

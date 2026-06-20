@@ -1379,6 +1379,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5667626439520963828, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6999999
+      objectReference: {fileID: 0}
     - target: {fileID: 6213643501107598610, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_text
       value: Pres E to Interact
@@ -1551,6 +1555,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8338173491694463207, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8613229607327819758, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1563,17 +1571,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9199573545824206650, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9199573545824206650, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 6634511172688406293, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
     - {fileID: 6965561206776277025, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
+    - {fileID: 9199573545824206650, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8613229607327819758, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
     - {fileID: 7113123366916977326, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 1362361829937640904}
     - targetCorrespondingSourceObject: {fileID: 7426911706187229499, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       insertIndex: -1
@@ -1623,7 +1640,6 @@ MonoBehaviour:
   swayRollAmount: 2.5
   swayPitchAmount: 1.2
   swaySmoothing: 5
-  playerRoot: {fileID: 0}
   gravityScale: 9.81
   walkSpeed: 3
   canMove: 1
@@ -1631,6 +1647,8 @@ MonoBehaviour:
   deceleration: 12
   baseGravityScale: 0
   baseWalkSpeed: 0
+  baseScale: {x: 0, y: 0, z: 0}
+  repereY: 0
   raycastDistance: 2
   raycastLayerMask:
     serializedVersion: 2

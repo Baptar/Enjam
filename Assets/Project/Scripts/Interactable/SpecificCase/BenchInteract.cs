@@ -28,6 +28,7 @@ public class BenchInteract : ObjectInteractable
     
     public void SitOnBench(Transform sitTransform)
     {
+        MainManager.instance.Player.repereY = MainManager.instance.Player.transform.position.y;
         playerManager.SetLookMode(PlayerManager.ELookMode.CantLook);
         playerManager.EnableCollision(false);
         float camX = playerManager.GetPlayerCamera().transform.localEulerAngles.x;

@@ -4746,7 +4746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &914837891
 Transform:
   m_ObjectHideFlags: 0
@@ -6187,7 +6187,19 @@ MonoBehaviour:
       m_Calls: []
   eventOnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2134711266}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
@@ -6242,15 +6254,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846111811243101077, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.103
+      value: 0.095
       objectReference: {fileID: 0}
     - target: {fileID: 8846111811243101077, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.745
+      value: -1.848
       objectReference: {fileID: 0}
     - target: {fileID: 8846111811243101077, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.467
+      value: 0.976
       objectReference: {fileID: 0}
     - target: {fileID: 8846111811243101077, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12994,7 +13006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2509190216785840930, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 2628143188295359012, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: customRenderingSettings
