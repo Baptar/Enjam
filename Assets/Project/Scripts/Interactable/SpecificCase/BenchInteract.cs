@@ -28,7 +28,6 @@ public class BenchInteract : ObjectInteractable
     
     public void SitOnBench(Transform sitTransform)
     {
-        MainManager.instance.Player.repereY = MainManager.instance.Player.transform.position.y;
         playerManager.SetLookMode(PlayerManager.ELookMode.CantLook);
         playerManager.EnableCollision(false);
         float camX = playerManager.GetPlayerCamera().transform.localEulerAngles.x;
@@ -42,7 +41,7 @@ public class BenchInteract : ObjectInteractable
                  playerManager.transform.DORotateQuaternion(sitTransform.rotation, timeBetweenChangeVision).SetEase(easeSitOnBench))
              .Insert(0.0f,
                  playerManager.GetPlayerCamera().transform
-                     .DOLocalRotateQuaternion(Quaternion.Euler(10, 0, 0), timeBetweenChangeVision)
+                     .DOLocalRotateQuaternion(Quaternion.Euler(-15, 0, 0), timeBetweenChangeVision)
                      .SetEase(easeSitOnBench))
              .OnComplete(()=> beerObj.StartDrinkBeer());
     }

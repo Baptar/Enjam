@@ -74,7 +74,6 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public float baseGravityScale;
     [HideInInspector] public float baseWalkSpeed;
     [HideInInspector] public Vector3 baseScale;
-    [HideInInspector] public float repereY;
     private float _currentSpeed = 0f;
     
     [Space(5)]
