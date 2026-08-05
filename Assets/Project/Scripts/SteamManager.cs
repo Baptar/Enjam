@@ -51,5 +51,6 @@ public class SteamManager : MonoBehaviour
         }
     }
     
-    // To unlock the success : SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_1");
+    // To unlock the ending success : SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_ENDING");
+    // To unlock the peephole success : SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_PEEPHOLE");
 }
