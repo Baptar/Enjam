@@ -69,6 +69,7 @@ public class PaperInteract : ObjectGrabbable
         SetObjectGrabPointTransform(MainManager.instance.Player.GetObjectGrabPointPaperTransform());
         GetComponent<Collider>().enabled = false;
         MainManager.instance.Player.SetGrabbedObject(this);
+        SetLayer(LayerMask.NameToLayer("Item"));
     }
 
     public override void Drop()
@@ -77,6 +78,7 @@ public class PaperInteract : ObjectGrabbable
         FadeText();
         OnDropEvent?.Invoke();
         MainManager.instance.Player.SetGrabbedObject(null);
+        SetLayer(LayerMask.NameToLayer("Default"));
     }
 
     public void MakePaperAppear(Ease easeLookAtPoint = Ease.InOutFlash)

@@ -18,6 +18,9 @@ public class ObjectGrabbable : ObjectInteractable
     [Header("Drop setting")]
     [SerializeField] private bool bShouldFall = true;
     
+    [Space(5)]
+    [Header("Layers")]
+    
     protected Rigidbody objectRigidBody;
     protected Transform objectGrabPointTransform;
     protected Collider objectCollider;
@@ -28,6 +31,12 @@ public class ObjectGrabbable : ObjectInteractable
     {
         objectRigidBody = GetComponent<Rigidbody>();
         objectCollider = GetComponent<Collider>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        SetLayer(LayerMask.NameToLayer("Default"));
     }
     
     
@@ -62,6 +71,9 @@ public class ObjectGrabbable : ObjectInteractable
     // Grab this Object
     protected virtual void Grab()
     {
+        Debug.LogError("TRAHHH");
+
+        SetLayer(LayerMask.NameToLayer("Item"));
         SetObjectGrabPointTransform(MainManager.instance.Player.GetObjectGrabPointTransform());
         if (objectRigidBody)
         {
@@ -75,6 +87,7 @@ public class ObjectGrabbable : ObjectInteractable
     [ContextMenu("Drop Object")]
     public virtual void Drop()
     {
+        SetLayer(LayerMask.NameToLayer("Default"));
         OnDropEvent?.Invoke();
         
         objectGrabPointTransform = null;
@@ -114,5 +127,16 @@ public class ObjectGrabbable : ObjectInteractable
     {
         gameObject.transform.DOMove(actor.transform.position, 0.5f).SetEase(Ease.InOutFlash)
             .OnComplete(()=>gameObject.SetActive(false));
+    }
+    
+    protected void SetLayer(LayerMask layer) => SetLayerRecursive(gameObject, layer); 
+
+    private void SetLayerRecursive(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursive(child.gameObject, layer);
+        }
     }
 }

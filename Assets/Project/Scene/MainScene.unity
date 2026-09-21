@@ -836,6 +836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 914837891}
     m_Modifications:
+    - target: {fileID: 235688623075320120, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460465960725765852, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
       propertyPath: paperText
       value: You shouldn't be outside..      Have you heard the news?
@@ -900,9 +904,17 @@ PrefabInstance:
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3493496822696146871, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3524887286691917279, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
       propertyPath: m_text
       value: You shouldn't be outside..      Have you heard the news?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734814244660969084, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6928808977469234768, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
       propertyPath: m_LocalScale.x
@@ -955,6 +967,10 @@ PrefabInstance:
     - target: {fileID: 7738243682622964970, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
       propertyPath: m_Name
       value: PaperJudas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738243682622964970, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8098386723274794303, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6729,6 +6745,97 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6928808977469234768, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
   m_PrefabInstance: {fileID: 199467013}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1215019837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215019839}
+  - component: {fileID: 1215019838}
+  m_Layer: 0
+  m_Name: Held
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1215019838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215019837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  fadeRadius: 0
+  priority: 0
+  customPasses:
+  - rid: 2446279707539537926
+  injectionPoint: 2
+  m_TargetCamera: {fileID: 896944861}
+  useTargetCamera: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2446279707539537926
+      type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
+      data:
+        m_Name: Custom Pass
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        filterFoldout: 1
+        rendererFoldout: 1
+        renderQueueType: 10
+        layerMask:
+          serializedVersion: 2
+          m_Bits: 256
+        sortingCriteria: 51
+        overrideMode: 0
+        overrideMaterial: {fileID: 0}
+        overrideMaterialPassIndex: 0
+        overrideMaterialPassName: Forward
+        overrideShader: {fileID: 0}
+        overrideShaderPassIndex: 0
+        overrideShaderPassName: Forward
+        overrideDepthState: 1
+        depthCompareFunction: 8
+        depthWrite: 1
+        overrideStencil: 0
+        stencilReferenceValue: 64
+        stencilWriteMask: 192
+        stencilReadMask: 192
+        stencilCompareFunction: 8
+        stencilPassOperation: 0
+        stencilFailOperation: 0
+        stencilDepthFailOperation: 0
+        shaderPass: 0
+--- !u!4 &1215019839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215019837}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.2009125, y: 1.4001738, z: 39.79459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1228821786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6890997100478574641, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
@@ -6927,8 +7034,16 @@ PrefabInstance:
       value: BeerBottle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1352519850152638, guid: 293ec170ec9912240b5765c4cf87f845, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352519850152638, guid: 293ec170ec9912240b5765c4cf87f845, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402207451085584, guid: 293ec170ec9912240b5765c4cf87f845, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1402207451085584, guid: 293ec170ec9912240b5765c4cf87f845, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7565,6 +7680,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 914837891}
     m_Modifications:
+    - target: {fileID: 1250554291713844394, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478367192655245861, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: bInteractable
       value: 1
@@ -7797,10 +7920,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaperChillBeer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5350975612839581687, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5855391484454073890, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 309226137ff5b28468c43990b962970a, type: 2}
+    - target: {fileID: 7978020579786501473, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12929,6 +13060,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 518818062223850107, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 191
+      objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: canMove
       value: 1
@@ -12991,7 +13126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: raycastLayerMask.m_Bits
-      value: 1
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: objectGrabPointPaperTransform
@@ -13414,3 +13549,4 @@ SceneRoots:
   - {fileID: 914837891}
   - {fileID: 749926999}
   - {fileID: 183185242}
+  - {fileID: 1215019839}
