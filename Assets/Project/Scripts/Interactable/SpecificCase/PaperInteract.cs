@@ -78,7 +78,7 @@ public class PaperInteract : ObjectGrabbable
         FadeText();
         OnDropEvent?.Invoke();
         MainManager.instance.Player.SetGrabbedObject(null);
-        SetLayer(LayerMask.NameToLayer("Default"));
+        //SetLayer(LayerMask.NameToLayer("Default"));
     }
 
     public void MakePaperAppear(Ease easeLookAtPoint = Ease.InOutFlash)
