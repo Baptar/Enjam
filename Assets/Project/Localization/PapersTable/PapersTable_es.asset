@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: "Me muero de hambre, \xBFme puedes comprar algunos dulces?"
+    m_Localized: "Me muero de hambre, \xBFme puedes traer algunos caramelos?"
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
@@ -35,11 +35,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2318523695104
-    m_Localized: Placeholder
+    m_Localized: "La gente no deja de dejar sus cosas en el parque; entiendo por
+      qu\xE9 \xE9l se marcha una y otra vez."
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: "\xA1Tira esa radio de mierda!\r"
+    m_Localized: "\xA1Por Dios, tira esa maldita radio!"
     m_Metadata:
       m_Items: []
   references:

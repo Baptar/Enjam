@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: J'ai une faim de loup, tu peux m'acheter des bonbons ?
+    m_Localized: J'ai une faim de loup, tu peux aller me chercher des bonbons ?
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
@@ -41,7 +41,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: Jette cette radio de con !
+    m_Localized: "Par piti\xE9, jette cette foutue radio !"
     m_Metadata:
       m_Items: []
   references:
