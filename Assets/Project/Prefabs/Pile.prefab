@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8846111811243101077}
   - component: {fileID: 5796543183028353030}
-  - component: {fileID: 902908926931338034}
   - component: {fileID: 3962105552446379722}
   m_Layer: 0
   m_Name: Pile
@@ -56,23 +55,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.08978987, y: 0.1089481, z: 0.29286355}
   m_Center: {x: 0.002620697, y: 0.009390347, z: -0.010100216}
---- !u!114 &902908926931338034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7841497769587172190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f739a6fe32d4c4c8ee7af2e5800503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventLocName: event:/Park/PickBattery
-  playerPickUp: {fileID: 0}
-  canTake: 1
-  textInteraction: Press E to take Pile
-  lerpSpeed: 10
 --- !u!54 &3962105552446379722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,43 +92,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0024285177
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0019924194
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.00012493134
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.10826116
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.44941157
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.013292568
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.88664085
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -6.943
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -53.123
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 169.551
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: b2c0308541486c144bccf3d4583badde, type: 3}
       propertyPath: m_Materials.Array.data[0]
