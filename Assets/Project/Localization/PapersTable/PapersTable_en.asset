@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: I'm starving, can you get me some candies ?
+    m_Localized: I'm starving, can you get me some candies?
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: I would love to go to the park but he fell in a hole again..
+    m_Localized: I would love to go to the park but he fell in a hole again...
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
-    m_Localized: You shouldn't be outside..      Have you heard the news?
+    m_Localized: You shouldn't be outside...      have you heard the news?
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
-    m_Localized: Homie, I feel like you should chill a bit. Here take this.
+    m_Localized: Homie, I feel like you should chill a bit. Here, take this.
     m_Metadata:
       m_Items: []
   - m_Id: 2318523695104
@@ -40,7 +40,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: Throw that dump radio away
+    m_Localized: Throw that dump radio away!
     m_Metadata:
       m_Items: []
   references:

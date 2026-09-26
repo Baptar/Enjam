@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: Dulceee
+    m_Localized: "Me muero de hambre, \xBFme puedes comprar algunos dulces?"
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: Placeholder
+    m_Localized: "Me encantar\xEDa ir al parque, pero se ha vuelto a caer en un agujero..."
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
-    m_Localized: Placeholder
+    m_Localized: "No deber\xEDas estar afuera... \xBFHas o\xEDdo las noticias?"
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
-    m_Localized: Placeholder
+    m_Localized: "T\xEDo, creo que deber\xEDas relajarte un poco. Toma, coge esto."
     m_Metadata:
       m_Items: []
   - m_Id: 2318523695104
@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: PlaceHolder
+    m_Localized: "\xA1Tira esa radio de mierda!\r"
     m_Metadata:
       m_Items: []
   references:

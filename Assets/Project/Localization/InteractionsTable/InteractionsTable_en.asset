@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72502066864128
-    m_Localized: Go checkhole
+    m_Localized: Go check out the hole
     m_Metadata:
       m_Items: []
   - m_Id: 723364709298176
@@ -103,7 +103,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1117333551636480
-    m_Localized: Talk to hole
+    m_Localized: Talk to the hole
     m_Metadata:
       m_Items: []
   references:
