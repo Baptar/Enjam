@@ -23,12 +23,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: I would love to go to the park but he fell in a hole again. Play
-      him some music to cheer him up.
+    m_Localized: Placeholder
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
-    m_Localized: You shouldn't be outside...      have you heard the news?
+    m_Localized: You shouldn't be outside... have you heard the news?
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
@@ -41,7 +40,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: "For God's sake, throw out that damn radio!\r"
+    m_Localized: I would love to go to the park but he fell in a hole again. Play
+      him some music to cheer him up.
     m_Metadata:
       m_Items: []
   references:

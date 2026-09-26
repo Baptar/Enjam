@@ -27,8 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: "J'adorerais aller au parc, mais il est encore tomb\xE9 dans un
-      trou. Passe-lui un peu de musique pour lui remonter le moral."
+    m_Localized: Placeholder
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
@@ -41,7 +40,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: "Par piti\xE9, jette cette foutue radio !"
+    m_Localized: "J'adorerais aller au parc, mais il est encore tomb\xE9 dans un
+      trou. Passe-lui un peu de musique pour lui remonter le moral."
     m_Metadata:
       m_Items: []
   references:

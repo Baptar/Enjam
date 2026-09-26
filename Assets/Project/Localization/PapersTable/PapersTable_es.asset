@@ -23,8 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: "Me encantar\xEDa ir al parque, pero se ha vuelto a caer en un agujero.
-      Ponle un poco de m\xFAsica para animarlo."
+    m_Localized: Placeholder
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
@@ -41,7 +40,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: "\xA1Por Dios, tira esa maldita radio!"
+    m_Localized: "Me encantar\xEDa ir al parque, pero se ha vuelto a caer en un agujero.
+      Ponle un poco de m\xFAsica para animarlo."
     m_Metadata:
       m_Items: []
   references:
