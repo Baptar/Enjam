@@ -9,9 +9,23 @@ public class InputManager : MonoBehaviour
     
     private bool m_isGamepad;
     private GameState gameState;
+    private static InputManager m_instance;
+    public static InputManager Instance => m_instance;
     
     public GameState GameState { get => gameState; set => gameState = value; }
 
+    private void Awake()
+    {
+        if (m_instance != null && m_instance != this)
+        {
+            Debug.LogWarning("Multiple InputManager instances in scene!");
+            Destroy(gameObject);
+            return;
+        }
+
+        m_instance = this;
+    }
+    
     private void Start()
     {
         m_isGamepad = false;
@@ -22,6 +36,12 @@ public class InputManager : MonoBehaviour
     {
         Cursor.visible = show;
         Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Confined;
+    }
+    
+    public void SetSelected(GameObject selected)
+    {
+        if (EventSystem.current.currentSelectedGameObject != selected)
+            EventSystem.current.SetSelectedGameObject(selected);
     }
     
     void Update()
