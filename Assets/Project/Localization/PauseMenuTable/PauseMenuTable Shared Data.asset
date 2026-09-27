@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: PauseMenuTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: PauseMenuTable
+  m_TableCollectionNameGuidString: a5eb3c081a4a7444e8b29bb86ab417c2
+  m_Entries:
+  - m_Id: 19160104960
+    m_Key: pause_menu_resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167701381120
+    m_Key: pause_menu_mainmenu
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7057089564795207682
+  references:
+    version: 2
+    RefIds:
+    - rid: 7057089564795207682
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1790522131988

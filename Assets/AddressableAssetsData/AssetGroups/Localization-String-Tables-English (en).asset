@@ -45,6 +45,12 @@ MonoBehaviour:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84fde504408ea0c4bb2361f675166957
+    m_Address: PauseMenuTable_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e5ad9cc4be5f24d45b26e64b52a037d0
     m_Address: InteractionsTable_en
     m_ReadOnly: 1

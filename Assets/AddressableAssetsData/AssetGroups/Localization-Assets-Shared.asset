@@ -43,6 +43,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5eb3c081a4a7444e8b29bb86ab417c2
+    m_Address: Assets/Project/Localization/PauseMenu/PauseMenuTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: fde9355d6d441824c912d2fa0bf73a50, type: 2}
   m_SchemaSet:

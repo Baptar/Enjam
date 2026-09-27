@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
         SetPanel(PanelState.Main);
     }
     
-    private static void ShowCanvasGroup(bool show, CanvasGroup canvasGroup)
+    public static void ShowCanvasGroup(bool show, CanvasGroup canvasGroup)
     {
         canvasGroup.alpha = show ? 1 : 0;
         canvasGroup.blocksRaycasts = show;
