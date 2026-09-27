@@ -5,7 +5,7 @@ public class BackButton : MonoBehaviour
 {
     [SerializeField] MenuManager menuManager;
     [SerializeField] GameObject settingsButton; 
-    [SerializeField] Button sensibilityButton; 
+    [SerializeField] Button fullscreenButton; 
     
     public void Back()
     {
@@ -17,14 +17,13 @@ public class BackButton : MonoBehaviour
             // Update back button navigation
             Button button = GetComponent<Button>();
             Navigation nav = button.navigation;
-            nav.selectOnUp = sensibilityButton;
+            nav.selectOnUp = fullscreenButton;
             button.navigation = nav;
         }
         else if (menuManager.PanelState == PanelState.SettingsMain)
         {
             menuManager.SetPanel(PanelState.Main);
             InputManager.Instance.SetSelected(settingsButton);
-
         }
     }
 }

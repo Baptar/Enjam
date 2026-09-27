@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: "Atr\xE1s"
     m_Metadata:
       m_Items: []
+  - m_Id: 40182670181269504
+    m_Localized: Sensibilidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188006422282240
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188662461759488
+    m_Localized: Pantalla completa
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

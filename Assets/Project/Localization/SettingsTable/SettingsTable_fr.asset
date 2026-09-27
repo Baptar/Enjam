@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: Retour
     m_Metadata:
       m_Items: []
+  - m_Id: 40182670181269504
+    m_Localized: "Sensibilit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188006422282240
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188662461759488
+    m_Localized: "Plein \xE9cran"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

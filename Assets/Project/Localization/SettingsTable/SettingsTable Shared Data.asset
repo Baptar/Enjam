@@ -23,6 +23,18 @@ MonoBehaviour:
     m_Key: settings_language
     m_Metadata:
       m_Items: []
+  - m_Id: 40182670181269504
+    m_Key: settings_sensibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188006422282240
+    m_Key: settings_vsync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188662461759488
+    m_Key: settings_fullscreen
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

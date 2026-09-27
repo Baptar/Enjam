@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: Languages
     m_Metadata:
       m_Items: []
+  - m_Id: 40182670181269504
+    m_Localized: Sensibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188006422282240
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40188662461759488
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
