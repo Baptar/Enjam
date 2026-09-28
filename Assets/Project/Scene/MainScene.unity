@@ -20554,6 +20554,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 979438413}
     - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: intervalle
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
       propertyPath: judasMaterial
       value: 
       objectReference: {fileID: 2100000, guid: ca3ea3aa3500e2544bb30ae10a108601, type: 2}
@@ -24581,7 +24585,79 @@ MonoBehaviour:
     Path: event:/Salon/GrabCandy
   eventOnStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4511532055683134118}
+        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
+        m_MethodName: InitDissolveMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4511532055683134118}
+        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
+        m_MethodName: InitDissolveMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: d14447c872acd1c4891bd191f6f29bf5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4511532055683134118}
+        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
+        m_MethodName: InitDissolveMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 5653c20d77906b749ab10f7c46012f50, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4511532055683134118}
+        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
+        m_MethodName: InitDissolveMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 5031e213b6064e9459d71fc594f76f41, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4511532055683134118}
+        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
+        m_MethodName: InitDissolveMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: e9c7970dd9cafa748becc1f1692edf55, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4511532055683134118}
+        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
+        m_MethodName: InitDissolveMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 87d9d8d561f2b6e4aa4b95f131100278, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   eventOnInteract:
     m_PersistentCalls:
       m_Calls:
