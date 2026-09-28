@@ -99,4 +99,53 @@ public class JudasGenerator : MonoBehaviour
             }
         }
     }
+    
+    /*
+     [ContextMenu("Generate")]
+    public void Generate()
+    {
+        generateSequence?.Kill();
+        generateSequence = DOTween.Sequence();
+
+        Vector3 posSpawn = pointSpawn != null ? pointSpawn.position : transform.position;
+
+        foreach (JudasGrabObj rb in judas)
+        {
+            JudasGrabObj current = rb;
+
+            generateSequence.AppendCallback(() => LaunchObject(current, posSpawn));
+            generateSequence.AppendInterval(intervalle);
+        }
+    }
+    
+    private void LaunchObject(JudasGrabObj rb, Vector3 posSpawn)
+    {
+        if (rb == null) return;
+
+        Rigidbody rbObj = rb.GetComponent<Rigidbody>();
+
+        rbObj.isKinematic = false;
+        rbObj.useGravity = true;
+        rbObj.velocity = Vector3.zero;
+        rbObj.angularVelocity = Vector3.zero;
+        rbObj.constraints = RigidbodyConstraints.None;
+
+        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+        Vector3 directionHorizontale = new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle));
+
+        float forceV = Random.Range(forceVerticaleMin, forceVerticaleMax);
+        float forceH = Random.Range(forceHorizontaleMin, forceHorizontaleMax);
+
+        Vector3 forceFinale = (Vector3.up * forceV) + (directionHorizontale * forceH);
+
+        UseGravity(true);
+        rbObj.AddForce(forceFinale, ForceMode.Impulse);
+        rbObj.AddTorque(Random.insideUnitSphere * forceV, ForceMode.Impulse);
+
+        if (debug)
+        {
+            Debug.DrawRay(posSpawn, forceFinale, Color.red, 20f);
+        }
+    }
+     */
 }
