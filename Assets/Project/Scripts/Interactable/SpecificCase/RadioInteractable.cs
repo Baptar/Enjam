@@ -29,6 +29,7 @@ public class RadioInteractable : ObjectGrabbable
 
     public override void Drop()
     {
+        SetLayer(LayerMask.NameToLayer("Default"));
         StartCoroutine(OnDrop());
     }
 
