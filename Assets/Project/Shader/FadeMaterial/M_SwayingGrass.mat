@@ -65,6 +65,7 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
+    - _Intersection_depth: 0.53
     - _OpaqueCullMode: 2
     - _RayTracing: 0
     - _ReceivesSSR: 1
