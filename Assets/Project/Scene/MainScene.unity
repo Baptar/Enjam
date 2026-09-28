@@ -1716,7 +1716,6 @@ MonoBehaviour:
   - {fileID: 4085716}
   - {fileID: 918350092}
   - {fileID: 542283011}
-  judasObject: {fileID: 2040379531}
   judasOnDoor:
   - {fileID: 553090997}
   - {fileID: 212395133}
@@ -7860,7 +7859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &914837891
 Transform:
   m_ObjectHideFlags: 0

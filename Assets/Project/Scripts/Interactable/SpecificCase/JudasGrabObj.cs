@@ -17,6 +17,7 @@ public class JudasGrabObj : ObjectGrabbable
             eventOnInteract?.Invoke();
             Grab();
             
+            MainManager.instance.JudasManager.InitJudaObject(this);
             MainManager.instance.Player.SetHasJuda(true);
             MainManager.instance.JudasManager.GetJudasGenerator().RemoveOtherJudas(this);
             MainManager.instance.JudasManager.StartJudasEvent();

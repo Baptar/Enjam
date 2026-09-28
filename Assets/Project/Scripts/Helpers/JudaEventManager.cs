@@ -9,7 +9,7 @@ public class JudaEventManager : MonoBehaviour
 {
     [Header("References")] 
     [SerializeField] private DoorCoridorInteract[] doors;
-    [SerializeField] private ObjectGrabbable judasObject;
+    private JudasGrabObj judasObject;
     [SerializeField] private GameObject[] judasOnDoor;
     [SerializeField] private string[] sceneNames = new string[5];
     [SerializeField] private JudasGenerator judasGenerator;
@@ -28,6 +28,12 @@ public class JudaEventManager : MonoBehaviour
 
     private Camera playerCamera;
 
+    public void InitJudaObject(JudasGrabObj value)
+    {
+        judasObject = value;
+        judaScaleStart = value.transform.localScale;
+    }
+
     private void Start()
     {
         playerCamera = MainManager.instance.PlayerCamera;
@@ -37,7 +43,6 @@ public class JudaEventManager : MonoBehaviour
             juda.SetActive(false);
         }
         
-        judaScaleStart = judasObject.transform.localScale;
         if (sceneNames.Length != doors.Length)
         {
             Debug.LogError("sceneNames.Length != doors.Length");
