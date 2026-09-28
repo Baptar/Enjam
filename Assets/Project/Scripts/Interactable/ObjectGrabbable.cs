@@ -36,7 +36,7 @@ public class ObjectGrabbable : ObjectInteractable
     protected override void Start()
     {
         base.Start();
-        SetLayer(LayerMask.NameToLayer("Default"));
+        //SetLayer(LayerMask.NameToLayer("Default"));
     }
     
     
