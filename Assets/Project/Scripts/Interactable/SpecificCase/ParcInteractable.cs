@@ -14,6 +14,16 @@ public class ParcInteractable : ZoneInteractable
     {
         SetTextInteract(judasLocalizedString.GetLocalizedString());
     }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerEnter(other);
+        
+        if (GetInteractable() && !bGaveJuda)
+        {
+            TalkToParc();
+        }
+    }
     
     public override bool GetInteractable()
     {
@@ -40,12 +50,14 @@ public class ParcInteractable : ZoneInteractable
 
     private void TalkToParc()
     {
-        Debug.Log("TalkToParc");
+        Debug.LogError("TalkToParc");
         
         bGaveJuda = true;
         SetTextInteract(radioLocalizedString.GetLocalizedString());
-        MainManager.instance.JudasManager.GetJudasObjectGrabbable().gameObject.SetActive(true);
-        MainManager.instance.JudasManager.GetJudasObjectGrabbable().Interact();
+        MainManager.instance.JudasManager.GenerateJudas();
+        gameObject.SetActive(false);
+        //MainManager.instance.JudasManager.GetJudasObjectGrabbable().gameObject.SetActive(true);
+        //MainManager.instance.JudasManager.GetJudasObjectGrabbable().Interact();
     }
 
     private void ThrowRadio()

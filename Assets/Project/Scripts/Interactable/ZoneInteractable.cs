@@ -4,7 +4,7 @@ public class ZoneInteractable : ObjectInteractable
 {
     protected bool bInInteractionZone = false;
     
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (!enabled || !other.CompareTag("Player")) return;
         bInInteractionZone = true;
@@ -14,7 +14,7 @@ public class ZoneInteractable : ObjectInteractable
         MainManager.instance.Player.SetObjectInteractable(this);
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (!enabled || !other.CompareTag("Player")) return;
         bInInteractionZone = false;

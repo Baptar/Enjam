@@ -12,6 +12,8 @@ public class JudaEventManager : MonoBehaviour
     [SerializeField] private ObjectGrabbable judasObject;
     [SerializeField] private GameObject[] judasOnDoor;
     [SerializeField] private string[] sceneNames = new string[5];
+    [SerializeField] private JudasGenerator judasGenerator;
+    
     
     private List<GameObject> judasFound = new List<GameObject>();
     
@@ -291,4 +293,8 @@ public class JudaEventManager : MonoBehaviour
     }
     
     public ObjectGrabbable GetJudasObjectGrabbable() => judasObject;
+    
+    public void GenerateJudas() => judasGenerator.Generate();
+    
+    public JudasGenerator GetJudasGenerator() => judasGenerator;
 }
