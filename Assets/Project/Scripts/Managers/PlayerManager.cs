@@ -96,6 +96,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private bool bHasRadio = false;
     [SerializeField] private bool bHasJuda = false;
     [SerializeField] private bool bHasPile = false;
+    [SerializeField] private bool bHasShovel = false;
     [Space(2)]
     [Header("Zone")]
     [SerializeField] private bool bInBenchZone = false;
@@ -281,7 +282,7 @@ public class PlayerManager : MonoBehaviour
 
         if (lookMode == ELookMode.Peephole && isInJudasMode)
         {
-            StartCoroutine(MainManager.instance.JudasManager.ExitJudas());
+            StartCoroutine(MainManager.instance.JudasesManager.ExitJudas());
         }
         
         if (objectInteractable) 
@@ -396,6 +397,7 @@ public class PlayerManager : MonoBehaviour
     public bool GetHasRadio() => bHasRadio;
     public bool GetHasJuda() => bHasJuda;
     public bool GetHasPile() => bHasPile;
+    public bool GetHasShovel() => bHasShovel;
     public ObjectGrabbable GetGrabbedObject() => grabbedObject;
     
     //Zone
@@ -430,6 +432,7 @@ public class PlayerManager : MonoBehaviour
     public void SetHasRadio(bool value) => bHasRadio = value;
     public void SetHasJuda(bool value) => bHasJuda = value;
     public void SetHasPile(bool value) => bHasPile = value;
+    public void SetHasShovel(bool value) => bHasShovel = value;
     public void SetGrabbedObject(ObjectGrabbable value) => grabbedObject = value;
     public void SetObjectInteractable(ObjectInteractable value) => objectInteractable = value;
     

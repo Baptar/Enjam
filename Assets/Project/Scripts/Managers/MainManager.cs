@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class MainManager : MonoBehaviour
 {
@@ -11,7 +8,8 @@ public class MainManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private PaperManager paperManager;
-    [SerializeField] private JudaEventManager judaEventManager;
+    [SerializeField] private JudaEventManager judasEventManager;
+    [SerializeField] private CameraManager cameraManager;
     private PlayerInputController playerInputManager;
 
     public PlayerManager Player => playerManager;
@@ -19,8 +17,9 @@ public class MainManager : MonoBehaviour
     public AudioManager AudioManager => audioManager;
     public UIManager UIManager => uiManager;
     public PaperManager PaperManager => paperManager;
-    public JudaEventManager JudasManager => judaEventManager;
+    public JudaEventManager JudasesManager => judasEventManager;
     public Camera PlayerCamera => playerManager.GetPlayerCamera();
+    public CameraManager CameraManager => cameraManager;
     
 
     private void Awake()

@@ -54,10 +54,10 @@ public class ParcInteractable : ZoneInteractable
         
         bGaveJuda = true;
         SetTextInteract(radioLocalizedString.GetLocalizedString());
-        MainManager.instance.JudasManager.GenerateJudas();
+        MainManager.instance.JudasesManager.GenerateJudas();
         gameObject.SetActive(false);
-        //MainManager.instance.JudasManager.GetJudasObjectGrabbable().gameObject.SetActive(true);
-        //MainManager.instance.JudasManager.GetJudasObjectGrabbable().Interact();
+        //MainManager.instance.JudasesManager.GetJudasObjectGrabbable().gameObject.SetActive(true);
+        //MainManager.instance.JudasesManager.GetJudasObjectGrabbable().Interact();
     }
 
     private void ThrowRadio()

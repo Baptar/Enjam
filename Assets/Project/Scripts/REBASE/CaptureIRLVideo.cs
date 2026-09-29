@@ -1,73 +1,106 @@
-using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-/*public class CaptureIRLVideo : MonoBehaviour
+public class CaptureIRLVideo : MonoBehaviour
 {
-    WebCamTexture webCamTexture;
-    public Image crosshair;
-    public GameObject blackBoardTV;
-    public GameObject blackBoardPlayer;
-    [SerializeField] public int numberDevice;
-    [SerializeField] private Camera cam;
+    [Header("Settings")]
     [SerializeField] private float delayWatchParc = 5f;
     [SerializeField] private float delayWatchIrl = 5f;
-    [SerializeField] private FPSController fpsController;
+    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private GameObject graveObj;
+    
+    [Space(10)]
+    [Header("DEBUG")]
+    [SerializeField] public int numberDevice;
+    [FormerlySerializedAs("cam")] [SerializeField] private Camera cameraParc;
+    
     
     private FMOD.Studio.EventInstance eventFMOD;
+    private WebCamTexture webCamTexture;
 
-    void Start()
+    private void Start()
     {
         eventFMOD = FMODUnity.RuntimeManager.CreateInstance("event:/Salon/Tele");
+        InitWebcamTexture();
         
+        meshRenderer.material.mainTexture = null;
+        meshRenderer.material.color = Color.black;
+    }
+
+    private void InitWebcamTexture()
+    {
         if (WebCamTexture.devices.Length < numberDevice + 1) return;
         WebCamDevice device = WebCamTexture.devices[numberDevice];
         Debug.Log("Webcam détectée : " + WebCamTexture.devices[0].name);
         Debug.Log("device.lenght : " + WebCamTexture.devices.Length);
         webCamTexture = new WebCamTexture(device.name);
     }
+
+    public void WatchTv()
+    {
+        MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.CantLook);
+        MainManager.instance.Player.SetCanMove(false);
+        
+        StartTVParc();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
+        MainManager.instance.UIManager.EnableCrosshair(false);
+        
+        Sequence sequence = DOTween.Sequence();
+        Image img = MainManager.instance.UIManager.fadeImage;
+
+        sequence.Append(img.DOColor(Color.black, 0.4f).SetEase(Ease.InOutFlash));
+        sequence.AppendCallback(()=>MainManager.instance.CameraManager.Cam_TV());   
+        sequence.Append(img.DOColor(Color.clear, 0.4f).SetEase(Ease.InOutFlash));
+        sequence.AppendCallback(MakeGraveAppear);
+        sequence.AppendInterval(delayWatchParc);
+        sequence.AppendCallback(() =>
+        {
+            if (webCamTexture)
+            {
+                StartTvirl();
+            }
+        });
+        sequence.AppendInterval(delayWatchIrl);
+        sequence.Append(img.DOColor(Color.black, 0.4f).SetEase(Ease.InOutFlash));
+        sequence.AppendCallback(() =>
+        {
+            MainManager.instance.CameraManager.Cam_Player();
+            MainManager.instance.Player.SetCanMove(true);
+            MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.Normal);
+            eventFMOD.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        });
+        sequence.Append(img.DOColor(Color.clear, 0.4f).SetEase(Ease.InOutFlash));
+        sequence.AppendCallback(()=>MainManager.instance.UIManager.EnableCrosshair(true));
+    }
+
+
     
-    public void StartTvirl()
+    
+    private void StartTvirl()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
         if(!webCamTexture.isPlaying) webCamTexture.Play();
         GetComponent<Renderer>().material.mainTexture = webCamTexture;
     }
 
-    public void StartTVParc()
+    private void StartTVParc()
     {
-        cam.GetComponent<Camera>().enabled = true;
-        GetComponent<Renderer>().material.mainTexture = cam.targetTexture;
-    }
-
-    public void WatchTv()
-    {
-        //GetComponent<Renderer>().material = null;
-        StartTVParc();
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
-        blackBoardTV.GetComponent<Animator>().SetTrigger("ChangeTV");
-        crosshair.enabled = false;
-    }
-
-    IEnumerator StartWatchTV()
-    {
-        //StartTVParc();
-        yield return new WaitForSeconds(delayWatchParc);
-        if (webCamTexture)
-        {
-            StartTvirl();
-            yield return new WaitForSeconds(delayWatchIrl);
-        }
+        cameraParc.enabled = true;
         
-        blackBoardPlayer.GetComponent<Animator>().SetTrigger("ChangePlayer");
-        crosshair.enabled = true;
-        fpsController.canMove = true;
-        eventFMOD.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        meshRenderer.material.mainTexture = cameraParc.targetTexture;
+        Color c = new Color(0.75f, 0.75f, 0.75f, .75f);
+        meshRenderer.material.color = c;
     }
 
-    public void TurnOnTv()
+    private void MakeGraveAppear()
     {
-        StartCoroutine(StartWatchTV());
+        graveObj.SetActive(true);
+        
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(graveObj.transform.DOLocalMoveY(graveObj.transform.localPosition.y + 1.2f, 3.5f)
+            .SetEase(Ease.InOutExpo))
+            .Join(graveObj.transform.DOShakeRotation(3.5f, 10f));
     }
-}*/
+}

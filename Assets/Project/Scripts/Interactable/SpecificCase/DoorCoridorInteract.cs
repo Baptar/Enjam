@@ -214,7 +214,7 @@ public class DoorCoridorInteract : ObjectInteractable
 
     private void LookJudas()
     {
-        MainManager.instance.JudasManager.OnInteractJudas(
+        MainManager.instance.JudasesManager.OnInteractJudas(
             this, 
             camJudaTarget : cameraJudaTarget, 
             judasTransformTarget : judasWorldPosition, 

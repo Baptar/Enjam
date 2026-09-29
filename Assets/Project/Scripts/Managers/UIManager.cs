@@ -8,13 +8,18 @@ public class UIManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text interactionText;
-    [SerializeField] private Image fadeImage;
+    public Image fadeImage;
     [SerializeField] private Image crosshairImage;
 
     [Space(10)]
     [Header("Parameters")]
     [SerializeField] private float delayShowCrosshair = 1.5f;
 
+    private void Awake()
+    {
+        crosshairImage.color = Color.clear;
+    }
+    
     private IEnumerator Start()
     {
         FadeScreen(false, 0.0f);

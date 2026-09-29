@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -5,6 +6,7 @@ public class FinalDoor : ObjectInteractable
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Animator animatorEndDoor;
+    [SerializeField] private Transform transformKey;
     
     [Space(10)]
     [Header("Judas")]
@@ -35,7 +37,7 @@ public class FinalDoor : ObjectInteractable
             // look in juda
             if (MainManager.instance.Player.GetHasJuda())
             {
-                MainManager.instance.JudasManager.OnInteractJudas(
+                MainManager.instance.JudasesManager.OnInteractJudas(
                     camJudaTarget : cameraJudaTarget, 
                     judasTransformTarget : judasWorldPosition, 
                     judasSceneName : judasSceneName, 
@@ -45,13 +47,14 @@ public class FinalDoor : ObjectInteractable
             
             SetInteractable(false);
             if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
-            
-            /*bool res = CheckIsInFront();
-            
-            animator.Play(!res ? "Door Opened" : "Door Opened Reverse", 0, 0f);
-            animatorEndDoor.Play(!res ? "Door Opened" : "Door Opened Reverse", 0, 0f);*/
-            animator.Play("Door Opened", 0, 0f);
-            animatorEndDoor.Play("Door Opened", 0, 0f);
+
+            Sequence sequence = DOTween.Sequence();
+            sequence.AppendInterval(2.0f);
+            sequence.AppendCallback(() =>
+            {
+                animator.Play("Door Opened", 0, 0f);
+                animatorEndDoor.Play("Door Opened", 0, 0f);
+            });
             
             eventOnInteract?.Invoke();
         }
@@ -79,5 +82,18 @@ public class FinalDoor : ObjectInteractable
     public void DoorClosedVibration()
     {
         GamepadVibration.Vibrate(0.5f, 0.5f, 0.15f);
+    }
+
+    public void MoveKey(GameObject keyObj)
+    {
+        keyObj.GetComponent<Rigidbody>().isKinematic = true;
+        keyObj.transform.SetParent(transformKey);
+        
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(keyObj.transform.DOLocalMove(Vector3.zero, 1.0f))
+            .Join(keyObj.transform.DOLocalRotate(Vector3.zero, 1.0f))
+            .Join(keyObj.transform.DOScale(Vector3.one, 1.0f))
+            .Append(keyObj.transform.DOLocalRotate(new Vector3(-75.0f, .0f, .0f), .5f))
+            .Append(keyObj.transform.DOLocalRotate(new Vector3(0.0f, .0f, .0f), .5f));
     }
 }

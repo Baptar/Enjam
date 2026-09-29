@@ -21,6 +21,18 @@ public class PileInteract : ObjectGrabbable
         base.Interact();
     }
 
+    public override void Drop()
+    {
+        SetTextCantInteract("");
+        SetLayer(LayerMask.NameToLayer("Default"));
+        OnDropEvent?.Invoke();
+        
+        objectGrabPointTransform = null;
+        if (!objectRigidBody) return;
+
+        Destroy(gameObject, 2.0f);
+    }
+
     [ContextMenu("GrowBackPlayer")]
     public void GrowBackPlayer()
     {

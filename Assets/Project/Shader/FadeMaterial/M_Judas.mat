@@ -82,7 +82,7 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
-    - _Fade: 1
+    - _Fade: 0
     - _Metalic: 0
     - _NoiseScale: 76
     - _OpaqueCullMode: 2

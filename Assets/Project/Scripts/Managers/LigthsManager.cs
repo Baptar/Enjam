@@ -25,7 +25,15 @@ public class LigthsManager : MonoBehaviour
     private Sequence blinkSequence;
     private Sequence switchOnStartSequence;
 
-
+    private void Awake()
+    {
+        foreach (var light in lights)
+        {
+            light.intensity = 0.0f;
+            //light.gameObject.SetActive(false);
+        }
+    }
+    
     private IEnumerator Start()
     {
         if (!startLightsOff) yield break;

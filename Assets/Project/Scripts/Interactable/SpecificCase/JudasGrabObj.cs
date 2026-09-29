@@ -3,7 +3,7 @@ public class JudasGrabObj : ObjectGrabbable
     protected virtual void Start()
     {
         base.Start();
-        InitDissolveMaterial(MainManager.instance.JudasManager.GetJudasGenerator().judasMaterialFade);
+        InitDissolveMaterial(MainManager.instance.JudasesManager.GetJudasGenerator().judasMaterialFade);
     }
 
     
@@ -17,10 +17,10 @@ public class JudasGrabObj : ObjectGrabbable
             eventOnInteract?.Invoke();
             Grab();
             
-            MainManager.instance.JudasManager.InitJudaObject(this);
+            MainManager.instance.JudasesManager.InitJudaObject(this);
             MainManager.instance.Player.SetHasJuda(true);
-            MainManager.instance.JudasManager.GetJudasGenerator().RemoveOtherJudas(this);
-            MainManager.instance.JudasManager.StartJudasEvent();
+            MainManager.instance.JudasesManager.GetJudasGenerator().RemoveOtherJudas(this);
+            MainManager.instance.JudasesManager.StartJudasEvent();
         }
         // Not Interactable
         else eventOnInteractButNotInteractable?.Invoke();

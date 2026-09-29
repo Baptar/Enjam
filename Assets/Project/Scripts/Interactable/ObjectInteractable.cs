@@ -32,9 +32,9 @@ public class ObjectInteractable : MonoBehaviour
     }
 
     #region Getter
-    public string GetTextInteract() => textInteraction == "" ? localizedTextInteraction.GetLocalizedString() : textInteraction;
+    public virtual string GetTextInteract() => textInteraction == "" ? localizedTextInteraction.GetLocalizedString() : textInteraction;
 
-    public string GetTextCantInteract() => localizedTextCantInteract.IsEmpty ? textCantInteract : localizedTextCantInteract.GetLocalizedString();
+    public virtual string GetTextCantInteract() => localizedTextCantInteract.IsEmpty ? textCantInteract : localizedTextCantInteract.GetLocalizedString();
 
     public virtual bool GetInteractable() => bInteractable;
     #endregion
