@@ -23,6 +23,7 @@ public class FinalDoor : ObjectInteractable
     
     private Transform playerCameraTransform;
     private Transform targetTransform;
+    private bool bUsed = false;
 
     protected override void Start()
     {
@@ -45,6 +46,7 @@ public class FinalDoor : ObjectInteractable
                 return;
             }
             
+            bUsed = true;
             SetInteractable(false);
             if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
 
@@ -58,7 +60,7 @@ public class FinalDoor : ObjectInteractable
             
             eventOnInteract?.Invoke();
         }
-        else eventOnInteractButNotInteractable?.Invoke();
+        else if (!bUsed) eventOnInteractButNotInteractable?.Invoke();
     }
 
     public override bool GetInteractable()
@@ -68,6 +70,11 @@ public class FinalDoor : ObjectInteractable
         SetTextInteract(textInteraction);
         
         return playerHasJuda || bInteractable;
+    }
+
+    public override string GetTextCantInteract()
+    {
+        return bUsed ? "" : base.GetTextCantInteract();
     }
 
     private bool CheckIsInFront()
