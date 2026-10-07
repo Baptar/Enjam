@@ -22014,6 +22014,34 @@ PrefabInstance:
       propertyPath: judasMaterialFade
       value: 
       objectReference: {fileID: 2100000, guid: 7f096968194791141b32a56831e6428c, type: 2}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286239712}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CancelDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+      propertyPath: eventOnGenerated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7749324577210282739, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 268
@@ -26523,7 +26551,7 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  lerpSpeed: 7
+  lerpSpeed: 9
   blockYOnGrabbed: 1
   OnDropEvent:
     m_PersistentCalls:

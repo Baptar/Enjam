@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class JudasGenerator : MonoBehaviour
@@ -9,6 +10,7 @@ public class JudasGenerator : MonoBehaviour
     [SerializeField] private Transform pointSpawn;
     [SerializeField] private Material judasMaterial;
     public Material judasMaterialFade;
+    [SerializeField] private UnityEvent eventOnGenerated;
 
     [Header("vertical power")]
     [SerializeField] private float forceVerticaleMin = 8f;
@@ -53,6 +55,7 @@ public class JudasGenerator : MonoBehaviour
             {
                 Debug.DrawRay(posSpawn, forceFinale, Color.red, 20f);
             }
+            eventOnGenerated?.Invoke();
         }
     }
     

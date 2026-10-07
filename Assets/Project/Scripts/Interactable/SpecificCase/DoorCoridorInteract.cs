@@ -237,6 +237,12 @@ public class DoorCoridorInteract : ObjectInteractable
     public void SetRadioDoor() => SetJudasSceneName("JudasRadio");
 
     public void MakePaperJudaAppear() => paperAfterJuda.MakePaperAppear();
+
+    public void CancelDoor()
+    {
+        MainManager.instance.AudioManager.StopSoundTocLittle(transform);
+        SetNoneEvent();
+    }
     
 
     [ContextMenu("SetNoneEvent")]
