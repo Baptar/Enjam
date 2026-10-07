@@ -226,6 +226,39 @@ public class JudaEventManager : MonoBehaviour
     {
         Debug.Log("All judas looked");
         
+        // randomize list
+        var count = judasFound.Count;
+        var last = count - 1;
+        for (var i = 0; i < last; ++i)
+        {
+            var r = UnityEngine.Random.Range(i, count);
+            var tmp = judasFound[i];
+            judasFound[i] = judasFound[r];
+            judasFound[r] = tmp;
+        }
+        
+        // Get random other door
+        DoorCoridorInteract res = null;
+        foreach (var judaDoor in judasFound)
+        {
+            DoorCoridorInteract jdoor = judaDoor.GetComponent<DoorCoridorInteract>();
+            if (jdoor == null) continue;
+                
+            if (jdoor != door)
+            {
+                res = jdoor;
+                break;
+            }
+        }
+        
+        // when finish interact, toc toc other door 
+        door.paperAfterJuda.OnDropEvent.AddListener(() =>
+        {
+            if (res)
+            {
+                res.SetUnderstandParc();
+            }
+        });
         door.MakePaperJudaAppear();
         return;
         

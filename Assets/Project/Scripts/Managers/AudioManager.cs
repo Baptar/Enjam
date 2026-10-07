@@ -23,6 +23,11 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound("event:/Hall/DoorToc2ActiveTrig", soundTransform);
     }
+    
+    public void PlayerSoundTocLittleDoor4(Transform soundTransform)
+    {
+        PlaySound("event:/Hall/DoorToc4ActiveTrig", soundTransform);
+    }
 
     private void PlayerSoundPaperSound(Transform soundTransform)
     {
@@ -38,6 +43,7 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound("event:/Hall/DoorToc1NoneTrig", soundTransform);
         PlaySound("event:/Hall/DoorToc2NoneTrig", soundTransform);
+        PlaySound("event:/Hall/DoorToc4NoneTrig", soundTransform);
     }
     
     public void StopSoundTocHard(Transform soundTransform)

@@ -243,7 +243,10 @@ PrefabInstance:
     - {fileID: 8686106818596734247, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3272684556166003398, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6116065219335654441, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 226389520}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4194492658811072261, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       insertIndex: -1
@@ -306,11 +309,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  tocSoundPosition: {fileID: 226389520}
+  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 1704747504}
   cameraJudaTarget: {fileID: 1806704714}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 187617361}
+  paperUnderstandParc: {fileID: 933514885}
   goShakeDoor: {fileID: 4085715}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -410,6 +416,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!4 &4085717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6116065219335654441, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 4085713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &16298687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2763841140932672965, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
@@ -479,6 +490,22 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!4 &35967660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 599387531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &35967663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 599387531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &43101423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7811703334794160741, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -1453,6 +1480,37 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &111029417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111029418}
+  m_Layer: 0
+  m_Name: SoundTocDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111029418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111029417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.267, z: 0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 918350096}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &119059944 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3345391089550891871, guid: 85d95e9b2720d704c9a2350289f25b07, type: 3}
@@ -2695,6 +2753,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
   m_PrefabInstance: {fileID: 1482175804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &226389519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226389520}
+  m_Layer: 0
+  m_Name: SoundTocDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226389520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226389519}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.00000008940697, z: 4.796281e-15, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.267, z: 0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4085717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &226698899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5072506421463697684, guid: 19ac23b133e7bc04ba6f4751eee92bf4, type: 3}
@@ -3093,11 +3182,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  tocSoundPosition: {fileID: 679843711}
+  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 76334963100526909}
   cameraJudaTarget: {fileID: 76334963100526911}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 56555591}
+  paperUnderstandParc: {fileID: 35967663}
   goShakeDoor: {fileID: 1691022509}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -3197,6 +3289,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!4 &286239713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4938948195956513504, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &286623135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2525835595395883398, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -3324,6 +3421,22 @@ Transform:
   - {fileID: 226698899}
   m_Father: {fileID: 1712562063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &352158017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 620499449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &352158020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 620499449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363379050
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,6 +3562,132 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1712684967}
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+--- !u!1001 &367108619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 864846173}
+    m_Modifications:
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8129997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.671
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.1949997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.72396725
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6898344
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 82.969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405182820913438442, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_Name
+      value: PaperUnderstandParc Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: paperText
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: textInteraction
+      value: Read
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Path
+      value: event:/Hall/PaperGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data1
+      value: 297058600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data2
+      value: 1151305787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data3
+      value: -1956109649
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data4
+      value: 1909421314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286239712}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNoneEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398133811841218527, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_text
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1862166862415537276, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
 --- !u!1 &372820567 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7939564937007866380, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -4161,6 +4400,37 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &448462643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448462644}
+  m_Layer: 0
+  m_Name: SoundTocDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &448462644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448462643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.267, z: 0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542283016}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &451942607 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2836916409277502951, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -4842,11 +5112,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 870668916}
+    m_TransformParent: {fileID: 864846173}
     m_Modifications:
     - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1659994
+      value: 4.2860003
       objectReference: {fileID: 0}
     - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4854,7 +5124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.287
+      value: 1.2719998
       objectReference: {fileID: 0}
     - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4919,7 +5189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5200,11 +5470,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  tocSoundPosition: {fileID: 0}
+  tocSoundObject: {fileID: 0}
   judasSceneName: Judas2
   judasWorldPosition: {fileID: 1626557179}
   cameraJudaTarget: {fileID: 1012029915}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 0}
+  paperUnderstandParc: {fileID: 0}
   goShakeDoor: {fileID: 1228821786}
   shakeDuration: 1
   shakeStrength: 0.06
@@ -5425,7 +5698,10 @@ PrefabInstance:
     - {fileID: 8686106818596734247, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3272684556166003398, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6116065219335654441, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 448462644}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4194492658811072261, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       insertIndex: -1
@@ -5488,11 +5764,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  tocSoundPosition: {fileID: 448462644}
+  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 128841791}
   cameraJudaTarget: {fileID: 734758729}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 993529999}
+  paperUnderstandParc: {fileID: 2104863006}
   goShakeDoor: {fileID: 1013983693}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -5595,6 +5874,11 @@ MonoBehaviour:
 --- !u!1 &542283012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 542283008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &542283016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6116065219335654441, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
   m_PrefabInstance: {fileID: 542283008}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &547392266
@@ -6125,6 +6409,132 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1001 &599387531
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 864846173}
+    m_Modifications:
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.1659994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.671
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.6898344
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.72396725
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 267.234
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405182820913438442, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_Name
+      value: PaperUnderstandParc
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: paperText
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: textInteraction
+      value: Read
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Path
+      value: event:/Hall/PaperGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data1
+      value: 297058600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data2
+      value: 1151305787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data3
+      value: -1956109649
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data4
+      value: 1909421314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286239712}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNoneEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398133811841218527, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_text
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1862166862415537276, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
 --- !u!1001 &604626831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6338,6 +6748,132 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1001 &620499449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 864846173}
+    m_Modifications:
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6160002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.671
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.72396725
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6898344
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 82.969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405182820913438442, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_Name
+      value: PaperUnderstandParc Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: paperText
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: textInteraction
+      value: Read
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Path
+      value: event:/Hall/PaperGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data1
+      value: 297058600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data2
+      value: 1151305787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data3
+      value: -1956109649
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data4
+      value: 1909421314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286239712}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNoneEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398133811841218527, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_text
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1862166862415537276, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
 --- !u!1 &621352045
 GameObject:
   m_ObjectHideFlags: 0
@@ -6379,6 +6915,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6132733868959194031, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
   m_PrefabInstance: {fileID: 2699075059698761581}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &679843710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 679843711}
+  m_Layer: 0
+  m_Name: SoundTocDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &679843711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679843710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.267, z: 0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 286239713}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &680336629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2975111674662256449, guid: 70d71d9c470f11541b9c10d6f3ee612b, type: 3}
@@ -6523,6 +7090,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &688887987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2129229521275322734, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &695918055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3798836726391213666, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -8597,6 +9169,42 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b77dbcf466f3c424b8629799b5d00883, type: 3}
+--- !u!1 &864846172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864846173}
+  m_Layer: 0
+  m_Name: PapersUnderstandParc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &864846173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864846172}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 35967660}
+  - {fileID: 498027212}
+  - {fileID: 2104863007}
+  - {fileID: 1504725402}
+  - {fileID: 352158017}
+  m_Father: {fileID: 870668916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865716313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5677216325704845460, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
@@ -8636,7 +9244,7 @@ Transform:
   - {fileID: 680336629}
   - {fileID: 8565943291144711044}
   - {fileID: 5018586436179841245}
-  - {fileID: 498027212}
+  - {fileID: 864846173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &884474038 stripped
@@ -8882,11 +9490,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  tocSoundPosition: {fileID: 111029418}
+  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 76334963100526908}
   cameraJudaTarget: {fileID: 76334963100526910}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 1366225619}
+  paperUnderstandParc: {fileID: 1504725405}
   goShakeDoor: {fileID: 1069446673}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -11055,6 +11666,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074793677}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1089489908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089489909}
+  m_Layer: 0
+  m_Name: SoundTocDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089489909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089489908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.267, z: 0.015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1482175808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090772817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1532645793480243332, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -13552,6 +14194,132 @@ MonoBehaviour:
   fadeImage: {fileID: 986150813}
   crosshairImage: {fileID: 716466832}
   delayShowCrosshair: 1.5
+--- !u!1001 &1325698598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 864846173}
+    m_Modifications:
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1140003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.671
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8640003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9997087
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.024135755
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 82.969
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405182820913438442, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_Name
+      value: PaperUnderstandParc Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: paperText
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: textInteraction
+      value: Read
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Path
+      value: event:/Hall/PaperGrab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data1
+      value: 297058600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data2
+      value: 1151305787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data3
+      value: -1956109649
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: eventSoundOnInteract.Guid.Data4
+      value: 1909421314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286239712}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNoneEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoorCoridorInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398133811841218527, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      propertyPath: m_text
+      value: People keep letting their stuff in the park, I understand why he keeps
+        leaving.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1862166862415537276, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
 --- !u!1 &1334935000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7796945807699147144, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -15012,6 +15780,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 286239712}
+        m_TargetAssemblyTypeName: DoorCoridorInteract, Assembly-CSharp
+        m_MethodName: CancelDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1482175807}
+        m_TargetAssemblyTypeName: DoorCoridorInteract, Assembly-CSharp
+        m_MethodName: CancelDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4085716}
+        m_TargetAssemblyTypeName: DoorCoridorInteract, Assembly-CSharp
+        m_MethodName: CancelDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 918350092}
+        m_TargetAssemblyTypeName: DoorCoridorInteract, Assembly-CSharp
+        m_MethodName: CancelDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 542283011}
+        m_TargetAssemblyTypeName: DoorCoridorInteract, Assembly-CSharp
+        m_MethodName: CancelDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
@@ -15244,7 +16072,10 @@ PrefabInstance:
     - {fileID: 3927055112785166230, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
     - {fileID: 958166185448178073, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
     - {fileID: 3272684556166003398, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6116065219335654441, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1089489909}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4194492658811072261, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       insertIndex: -1
@@ -15307,11 +16138,14 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
+  tocSoundPosition: {fileID: 1089489909}
+  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 635087081}
   cameraJudaTarget: {fileID: 1281294734}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 1024350359}
+  paperUnderstandParc: {fileID: 352158020}
   goShakeDoor: {fileID: 327033745}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -15411,6 +16245,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!4 &1482175808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6116065219335654441, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
+  m_PrefabInstance: {fileID: 1482175804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486110081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3330562560485226908, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
@@ -15980,6 +16819,22 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!4 &1504725402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 367108619}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504725405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 367108619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1509790956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8078494944598450444, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -24414,6 +25269,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6798963856286841780, guid: b1a48ea6993eda043a514497ea92ef34, type: 3}
   m_PrefabInstance: {fileID: 2502179348806123228}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104863006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 1325698598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2104863007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 1325698598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2109511711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25188,9 +26059,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9119956294095549567, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       insertIndex: 4
       addedObject: {fileID: 542283009}
+    - targetCorrespondingSourceObject: {fileID: 4938948195956513504, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 679843711}
     - targetCorrespondingSourceObject: {fileID: 3484373044176575777, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2036350345}
+    - targetCorrespondingSourceObject: {fileID: 2043091653060392942, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 111029418}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3053404295031306700, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       insertIndex: -1

@@ -17,13 +17,17 @@ public class DoorCoridorInteract : ObjectInteractable
         ChillBeer,      // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
         UnderstandParc  // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
     }
+
+    [SerializeField] private Transform tocSoundPosition;
+    [SerializeField] private GameObject tocSoundObject;
     
     [Header("Judas")]
     [SerializeField] private string judasSceneName;
     [SerializeField] private Transform judasWorldPosition;
     [SerializeField] private Transform cameraJudaTarget;
     [SerializeField] private float judasCamFOV = 1;
-    [SerializeField] private PaperInteract paperAfterJuda;
+    public PaperInteract paperAfterJuda;
+    public PaperInteract paperUnderstandParc;
     
     [Space(5)]
     [Header("Shake")]
@@ -116,7 +120,7 @@ public class DoorCoridorInteract : ObjectInteractable
                 
                 case EDoorEvent.UnderstandParc:
                     MainManager.instance.AudioManager.StopSoundTocLittle(transform);
-                    MainManager.instance.PaperManager.AppearPaperUnderstandParc();
+                    MakePaperUnderstandParcAppear();
                     break;
             }
             
@@ -201,6 +205,10 @@ public class DoorCoridorInteract : ObjectInteractable
                 break;
             
             case EDoorEvent.UnderstandParc:
+                tocSoundObject.transform.position = tocSoundPosition.position;
+                tocSoundObject.transform.rotation = tocSoundPosition.rotation;
+                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor4(gameObject.transform);
+
                 newTextInteract = understandPark.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
@@ -237,6 +245,7 @@ public class DoorCoridorInteract : ObjectInteractable
     public void SetRadioDoor() => SetJudasSceneName("JudasRadio");
 
     public void MakePaperJudaAppear() => paperAfterJuda.MakePaperAppear();
+    public void MakePaperUnderstandParcAppear() => paperUnderstandParc.MakePaperAppear();
 
     public void CancelDoor()
     {
