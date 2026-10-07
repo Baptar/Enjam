@@ -26156,11 +26156,11 @@ PrefabInstance:
     - target: {fileID: 675420156003135690, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5653c20d77906b749ab10f7c46012f50, type: 2}
+      objectReference: {fileID: 2100000, guid: f3a6ca90440498f418b0b268c40d276f, type: 2}
     - target: {fileID: 779403455029752459, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d14447c872acd1c4891bd191f6f29bf5, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e968f0a88499e54fa1f5c9610d99801, type: 2}
     - target: {fileID: 1721040672925388026, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: Banc
       value: 
@@ -26204,15 +26204,15 @@ PrefabInstance:
     - target: {fileID: 2571584340049706202, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5031e213b6064e9459d71fc594f76f41, type: 2}
+      objectReference: {fileID: 2100000, guid: b1d34897309806545b7a13279efbb344, type: 2}
     - target: {fileID: 3000745424576484640, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d14447c872acd1c4891bd191f6f29bf5, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e968f0a88499e54fa1f5c9610d99801, type: 2}
     - target: {fileID: 3033872889529290840, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
+      objectReference: {fileID: 2100000, guid: 88a64a82561b8d84dafd136fa4631d9f, type: 2}
     - target: {fileID: 3143469127138933269, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Intensity
       value: 7787.031
@@ -26248,7 +26248,7 @@ PrefabInstance:
     - target: {fileID: 4743235031785171102, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
+      objectReference: {fileID: 2100000, guid: 88a64a82561b8d84dafd136fa4631d9f, type: 2}
     - target: {fileID: 4965894665867142165, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -26256,7 +26256,7 @@ PrefabInstance:
     - target: {fileID: 5049336522817472744, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5653c20d77906b749ab10f7c46012f50, type: 2}
+      objectReference: {fileID: 2100000, guid: f3a6ca90440498f418b0b268c40d276f, type: 2}
     - target: {fileID: 5268875279546656900, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -26280,15 +26280,15 @@ PrefabInstance:
     - target: {fileID: 5558233431643314114, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e9c7970dd9cafa748becc1f1692edf55, type: 2}
+      objectReference: {fileID: 2100000, guid: 824cc8916161dcb4fae4d2bc626f8f4b, type: 2}
     - target: {fileID: 5558233431643314114, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 87d9d8d561f2b6e4aa4b95f131100278, type: 2}
+      objectReference: {fileID: 2100000, guid: b92bccef65ecf7d458d1f8d67faf2ca5, type: 2}
     - target: {fileID: 6205765952400020868, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5653c20d77906b749ab10f7c46012f50, type: 2}
+      objectReference: {fileID: 2100000, guid: f3a6ca90440498f418b0b268c40d276f, type: 2}
     - target: {fileID: 6532695994310284017, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: cam
       value: 
@@ -26324,15 +26324,15 @@ PrefabInstance:
     - target: {fileID: 7039153991935360304, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
+      objectReference: {fileID: 2100000, guid: 88a64a82561b8d84dafd136fa4631d9f, type: 2}
     - target: {fileID: 7042113205829951676, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d14447c872acd1c4891bd191f6f29bf5, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e968f0a88499e54fa1f5c9610d99801, type: 2}
     - target: {fileID: 7361982972998469047, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5031e213b6064e9459d71fc594f76f41, type: 2}
+      objectReference: {fileID: 2100000, guid: b1d34897309806545b7a13279efbb344, type: 2}
     - target: {fileID: 7402115583597552738, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.4032545
@@ -26408,7 +26408,7 @@ PrefabInstance:
     - target: {fileID: 8009235873393036589, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
+      objectReference: {fileID: 2100000, guid: 88a64a82561b8d84dafd136fa4631d9f, type: 2}
     - target: {fileID: 8326669703405711693, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9972513
@@ -26492,79 +26492,7 @@ MonoBehaviour:
     Path: event:/Salon/GrabCandy
   eventOnStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: InitDissolveMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: InitDissolveMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: d14447c872acd1c4891bd191f6f29bf5, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: InitDissolveMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 5653c20d77906b749ab10f7c46012f50, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: InitDissolveMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 5031e213b6064e9459d71fc594f76f41, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: InitDissolveMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: e9c7970dd9cafa748becc1f1692edf55, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: InitDissolveMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 87d9d8d561f2b6e4aa4b95f131100278, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eventOnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -26600,78 +26528,6 @@ MonoBehaviour:
   OnDropEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 815e97bbe458ffd45937a70764f79474, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: d14447c872acd1c4891bd191f6f29bf5, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 5653c20d77906b749ab10f7c46012f50, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 5031e213b6064e9459d71fc594f76f41, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: e9c7970dd9cafa748becc1f1692edf55, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4511532055683134118}
-        m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 87d9d8d561f2b6e4aa4b95f131100278, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4511532055683134118}
         m_TargetAssemblyTypeName: ObjectGrabbable, Assembly-CSharp
         m_MethodName: MoveToActorAndDiseaper
