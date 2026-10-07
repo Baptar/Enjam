@@ -410,6 +410,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &16298687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2763841140932672965, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+  m_PrefabInstance: {fileID: 7810806128490278733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &26953487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 754628348053124164, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
@@ -1316,8 +1321,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2014651943883290018, guid: fd31f74123a893a4488873b99421a95a, type: 3}
+      propertyPath: managedReferences[2446279707539537926].clearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014651943883290018, guid: fd31f74123a893a4488873b99421a95a, type: 3}
+      propertyPath: managedReferences[2446279707539537926].renderQueueType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014651943883290018, guid: fd31f74123a893a4488873b99421a95a, type: 3}
       propertyPath: managedReferences[2446279707539537926].layerMask.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014651943883290018, guid: fd31f74123a893a4488873b99421a95a, type: 3}
+      propertyPath: managedReferences[2446279707539537926].depthCompareFunction
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2606232595453640792, guid: fd31f74123a893a4488873b99421a95a, type: 3}
       propertyPath: m_Name
@@ -8995,6 +9012,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 839718560956174982, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
   m_PrefabInstance: {fileID: 7810806128490278733}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &922799924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16298687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cfad1eb451eff40a1ae4953f3a67cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &933514885 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
@@ -27145,7 +27174,7 @@ PrefabInstance:
       objectReference: {fileID: 922799920}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableSway
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: playerRoot
@@ -27153,7 +27182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableBreath
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: gravityScale
@@ -27168,12 +27197,16 @@ PrefabInstance:
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: swaySmoothing
+      value: 2.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: breathWalkMult
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: swayRollAmount
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: breathFrequency
@@ -27182,6 +27215,10 @@ PrefabInstance:
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: raycastDistance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: swayPitchAmount
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: peepholeMaxAngle
@@ -27455,6 +27492,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 366842933757269188, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458681255}
+    - targetCorrespondingSourceObject: {fileID: 2763841140932672965, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 922799924}
     - targetCorrespondingSourceObject: {fileID: 3330562560485226908, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1486110085}
