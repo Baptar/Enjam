@@ -27165,6 +27165,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: lookSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: walkSpeed
       value: 3
       objectReference: {fileID: 0}
@@ -27174,15 +27178,19 @@ PrefabInstance:
       objectReference: {fileID: 922799920}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableSway
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: playerRoot
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: acceleration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableBreath
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: gravityScale
@@ -27191,6 +27199,10 @@ PrefabInstance:
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: enableHeadBob
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: lookSmoothing
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: lookXTopLimit

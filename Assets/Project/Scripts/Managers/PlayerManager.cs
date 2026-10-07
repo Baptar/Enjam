@@ -22,6 +22,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float lookXTopLimit = 45f;
     [SerializeField] private float lookXBotLimit = 55f;
     private float rotationY = 0f;
+    [Header("Look Smoothing")]
+    [SerializeField] private float lookSmoothing = 10f;
+    private float _pendingYaw;
+    private float _pendingPitch;
 
     [Space(2)] [Header("Rotation Peephole Settings")]
     [SerializeField] private float peepholeSensitivity = 0.5f;
@@ -109,6 +113,8 @@ public class PlayerManager : MonoBehaviour
     private bool bReading = false;
     public bool bInInteractionZone = false;
     
+    private Vector2 _currentMove;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -163,16 +169,31 @@ public class PlayerManager : MonoBehaviour
         #endregion
         
         #region Handles Movement
-        Vector2 playerMovementInput = playerInputController.Move;
-        Vector3 moveDirection = new Vector3(GetWalkSpeed() * playerMovementInput.x, -GetGravityScale(), GetWalkSpeed() * playerMovementInput.y);
-        bWalking = playerMovementInput is not { x: 0, y: 0 };
+        Vector2 playerMovementInput = Vector2.ClampMagnitude(playerInputController.Move, 1f);
+        bWalking = playerMovementInput.sqrMagnitude > 0.0001f;
+
         if (canMove)
         {
+            Vector2 targetMove = playerMovementInput * GetWalkSpeed();
+            float rate = bWalking ? acceleration : deceleration;
+            _currentMove = Vector2.MoveTowards(_currentMove, targetMove, rate * Time.deltaTime);
+
+            Vector3 moveDirection = new Vector3(_currentMove.x, -GetGravityScale(), _currentMove.y);
             characterController.Move(transform.rotation * moveDirection * Time.deltaTime);
+        }
+        else
+        {
+            _currentMove = Vector2.zero;
         }
         #endregion
         
         #region Handles Rotation
+        if (lookMode != ELookMode.Normal)
+        {
+            _pendingYaw = 0f;
+            _pendingPitch = 0f;
+        }
+        
         switch (lookMode)
         {
             case ELookMode.TargetPoint: break;
@@ -195,10 +216,20 @@ public class PlayerManager : MonoBehaviour
     {
         Vector2 delta = playerInputController.Look;
 
-        rotationY -= delta.y * lookSpeed;
-        rotationY = Mathf.Clamp(rotationY, -lookXBotLimit, lookXTopLimit);
+        _pendingYaw   += delta.x * lookSpeed;
+        _pendingPitch -= delta.y * lookSpeed;
 
-        transform.rotation *= Quaternion.Euler(0, delta.x * lookSpeed, 0);
+        float t = 1f - Mathf.Exp(-lookSmoothing * Time.deltaTime);
+
+        float yawStep = _pendingYaw * t;
+        _pendingYaw -= yawStep;
+        transform.rotation *= Quaternion.Euler(0f, yawStep, 0f);
+
+        float pitchStep = _pendingPitch * t;
+        float newPitch  = Mathf.Clamp(rotationY + pitchStep, -lookXBotLimit, lookXTopLimit);
+        bool  clamped   = !Mathf.Approximately(newPitch, rotationY + pitchStep);
+        rotationY       = newPitch;
+        _pendingPitch   = clamped ? 0f : _pendingPitch - pitchStep;
     }
 
     private void HandlePeepholeRotation()
