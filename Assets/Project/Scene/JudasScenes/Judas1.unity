@@ -247,7 +247,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candy_Bowl
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6472208736748200551, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 3781835790616679, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 9060805525790814413, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 7263883473320474151, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 2201356766719003013, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 7979333807656894996, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 8428191874922887886, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 324035162366740079, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 4387740570062115409, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 8853079255840680218, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 2232310580011701629, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 1948262521409006463, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 3708897015034767573, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
+    - {fileID: 6781151030530151274, guid: 43e9b94d4f2cb3d438c00b4602bd019a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1314,7 +1328,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3962105552446379722, guid: ad5915d406c8c5a40aa91f9a16bc0310, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
