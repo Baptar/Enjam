@@ -26675,6 +26675,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1281060972182142186, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: m_Color.b
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281060972182142186, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
     - target: {fileID: 1868509735376269824, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -26891,6 +26899,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6358215888094699106, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7026235771610548335, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: textHold
       value: 
@@ -26901,7 +26913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7054786562451796536, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7311394708095087569, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_IsActive
@@ -26945,7 +26957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8637524583440595136, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7903064062865594541, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
