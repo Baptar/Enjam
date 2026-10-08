@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     
     private IEnumerator Start()
     {
+        yield return new WaitForSeconds(0.2f);
         FadeScreen(false, 0.0f);
 
         if (delayShowCrosshair <= 0)
