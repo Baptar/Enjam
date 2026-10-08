@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Project/Scene/JudasScenes/Judas3.unity
     guid: 01e8928712a0d4140968360c4880fa56
   - enabled: 1
+    path: Assets/Project/Scene/JudasScenes/Judas3-1.unity
+    guid: 59b64812576ec4c4e844c71075d138a3
+  - enabled: 1
+    path: Assets/Project/Scene/JudasScenes/Judas4.unity
+    guid: 9f33a60163ef4b24cab75a5cca2909e8
+  - enabled: 1
     path: Assets/Project/Scene/JudasScenes/JudasRadio.unity
     guid: 7ab4486bd59cfb545ad714f0488d1de5
   - enabled: 1
