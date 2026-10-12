@@ -1370,7 +1370,7 @@ MonoBehaviour:
   - Judas1
   - Judas2
   - Judas3
-  - Judas4
+  - Judas4Bis
   - JudasRadio
   judasGenerator: {fileID: 1203205912}
 --- !u!1001 &199467013
@@ -1508,7 +1508,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5734814244660969084, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
 --- !u!1 &204137619 stripped
 GameObject:
@@ -1812,6 +1815,75 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colliderTag: Player
+--- !u!1 &212011324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2606213326013131985, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+  m_PrefabInstance: {fileID: 731303662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &212011325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+  m_PrefabInstance: {fileID: 731303662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &212011329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212011324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e155f0cff9a794dbd3fd202ec86b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bInteractable: 1
+  localizedTextInteraction:
+    m_TableReference:
+      m_TableCollectionName: InteractionsTable
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: interaction_default
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedTextCantInteract:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  eventSoundOnInteract:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  eventOnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOnInteractButNotInteractable:
+    m_PersistentCalls:
+      m_Calls: []
+  lerpSpeed: 10.75
+  blockYOnGrabbed: 1
+  OnDropEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  xValue: 295
+  zValue: 0
+  bShouldFall: 1
+  bFollowTargetPoint: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &212395133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
@@ -2904,7 +2976,7 @@ MonoBehaviour:
       m_Calls: []
   tocSoundPosition: {fileID: 0}
   tocSoundObject: {fileID: 0}
-  judasSceneName: Judas2
+  judasSceneName: Judas4
   judasWorldPosition: {fileID: 1626557179}
   cameraJudaTarget: {fileID: 1012029915}
   judasCamFOV: 1
@@ -4501,6 +4573,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730190254}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &731303662
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 914837891}
+    m_Modifications:
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7729374855502888082, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RemoveOtherJudas
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: JudasGenerator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 6298137833385559496, guid: 4e79dc028708bac44a7c6bbdb1407f9f, type: 3}
+    - target: {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 594439502266804875, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 268
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606213326013131985, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_Name
+      value: Judas (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606213326013131985, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413994164148680299, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506595552194502794, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 411407975102496166, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2606213326013131985, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 212011329}
+  m_SourcePrefab: {fileID: 100100000, guid: f657c3cd090f5d4419c5ab11ce02c8ad, type: 3}
 --- !u!4 &734758729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6528503114896258039, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
@@ -5614,7 +5799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &914837891
 Transform:
   m_ObjectHideFlags: 0
@@ -5638,6 +5823,7 @@ Transform:
   - {fileID: 417840506}
   - {fileID: 763097934}
   - {fileID: 81470137}
+  - {fileID: 212011325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &918350092
@@ -8842,7 +9028,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7978020579786501473, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d75ded2ef1aadef40846533818c78586, type: 3}
 --- !u!1 &1458681245 stripped
 GameObject:
