@@ -316,7 +316,7 @@ MonoBehaviour:
   cameraJudaTarget: {fileID: 1806704714}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 187617361}
-  paperUnderstandParc: {fileID: 0}
+  paperUnderstandParc: {fileID: 933514885}
   goShakeDoor: {fileID: 4085715}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -1508,10 +1508,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5734814244660969084, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
 --- !u!1 &204137619 stripped
 GameObject:
@@ -2044,7 +2041,7 @@ MonoBehaviour:
   cameraJudaTarget: {fileID: 76334963100526911}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 56555591}
-  paperUnderstandParc: {fileID: 0}
+  paperUnderstandParc: {fileID: 387036243}
   goShakeDoor: {fileID: 1691022509}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -2217,6 +2214,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
   m_PrefabInstance: {fileID: 620499449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &352158020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 620499449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363379050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,6 +2476,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+--- !u!114 &387036243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 599387531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &398240547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,7 +3294,7 @@ MonoBehaviour:
   cameraJudaTarget: {fileID: 734758729}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 993529999}
-  paperUnderstandParc: {fileID: 0}
+  paperUnderstandParc: {fileID: 2104863010}
   goShakeDoor: {fileID: 1013983693}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -5892,7 +5911,7 @@ MonoBehaviour:
   cameraJudaTarget: {fileID: 76334963100526910}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 1366225619}
-  paperUnderstandParc: {fileID: 0}
+  paperUnderstandParc: {fileID: 1504725405}
   goShakeDoor: {fileID: 1069446673}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -9028,10 +9047,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7978020579786501473, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75ded2ef1aadef40846533818c78586, type: 3}
 --- !u!1 &1458681245 stripped
 GameObject:
@@ -9480,7 +9496,7 @@ MonoBehaviour:
   cameraJudaTarget: {fileID: 1281294734}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 1024350359}
-  paperUnderstandParc: {fileID: 0}
+  paperUnderstandParc: {fileID: 352158020}
   goShakeDoor: {fileID: 327033745}
   shakeDuration: 0.5
   shakeStrength: 1
@@ -9839,6 +9855,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
   m_PrefabInstance: {fileID: 367108619}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504725405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 367108619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1510310238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6148786328586362027, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -12110,6 +12137,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3920817520751314000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
   m_PrefabInstance: {fileID: 1325698598}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104863010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+  m_PrefabInstance: {fileID: 1325698598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2109511711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13371,6 +13409,10 @@ PrefabInstance:
     - target: {fileID: 4319607479582547308, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691544891874539473, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: localizedTextInteraction.m_TableEntryReference.m_KeyId
+      value: 1117492738056192
       objectReference: {fileID: 0}
     - target: {fileID: 4924067859762589452, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target

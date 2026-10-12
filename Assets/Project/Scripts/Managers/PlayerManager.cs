@@ -142,10 +142,23 @@ public class PlayerManager : MonoBehaviour
             MainManager.instance.UIManager.SetCanvaTextInteract("");
             objectInteractable = null;
         }
-
-        else/* if (!GetIsInInteractionZone())*/
+        
+        else
         {
-            if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
+            if (GetIsInInteractionZone())
+            {
+                if (objectInteractable == null)
+                {
+                    MainManager.instance.UIManager.SetCanvaTextInteract("");
+                }
+                else
+                {
+                    string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
+                    MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);    
+                }
+            }
+            
+            else if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
                     out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
             {
                 MainManager.instance.UIManager.SetCanvaTextInteract("");

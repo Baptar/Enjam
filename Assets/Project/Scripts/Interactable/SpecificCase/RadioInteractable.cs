@@ -37,6 +37,7 @@ public class RadioInteractable : ObjectGrabbable
     private IEnumerator OnDrop()
     {
         MainManager.instance.Player.FocusTarget(transform, jumpDuration - 1.0f);
+        MainManager.instance.UIManager.EnableCrosshair(false);
         
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOJump(jumpEndValue.position, jumpPower, 1, jumpDuration))
@@ -44,7 +45,7 @@ public class RadioInteractable : ObjectGrabbable
             {
                 OnDropEvent?.Invoke();
                 if (!objectRigidBody) return;
-        
+
                 objectCollider.enabled = true;
                 objectGrabPointTransform = null;
                 objectRigidBody.freezeRotation = false;
@@ -56,5 +57,6 @@ public class RadioInteractable : ObjectGrabbable
         
         yield return new WaitForSeconds(durationBeforeParcAppear);
         ParcObj.instance.MakeParcAppear();
+        MainManager.instance.UIManager.EnableCrosshair(true);
     }
 }
