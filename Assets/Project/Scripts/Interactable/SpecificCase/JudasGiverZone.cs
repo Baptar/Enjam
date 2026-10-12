@@ -9,13 +9,26 @@ public class JudasGiverZone : ZoneInteractable
         
         if (GetInteractable())
         {
-            GiveJudas();
+            Interact();
         }
     }
     
     public override bool GetInteractable()
     {
         return bInteractable && bInInteractionZone;
+    }
+
+    public override void Interact()
+    {
+        if (GetInteractable())
+        {
+            SetInteractable(false);
+            
+            if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
+            eventOnInteract?.Invoke();
+            GiveJudas();
+        }
+        else eventOnInteractButNotInteractable?.Invoke();
     }
 
     private void GiveJudas()

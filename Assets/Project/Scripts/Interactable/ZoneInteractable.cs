@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ZoneInteractable : ObjectInteractable
 {
-    protected bool bInInteractionZone = false;
+    [Header("DEBUG")]
+     [SerializeField] protected bool bInInteractionZone = false;
     
     protected virtual void OnTriggerEnter(Collider other)
     {

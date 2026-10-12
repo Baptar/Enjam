@@ -17,6 +17,7 @@ public class PileInteract : ObjectGrabbable
     public override void Interact()
     {
         MainManager.instance.Player.SetHasPile(true);
+        gameObject.transform.DOScale(1.0f, 2.0f).SetEase(Ease.InOutElastic);
         GrowBackPlayer();
         base.Interact();
     }

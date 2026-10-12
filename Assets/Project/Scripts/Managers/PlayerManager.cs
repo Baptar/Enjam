@@ -96,6 +96,7 @@ public class PlayerManager : MonoBehaviour
     [Space(2)]
     [Header("Inventory")]
     [SerializeField] private ObjectGrabbable grabbedObject = null;
+    [SerializeField] private ObjectInteractable objectInteractable;
     [SerializeField] private bool bHasBeer = false;
     [SerializeField] private bool bHasRadio = false;
     [SerializeField] private bool bHasJuda = false;
@@ -109,7 +110,6 @@ public class PlayerManager : MonoBehaviour
     
     private CharacterController characterController;
     private PlayerInputController playerInputController;
-    private ObjectInteractable objectInteractable;
     private bool bReading = false;
     public bool bInInteractionZone = false;
     
@@ -143,22 +143,48 @@ public class PlayerManager : MonoBehaviour
             objectInteractable = null;
         }
         
-        else
+        // Check is in zone and its is interactable
+        else if (GetIsInInteractionZone())
         {
-            if (GetIsInInteractionZone())
+            if (objectInteractable != null && objectInteractable.GetInteractable())
             {
-                if (objectInteractable == null)
+                // Get Text to display
+                string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
+                MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
+            }
+
+            else
+            {
+                // Check reycasting something
+                if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
+                        out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
                 {
                     MainManager.instance.UIManager.SetCanvaTextInteract("");
+                    objectInteractable = null;
                 }
+
+                // Check if it's an interactable element
+                else if (!raycastHit.collider.TryGetComponent(out objectInteractable))
+                {
+                    MainManager.instance.UIManager.SetCanvaTextInteract("");
+                    objectInteractable = null;
+                }
+
                 else
                 {
-                    string textToDisplay = objectInteractable.GetInteractable() ? objectInteractable.GetTextInteract() : objectInteractable.GetTextCantInteract();
-                    MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);    
+                    // Get Text to display
+                    string textToDisplay = objectInteractable.GetInteractable()
+                        ? objectInteractable.GetTextInteract()
+                        : objectInteractable.GetTextCantInteract();
+                    MainManager.instance.UIManager.SetCanvaTextInteract(textToDisplay);
                 }
             }
-            
-            else if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
+        }
+        
+        else
+        {
+            // Check reycasting something
+            if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
                     out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
             {
                 MainManager.instance.UIManager.SetCanvaTextInteract("");
@@ -488,5 +514,8 @@ public class PlayerManager : MonoBehaviour
     {
         bInInteractionZone = value;   
     }
+    
+    // raycast 
+    public void SetRaycastDistance(float value) => raycastDistance = value;
     #endregion
 }
