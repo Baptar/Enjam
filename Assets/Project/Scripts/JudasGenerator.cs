@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -11,6 +12,7 @@ public class JudasGenerator : MonoBehaviour
     [SerializeField] private Material judasMaterial;
     public Material judasMaterialFade;
     [SerializeField] private UnityEvent eventOnGenerated;
+    [SerializeField] private float intervalle = 0.2f;
 
     [Header("vertical power")]
     [SerializeField] private float forceVerticaleMin = 8f;
@@ -24,8 +26,10 @@ public class JudasGenerator : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool debug = true;
 
+    private Sequence generateSequence;
+
     
-    [ContextMenu("Generate")]
+    /*[ContextMenu("Generate")]
     public void Generate()
     {
         foreach (JudasGrabObj rb in judas)
@@ -57,7 +61,7 @@ public class JudasGenerator : MonoBehaviour
             }
             eventOnGenerated?.Invoke();
         }
-    }
+    }*/
     
     private void Start()
     {
@@ -98,8 +102,8 @@ public class JudasGenerator : MonoBehaviour
         }
     }
     
-    /*
-     [ContextMenu("Generate")]
+    
+    [ContextMenu("Generate")]
     public void Generate()
     {
         generateSequence?.Kill();
@@ -145,5 +149,4 @@ public class JudasGenerator : MonoBehaviour
             Debug.DrawRay(posSpawn, forceFinale, Color.red, 20f);
         }
     }
-     */
 }

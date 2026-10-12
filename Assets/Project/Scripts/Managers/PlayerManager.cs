@@ -143,7 +143,7 @@ public class PlayerManager : MonoBehaviour
             objectInteractable = null;
         }
 
-        else if (!GetIsInInteractionZone())
+        else/* if (!GetIsInInteractionZone())*/
         {
             if (!Physics.Raycast(GetPlayerCamera().transform.position, GetPlayerCamera().transform.forward,
                     out RaycastHit raycastHit, raycastDistance, raycastLayerMask))
