@@ -20,6 +20,10 @@ public class BackButton : MonoBehaviour
             nav.selectOnUp = fullscreenButton;
             button.navigation = nav;
         }
+        else if (menuManager.PanelState == PanelState.SettingsSensibility)
+        {
+            menuManager.ResetSensibilityButton();
+        }
         else if (menuManager.PanelState == PanelState.SettingsMain)
         {
             menuManager.SetPanel(PanelState.Main);

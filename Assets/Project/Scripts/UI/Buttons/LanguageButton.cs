@@ -15,6 +15,7 @@ public class LanguageButton : MonoBehaviour
     {
         menuManager.SetPanel(PanelState.SettingsLanguage);
         InputManager.Instance.SetSelected(englishButton);
+        menuManager.ResetSensibilityButton();
         
         // Update back button navigation
         Navigation nav = backButton.navigation;

@@ -35,6 +35,14 @@ MonoBehaviour:
     m_Key: settings_fullscreen
     m_Metadata:
       m_Items: []
+  - m_Id: 46875294316187648
+    m_Key: settings_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46875569441558528
+    m_Key: settings_no
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

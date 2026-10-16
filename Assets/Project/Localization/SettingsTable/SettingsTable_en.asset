@@ -31,11 +31,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 40188006422282240
-    m_Localized: V-Sync
+    m_Localized: 'V-Sync:'
     m_Metadata:
       m_Items: []
   - m_Id: 40188662461759488
-    m_Localized: Fullscreen
+    m_Localized: 'Fullscreen:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46875294316187648
+    m_Localized: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46875569441558528
+    m_Localized: no
     m_Metadata:
       m_Items: []
   references:

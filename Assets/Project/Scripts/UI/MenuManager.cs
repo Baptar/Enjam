@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup settingsMenu;
     [SerializeField] private CanvasGroup mainSettingsPanel;
     [SerializeField] private CanvasGroup languageSettingsPanel;
+    [SerializeField] private Button languageButton;
+    [SerializeField] private Button vsyncButton;
+    [SerializeField] private Button sensibilityButton;
+    [SerializeField] private GameObject sensibilityScrollbar;
+    [SerializeField] private SettingsManager settingsManager;
     
     private PanelState panelState;
     
@@ -24,6 +30,22 @@ public class MenuManager : MonoBehaviour
         canvasGroup.blocksRaycasts = show;
         canvasGroup.interactable = show;
     }
+
+    public void ResetSensibilityButton()
+    {
+        sensibilityButton.gameObject.SetActive(true);
+        sensibilityScrollbar.gameObject.SetActive(false);
+        
+        // Update language button navigation
+        Navigation nav = languageButton.navigation;
+        nav.selectOnDown = sensibilityButton;
+        languageButton.navigation = nav;
+        
+        // Update Vsync button navigation
+        nav = vsyncButton.navigation;
+        nav.selectOnUp = sensibilityButton;
+        vsyncButton.navigation = nav;
+    }
     
     public void SetPanel(PanelState state)
     {
@@ -32,6 +54,7 @@ public class MenuManager : MonoBehaviour
         ShowCanvasGroup(state == PanelState.SettingsLanguage, languageSettingsPanel);
         
         ShowCanvasGroup(state != PanelState.Main, settingsMenu);
+        ResetSensibilityButton();
 
         panelState = state;
     }
@@ -39,5 +62,7 @@ public class MenuManager : MonoBehaviour
     public void SetLanguage(int language)
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[language];
+        settingsManager.SetVsyncButtonsText();
+        settingsManager.SetFullscreenButtonsText();
     }
 }
