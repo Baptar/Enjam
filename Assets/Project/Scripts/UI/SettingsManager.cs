@@ -18,12 +18,16 @@ public class SettingsManager : MonoBehaviour
     {
         SetVsyncButtonsText();
         SetFullscreenButtonsText();
+        
+        vsyncEnabled = QualitySettings.vSyncCount > 0;
+        fullscreenEnabled = Screen.fullScreen;
     }
 
     public void VSyncButton()
     {
         InputManager.Instance.SetSelected(vsyncText.gameObject);
         vsyncEnabled = !vsyncEnabled;
+        QualitySettings.vSyncCount = vsyncEnabled ? 1 : 0;
         SetVsyncButtonsText();
     }
 
@@ -31,6 +35,18 @@ public class SettingsManager : MonoBehaviour
     {
         InputManager.Instance.SetSelected(fullscreenText.gameObject);
         fullscreenEnabled = !fullscreenEnabled;
+        
+        if (fullscreenEnabled)
+        {
+            // Plein écran exclusif
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else
+        {
+            // Plein écran fenêtré sans bordure
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        }
+        
         SetFullscreenButtonsText();
     }
     

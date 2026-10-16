@@ -112,8 +112,14 @@ public class PlayerManager : MonoBehaviour
     private PlayerInputController playerInputController;
     private bool bReading = false;
     public bool bInInteractionZone = false;
-    
+    private bool bPaused = false;
     private Vector2 _currentMove;
+    
+    public void SetPaused(bool value)
+    {
+        bPaused = value;
+        if (value) _currentMove = Vector2.zero;
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -135,6 +141,8 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bPaused) return;
+        
         #region Raycast
         // Raycast Elements
         if (lookMode != ELookMode.Normal)
@@ -342,6 +350,8 @@ public class PlayerManager : MonoBehaviour
 
     private void OnInteract()
     {
+        if (bPaused) return;
+        
         if (bReading)
         {
             SetIsReading(false);
