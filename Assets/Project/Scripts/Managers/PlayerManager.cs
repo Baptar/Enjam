@@ -15,6 +15,9 @@ public class PlayerManager : MonoBehaviour
         TargetPoint
     }
     
+    [Header("Light")]
+    public Light cameraLight;
+    
     [Header("Rotation Normal Settings")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform cameraRoot;

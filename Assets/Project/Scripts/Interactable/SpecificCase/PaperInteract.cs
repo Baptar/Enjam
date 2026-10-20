@@ -30,9 +30,10 @@ public class PaperInteract : ObjectGrabbable
     [SerializeField] private float durationDissolve = 0.5f;
     [SerializeField] private Ease easeDissolve = Ease.InOutFlash;
     
-    protected void Start()
+    protected override void Start()
     {
         lastCameraEuler = MainManager.instance.Player.GetPlayerCamera().transform.eulerAngles;
+        InitDissolveMaterial(GetComponent<Renderer>().material);
     }
     
     protected override void Update()
@@ -132,9 +133,28 @@ public class PaperInteract : ObjectGrabbable
         sequence.Append(paperTextRef.DOColor(Color.clear, durationDissolve).SetEase(easeDissolve))
             .InsertCallback(durationDissolve / 4.0f, () =>
             {
-                SetLayer(LayerMask.NameToLayer("Default"));
+                //SetLayer(LayerMask.NameToLayer("Default"));
                 FadeOut(GetComponent<Renderer>().material);
             })
         ;
+    }
+    
+    public virtual void FadeOut(Material mat)
+    {
+        //Debug.Log("Fade out");
+        float valFloat = 0.0f;
+        
+        DOTween.To(() => valFloat, x => valFloat = x, 1.0f, 1f)
+            .OnUpdate(() =>
+            {
+                mat.SetFloat("_Dissolve", valFloat);
+            })
+            .OnComplete(()=> gameObject.SetActive(false));
+    }
+
+    public virtual void InitDissolveMaterial(Material mat)
+    {
+        Debug.unityLogger.Log("InitDissolveMaterial " + this);
+        mat.SetFloat("_Dissolve", 0.0f);
     }
 }

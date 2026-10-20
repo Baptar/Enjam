@@ -104,9 +104,8 @@ public class ObjectGrabbable : ObjectInteractable
         objectGrabPointTransform = newObjectGrabPoint;
     }
 
-    public void FadeOut(Material mat)
+    public virtual void FadeOut(Material mat)
     {
-        Debug.Log("Fade out");
         float valFloat = 0.0f;
         
         DOTween.To(() => valFloat, x => valFloat = x, 1.0f, 1f)
@@ -117,7 +116,7 @@ public class ObjectGrabbable : ObjectInteractable
             /*.OnComplete(()=> gameObject.SetActive(false))*/;
     }
 
-    public void InitDissolveMaterial(Material mat)
+    public virtual void InitDissolveMaterial(Material mat)
     {
         mat.SetFloat("_Fade", 0.0f);
     }
