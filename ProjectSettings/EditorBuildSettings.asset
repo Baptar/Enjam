@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scene/JudasScenes/JudasFinalDoor.unity
     guid: ed5965a78b1bd1e47807c41b2ecabdad
+  - enabled: 1
+    path: Assets/Project/Scene/EndScene.unity
+    guid: ce3744b050b82aa46b700ab2e109b61c
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 4ce4aefa2e04208439d4e4375398cd88, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 260f482c6940b074e8409d60617ea37c, type: 2}

@@ -11,6 +11,9 @@ public class ObjectGrabbable : ObjectInteractable
     public UnityEvent OnDropEvent;
     [SerializeField] private float xValue = 0.0f;
     [SerializeField] private float zValue = 0.0f;
+    [SerializeField] protected bool bTransparent = false;
+    [SerializeField] protected LayerMask layerMask;
+    [SerializeField] protected LayerMask layerMaskTransparent;
 
     [Space(5)]
     [Header("Drop setting")]
@@ -69,9 +72,17 @@ public class ObjectGrabbable : ObjectInteractable
     // Grab this Object
     protected virtual void Grab()
     {
-        Debug.LogError("TRAHHH");
 
-        SetLayer(LayerMask.NameToLayer("Item"));
+        //SetLayer(LayerMask.NameToLayer(bTransparent ? "ItemTransparent" : "Item"));
+        if (bTransparent)
+        {
+            SetLayer(LayerMaskToLayer(layerMaskTransparent));
+        }
+        else
+        {
+            SetLayer(LayerMaskToLayer(layerMask));
+        }
+        
         SetObjectGrabPointTransform(MainManager.instance.Player.GetObjectGrabPointTransform());
         if (objectRigidBody)
         {
@@ -137,4 +148,12 @@ public class ObjectGrabbable : ObjectInteractable
             SetLayerRecursive(child.gameObject, layer);
         }
     }
+    
+    public int LayerMaskToLayer(LayerMask mask)
+    {
+        return Mathf.RoundToInt(Mathf.Log(mask.value, 2));
+    }
+
+    [ContextMenu("TEST LAYER")]
+    public void TestLayer() => SetLayer(layerMask);
 }

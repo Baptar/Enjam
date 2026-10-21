@@ -64,6 +64,16 @@ public class PaperInteract : ObjectGrabbable
 
     protected override void Grab()
     {
+        //SetLayer(LayerMask.NameToLayer(bTransparent ? "ItemTransparent" : "Item"));
+        if (bTransparent)
+        {
+            SetLayer(LayerMaskToLayer(layerMaskTransparent));
+        }
+        else
+        {
+            SetLayer(LayerMaskToLayer(layerMask));
+        }
+        
         MainManager.instance.PaperManager.SetCurrentPaperRead(this);
         PlaySound("event:/Hall/PaperGrab");
         
@@ -71,6 +81,20 @@ public class PaperInteract : ObjectGrabbable
         GetComponent<Collider>().enabled = false;
         MainManager.instance.Player.SetGrabbedObject(this);
         SetLayer(LayerMask.NameToLayer("Item"));
+        
+        float valFloatBright = GetComponent<Renderer>().material.GetFloat("_PaperBrightness");
+        DOTween.To(() => valFloatBright, x => valFloatBright = x, 0.53f, 0.5f)
+            .OnUpdate(() =>
+            {
+                GetComponent<Renderer>().material.SetFloat("_PaperBrightness", valFloatBright);
+            });
+        
+        float valFloatHeld = GetComponent<Renderer>().material.GetFloat("_HeldBlend");
+        DOTween.To(() => valFloatHeld, x => valFloatHeld = x, 1.0f, 0.5f)
+            .OnUpdate(() =>
+            {
+                GetComponent<Renderer>().material.SetFloat("_HeldBlend", valFloatHeld);
+            });
     }
 
     public override void Drop()
@@ -156,5 +180,7 @@ public class PaperInteract : ObjectGrabbable
     {
         Debug.unityLogger.Log("InitDissolveMaterial " + this);
         mat.SetFloat("_Dissolve", 0.0f);
+        mat.SetFloat("_PaperBrightness", -0.58f);
+        mat.SetFloat("_HeldBlend", 0.0f);
     }
 }
