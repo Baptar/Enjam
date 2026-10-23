@@ -17,6 +17,11 @@ public class GamepadVibration : MonoBehaviour
 
         _instance = this;
     }
+    
+    public void NotInteractableVibration()
+    {
+        GamepadVibration.Vibrate(0.5f, 0.5f, 0.15f);
+    }
 
     public static void Vibrate(float low, float high, float duration)
     {

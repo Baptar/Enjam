@@ -1567,6 +1567,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 528177883}
     m_Modifications:
+    - target: {fileID: 1905784512057401329, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 2375361558986343305, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
       propertyPath: m_Name
       value: PaperThrowRadio Variant
@@ -1910,10 +1914,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5734814244660969084, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
 --- !u!1 &204137619 stripped
 GameObject:
@@ -6874,6 +6875,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 528177883}
     m_Modifications:
+    - target: {fileID: 1905784512057401329, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 2375361558986343305, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
       propertyPath: m_Name
       value: PaperThrowRadio Variant (1)
@@ -7067,6 +7072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 528177883}
     m_Modifications:
+    - target: {fileID: 1905784512057401329, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 2375361558986343305, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
       propertyPath: m_Name
       value: PaperThrowRadio Variant (3)
@@ -8579,6 +8588,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5707992051134428865, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.761
+      objectReference: {fileID: 0}
     - target: {fileID: 6380175309920261749, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_renderer
       value: 
@@ -9012,6 +9025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 528177883}
     m_Modifications:
+    - target: {fileID: 1905784512057401329, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 2375361558986343305, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
       propertyPath: m_Name
       value: PaperThrowRadio Variant (2)
@@ -9770,10 +9787,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7978020579786501473, guid: d75ded2ef1aadef40846533818c78586, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75ded2ef1aadef40846533818c78586, type: 3}
 --- !u!1 &1458681245 stripped
 GameObject:
@@ -10578,7 +10592,19 @@ MonoBehaviour:
         m_CallState: 2
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1666620129}
+        m_TargetAssemblyTypeName: GamepadVibration, Assembly-CSharp
+        m_MethodName: NotInteractableVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   captureVideo: {fileID: 363379051}
   references:
     version: 2
@@ -13636,6 +13662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 870668916}
     m_Modifications:
+    - target: {fileID: 195254440438271827, guid: 42bb9053f7539844d9d26f6e551909e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 3709330465161005457, guid: 42bb9053f7539844d9d26f6e551909e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8188
@@ -16555,6 +16585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaperChillBeer
       objectReference: {fileID: 0}
+    - target: {fileID: 8126241754618022799, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16598,6 +16632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 528177883}
     m_Modifications:
+    - target: {fileID: 1905784512057401329, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 2375361558986343305, guid: 459c3ff95a7043f4e8319bbe3a041bee, type: 3}
       propertyPath: m_Name
       value: PaperThrowRadio
@@ -17254,6 +17292,10 @@ PrefabInstance:
       propertyPath: m_text
       value: You shouldn't be outside..      Have you heard the news?
       objectReference: {fileID: 0}
+    - target: {fileID: 5901841466103666834, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8153370777243779499, guid: e003fa0df5031944eaa7a3196eee1660, type: 2}
     - target: {fileID: 6928808977469234768, guid: 9cf1810dcbb87a34a9d2736fffcedcef, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
