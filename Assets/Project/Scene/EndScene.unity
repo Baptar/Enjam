@@ -540,8 +540,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Baptiste Ruberte\nMat\xE9o Avventuriero\nPablo Val\nMael vhbdfhu\nHugo
-    sfdvd\n"
+  m_text: "Baptiste REUBERTE\nMat\xE9o AVVENTURIERO\nPablo VAL\nMael HEURARD\nHugo
+    BAYLE\nMoumine KONATE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e8d6fe0d82fadc42b9033714aab88bc, type: 2}
   m_sharedMaterial: {fileID: 6719784684195736571, guid: 9e8d6fe0d82fadc42b9033714aab88bc, type: 2}
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -747,7 +747,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269328071}
   m_LocalRotation: {x: 0.49999857, y: 0.49999994, z: -0.50000006, w: 0.5000015}
-  m_LocalPosition: {x: 0, y: 0, z: -85.208}
+  m_LocalPosition: {x: 0, y: 0, z: -85.19}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
   m_Children:
