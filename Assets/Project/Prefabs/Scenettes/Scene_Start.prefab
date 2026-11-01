@@ -1830,11 +1830,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f663af9186825443bd9635b40eef3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraLight: {fileID: 0}
   playerCamera: {fileID: 518818062223850107}
   cameraRoot: {fileID: 0}
   lookSpeed: 2
+  mouseLookSpeed: 1.5
+  gamepadLookSpeed: 2
   lookXTopLimit: 45
   lookXBotLimit: 55
+  lookSmoothing: 10
   peepholeSensitivity: 0.5
   peepholeMaxOffset: 0.3
   peepholeSmoothing: 8
@@ -1870,10 +1874,12 @@ MonoBehaviour:
   objectGrabPointPaperTransform: {fileID: 0}
   lookMode: 0
   grabbedObject: {fileID: 0}
+  objectInteractable: {fileID: 0}
   bHasBeer: 0
   bHasRadio: 0
   bHasJuda: 0
   bHasPile: 0
+  bHasShovel: 0
   bInBenchZone: 0
   bWalking: 0
   bInInteractionZone: 0

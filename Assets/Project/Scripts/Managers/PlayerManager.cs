@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 
 public class PlayerManager : MonoBehaviour
@@ -22,6 +24,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private float lookSpeed     = 2f;
+    [SerializeField] private float mouseLookSpeed = 0.1f;
+    [SerializeField] private float gamepadLookSpeed = 0.65f;
     [SerializeField] private float lookXTopLimit = 45f;
     [SerializeField] private float lookXBotLimit = 55f;
     private float rotationY = 0f;
@@ -350,6 +354,31 @@ public class PlayerManager : MonoBehaviour
         GetPlayerCamera().transform.localRotation = verticalRotation * swayValue * breathValue;
     }
     #endregion
+    
+    private void OnEnable()
+    {
+        InputSystem.onEvent += OnInputEvent;
+    }
+
+    private void OnDisable()
+    {
+        InputSystem.onEvent -= OnInputEvent;
+    }
+    
+    private void OnInputEvent(InputEventPtr eventPtr, InputDevice device)
+    {
+        if (!eventPtr.IsA<StateEvent>() && !eventPtr.IsA<DeltaStateEvent>())
+            return;
+
+        if (device is Gamepad)
+        {
+            lookSpeed = gamepadLookSpeed;
+        }
+        else if (device is Mouse)
+        {
+            lookSpeed = mouseLookSpeed;
+        }
+    }
 
     private void OnInteract()
     {
