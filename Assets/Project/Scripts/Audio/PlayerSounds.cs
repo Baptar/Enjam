@@ -22,7 +22,7 @@ public class PlayerSounds : MonoBehaviour
 
     void ManageFootSteps()
     {
-        if (!player.GetIsWalking()) return;
+        if (!player.GetIsWalking() || !player.GetCanMove()) return;
         
         footstepTime += Time.deltaTime;
         if (footstepTime >= rate) PlayFootStepSound();
