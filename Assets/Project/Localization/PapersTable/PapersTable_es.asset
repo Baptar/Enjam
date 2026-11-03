@@ -19,30 +19,31 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: "Me muero de hambre, \xBFme puedes traer algunos caramelos?"
+    m_Localized: "Me muero de hambre.\n\n\xBFMe puedes traer algunos caramelos?"
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: "Ya no veo nada; mi ojo debe de haber rodado a alguna parte. \xBFPodr\xEDas
+    m_Localized: "Ya no veo nada, mi ojo debe de haber rodado a alguna parte.\n\n\xBFPodr\xEDas
       recogerlo por m\xED?\r"
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
-    m_Localized: "No deber\xEDas estar afuera... \xBFHas o\xEDdo las noticias?"
+    m_Localized: "No deber\xEDas estar afuera... \n\n\xBFHas o\xEDdo las noticias?"
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
-    m_Localized: "T\xEDo, creo que deber\xEDas relajarte un poco. Toma, coge esto."
+    m_Localized: "T\xEDo, creo que deber\xEDas relajarte un poco. \n\nToma, coge
+      esto."
     m_Metadata:
       m_Items: []
   - m_Id: 2318523695104
-    m_Localized: "La gente no deja de dejar sus cosas en el parque; entiendo por
+    m_Localized: "La gente no deja de dejar sus cosas en el parque.\n\nEntiendo por
       qu\xE9 \xE9l se marcha una y otra vez."
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: "Me encantar\xEDa ir al parque, pero se ha vuelto a caer en un agujero.
-      Ponle un poco de m\xFAsica para animarlo."
+    m_Localized: "Me encantar\xEDa ir al parque, pero se ha vuelto a caer en un agujero.\n\nPonle
+      un poco de m\xFAsica para animarlo."
     m_Metadata:
       m_Items: []
   references:

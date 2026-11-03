@@ -106,6 +106,10 @@ MonoBehaviour:
     m_Localized: Talk to the hole
     m_Metadata:
       m_Items: []
+  - m_Id: 53685671200612352
+    m_Localized: Play some music to the parc
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

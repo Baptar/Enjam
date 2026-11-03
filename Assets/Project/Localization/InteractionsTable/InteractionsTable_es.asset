@@ -106,6 +106,10 @@ MonoBehaviour:
     m_Localized: Tirar la radio
     m_Metadata:
       m_Items: []
+  - m_Id: 53685671200612352
+    m_Localized: "Ponle m\xFAsica al parque"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

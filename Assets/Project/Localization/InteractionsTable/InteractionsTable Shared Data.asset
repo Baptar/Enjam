@@ -103,6 +103,10 @@ MonoBehaviour:
     m_Key: interaction_parcZoneRadio
     m_Metadata:
       m_Items: []
+  - m_Id: 53685671200612352
+    m_Key: interaction_doorThrowRadioCantInteract
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

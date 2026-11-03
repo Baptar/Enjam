@@ -259,7 +259,7 @@ public class JudaEventManager : MonoBehaviour
                 res.SetUnderstandParc();
             }
         });
-        door.MakePaperJudaAppear();
+        door.MakePaperThrowRadioAppear();
         return;
         
         

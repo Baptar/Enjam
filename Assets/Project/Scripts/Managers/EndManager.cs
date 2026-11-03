@@ -14,11 +14,11 @@ public class EndManager : MonoBehaviour
     {
         Debug.Log("Ending Level");
         Sequence seq = DOTween.Sequence();
-        seq.AppendCallback(()=>
+        /*seq.AppendCallback(()=>
         {
-            MainManager.instance.UIManager.FadeScreen(true, 0.75f);
-        });
-        seq.AppendInterval(0.75f);
+            MainManager.instance.UIManager.FadeScreen(true, 0.15f);
+        });*/
+        //seq.AppendInterval(0.15f);
         seq.AppendCallback(()=>
         {
             SceneManager.LoadScene(sceneToLoad);

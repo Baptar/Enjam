@@ -19,30 +19,33 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2135316496384
-    m_Localized: I'm starving, can you get me some candies?
+    m_Localized: "I'm starving. \n\nCan you get me some candies?"
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: I can't see anything, my eye must have rolled somewhere, could you
-      pick it up for me?
+    m_Localized: 'I can''t see anything, my eye must have rolled somewhere.
+
+
+      Could
+      you pick it up for me?'
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
-    m_Localized: You shouldn't be outside... have you heard the news?
+    m_Localized: "You shouldn't be outside... \n\nHave you heard the news?"
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
-    m_Localized: Homie, I feel like you should chill a bit. Here, take this.
+    m_Localized: "Homie, I feel like you should chill a bit. \n\nHere, take this."
     m_Metadata:
       m_Items: []
   - m_Id: 2318523695104
-    m_Localized: People keep letting their stuff in the park, I understand why he
-      keeps leaving.
+    m_Localized: "People keep letting their stuff in the park. \n\nI understand why
+      he keeps leaving."
     m_Metadata:
       m_Items: []
   - m_Id: 700201984225280
-    m_Localized: I would love to go to the park but he fell in a hole again. Play
-      him some music to cheer him up.
+    m_Localized: "I would love to go to the park but he fell in a hole again.   \n\nPlay
+      him some music to cheer him up."
     m_Metadata:
       m_Items: []
   references:

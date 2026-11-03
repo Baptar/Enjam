@@ -49,6 +49,7 @@ public class DoorCoridorInteract : ObjectInteractable
     [SerializeField] private LocalizedString chillBeer;
     [SerializeField] private LocalizedString chillBeerCantInteract;
     [SerializeField] private LocalizedString understandPark;
+    [SerializeField] private LocalizedString throwRadioCantInteract;
     
     
     [Space(10)]
@@ -244,7 +245,15 @@ public class DoorCoridorInteract : ObjectInteractable
 
     public void SetRadioDoor() => SetJudasSceneName("JudasRadio");
 
-    public void MakePaperJudaAppear() => paperAfterJuda.MakePaperAppear();
+    public void MakePaperThrowRadioAppear()
+    {
+        paperAfterJuda.MakePaperAppear();
+    }
+
+    public void SetTextThrowRadio()
+    {
+        SetTextCantInteract(throwRadioCantInteract.GetLocalizedString());  
+    }
     public void MakePaperUnderstandParcAppear() => paperUnderstandParc.MakePaperAppear();
 
     public void CancelDoor()
