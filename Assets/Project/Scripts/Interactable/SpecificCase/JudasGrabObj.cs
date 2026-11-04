@@ -21,6 +21,7 @@ public class JudasGrabObj : ObjectGrabbable
             MainManager.instance.Player.SetHasJuda(true);
             MainManager.instance.JudasesManager.GetJudasGenerator().RemoveOtherJudas(this);
             MainManager.instance.JudasesManager.StartJudasEvent();
+            PlaySound("event:/Park/Pick Eye");
         }
         // Not Interactable
         else eventOnInteractButNotInteractable?.Invoke();

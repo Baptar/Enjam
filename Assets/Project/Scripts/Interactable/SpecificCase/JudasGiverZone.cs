@@ -36,6 +36,7 @@ public class JudasGiverZone : ZoneInteractable
         bInteractable = false;
         MainManager.instance.JudasesManager.GenerateJudas();
         gameObject.SetActive(false);
+        PlaySound("event:/Park/Eye explosion");
     }
 
     private void OnDisable()

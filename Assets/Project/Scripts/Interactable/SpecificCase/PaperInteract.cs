@@ -125,6 +125,7 @@ public class PaperInteract : ObjectGrabbable
     public void MakePaperDisappear()
     {
         Drop();
+        PlaySound("event:/Hall/PaperDissapear");
         //Sequence seq = DOTween.Sequence();
         //seq.Append(transform.DOShakePosition(1.0f, 0.1f).SetEase(Ease.InOutFlash))
         //    .Insert(0f, transform.DOScale(Vector3.zero, 1.0f).SetEase(Ease.InOutFlash))

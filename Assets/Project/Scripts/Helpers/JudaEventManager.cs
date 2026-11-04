@@ -84,6 +84,7 @@ public class JudaEventManager : MonoBehaviour
         fovBeforeJudas = playerCamera.fieldOfView;
         
         // Move Juda
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/EyeOnDoor");
         judasObject.bFollowTargetPoint = false;
         Sequence sequenceMoveJuda = DOTween.Sequence();
         sequenceMoveJuda.Append(judasObject.transform.DOMove(judasTransformTarget.position, 1.0f).SetEase(Ease.InOutFlash))
@@ -128,6 +129,7 @@ public class JudaEventManager : MonoBehaviour
         fovBeforeJudas = playerCamera.fieldOfView;
         
         // Move Juda
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/EyeOnDoor");
         judasObject.bFollowTargetPoint = false;
         Sequence sequenceMoveJuda = DOTween.Sequence();
         sequenceMoveJuda.Append(judasObject.transform.DOMove(judasTransformTarget.position, 1.0f).SetEase(Ease.InOutFlash))
@@ -190,6 +192,8 @@ public class JudaEventManager : MonoBehaviour
         
         uiManager.FadeScreen(false, 0.5f);
         
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Hall/EyeOnDoorExit");
+        
         // move back player cam
         Sequence camSequence = DOTween.Sequence();
         camSequence.Append(playerCamera.transform.DOLocalMove(camLocalPositionBeforeJudas, 1.0f).SetEase(Ease.InOutFlash))
@@ -225,6 +229,7 @@ public class JudaEventManager : MonoBehaviour
     private void OnAllJudasLooked(DoorCoridorInteract door)
     {
         Debug.Log("All judas looked");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/RadioMuteTrig");
         
         // randomize list
         var count = judasFound.Count;
