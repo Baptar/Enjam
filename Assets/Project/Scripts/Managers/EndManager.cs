@@ -36,6 +36,7 @@ public class EndManager : MonoBehaviour
         seq.InsertCallback(6.0f, () =>
         {
             MainManager.instance.UIManager.FadeScreen(true, 0.75f);
+            SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_ENDING");
         });
     }
 }

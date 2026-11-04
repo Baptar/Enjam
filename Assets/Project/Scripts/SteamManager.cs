@@ -4,6 +4,7 @@ using Steamworks;
 public class SteamManager : MonoBehaviour
 {
     public static bool Initialized { get; private set; }
+    public static SteamManager Instance;
     
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class SteamManager : MonoBehaviour
             return;
         }
 
+        Instance = this;
         Initialized = true;
         
         Debug.Log("Steam initialized.");

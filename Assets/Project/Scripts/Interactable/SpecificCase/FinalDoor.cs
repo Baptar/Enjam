@@ -38,6 +38,7 @@ public class FinalDoor : ObjectInteractable
             // look in juda
             if (MainManager.instance.Player.GetHasJuda())
             {
+                SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_PEEPHOLE");
                 MainManager.instance.JudasesManager.OnInteractJudas(
                     camJudaTarget : cameraJudaTarget, 
                     judasTransformTarget : judasWorldPosition, 
