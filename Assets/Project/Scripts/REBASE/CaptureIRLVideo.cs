@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,6 +11,8 @@ public class CaptureIRLVideo : MonoBehaviour
     [SerializeField] private float delayWatchIrl = 5f;
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private GameObject graveObj;
+    [SerializeField] private Transform playerTransformAfterTv;
+    [SerializeField] private List<Texture> channels = new List<Texture>();
     
     [Space(10)]
     [Header("DEBUG")]
@@ -19,10 +22,12 @@ public class CaptureIRLVideo : MonoBehaviour
     
     private FMOD.Studio.EventInstance eventFMOD;
     private WebCamTexture webCamTexture;
+    private int currentChannel = -1;
 
     private void Start()
     {
         eventFMOD = FMODUnity.RuntimeManager.CreateInstance("event:/Salon/Tele");
+        channels.Add(cameraParc.targetTexture);
         InitWebcamTexture();
         
         meshRenderer.material.mainTexture = null;
@@ -36,9 +41,10 @@ public class CaptureIRLVideo : MonoBehaviour
         Debug.Log("Webcam détectée : " + WebCamTexture.devices[0].name);
         Debug.Log("device.lenght : " + WebCamTexture.devices.Length);
         webCamTexture = new WebCamTexture(device.name);
+        channels.Add(webCamTexture);
     }
 
-    public void WatchTv()
+    public void WatchTv(RemoteInteract remoteInteract)
     {
         MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.CantLook);
         MainManager.instance.Player.SetCanMove(false);
@@ -49,6 +55,7 @@ public class CaptureIRLVideo : MonoBehaviour
         
         Sequence sequence = DOTween.Sequence();
         Image img = MainManager.instance.UIManager.fadeImage;
+        currentChannel = Mathf.Max(0, channels.Count - 2);
 
         sequence.Append(img.DOColor(Color.black, 0.4f).SetEase(Ease.InOutFlash));
         sequence.AppendCallback(()=>MainManager.instance.CameraManager.Cam_TV());   
@@ -59,7 +66,13 @@ public class CaptureIRLVideo : MonoBehaviour
         {
             if (webCamTexture)
             {
+                currentChannel = Mathf.Max(0, channels.Count - 1);
                 StartTvirl();
+                
+                // TP PLAYER
+                MainManager.instance.Player.TeleportTo(playerTransformAfterTv, 15f);
+                
+                remoteInteract.SetInteractable(true);
             }
         });
         sequence.AppendInterval(delayWatchIrl);
@@ -102,5 +115,14 @@ public class CaptureIRLVideo : MonoBehaviour
         sequence.Append(graveObj.transform.DOLocalMoveY(graveObj.transform.localPosition.y + 1.2f, 3.5f)
             .SetEase(Ease.InOutExpo))
             .Join(graveObj.transform.DOShakeRotation(3.5f, 10f));
+    }
+
+    public void SwitchTvChannel()
+    {
+        if (channels.Count <= 1) return;
+        Debug.Log("SwitchTvChannel");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Salon/TeleStateToCamTrig");
+        currentChannel = (currentChannel + 1) % channels.Count;
+        meshRenderer.material.mainTexture = channels[currentChannel];
     }
 }

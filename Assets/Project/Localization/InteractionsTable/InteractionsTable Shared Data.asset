@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Key: interaction_doorThrowRadioCantInteract
     m_Metadata:
       m_Items: []
+  - m_Id: 53712365437378560
+    m_Key: interaction_remoteSwitchTV
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

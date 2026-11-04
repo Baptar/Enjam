@@ -489,6 +489,28 @@ public class PlayerManager : MonoBehaviour
         rotationY             = Mathf.Clamp(-Mathf.Asin(finalDir.y) * Mathf.Rad2Deg, -lookXBotLimit, lookXTopLimit);
     }
     
+    public void TeleportTo(Transform target, float? cameraPitch = null)
+    {
+        if (target == null) return;
+
+        // Le CharacterController écrase la position : on le coupe le temps du TP
+        characterController.enabled = false;
+
+        transform.position = target.position;
+        transform.rotation = Quaternion.Euler(0f, target.eulerAngles.y, 0f);
+
+        characterController.enabled = true;
+
+        // Pitch de la caméra (clamp avec tes limites)
+        if (cameraPitch.HasValue)
+            rotationY = Mathf.Clamp(cameraPitch.Value, -lookXBotLimit, lookXTopLimit);
+
+        // On évite que la rotation/vitesse en attente "fuite" après le TP
+        _pendingYaw   = 0f;
+        _pendingPitch = 0f;
+        _currentMove  = Vector2.zero;
+    }
+    
     #region Getter
     // Component
     public Camera GetPlayerCamera() => playerCamera;

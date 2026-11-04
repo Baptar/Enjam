@@ -1,9 +1,11 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class RemoteInteract : ObjectInteractable
 {
     [SerializeField] private CaptureIRLVideo captureVideo;
+    [SerializeField] private LocalizedString switchTVText;
     private bool bUsed = false;
     
     public override bool GetInteractable() => bInteractable || MainManager.instance.Player.GetHasPile();
@@ -12,13 +14,20 @@ public class RemoteInteract : ObjectInteractable
     {
         if (GetInteractable())
         {
-            bUsed = true;
-            SetInteractable(false);
-            if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
-            eventOnInteract?.Invoke();
+            if (!bUsed)
+            {
+                SetInteractable(false);
+                bUsed = true;
+                if (!eventSoundOnInteract.IsNull) PlaySound(eventSoundOnInteract);
+                eventOnInteract?.Invoke();
+                SetTextInteract(switchTVText.GetLocalizedString());
+                captureVideo.WatchTv(this);
+            }
 
-            captureVideo.WatchTv();
-            
+            else
+            {
+                captureVideo.SwitchTvChannel();
+            }
         }
         else eventOnInteractButNotInteractable?.Invoke();
     }

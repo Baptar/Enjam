@@ -110,6 +110,10 @@ MonoBehaviour:
     m_Localized: "Ponle m\xFAsica al parque"
     m_Metadata:
       m_Items: []
+  - m_Id: 53712365437378560
+    m_Localized: Interactuar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
