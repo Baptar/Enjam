@@ -29,6 +29,9 @@
         },
         {
             "m_Id": "097e7fcf81a14b09b2809045b2f283bc"
+        },
+        {
+            "m_Id": "43e3063118a94386898b3c07076c7389"
         }
     ],
     "m_Keywords": [],
@@ -263,6 +266,9 @@
         },
         {
             "m_Id": "83991560c3fc4feca693417ac156f26c"
+        },
+        {
+            "m_Id": "4f39cbdc5f864490a8125c5018f0c7d2"
         }
     ],
     "m_GroupDatas": [
@@ -654,6 +660,20 @@
                     "m_Id": "026b8242a8964aada55f4cd3db2d3714"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "4f39cbdc5f864490a8125c5018f0c7d2"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "d46f33d17c3b4e4c9f2429eda9f927d6"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -1358,8 +1378,8 @@
     "m_ObjectId": "00d2a1c40c834b4da2958cb725bf72e9",
     "m_Title": "Swaying grass effect",
     "m_Position": {
-        "x": -4974.3994140625,
-        "y": -1947.199951171875
+        "x": -4974.400390625,
+        "y": -1947.2001953125
     }
 }
 
@@ -2075,8 +2095,8 @@
     "m_ObjectId": "114d5ee0136b42fd95777f8686223d12",
     "m_Title": "Color",
     "m_Position": {
-        "x": -2040.800048828125,
-        "y": -278.39996337890627
+        "x": -2040.80029296875,
+        "y": -278.400146484375
     }
 }
 
@@ -2250,6 +2270,9 @@
         },
         {
             "m_Id": "097e7fcf81a14b09b2809045b2f283bc"
+        },
+        {
+            "m_Id": "43e3063118a94386898b3c07076c7389"
         }
     ]
 }
@@ -3898,6 +3921,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "43e3063118a94386898b3c07076c7389",
+    "m_Guid": {
+        "m_GuidSerialized": "eac22fa5-0cb7-4e11-b111-97952ca9ef9d"
+    },
+    "m_Name": "WindStrength",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "WindStrength",
+    "m_DefaultReferenceName": "_WindStrength",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.009999999776482582,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "44842dd3dee245baa24e20e3b459c177",
@@ -4133,8 +4184,8 @@
     "m_ObjectId": "4b297574918b40fd97145030b1f3b9a6",
     "m_Title": "More Swaying through displace/ent",
     "m_Position": {
-        "x": -2352.000244140625,
-        "y": -2451.199951171875
+        "x": -2352.00048828125,
+        "y": -2451.2001953125
     }
 }
 
@@ -4283,6 +4334,42 @@
     },
     "m_Labels": [],
     "m_Channel": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "4f39cbdc5f864490a8125c5018f0c7d2",
+    "m_Group": {
+        "m_Id": "4b297574918b40fd97145030b1f3b9a6"
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2259.199951171875,
+            "y": -2312.000244140625,
+            "width": 147.199951171875,
+            "height": 33.60009765625
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "835ab955853c4084b760a90788367db5"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "43e3063118a94386898b3c07076c7389"
+    }
 }
 
 {
@@ -5706,6 +5793,21 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "835ab955853c4084b760a90788367db5",
+    "m_Id": 0,
+    "m_DisplayName": "WindStrength",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
