@@ -12,6 +12,8 @@ public class PlayerSounds : MonoBehaviour
     [HideInInspector] public int groundType;
     [SerializeField] float rate;
     [SerializeField] private List<LightAudioDistance> lightAudioList = new ();
+    
+    [SerializeField] EventReference FootstepsEvent;
 
     private PlayerManager player;
     
@@ -38,21 +40,29 @@ public class PlayerSounds : MonoBehaviour
             SoundMaterial soundMaterial = hit.transform.GetComponent<SoundMaterial>();
             if (soundMaterial)
             {
-                if (lightAudioList.Count == 0) return;
-                LightAudioDistance closestLightAudio = lightAudioList[0];
-                float minDistance = 10000.0f;
-                for (int i = 0; i < lightAudioList.Count; i++)
+                if (lightAudioList == null || lightAudioList.Count == 0)
                 {
-                    float currentDistance =
-                        Vector3.Distance(player.transform.position, lightAudioList[i].transform.position);
-                    if (currentDistance < minDistance)
-                    {
-                        minDistance = currentDistance;
-                        closestLightAudio = lightAudioList[i];
-                    }
+                    groundType = ((int)soundMaterial.soundMaterial);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ground", groundType);
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(FootstepsEvent, gameObject);
                 }
-                groundType = ((int)soundMaterial.soundMaterial);
-                closestLightAudio.PlayAudio(groundType);
+                else
+                {
+                    LightAudioDistance closestLightAudio = lightAudioList[0];
+                    float minDistance = 10000.0f;
+                    for (int i = 0; i < lightAudioList.Count; i++)
+                    {
+                        float currentDistance =
+                            Vector3.Distance(player.transform.position, lightAudioList[i].transform.position);
+                        if (currentDistance < minDistance)
+                        {
+                            minDistance = currentDistance;
+                            closestLightAudio = lightAudioList[i];
+                        }
+                    }
+                    groundType = ((int)soundMaterial.soundMaterial);
+                    closestLightAudio.PlayAudio(groundType);
+                }
             }
         }
     }
