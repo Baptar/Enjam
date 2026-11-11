@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Serialization;
 
 public class DoorCoridorInteract : ObjectInteractable
 {
@@ -32,10 +33,16 @@ public class DoorCoridorInteract : ObjectInteractable
     [Space(5)]
     [Header("Shake")]
     [SerializeField] private GameObject goShakeDoor;
-    [SerializeField] private float shakeDuration = 0.5f;
-    [SerializeField] private float shakeStrength = 1f;
-    [SerializeField] private int shakeVibrato = 10;
-    [SerializeField] private float shakeRandomness = 90f;
+    [Header("Little")]
+    [SerializeField] private float shakeLittleDuration = 0.5f;
+    [SerializeField] private float shakeLittleStrength = 1f;
+    [SerializeField] private int shakeLittleVibrato = 10;
+    [SerializeField] private float shakeLittleRandomness = 90f;
+    [Header("Big")]
+    [SerializeField] private float shakeBigDuration = 0.5f;
+    [SerializeField] private float shakeBigStrength = 1f;
+    [SerializeField] private int shakeBigVibrato = 10;
+    [SerializeField] private float shakeBigRandomness = 90f;
     
     [Space(5)]
     [Header("Localization")]
@@ -70,6 +77,25 @@ public class DoorCoridorInteract : ObjectInteractable
     {
         event_fmod_littleToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
         event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+    }
+    
+    void OnEnable()  => KnockMarkerRelay.OnMarker += HandleMarker;
+    void OnDisable() => KnockMarkerRelay.OnMarker -= HandleMarker;
+
+    void HandleMarker(Transform source, string marker)
+    {
+        if (source != gameObject.transform) return;
+
+        if (marker == "Knock")
+        {
+            Debug.Log("Knock : " + source);
+            ShakeDoor();
+        }
+        else if (marker == "BigKnock")
+        {
+            Debug.Log("BigKnock : " + source);
+            ShakeBigDoor();
+        }
     }
 
     public override bool GetInteractable()
@@ -230,14 +256,24 @@ public class DoorCoridorInteract : ObjectInteractable
             fovCam : judasCamFOV);
     }
 
-    [ContextMenu("Shake Door")]
+    [ContextMenu("Shake Little Door")]
     public void ShakeDoor()
     {
         goShakeDoor.transform.DOShakePosition(
-            shakeDuration, 
-            shakeStrength,
-            shakeVibrato,
-            shakeRandomness);
+            shakeLittleDuration, 
+            shakeLittleStrength,
+            shakeLittleVibrato,
+            shakeLittleRandomness);
+    }
+    
+    [ContextMenu("Shake Big Door")]
+    public void ShakeBigDoor()
+    {
+        goShakeDoor.transform.DOShakePosition(
+            shakeBigDuration, 
+            shakeBigStrength,
+            shakeBigVibrato,
+            shakeBigRandomness);
     }
 
     public void SetJudasSceneName(string text) => judasSceneName = text; 
