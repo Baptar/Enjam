@@ -5,7 +5,7 @@ public class RadioThrowZone : ZoneInteractable
 {
     public override bool GetInteractable()
     {
-        return bInteractable && bInInteractionZone;
+        return bInteractable && bInInteractionZone && MainManager.instance.Player.GetHasRadio();
     }
 
     public override void Interact()
