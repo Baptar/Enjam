@@ -23,11 +23,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: 'I can''t see anything, my eye must have rolled somewhere.
-
-
-      Could
-      you pick it up for me?'
+    m_Localized: I dropped my peephole. You should go and get it to keep an eye on
+      what the others are doing.
     m_Metadata:
       m_Items: []
   - m_Id: 2267831336960
