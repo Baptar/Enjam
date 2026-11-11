@@ -61,6 +61,7 @@ public class MenuManager : MonoBehaviour
 
     public void SetLanguage(int language)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[language];
         settingsManager.SetVsyncButtonsText();
         settingsManager.SetFullscreenButtonsText();

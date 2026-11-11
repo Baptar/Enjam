@@ -8,6 +8,7 @@ public class SettingsButton : MonoBehaviour
     
     public void Settings()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
         menuManager.SetPanel(PanelState.SettingsMain);
         InputManager.Instance.SetSelected(backButton);
     }

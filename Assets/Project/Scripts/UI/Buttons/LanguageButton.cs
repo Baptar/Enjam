@@ -13,6 +13,7 @@ public class LanguageButton : MonoBehaviour
 
     public void Language()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
         menuManager.SetPanel(PanelState.SettingsLanguage);
         InputManager.Instance.SetSelected(englishButton);
         menuManager.ResetSensibilityButton();

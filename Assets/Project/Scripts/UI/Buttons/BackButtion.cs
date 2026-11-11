@@ -9,6 +9,7 @@ public class BackButton : MonoBehaviour
     
     public void Back()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Back");
         if (menuManager.PanelState == PanelState.SettingsLanguage)
         {
             menuManager.SetPanel(PanelState.SettingsMain);

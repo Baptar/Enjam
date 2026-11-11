@@ -11,6 +11,7 @@ public class SensibilityButton : MonoBehaviour
 
     public void Sensibility()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
         InputManager.Instance.SetSelected(sensibilityScrollbar.gameObject);
         
         // Update language button navigation

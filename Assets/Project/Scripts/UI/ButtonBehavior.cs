@@ -25,6 +25,7 @@ public class ButtonBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (hovered && state ==  ButtonState.Normal)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Hover");
             state =  ButtonState.Hovered;
             text.color = highlightColor.Color;
             if (EventSystem.current.currentSelectedGameObject != gameObject)
