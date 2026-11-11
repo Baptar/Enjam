@@ -31,8 +31,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2225863131136
-    m_Localized: J'ai fait tomber mon oeil-de-boeuf, tu devrais aller le chercher
-      pour surveiller ce que font les autres.
+    m_Localized: 'J''ai fait tomber mon oeil-de-boeuf.
+
+
+      Tu devrais aller le
+      chercher pour surveiller ce que font les autres.'
     m_Metadata:
       m_Items: []
   - m_Id: 2285875232768
