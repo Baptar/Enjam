@@ -9112,6 +9112,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7002095845924502983, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1299777007}
+    - targetCorrespondingSourceObject: {fileID: 7002095845924502983, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1299777008}
     - targetCorrespondingSourceObject: {fileID: 6557578381116289909, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1650587910}
@@ -9121,6 +9127,63 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1811396350024246445, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
   m_PrefabInstance: {fileID: 1299777004}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299777006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7002095845924502983, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+  m_PrefabInstance: {fileID: 1299777004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1299777007
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299777006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1299777008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299777006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2967a27200958c245a703742bee65c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onZoneEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 650307236}
+        m_TargetAssemblyTypeName: EndManager, Assembly-CSharp
+        m_MethodName: TPEndLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onZoneExit:
+    m_PersistentCalls:
+      m_Calls: []
+  colliderTag: Player
 --- !u!1 &1324265429
 GameObject:
   m_ObjectHideFlags: 0
@@ -11857,7 +11920,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 102, y: 0, z: 46}
-  m_LocalScale: {x: 6.084482, y: 1, z: 3.959566}
+  m_LocalScale: {x: 12.68, y: 1, z: 3.959566}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 722109535}
@@ -17831,10 +17894,6 @@ PrefabInstance:
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: swayPitchAmount
       value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
-      propertyPath: gamepadLookSpeed
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: peepholeMaxAngle

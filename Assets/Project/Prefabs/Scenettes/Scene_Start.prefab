@@ -1835,7 +1835,7 @@ MonoBehaviour:
   cameraRoot: {fileID: 0}
   lookSpeed: 2
   mouseLookSpeed: 1.5
-  gamepadLookSpeed: 2
+  gamepadLookSpeed: 1
   lookXTopLimit: 45
   lookXBotLimit: 55
   lookSmoothing: 10
