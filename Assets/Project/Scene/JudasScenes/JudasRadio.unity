@@ -203,6 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128311260}
   - component: {fileID: 128311259}
+  - component: {fileID: 128311261}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -239,7 +240,7 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 2
+  OverrideMinDistance: 0.8
   OverrideMaxDistance: 6.8
 --- !u!4 &128311260
 Transform:
@@ -256,6 +257,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128311261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128311258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1727066247
+      Data2: 1116241790
+      Data3: -798061411
+      Data4: 279170358
+    Path: event:/Hall/AMB/AMB_Door_E
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &248904640
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,69 +561,6 @@ Transform:
   - {fileID: 1103223484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &781882343
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 781882344}
-  - component: {fileID: 781882345}
-  m_Layer: 0
-  m_Name: Sound (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &781882344
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781882343}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.31111443, z: -0, w: 0.95037246}
-  m_LocalPosition: {x: -0.0326, y: 0.0751, z: -0.0052}
-  m_LocalScale: {x: 0.5558644, y: 0.5558644, z: 0.5558644}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 816003250}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &781882345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781882343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 620373246
-      Data2: 1275102303
-      Data3: 899190182
-      Data4: -311489639
-    Path: event:/Salon/Radio
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 2
-  OverrideMaxDistance: 6.8
 --- !u!1001 &816003249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -661,11 +630,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4265502871271991535, guid: a5692252a65d2784fad5bd6673ab750f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 781882344}
+    m_RemovedGameObjects:
+    - {fileID: 4613494166905558873, guid: a5692252a65d2784fad5bd6673ab750f, type: 3}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5692252a65d2784fad5bd6673ab750f, type: 3}
 --- !u!4 &816003250 stripped
