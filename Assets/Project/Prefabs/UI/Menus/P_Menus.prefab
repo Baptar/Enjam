@@ -72,6 +72,7 @@ MonoBehaviour:
   sensibilityButton: {fileID: 5355337696148327931}
   sensibilityScrollbar: {fileID: 9118432941384694017}
   settingsManager: {fileID: 8021963460285345857}
+  inputManager: {fileID: 8877788845031881187}
 --- !u!1 &8260470857795167663
 GameObject:
   m_ObjectHideFlags: 0

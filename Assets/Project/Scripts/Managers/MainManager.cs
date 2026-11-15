@@ -10,6 +10,7 @@ public class MainManager : MonoBehaviour
     [SerializeField] private PaperManager paperManager;
     [SerializeField] private JudaEventManager judasEventManager;
     [SerializeField] private CameraManager cameraManager;
+    [SerializeField] private InputManager inputManager;
     private PlayerInputController playerInputManager;
 
     public PlayerManager Player => playerManager;
@@ -25,5 +26,7 @@ public class MainManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
+
+        inputManager.GameState = GameState.Game;
     }
 }

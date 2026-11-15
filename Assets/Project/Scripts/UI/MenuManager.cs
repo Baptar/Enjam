@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button sensibilityButton;
     [SerializeField] private GameObject sensibilityScrollbar;
     [SerializeField] private SettingsManager settingsManager;
+    [SerializeField] private InputManager inputManager;
     
     private PanelState panelState;
     
@@ -21,6 +22,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         SetPanel(PanelState.Main);
+        inputManager.GameState = GameState.Menus;
     }
     
     public static void ShowCanvasGroup(bool show, CanvasGroup canvasGroup)

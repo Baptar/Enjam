@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance => m_instance;
     
     public GameState GameState { get => gameState; set => gameState = value; }
+    public bool IsGamepad { get => m_isGamepad; }
 
     private void Awake()
     {
@@ -29,9 +30,6 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         m_isGamepad = false;
-        gameState = GameState.Menus;
-        
-        DontDestroyOnLoad(gameObject.transform);
     }
 
     public void ShowCursor(bool show)

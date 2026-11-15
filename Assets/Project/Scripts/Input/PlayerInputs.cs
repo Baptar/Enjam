@@ -297,6 +297,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2ff78084-171f-4f85-8472-7f63e6b9b2cc"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""23d8df45-ff25-4638-9ca3-41c89ea35480"",
                     ""path"": ""<DualShockGamepad>/start"",
                     ""interactions"": """",
