@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Rotation Normal Settings")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform cameraRoot;
+    [SerializeField] private SettingsManager settingsManager;
     [SerializeField] private float lookSpeed     = 2f;
     [SerializeField] private float mouseLookSpeed = 0.1f;
     [SerializeField] private float gamepadLookSpeed = 0.65f;
@@ -372,11 +373,11 @@ public class PlayerManager : MonoBehaviour
 
         if (device is Gamepad)
         {
-            lookSpeed = gamepadLookSpeed;
+            lookSpeed = settingsManager.Sensibility * gamepadLookSpeed;
         }
         else if (device is Mouse)
         {
-            lookSpeed = mouseLookSpeed;
+            lookSpeed = settingsManager.Sensibility * mouseLookSpeed;
         }
     }
 

@@ -3009,6 +3009,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
+--- !u!114 &375441928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2981925855284863802, guid: 85d95e9b2720d704c9a2350289f25b07, type: 3}
+  m_PrefabInstance: {fileID: 1710781599017735623}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710680a57bb24544ead7723ab9546c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &387036243 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5774316850643076316, guid: 4f28119adf13bba4aa4ec64d1219ba85, type: 3}
@@ -14848,6 +14859,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2476075396251366246, guid: 85d95e9b2720d704c9a2350289f25b07, type: 3}
+      propertyPath: backAction
+      value: 
+      objectReference: {fileID: 1139236909636714382, guid: b859ca4bea954ac489d0b46ee36f7c6b, type: 3}
+    - target: {fileID: 2476075396251366246, guid: 85d95e9b2720d704c9a2350289f25b07, type: 3}
       propertyPath: pauseAction
       value: 
       objectReference: {fileID: 5640045676903617844, guid: b859ca4bea954ac489d0b46ee36f7c6b, type: 3}
@@ -18740,6 +18755,10 @@ PrefabInstance:
       propertyPath: raycastDistance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: settingsManager
+      value: 
+      objectReference: {fileID: 375441928}
     - target: {fileID: 1362361829937640904, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: swayPitchAmount
       value: 0.7

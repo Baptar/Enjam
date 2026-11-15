@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [Header("Set in Inspector")] 
     [SerializeField] private CanvasGroup pauseMenu;
     [SerializeField] private InputActionReference pauseAction;
+    [SerializeField] private InputActionReference backAction;
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private SettingsManager settingsManager;
     [SerializeField] private GameObject resumeButton;
@@ -56,6 +57,10 @@ public class PauseMenu : MonoBehaviour
         if (pauseAction.action.WasPerformedThisFrame())
         {
             PauseGame(!isPaused);
+        }
+        else if (backAction.action.WasPerformedThisFrame())
+        {
+            PauseGame(false);
         }
     }
 

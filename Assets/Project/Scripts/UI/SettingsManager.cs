@@ -45,10 +45,13 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private LocalizedString fullscreenWindowedTextKey;
     [SerializeField] private LocalizedString windowedTextKey;
 
+    private float sensibility = 0.5f;
     private bool vsyncEnabled = true;
     private int language = 0;
     private int textureQuality = 0;
     private int displayMode = 0;
+
+    public float Sensibility => (sensibility * 2) > 0.1f ? sensibility * 2 : 0.1f ;
 
     private IEnumerator Start()
     {
@@ -97,10 +100,18 @@ public class SettingsManager : MonoBehaviour
         ResetSensibilityScrollbarButton();
     }
 
-    public void OnScrollbarChanged()
+    public void OnSensibilityChanged()
     {
+        PlayerPrefs.SetFloat("Sensibility", sensibilityScrollbar.value);
+        sensibility = sensibilityScrollbar.value;
         if (!InputManager.Instance.IsGamepad) return;
-        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+    }
+    
+    public void OnVolumeChanged()
+    {
+        PlayerPrefs.SetFloat("Volume", volumeScrollbar.value);
+        if (!InputManager.Instance.IsGamepad) return;
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
     }
     
@@ -108,6 +119,7 @@ public class SettingsManager : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
         PlayerPrefs.SetFloat("Sensibility", sensibilityScrollbar.value);
+        sensibility = sensibilityScrollbar.value;
         PlayerPrefs.Save();
     }
 
@@ -293,6 +305,7 @@ public class SettingsManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("SettingsInitialized"))
         {
             // First launch
+            sensibility = 0.5f;
             sensibilityScrollbar.value = 0.5f;
             volumeScrollbar.value = 1f;
             language = LocalizationSettings.AvailableLocales.Locales.IndexOf(
@@ -311,6 +324,8 @@ public class SettingsManager : MonoBehaviour
             // Sensibility
             sensibilityScrollbar.SetValueWithoutNotify(
                 PlayerPrefs.GetFloat("Sensibility", sensibilityScrollbar.value));
+            
+            sensibility = sensibilityScrollbar.value;
 
             // Volume
             volumeScrollbar.SetValueWithoutNotify(
