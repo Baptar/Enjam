@@ -159,7 +159,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   settingsManager: {fileID: 2981925855284863802}
   inputManager: {fileID: 774277844523753224}
-  ResumeButton: {fileID: 8521336680450907281}
+  resumeButton: {fileID: 8521336680450907281}
 --- !u!1 &6817397295790755536
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 8521336680450907281}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!114 &2216714488130990669

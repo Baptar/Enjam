@@ -96,6 +96,13 @@ public class SettingsManager : MonoBehaviour
         
         ResetSensibilityScrollbarButton();
     }
+
+    public void OnScrollbarChanged()
+    {
+        if (!InputManager.Instance.IsGamepad) return;
+        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+    }
     
     public void OnSensibilityReleased()
     {

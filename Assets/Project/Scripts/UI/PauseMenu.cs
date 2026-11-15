@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
@@ -12,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private SettingsManager settingsManager;
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private GameObject ResumeButton;
+    [SerializeField] private GameObject resumeButton;
 
 
     private bool isPaused;
@@ -27,25 +28,26 @@ public class PauseMenu : MonoBehaviour
     private void PauseGame(bool pause)
     {
         isPaused = pause;
+        Show(pause);
+        playerManager.SetPaused(pause);
 
         if (pause)
         {
-            InputManager.Instance.SetSelected(ResumeButton);
+            inputManager.SetSelected(resumeButton);
             inputManager.GameState = GameState.Menus;
         }
             
         else
         {
-            InputManager.Instance.SetSelected(null);
+            inputManager.SetSelected(null);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Back");
+            settingsManager.ResetAllScrollbarButtons();
             inputManager.GameState = GameState.Game;
         }
         
-        Show(pause);
-
         
-        if (inputManager.IsGamepad) return; // If gamepad is used, don't show the cursor on opening
         
-        playerManager.SetPaused(pause);
+        if (inputManager.IsGamepad && pause) return; // If gamepad is used, don't show the cursor on opening
         Cursor.visible = pause;
         Cursor.lockState = pause ? CursorLockMode.None : CursorLockMode.Confined;
     }
@@ -54,7 +56,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (pauseAction.action.WasPerformedThisFrame())
         {
-            settingsManager.ResetAllScrollbarButtons();
             PauseGame(!isPaused);
         }
     }
@@ -62,8 +63,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Back");
-        settingsManager.ResetAllScrollbarButtons();
         PauseGame(false);
     }
     

@@ -46,17 +46,6 @@ public class InputManager : MonoBehaviour
     
     void Update()
     {
-        if (gameState != GameState.Menus) return;
-
-        // Mouse check
-        if (Mouse.current != null &&
-            (Mouse.current.delta.ReadValue() != Vector2.zero ||
-             Mouse.current.leftButton.wasPressedThisFrame))
-        {
-            ShowCursor(true);
-            m_isGamepad = false;
-        }
-        
         // Gamepad and keyboard check
         if (Gamepad.current != null && (
                 Gamepad.current.leftStick.ReadValue() != Vector2.zero ||
@@ -67,6 +56,17 @@ public class InputManager : MonoBehaviour
         {
             ShowCursor(false);
             m_isGamepad = true;
+        }
+        
+        if (gameState != GameState.Menus) return;
+        
+        // Mouse check
+        if (Mouse.current != null &&
+            (Mouse.current.delta.ReadValue() != Vector2.zero ||
+             Mouse.current.leftButton.wasPressedThisFrame))
+        {
+            ShowCursor(true);
+            m_isGamepad = false;
         }
     }
 }

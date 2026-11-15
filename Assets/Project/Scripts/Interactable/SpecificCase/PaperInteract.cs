@@ -179,7 +179,7 @@ public class PaperInteract : ObjectGrabbable
 
     public virtual void InitDissolveMaterial(Material mat)
     {
-        Debug.unityLogger.Log("InitDissolveMaterial " + this);
+        //Debug.unityLogger.Log("InitDissolveMaterial " + this);
         mat.SetFloat("_Dissolve", 0.0f);
         mat.SetFloat("_PaperBrightness", -0.58f);
         mat.SetFloat("_HeldBlend", 0.0f);

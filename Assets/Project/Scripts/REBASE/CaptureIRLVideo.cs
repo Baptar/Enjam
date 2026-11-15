@@ -38,8 +38,8 @@ public class CaptureIRLVideo : MonoBehaviour
     {
         if (WebCamTexture.devices.Length < numberDevice + 1) return;
         WebCamDevice device = WebCamTexture.devices[numberDevice];
-        Debug.Log("Webcam détectée : " + WebCamTexture.devices[0].name);
-        Debug.Log("device.lenght : " + WebCamTexture.devices.Length);
+        //Debug.Log("Webcam détectée : " + WebCamTexture.devices[0].name);
+        //Debug.Log("device.lenght : " + WebCamTexture.devices.Length);
         webCamTexture = new WebCamTexture(device.name);
         channels.Add(webCamTexture);
     }
