@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 5629434544789688862}
   - component: {fileID: 8796215464557698415}
   - component: {fileID: 7262771242475123986}
+  - component: {fileID: 5649981168571730771}
   m_Layer: 0
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -406,11 +407,26 @@ MonoBehaviour:
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5649981168571730771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141200377604972127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae04b495b0eaf649984cbb4618b5b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onReleased:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7632136473890091107}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnSensibilityChanged
-        m_Mode: 0
+        m_MethodName: OnSensibilityReleased
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -431,6 +447,7 @@ GameObject:
   - component: {fileID: 3966313201844030913}
   - component: {fileID: 5806665318786650419}
   - component: {fileID: 5285040731063485796}
+  - component: {fileID: 5839965970921806101}
   m_Layer: 0
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -544,11 +561,26 @@ MonoBehaviour:
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5839965970921806101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474010590976960272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae04b495b0eaf649984cbb4618b5b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onReleased:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7632136473890091107}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: OnVolumeChanged
-        m_Mode: 0
+        m_MethodName: OnVolumeReleased
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

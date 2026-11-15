@@ -71,7 +71,7 @@ MonoBehaviour:
   vsyncButton: {fileID: 7587541102156259093}
   sensibilityButton: {fileID: 5355337696148327931}
   sensibilityScrollbar: {fileID: 9118432941384694017}
-  settingsManager: {fileID: 8175715856287494180}
+  settingsManager: {fileID: 8021963460285345857}
 --- !u!1 &8260470857795167663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,9 +1349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8175715856287494180 stripped
+--- !u!114 &8021963460285345857 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6807314559202144211, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4638205709172174774, guid: 5bb5efdb895dfc1478c4463157ee6129, type: 3}
   m_PrefabInstance: {fileID: 3390518683814977527}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

@@ -97,18 +97,19 @@ public class SettingsManager : MonoBehaviour
         ResetSensibilityScrollbarButton();
     }
     
-    public void OnSensibilityChanged(float value)
+    public void OnSensibilityReleased()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
-        PlayerPrefs.SetFloat("Sensibility", value);
+        PlayerPrefs.SetFloat("Sensibility", sensibilityScrollbar.value);
         PlayerPrefs.Save();
     }
 
-    public void OnVolumeChanged(float value)
+    public void OnVolumeReleased()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
-        PlayerPrefs.SetFloat("Volume", value);
+        PlayerPrefs.SetFloat("Volume", volumeScrollbar.value);
         PlayerPrefs.Save();
+        
         // MAEL : update son
     }
 
@@ -140,6 +141,7 @@ public class SettingsManager : MonoBehaviour
         InputManager.Instance.SetSelected(textureQualityText.gameObject);
         textureQuality = (textureQuality + 1) % 3;
         
+        QualitySettings.SetQualityLevel(textureQuality, true);
         
         SetTextureQualityButtonText();
         SaveSettings();
@@ -286,12 +288,14 @@ public class SettingsManager : MonoBehaviour
             // First launch
             sensibilityScrollbar.value = 0.5f;
             volumeScrollbar.value = 1f;
-
-            language = 0;
+            language = LocalizationSettings.AvailableLocales.Locales.IndexOf(
+                LocalizationSettings.SelectedLocale);
             vsyncEnabled = true;
             textureQuality = 0;
-            displayMode = 1;
+            displayMode = 0;
 
+            
+            
             PlayerPrefs.SetInt("SettingsInitialized", 1);
             SaveSettings();
         }
