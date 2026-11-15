@@ -12,7 +12,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private InputActionReference pauseAction;
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private SettingsManager settingsManager;
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject resumeButton;
 
 
@@ -33,21 +32,21 @@ public class PauseMenu : MonoBehaviour
 
         if (pause)
         {
-            inputManager.SetSelected(resumeButton);
-            inputManager.GameState = GameState.Menus;
+            InputManager.Instance.SetSelected(resumeButton);
+            InputManager.Instance.GameState = GameState.Menus;
         }
             
         else
         {
-            inputManager.SetSelected(null);
+            InputManager.Instance.SetSelected(null);
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Back");
             settingsManager.ResetAllScrollbarButtons();
-            inputManager.GameState = GameState.Game;
+            InputManager.Instance.GameState = GameState.Game;
         }
         
         
         
-        if (inputManager.IsGamepad && pause) return; // If gamepad is used, don't show the cursor on opening
+        if (InputManager.Instance.IsGamepad && pause) return; // If gamepad is used, don't show the cursor on opening
         Cursor.visible = pause;
         Cursor.lockState = pause ? CursorLockMode.None : CursorLockMode.Confined;
     }
