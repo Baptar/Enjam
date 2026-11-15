@@ -31,16 +31,60 @@ MonoBehaviour:
     m_Key: settings_vsync
     m_Metadata:
       m_Items: []
-  - m_Id: 40188662461759488
-    m_Key: settings_fullscreen
-    m_Metadata:
-      m_Items: []
   - m_Id: 46875294316187648
     m_Key: settings_yes
     m_Metadata:
       m_Items: []
   - m_Id: 46875569441558528
     m_Key: settings_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57675558233133056
+    m_Key: settings_display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57685760990859264
+    m_Key: settings_quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57687416038051840
+    m_Key: settings_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144523964416
+    m_Key: settings_display_fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144586878976
+    m_Key: settings_display_fullscreenwindowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144599461888
+    m_Key: settings_display_windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144603656192
+    m_Key: settings_quality_high
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706894884950016
+    m_Key: settings_quality_medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706898554966016
+    m_Key: settings_quality_low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720604990984192
+    m_Key: settings_language_english
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720629624131584
+    m_Key: settings_language_french
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720658434805760
+    m_Key: settings_language_spanish
     m_Metadata:
       m_Items: []
   m_Metadata:

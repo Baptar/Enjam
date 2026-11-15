@@ -4,31 +4,15 @@ using UnityEngine.UI;
 public class BackButton : MonoBehaviour
 {
     [SerializeField] MenuManager menuManager;
+    [SerializeField] SettingsManager settingsManager;
     [SerializeField] GameObject settingsButton; 
     [SerializeField] Button fullscreenButton; 
     
     public void Back()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Back");
-        if (menuManager.PanelState == PanelState.SettingsLanguage)
-        {
-            menuManager.SetPanel(PanelState.SettingsMain);
-            InputManager.Instance.SetSelected(gameObject);
-
-            // Update back button navigation
-            Button button = GetComponent<Button>();
-            Navigation nav = button.navigation;
-            nav.selectOnUp = fullscreenButton;
-            button.navigation = nav;
-        }
-        else if (menuManager.PanelState == PanelState.SettingsSensibility)
-        {
-            menuManager.ResetSensibilityButton();
-        }
-        else if (menuManager.PanelState == PanelState.SettingsMain)
-        {
-            menuManager.SetPanel(PanelState.Main);
-            InputManager.Instance.SetSelected(settingsButton);
-        }
+        settingsManager.ResetAllScrollbarButtons();
+        menuManager.SetPanel(PanelState.Main);
+        InputManager.Instance.SetSelected(settingsButton);
     }
 }

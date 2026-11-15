@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 47681372160
-    m_Localized: Langues
+    m_Localized: 'Langue :'
     m_Metadata:
       m_Items: []
   - m_Id: 7504134144
@@ -34,8 +34,8 @@ MonoBehaviour:
     m_Localized: 'V-Sync :'
     m_Metadata:
       m_Items: []
-  - m_Id: 40188662461759488
-    m_Localized: "Plein \xE9cran :"
+  - m_Id: 57687416038051840
+    m_Localized: Volume
     m_Metadata:
       m_Items: []
   - m_Id: 46875294316187648
@@ -44,6 +44,50 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 46875569441558528
     m_Localized: non
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57675558233133056
+    m_Localized: 'Mode d''affichage :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57685760990859264
+    m_Localized: "Qualit\xE9 des textures :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144523964416
+    m_Localized: "plein \xE9cran"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144586878976
+    m_Localized: "fen\xEAtr\xE9 sans bordure"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144599461888
+    m_Localized: "fen\xEAtr\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706898554966016
+    m_Localized: bas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144603656192
+    m_Localized: "\xE9l\xE9v\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706894884950016
+    m_Localized: moyen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720604990984192
+    m_Localized: anglais
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720629624131584
+    m_Localized: "fran\xE7ais"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720658434805760
+    m_Localized: espagnol
     m_Metadata:
       m_Items: []
   references:

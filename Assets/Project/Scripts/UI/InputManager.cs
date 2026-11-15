@@ -49,7 +49,7 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         if (gameState != GameState.Menus) return;
-        Debug.Log("MENUS");
+
         // Mouse check
         if (Mouse.current != null &&
             (Mouse.current.delta.ReadValue() != Vector2.zero ||

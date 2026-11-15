@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 47681372160
-    m_Localized: Languages
+    m_Localized: 'Language:'
     m_Metadata:
       m_Items: []
   - m_Id: 40182670181269504
@@ -34,8 +34,8 @@ MonoBehaviour:
     m_Localized: 'V-Sync:'
     m_Metadata:
       m_Items: []
-  - m_Id: 40188662461759488
-    m_Localized: 'Fullscreen:'
+  - m_Id: 57687416038051840
+    m_Localized: Volume
     m_Metadata:
       m_Items: []
   - m_Id: 46875294316187648
@@ -44,6 +44,50 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 46875569441558528
     m_Localized: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57675558233133056
+    m_Localized: 'Display mode:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57685760990859264
+    m_Localized: 'Texture quality:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144523964416
+    m_Localized: fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144586878976
+    m_Localized: windowed fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144599461888
+    m_Localized: windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706144603656192
+    m_Localized: high
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706894884950016
+    m_Localized: medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57706898554966016
+    m_Localized: low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720604990984192
+    m_Localized: english
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720629624131584
+    m_Localized: french
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57720658434805760
+    m_Localized: spanish
     m_Metadata:
       m_Items: []
   references:

@@ -1,67 +1,365 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
+    [Header("Sensibility")]
+    [SerializeField] private Button volumeButton;
+    [SerializeField] private Scrollbar sensibilityScrollbar;
+    [SerializeField] private GameObject sensibilityScrollbarContainer;
+    
+    [Header("Volume")]
+    [SerializeField] private Button sensibilityButton;
+    [SerializeField] private Button languageButton;
+    [SerializeField] private Scrollbar volumeScrollbar;
+    [SerializeField] private GameObject volumeScrollbarContainer;
+    
+    [Header("Language")]
+    [SerializeField] private TMP_Text languageText;
+    [SerializeField] private LocalizedString languageTextKey;
+    [SerializeField] private LocalizedString englishTextKey;
+    [SerializeField] private LocalizedString frenchTextKey;
+    [SerializeField] private LocalizedString spanishTextKey;
+    
+    [Header("Vsync")]
     [SerializeField] private TMP_Text vsyncText;
-    [SerializeField] private TMP_Text fullscreenText;
     [SerializeField] private LocalizedString vsyncTextKey;
-    [SerializeField] private LocalizedString fullscreenTextKey;
     [SerializeField] private LocalizedString enabledTextKey;
     [SerializeField] private LocalizedString disabledTextKey;
+    
+    [Header("Texture quality")]
+    [SerializeField] private TMP_Text textureQualityText;
+    [SerializeField] private LocalizedString textureQualityTextKey;
+    [SerializeField] private LocalizedString highQualityTextKey;
+    [SerializeField] private LocalizedString mediumQualityTextKey;
+    [SerializeField] private LocalizedString lowQualityTextKey;
+    
+    [Header("Display mode")]
+    [SerializeField] private TMP_Text displayModeText;
+    [SerializeField] private LocalizedString displayModeTextKey;
+    [SerializeField] private LocalizedString fullscreenTextKey;
+    [SerializeField] private LocalizedString fullscreenWindowedTextKey;
+    [SerializeField] private LocalizedString windowedTextKey;
 
     private bool vsyncEnabled = true;
-    private bool fullscreenEnabled = true;
+    private int language = 0;
+    private int textureQuality = 0;
+    private int displayMode = 0;
 
-    void Start()
+    private IEnumerator Start()
     {
-        SetVsyncButtonsText();
-        SetFullscreenButtonsText();
+        yield return LocalizationSettings.InitializationOperation;
+
+        LoadSettings();
+        SetAllButtonsText();
+    }
+    
+    #region ButtonCalls
+
+    public void SensibilityButton()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        InputManager.Instance.SetSelected(sensibilityScrollbar.gameObject);
         
-        vsyncEnabled = QualitySettings.vSyncCount > 0;
-        fullscreenEnabled = Screen.fullScreen;
+        // Update language button navigation
+        Navigation nav = volumeButton.navigation;
+        nav.selectOnUp = sensibilityScrollbar;
+        volumeButton.navigation = nav;
+        
+        sensibilityScrollbarContainer.SetActive(true);
+        sensibilityButton.gameObject.SetActive(false);
+        
+        ResetVolumeScrollbarButton();
     }
 
+    public void VolumeButton()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        InputManager.Instance.SetSelected(volumeScrollbar.gameObject);
+        
+        // Update sensibility button navigation
+        Navigation nav = sensibilityButton.navigation;
+        nav.selectOnDown = volumeScrollbar;
+        sensibilityButton.navigation = nav;
+        
+        // Update language button navigation
+        nav = languageButton.navigation;
+        nav.selectOnUp = volumeScrollbar;
+        languageButton.navigation = nav;
+        
+        volumeScrollbarContainer.SetActive(true);
+        volumeButton.gameObject.SetActive(false);
+        
+        ResetSensibilityScrollbarButton();
+    }
+    
+    public void OnSensibilityChanged(float value)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        PlayerPrefs.SetFloat("Sensibility", value);
+        PlayerPrefs.Save();
+    }
+
+    public void OnVolumeChanged(float value)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        PlayerPrefs.SetFloat("Volume", value);
+        PlayerPrefs.Save();
+        // MAEL : update son
+    }
+
+    public void LanguageButton()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        InputManager.Instance.SetSelected(languageText.gameObject);
+        language = (language + 1) % 3;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[language];
+        SetAllButtonsText();
+        SaveSettings();
+        ResetAllScrollbarButtons();
+    }
+    
     public void VSyncButton()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
         InputManager.Instance.SetSelected(vsyncText.gameObject);
         vsyncEnabled = !vsyncEnabled;
         QualitySettings.vSyncCount = vsyncEnabled ? 1 : 0;
-        SetVsyncButtonsText();
+        SetVsyncButtonText();
+        SaveSettings();
+        ResetAllScrollbarButtons();
     }
 
-    public void FullscreenButton()
+    public void TextureQualityButton()
     {
-        InputManager.Instance.SetSelected(fullscreenText.gameObject);
-        fullscreenEnabled = !fullscreenEnabled;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        InputManager.Instance.SetSelected(textureQualityText.gameObject);
+        textureQuality = (textureQuality + 1) % 3;
         
-        if (fullscreenEnabled)
-        {
-            // Plein écran exclusif
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        }
-        else
-        {
-            // Plein écran fenêtré sans bordure
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        }
         
-        SetFullscreenButtonsText();
+        SetTextureQualityButtonText();
+        SaveSettings();
+        ResetAllScrollbarButtons();
     }
     
-    public void SetVsyncButtonsText()
+    private void ApplyDisplayMode()
     {
-        // Main menu
+        switch (displayMode)
+        {
+            case 0:
+                Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+                break;
+
+            case 1:
+                Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+                break;
+
+            case 2:
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+                break;
+        }
+    }
+
+    public void DisplayModeButton()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        InputManager.Instance.SetSelected(displayModeText.gameObject);
+        displayMode = (displayMode + 1) % 3;
+        
+        ApplyDisplayMode();
+        
+        SetDisplayModeButtonText();
+        SaveSettings();
+        ResetAllScrollbarButtons();
+    }
+    
+    #endregion
+    
+    #region UpdateButtonText
+
+    private void SetLanguageButtonText()
+    {
+        languageText.text = languageTextKey.GetLocalizedString();
+        languageText.text += " ";
+
+        string l = language == 0 ? englishTextKey.GetLocalizedString() :
+            language == 1 ? frenchTextKey.GetLocalizedString() : spanishTextKey.GetLocalizedString();
+        
+        languageText.text += l;
+    }
+    
+    private void SetVsyncButtonText()
+    {
         vsyncText.text = vsyncTextKey.GetLocalizedString();
         vsyncText.text += " ";
         vsyncText.text += vsyncEnabled ? enabledTextKey.GetLocalizedString() : disabledTextKey.GetLocalizedString();
     }
 
-    public void SetFullscreenButtonsText()
+    private void SetTextureQualityButtonText()
     {
-        fullscreenText.text = fullscreenTextKey.GetLocalizedString();
-        fullscreenText.text += " ";
-        fullscreenText.text += fullscreenEnabled ? enabledTextKey.GetLocalizedString() : disabledTextKey.GetLocalizedString();
+        textureQualityText.text = textureQualityTextKey.GetLocalizedString();
+        textureQualityText.text += " ";
+
+        string l = textureQuality == 0 ? highQualityTextKey.GetLocalizedString() :
+            textureQuality == 1 ? mediumQualityTextKey.GetLocalizedString() : lowQualityTextKey.GetLocalizedString();
+        
+        textureQualityText.text += l;
     }
+
+    private void SetDisplayModeButtonText()
+    {
+        displayModeText.text = displayModeTextKey.GetLocalizedString();
+        displayModeText.text += " ";
+
+        string l = displayMode == 0 ? fullscreenTextKey.GetLocalizedString() :
+            displayMode == 1 ? fullscreenWindowedTextKey.GetLocalizedString() : windowedTextKey.GetLocalizedString();
+        
+        displayModeText.text += l;
+    }
+
+    public void SetAllButtonsText()
+    {
+        SetLanguageButtonText();
+        SetVsyncButtonText();
+        SetTextureQualityButtonText();
+        SetDisplayModeButtonText();
+    }
+    
+    private void ResetSensibilityScrollbarButton()
+    {
+        // Update language button navigation
+        Navigation nav = volumeButton.navigation;
+        nav.selectOnUp = sensibilityButton;
+        volumeButton.navigation = nav;
+        
+        sensibilityScrollbarContainer.SetActive(false);
+        sensibilityButton.gameObject.SetActive(true);
+    }
+    
+    private void ResetVolumeScrollbarButton()
+    {
+        // Update sensibility button navigation
+        Navigation nav = sensibilityButton.navigation;
+        nav.selectOnDown = volumeButton;
+        sensibilityButton.navigation = nav;
+        
+        // Update language button navigation
+        nav = languageButton.navigation;
+        nav.selectOnUp = volumeButton;
+        languageButton.navigation = nav;
+        
+        volumeScrollbarContainer.SetActive(false);
+        volumeButton.gameObject.SetActive(true);
+    }
+
+    public void ResetAllScrollbarButtons()
+    {
+        ResetSensibilityScrollbarButton();
+        ResetVolumeScrollbarButton();
+    }
+    
+    #endregion
+
+    #region SavingSystem
+    
+    private void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("Sensibility", sensibilityScrollbar.value);
+        PlayerPrefs.SetFloat("Volume", volumeScrollbar.value);
+
+        PlayerPrefs.SetInt("Language", language);
+        PlayerPrefs.SetInt("VSync", vsyncEnabled ? 1 : 0);
+        PlayerPrefs.SetInt("TextureQuality", textureQuality);
+        PlayerPrefs.SetInt("DisplayMode", displayMode);
+
+        PlayerPrefs.Save();
+    }
+    
+    private void LoadSettings()
+    {
+        if (!PlayerPrefs.HasKey("SettingsInitialized"))
+        {
+            // First launch
+            sensibilityScrollbar.value = 0.5f;
+            volumeScrollbar.value = 1f;
+
+            language = 0;
+            vsyncEnabled = true;
+            textureQuality = 0;
+            displayMode = 1;
+
+            PlayerPrefs.SetInt("SettingsInitialized", 1);
+            SaveSettings();
+        }
+        else
+        {
+            // Sensibility
+            sensibilityScrollbar.SetValueWithoutNotify(
+                PlayerPrefs.GetFloat("Sensibility", sensibilityScrollbar.value));
+
+            // Volume
+            volumeScrollbar.SetValueWithoutNotify(
+                PlayerPrefs.GetFloat("Volume", volumeScrollbar.value));
+
+            // Language
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+
+            if (locales.Count > 0)
+            {
+                language = Mathf.Clamp(
+                    PlayerPrefs.GetInt("Language",
+                        locales.IndexOf(LocalizationSettings.SelectedLocale)),
+                    0,
+                    locales.Count - 1
+                );
+
+                LocalizationSettings.SelectedLocale = locales[language];
+            }
+
+            // VSync
+            vsyncEnabled = PlayerPrefs.GetInt(
+                "VSync", QualitySettings.vSyncCount > 0 ? 1 : 0) == 1;
+
+            QualitySettings.vSyncCount = vsyncEnabled ? 1 : 0;
+
+            // Texture quality
+            textureQuality = PlayerPrefs.GetInt(
+                "TextureQuality", QualitySettings.GetQualityLevel());
+
+            textureQuality = Mathf.Clamp(
+                textureQuality, 0, QualitySettings.names.Length - 1);
+
+            QualitySettings.SetQualityLevel(textureQuality, true);
+
+            // Display mode
+            displayMode = PlayerPrefs.GetInt(
+                "DisplayMode", (int)Screen.fullScreenMode switch
+                {
+                    0 => 0,
+                    1 => 1,
+                    _ => 2
+                });
+
+            displayMode = Mathf.Clamp(displayMode, 0, 2);
+        }
+
+        // Apply all settings
+        QualitySettings.vSyncCount = vsyncEnabled ? 1 : 0;
+
+        QualitySettings.SetQualityLevel(textureQuality, true);
+
+        ApplyDisplayMode();
+
+        if (LocalizationSettings.AvailableLocales.Locales.Count > 0)
+        {
+            LocalizationSettings.SelectedLocale =
+                LocalizationSettings.AvailableLocales.Locales[language];
+        }
+    }
+    
+    #endregion
 }
