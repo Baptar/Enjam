@@ -14,29 +14,18 @@ public class AudioManager : MonoBehaviour
         if (!eventLocName.IsNull) FMODUnity.RuntimeManager.PlayOneShot(eventLocName, soundTransform.position);
     }
     
-    public void PlayerSoundTocLittleDoor1(Transform soundTransform)
+    public void PlayerSoundTocLittleDoor(Transform soundTransform)
     {
-        PlaySound("event:/Hall/DoorToc1ActiveTrig", soundTransform);
-        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        //PlaySound("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        KnockMarkerRelay.Play("event:/Hall/Knock/SFX_DoorKnockExperiment", soundTransform);
     }
-    
-    public void PlayerSoundTocLittleDoor2(Transform soundTransform)
-    {
-        PlaySound("event:/Hall/DoorToc2ActiveTrig", soundTransform);
-        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
-    }
-    
-    public void PlayerSoundTocLittleDoor4(Transform soundTransform)
-    {
-        PlaySound("event:/Hall/DoorToc4ActiveTrig", soundTransform);
-        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
-    }
-
     
     public void PlayerSoundTocHard(Transform soundTransform)
     {
-        PlaySound("event:/Hall/BigDoorTocActiveTrig", soundTransform);
+        //PlaySound("event:/Hall/BigDoorTocActiveTrig", soundTransform);
         //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        KnockMarkerRelay.Play("event:/Hall/Knock/SFX_DoorBIGKnockExperiment", soundTransform);
+
     }
 
     public void StopSoundTocLittle(Transform soundTransform)
@@ -44,11 +33,13 @@ public class AudioManager : MonoBehaviour
         PlaySound("event:/Hall/DoorToc1NoneTrig", soundTransform);
         PlaySound("event:/Hall/DoorToc2NoneTrig", soundTransform);
         PlaySound("event:/Hall/DoorToc4NoneTrig", soundTransform);
+        PlaySound("event:/Hall/Knock/SFX_DoorStop", soundTransform);
     }
     
     public void StopSoundTocHard(Transform soundTransform)
     {
         PlaySound("event:/Hall/BigDoorTocNoneTrig", soundTransform);
+        PlaySound("event:/Hall/Knock/SFX_DoorStop", soundTransform);
     }
     
     private void PlayerSoundPaperSound(Transform soundTransform)

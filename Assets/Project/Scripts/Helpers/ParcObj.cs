@@ -20,6 +20,8 @@ public class ParcObj : MonoBehaviour
     [Space(5)]
     [Header("Event")]
     [SerializeField] private UnityEvent onParcAppear;
+    [SerializeField] private float delayBigToc = 8.0f;
+    [SerializeField] private DoorCoridorInteract doorBigToc;
     
     private void Awake() => instance = this;
     
@@ -34,10 +36,18 @@ public class ParcObj : MonoBehaviour
         // Shake cam    
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOMove(targetParcTransform.position, durationParcAppear).SetEase(easeParcAppear))
-            .Insert(0.0f, playerCam.transform.DOShakePosition(durationParcAppear, shakeStrengthPosition)).SetEase(easeParcAppear)
-            .OnComplete(()=> onParcAppear?.Invoke());
-        
+            .Insert(0.0f, playerCam.transform.DOShakePosition(durationParcAppear, shakeStrengthPosition))
+            .SetEase(easeParcAppear)
+            .OnComplete(() =>
+            {
+                onParcAppear?.Invoke();
+                StartCoroutine(StartToc());
+            });
     }
-    
-    
+
+    private IEnumerator StartToc()
+    {
+        yield return new WaitForSeconds(delayBigToc);
+        doorBigToc.SetChillBeerEvent();
+    }
 }

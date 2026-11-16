@@ -3,6 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class DoorCoridorInteract : ObjectInteractable
 {
@@ -18,9 +19,6 @@ public class DoorCoridorInteract : ObjectInteractable
         ChillBeer,      // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
         UnderstandParc  // paper : buy me candy   |  interact : give candies   |  cantInteract : search candies
     }
-
-    [SerializeField] private Transform tocSoundPosition;
-    [SerializeField] private GameObject tocSoundObject;
     
     [Header("Judas")]
     [SerializeField] private string judasSceneName;
@@ -31,18 +29,25 @@ public class DoorCoridorInteract : ObjectInteractable
     public PaperInteract paperUnderstandParc;
     
     [Space(5)]
-    [Header("Shake")]
+    [Header("Toc")]
     [SerializeField] private GameObject goShakeDoor;
+    [SerializeField] private Vector3 knockLocalAxis = Vector3.forward;
+    [SerializeField] private int vibrato = 6;
+    [SerializeField] private float elasticity = 0.4f;
     [Header("Little")]
-    [SerializeField] private float shakeLittleDuration = 0.5f;
-    [SerializeField] private float shakeLittleStrength = 1f;
-    [SerializeField] private int shakeLittleVibrato = 10;
-    [SerializeField] private float shakeLittleRandomness = 90f;
+    [SerializeField] private float littleStrength = 0.01f;
+    [SerializeField] private float littleDuration = 0.18f;
     [Header("Big")]
-    [SerializeField] private float shakeBigDuration = 0.5f;
-    [SerializeField] private float shakeBigStrength = 1f;
-    [SerializeField] private int shakeBigVibrato = 10;
-    [SerializeField] private float shakeBigRandomness = 90f;
+    [SerializeField] private float bigStrength = 0.04f;
+    [SerializeField] private float bigDuration = 0.35f;
+    [Header("Random")]
+    [SerializeField, Range(0f, 0.5f)] private float strengthVariation = 0.25f;
+    [SerializeField, Range(0f, 0.5f)] private float durationVariation = 0.15f;
+    [SerializeField] private float axisAngleJitter = 6f;
+    [SerializeField] private float rotationStrength = 0.6f;
+    private Vector3 restLocalPos;
+    private Quaternion restLocalRot;
+    private float lastFactor = 1f;
     
     [Space(5)]
     [Header("Localization")]
@@ -66,6 +71,15 @@ public class DoorCoridorInteract : ObjectInteractable
     private FMOD.Studio.EventInstance event_fmod_littleToc;
     private FMOD.Studio.EventInstance event_fmod_hardToc;
     
+    private Sequence sequenceToc;
+    private float durationToc = 0.0f;
+    
+    private void Awake()
+    {
+        var t = goShakeDoor.transform;
+        restLocalPos = t.localPosition;
+        restLocalRot = t.localRotation;
+    }
     
     private void Start()
     {
@@ -79,7 +93,7 @@ public class DoorCoridorInteract : ObjectInteractable
         event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
     }
     
-    /*void OnEnable()  => KnockMarkerRelay.OnMarker += HandleMarker;
+    void OnEnable()  => KnockMarkerRelay.OnMarker += HandleMarker;
     void OnDisable() => KnockMarkerRelay.OnMarker -= HandleMarker;
 
     void HandleMarker(Transform source, string marker)
@@ -96,7 +110,7 @@ public class DoorCoridorInteract : ObjectInteractable
             Debug.Log("BigKnock : " + source);
             ShakeBigDoor();
         }
-    }*/
+    }
 
     public override bool GetInteractable()
     {
@@ -194,7 +208,7 @@ public class DoorCoridorInteract : ObjectInteractable
         switch (newDoorEvent)
         {
             case EDoorEvent.Start:
-                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor1(gameObject.transform);
+                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor(gameObject.transform);
                 newTextInteract = start.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
@@ -207,7 +221,7 @@ public class DoorCoridorInteract : ObjectInteractable
                 break;
             
             case EDoorEvent.BeforeJudas:
-                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor2(gameObject.transform);
+                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor(gameObject.transform);
                 newTextInteract = beforeJudas.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
@@ -226,16 +240,14 @@ public class DoorCoridorInteract : ObjectInteractable
                 break;
             
             case EDoorEvent.ChillBeer:
+                MainManager.instance.AudioManager.PlayerSoundTocHard(gameObject.transform);
                 newTextInteract = chillBeer.GetLocalizedString();
                 newTextCantInteract = chillBeerCantInteract.GetLocalizedString();
                 newIsInteractable = true;
                 break;
             
             case EDoorEvent.UnderstandParc:
-                tocSoundObject.transform.position = tocSoundPosition.position;
-                tocSoundObject.transform.rotation = tocSoundPosition.rotation;
-                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor4(gameObject.transform);
-
+                MainManager.instance.AudioManager.PlayerSoundTocLittleDoor(gameObject.transform);
                 newTextInteract = understandPark.GetLocalizedString();
                 newTextCantInteract = "";
                 newIsInteractable = true;
@@ -257,23 +269,50 @@ public class DoorCoridorInteract : ObjectInteractable
     }
 
     [ContextMenu("Shake Little Door")]
-    public void ShakeDoor()
-    {
-        goShakeDoor.transform.DOShakePosition(
-            shakeLittleDuration, 
-            shakeLittleStrength,
-            shakeLittleVibrato,
-            shakeLittleRandomness);
-    }
+    public void ShakeDoor() => Knock(littleStrength, littleDuration);
     
     [ContextMenu("Shake Big Door")]
-    public void ShakeBigDoor()
+    public void ShakeBigDoor() => Knock(bigStrength, bigDuration);
+    
+    private void Knock(float strength, float duration)
     {
-        goShakeDoor.transform.DOShakePosition(
-            shakeBigDuration, 
-            shakeBigStrength,
-            shakeBigVibrato,
-            shakeBigRandomness);
+        var t = goShakeDoor.transform;
+
+        t.DOKill();
+        t.localPosition = restLocalPos;
+        t.localRotation = restLocalRot;
+
+        float factor;
+        int tries = 0;
+        do
+        {
+            factor = 1f + Random.Range(-strengthVariation, strengthVariation);
+            tries++;
+        } while (Mathf.Abs(factor - lastFactor) < strengthVariation * 0.4f && tries < 5);
+        lastFactor = factor;
+
+        float s = strength * factor;
+        float d = duration * (1f + Random.Range(-durationVariation, durationVariation));
+
+        Vector3 dir = Quaternion.Euler(
+            Random.Range(-axisAngleJitter, axisAngleJitter),
+            Random.Range(-axisAngleJitter, axisAngleJitter),
+            0f) * knockLocalAxis.normalized;
+
+        Vector3 target = restLocalPos + dir * s;
+
+        Vector3 rot = new Vector3(
+            Random.Range(-1f, 1f),
+            Random.Range(-1f, 1f),
+            Random.Range(-1f, 1f)) * rotationStrength * factor;
+        Quaternion rotTarget = restLocalRot * Quaternion.Euler(rot);
+
+        DOTween.Sequence()
+            .Append(t.DOLocalMove(target, d * 0.25f).SetEase(Ease.OutQuad))
+            .Join(t.DOLocalRotateQuaternion(rotTarget, d * 0.25f).SetEase(Ease.OutQuad))
+            .Append(t.DOLocalMove(restLocalPos, d * 0.75f).SetEase(Ease.OutElastic, 1.2f, 0.4f))
+            .Join(t.DOLocalRotateQuaternion(restLocalRot, d * 0.75f).SetEase(Ease.OutElastic, 1.2f, 0.4f))
+            .SetLink(goShakeDoor);
     }
 
     public void SetJudasSceneName(string text) => judasSceneName = text; 

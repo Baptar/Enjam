@@ -136,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382340146252118663, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2460674783726405196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2776477416770785266, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3047402209769318127, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4194492658811072261, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_Name
@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217495070698467648, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8310909525286754155, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8686106818596734247, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: canTake
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698464622656135607, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710207092133340902, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -341,8 +341,6 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  tocSoundPosition: {fileID: 226389520}
-  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 1704747504}
   cameraJudaTarget: {fileID: 1806704714}
@@ -350,14 +348,17 @@ MonoBehaviour:
   paperAfterJuda: {fileID: 187617361}
   paperUnderstandParc: {fileID: 933514885}
   goShakeDoor: {fileID: 4085715}
-  shakeLittleDuration: 0.6
-  shakeLittleStrength: 0.05
-  shakeLittleVibrato: 50
-  shakeLittleRandomness: 90
-  shakeBigDuration: 0.65
-  shakeBigStrength: 0.08
-  shakeBigVibrato: 50
-  shakeBigRandomness: 90
+  knockLocalAxis: {x: 0, y: 0, z: -1}
+  vibrato: 6
+  elasticity: 0.4
+  littleStrength: 0.01
+  littleDuration: 0.18
+  bigStrength: 0.04
+  bigDuration: 0.2
+  strengthVariation: 0.191
+  durationVariation: 0.15
+  axisAngleJitter: 6
+  rotationStrength: 0.6
   start:
     m_TableReference:
       m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
@@ -1299,7 +1300,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &111029418
 Transform:
@@ -2389,7 +2390,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &226389520
 Transform:
@@ -2541,23 +2542,24 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  tocSoundPosition: {fileID: 679843711}
-  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 76334963100526909}
   cameraJudaTarget: {fileID: 76334963100526911}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 56555591}
   paperUnderstandParc: {fileID: 387036243}
-  goShakeDoor: {fileID: 1691022509}
-  shakeLittleDuration: 0.6
-  shakeLittleStrength: 0.05
-  shakeLittleVibrato: 50
-  shakeLittleRandomness: 90
-  shakeBigDuration: 0.65
-  shakeBigStrength: 0.08
-  shakeBigVibrato: 50
-  shakeBigRandomness: 90
+  goShakeDoor: {fileID: 286239707}
+  knockLocalAxis: {x: 0, y: 0, z: -1}
+  vibrato: 6
+  elasticity: 0.4
+  littleStrength: 0.01
+  littleDuration: 0.18
+  bigStrength: 0.04
+  bigDuration: 0.2
+  strengthVariation: 0.191
+  durationVariation: 0.15
+  axisAngleJitter: 6
+  rotationStrength: 0.6
   start:
     m_TableReference:
       m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
@@ -2692,11 +2694,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9999999, y: 3, z: 0.038447503}
   m_Center: {x: 0.99999946, y: 1.5, z: 0.019224705}
---- !u!1 &327033745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
-  m_PrefabInstance: {fileID: 1482175804}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337229513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,7 +3108,19 @@ MonoBehaviour:
       m_Calls: []
   eventOnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 552828871}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayerSoundTocLittleDoor1
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 417840506}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
@@ -3149,7 +3158,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &448462644
 Transform:
@@ -3475,8 +3484,6 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  tocSoundPosition: {fileID: 0}
-  tocSoundObject: {fileID: 0}
   judasSceneName: Judas4
   judasWorldPosition: {fileID: 1626557179}
   cameraJudaTarget: {fileID: 1012029915}
@@ -3484,14 +3491,17 @@ MonoBehaviour:
   paperAfterJuda: {fileID: 0}
   paperUnderstandParc: {fileID: 0}
   goShakeDoor: {fileID: 538373467}
-  shakeLittleDuration: 0.6
-  shakeLittleStrength: 0.05
-  shakeLittleVibrato: 50
-  shakeLittleRandomness: 90
-  shakeBigDuration: 0.65
-  shakeBigStrength: 0.08
-  shakeBigVibrato: 60
-  shakeBigRandomness: 90
+  knockLocalAxis: {x: 0, y: 0, z: 1}
+  vibrato: 6
+  elasticity: 0.4
+  littleStrength: 0.01
+  littleDuration: 0.18
+  bigStrength: 0.04
+  bigDuration: 0.35
+  strengthVariation: 0.25
+  durationVariation: 0.15
+  axisAngleJitter: 6
+  rotationStrength: 0.6
   start:
     m_TableReference:
       m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
@@ -3609,11 +3619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382340146252118663, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2460674783726405196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2776477416770785266, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3629,7 +3639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3047402209769318127, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
@@ -3649,7 +3659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4194492658811072261, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
@@ -3666,7 +3676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_Name
@@ -3678,7 +3688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217495070698467648, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3694,7 +3704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8310909525286754155, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8686106818596734247, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: canTake
@@ -3702,7 +3712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698464622656135607, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710207092133340902, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3814,23 +3824,24 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  tocSoundPosition: {fileID: 448462644}
-  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 128841791}
   cameraJudaTarget: {fileID: 734758729}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 993529999}
   paperUnderstandParc: {fileID: 2104863010}
-  goShakeDoor: {fileID: 1013983693}
-  shakeLittleDuration: 0.6
-  shakeLittleStrength: 0.05
-  shakeLittleVibrato: 50
-  shakeLittleRandomness: 90
-  shakeBigDuration: 0.65
-  shakeBigStrength: 0.08
-  shakeBigVibrato: 50
-  shakeBigRandomness: 90
+  goShakeDoor: {fileID: 542283010}
+  knockLocalAxis: {x: 0, y: 0, z: -1}
+  vibrato: 6
+  elasticity: 0.4
+  littleStrength: 0.01
+  littleDuration: 0.18
+  bigStrength: 0.04
+  bigDuration: 0.2
+  strengthVariation: 0.191
+  durationVariation: 0.15
+  axisAngleJitter: 6
+  rotationStrength: 0.6
   start:
     m_TableReference:
       m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
@@ -5096,7 +5107,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &679843711
 Transform:
@@ -5129,11 +5140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &688887987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2129229521275322734, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
-  m_PrefabInstance: {fileID: 76334963100526906}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &708643910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6824,6 +6830,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 518818062223850107, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
   m_PrefabInstance: {fileID: 7810806128490278733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &900678339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3284272333750685807, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+  m_PrefabInstance: {fileID: 2699075059698761581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &914037598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2243371251087396292, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
@@ -6931,23 +6942,24 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  tocSoundPosition: {fileID: 111029418}
-  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 76334963100526908}
   cameraJudaTarget: {fileID: 76334963100526910}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 1366225619}
   paperUnderstandParc: {fileID: 1504725405}
-  goShakeDoor: {fileID: 1069446673}
-  shakeLittleDuration: 0.6
-  shakeLittleStrength: 0.05
-  shakeLittleVibrato: 50
-  shakeLittleRandomness: 90
-  shakeBigDuration: 0.65
-  shakeBigStrength: 0.08
-  shakeBigVibrato: 50
-  shakeBigRandomness: 90
+  goShakeDoor: {fileID: 147166526}
+  knockLocalAxis: {x: 0, y: 0, z: -1}
+  vibrato: 6
+  elasticity: 0.4
+  littleStrength: 0.01
+  littleDuration: 0.18
+  bigStrength: 0.04
+  bigDuration: 0.2
+  strengthVariation: 0.191
+  durationVariation: 0.15
+  axisAngleJitter: 6
+  rotationStrength: 0.6
   start:
     m_TableReference:
       m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
@@ -7604,11 +7616,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6525744154138828781, guid: 085c4af015e5bad478c137b4e2ae3f34, type: 3}
   m_PrefabInstance: {fileID: 1246675798}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1013983693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
-  m_PrefabInstance: {fileID: 542283008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1024350357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8071,11 +8078,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
---- !u!1 &1069446673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1665092417644186614, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
-  m_PrefabInstance: {fileID: 76334963100526906}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1069446674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3484373044176575777, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -8279,7 +8281,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1089489909
 Transform:
@@ -9540,9 +9542,9 @@ Transform:
   - {fileID: 1739716924}
   - {fileID: 76334963100526907}
   - {fileID: 1636972967}
+  - {fileID: 643691443}
   - {fileID: 760064402}
   - {fileID: 722109535}
-  - {fileID: 643691443}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1343960763
@@ -10829,11 +10831,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382340146252118663, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2460674783726405196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2776477416770785266, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10849,7 +10851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3047402209769318127, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3535845181423164065, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
@@ -10869,7 +10871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4194492658811072261, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4558195182177636365, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: paperText
@@ -10886,7 +10888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6019774323658434196, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_Name
@@ -10898,7 +10900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890997100478574641, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217495070698467648, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10914,7 +10916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8310909525286754155, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8686106818596734247, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: canTake
@@ -10922,7 +10924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698464622656135607, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710207092133340902, guid: 893172245ac46474c80ffbe0534f06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11036,23 +11038,24 @@ MonoBehaviour:
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls: []
-  tocSoundPosition: {fileID: 1089489909}
-  tocSoundObject: {fileID: 688887987}
   judasSceneName: 
   judasWorldPosition: {fileID: 635087081}
   cameraJudaTarget: {fileID: 1281294734}
   judasCamFOV: 1
   paperAfterJuda: {fileID: 1024350359}
   paperUnderstandParc: {fileID: 352158020}
-  goShakeDoor: {fileID: 327033745}
-  shakeLittleDuration: 0.6
-  shakeLittleStrength: 0.05
-  shakeLittleVibrato: 50
-  shakeLittleRandomness: 90
-  shakeBigDuration: 0.65
-  shakeBigStrength: 0.08
-  shakeBigVibrato: 50
-  shakeBigRandomness: 90
+  goShakeDoor: {fileID: 1482175806}
+  knockLocalAxis: {x: 0, y: 0, z: -1}
+  vibrato: 6
+  elasticity: 0.4
+  littleStrength: 0.01
+  littleDuration: 0.18
+  bigStrength: 0.04
+  bigDuration: 0.2
+  strengthVariation: 0.191
+  durationVariation: 0.15
+  axisAngleJitter: 6
+  rotationStrength: 0.6
   start:
     m_TableReference:
       m_TableCollectionName: GUID:8689efe4747f6714e8deeb74ddc6f862
@@ -11952,11 +11955,6 @@ BoxCollider:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2075321524013652344, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
   m_PrefabInstance: {fileID: 4511532055683134112}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1691022509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5749890029599155960, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
-  m_PrefabInstance: {fileID: 76334963100526906}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1704747504 stripped
 Transform:
@@ -13226,7 +13224,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2036350345
 Transform:
@@ -13803,11 +13801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151102382228967027, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 235599867669032014, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 318348576768264926, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13883,7 +13881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1665092417644186614, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1678778366389924532, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: beerToGrab
@@ -13979,7 +13977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3053404295031306700, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099437082098904955, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14035,7 +14033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624299783487934597, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3672393635022717548, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14071,15 +14069,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188497149129830438, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4287816696945362554, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4317946879012105388, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4337803946583164193, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14099,7 +14097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672860389419165248, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4886538372387490245, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14111,7 +14109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4891053251618238557, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4945556693246007898, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14175,7 +14173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749890029599155960, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5752075358242915354, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14223,7 +14221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6634805442684706980, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6640735280084644743, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14263,7 +14261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7150665009829527970, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7188275264766466323, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14295,7 +14293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556244824918882174, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7557405211482543086, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: playerPickUp
@@ -14311,7 +14309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7682075866937130379, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7759889109646265247, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_IsActive
@@ -14371,7 +14369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8255081867109176514, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8267830065643243408, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       propertyPath: m_Intensity
@@ -14493,6 +14491,10 @@ PrefabInstance:
     - {fileID: 7336588792189092097, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
     - {fileID: 4395762401958079503, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
     - {fileID: 870717587663704668, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - {fileID: 7033742952190842242, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - {fileID: 2089313606565456972, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - {fileID: 3207039628014841665, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+    - {fileID: 2129229521275322734, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9119956294095549567, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
       insertIndex: 1
@@ -16116,13 +16118,41 @@ PrefabInstance:
       value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
-      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: doorBigToc
       value: 
       objectReference: {fileID: 918350092}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: delayBigToc
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900678339}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 552828871}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
@@ -18120,6 +18150,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
       objectReference: {fileID: 0}
@@ -18166,6 +18200,10 @@ PrefabInstance:
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -18216,6 +18254,18 @@ PrefabInstance:
       value: SetInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 552828871}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopSoundTocHard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
@@ -18264,6 +18314,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 918350096}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -18286,6 +18344,10 @@ PrefabInstance:
     - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: OnDropEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828927984461942209, guid: d75ded2ef1aadef40846533818c78586, type: 3}
+      propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4686465266797022541, guid: d75ded2ef1aadef40846533818c78586, type: 3}
       propertyPath: m_LocalPosition.x
