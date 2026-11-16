@@ -79,7 +79,7 @@ public class DoorCoridorInteract : ObjectInteractable
         event_fmod_hardToc.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
     }
     
-    void OnEnable()  => KnockMarkerRelay.OnMarker += HandleMarker;
+    /*void OnEnable()  => KnockMarkerRelay.OnMarker += HandleMarker;
     void OnDisable() => KnockMarkerRelay.OnMarker -= HandleMarker;
 
     void HandleMarker(Transform source, string marker)
@@ -96,7 +96,7 @@ public class DoorCoridorInteract : ObjectInteractable
             Debug.Log("BigKnock : " + source);
             ShakeBigDoor();
         }
-    }
+    }*/
 
     public override bool GetInteractable()
     {

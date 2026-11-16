@@ -16,27 +16,27 @@ public class AudioManager : MonoBehaviour
     
     public void PlayerSoundTocLittleDoor1(Transform soundTransform)
     {
-        //PlaySound("event:/Hall/DoorToc1ActiveTrig", soundTransform);
-        KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        PlaySound("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
     }
     
     public void PlayerSoundTocLittleDoor2(Transform soundTransform)
     {
-        //PlaySound("event:/Hall/DoorToc2ActiveTrig", soundTransform);
-        KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        PlaySound("event:/Hall/DoorToc2ActiveTrig", soundTransform);
+        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
     }
     
     public void PlayerSoundTocLittleDoor4(Transform soundTransform)
     {
-        //PlaySound("event:/Hall/DoorToc4ActiveTrig", soundTransform);
-        KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        PlaySound("event:/Hall/DoorToc4ActiveTrig", soundTransform);
+        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
     }
 
     
     public void PlayerSoundTocHard(Transform soundTransform)
     {
-        //PlaySound("event:/Hall/BigDoorTocActiveTrig", soundTransform);
-        KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
+        PlaySound("event:/Hall/BigDoorTocActiveTrig", soundTransform);
+        //KnockMarkerRelay.Play("event:/Hall/DoorToc1ActiveTrig", soundTransform);
     }
 
     public void StopSoundTocLittle(Transform soundTransform)
