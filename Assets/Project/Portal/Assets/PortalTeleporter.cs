@@ -28,8 +28,10 @@ public class PortalTeleporter : MonoBehaviour
 
             Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
 
+            controller.enabled = false;
             player.position = receiver.position + positionOffset;
             player.Rotate(Vector3.up, rotationDiff);
+            controller.enabled = true;
             Physics.SyncTransforms();
 
             playerIsOverlapping = false;
@@ -41,7 +43,6 @@ public class PortalTeleporter : MonoBehaviour
         if (other.transform == player)
         {
             playerIsOverlapping = true;
-            // ✅ On mémorise de quel côté le joueur est entré
             dotProductOnEnter = Vector3.Dot(transform.forward, player.position - transform.position);
         }
     }

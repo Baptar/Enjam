@@ -1596,7 +1596,7 @@ Transform:
   m_GameObject: {fileID: 183185241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.1, y: 0, z: 39.8}
+  m_LocalPosition: {x: 51.1, y: 0, z: 38.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3144,6 +3144,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!4 &431224877 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8881082504797003072, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+  m_PrefabInstance: {fileID: 7810806128490278733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &448462643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,7 +5499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f1c7f536f22824da1332c9cd3023c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bInteractable: 0
+  bInteractable: 1
   localizedTextInteraction:
     m_TableReference:
       m_TableCollectionName: InteractionsTable
@@ -6278,6 +6283,10 @@ PrefabInstance:
     - target: {fileID: 2075112967352681402, guid: a3ba71e833bc24f4c974a42f6af38b90, type: 3}
       propertyPath: m_Intensity
       value: 8251.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075112967352681402, guid: a3ba71e833bc24f4c974a42f6af38b90, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4884793770009814018, guid: a3ba71e833bc24f4c974a42f6af38b90, type: 3}
       propertyPath: m_Name
@@ -9167,8 +9176,88 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 183185242}
     m_Modifications:
+    - target: {fileID: 155960213190104865, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 155960213190104865, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066579816995641330, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066579816995641330, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066579816995641330, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205916128962139647, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205916128962139647, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205916128962139647, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332948543170162337, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332948543170162337, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332948543170162337, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604665023222191777, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604665023222191777, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604665023222191777, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811396350024246445, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911528856700122327, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911528856700122327, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911528856700122327, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911528856700122327, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911528856700122327, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911528856700122327, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2243371251087396292, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
@@ -9211,6 +9300,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2263401320985175197, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263401320985175197, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263401320985175197, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463349796254940369, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463349796254940369, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463349796254940369, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582253014972327852, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582253014972327852, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779962085099927098, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779962085099927098, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779962085099927098, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003073629901633305, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003073629901633305, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003073629901633305, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3018269259253580015, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Name
       value: Couloir_fin
@@ -9219,13 +9364,265 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196174711437947305, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213139548481622362, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213139548481622362, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213139548481622362, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265209376135443588, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265209376135443588, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344465383690580962, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344465383690580962, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344465383690580962, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554751036085649901, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554751036085649901, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646178103483938696, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646178103483938696, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646178103483938696, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789550514491330773, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789550514491330773, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789550514491330773, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926961290275276261, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926961290275276261, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926961290275276261, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408417904342424717, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408417904342424717, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408417904342424717, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408417904342424717, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408417904342424717, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408417904342424717, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732616816976631811, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732616816976631811, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732616816976631811, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732616816976631811, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732616816976631811, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783229051782262374, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783229051782262374, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783229051782262374, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162042562659139422, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162042562659139422, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162042562659139422, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162042562659139422, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162042562659139422, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627717205292774150, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627717205292774150, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627717205292774150, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5707992051134428865, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 7.761
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828347511617767463, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828347511617767463, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828347511617767463, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844513257248215898, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844513257248215898, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169960663188134321, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169960663188134321, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169960663188134321, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169960663188134321, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169960663188134321, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6380175309920261749, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_renderer
@@ -9243,13 +9640,173 @@ PrefabInstance:
       propertyPath: m_enableKerning
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6391218782432277312, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391218782432277312, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391218782432277312, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528387463612209298, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528387463612209298, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727709112226716777, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727709112226716777, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801606286917688079, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801606286917688079, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801606286917688079, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891403687094697681, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891403687094697681, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891403687094697681, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891403687094697681, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891403687094697681, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891403687094697681, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7002095845924502983, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7010952204384272682, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010952204384272682, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172039673058622068, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172039673058622068, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616553573976759132, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616553573976759132, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616553573976759132, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808474034720574230, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 7787.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808474034720574230, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7951963807453263446, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151065340983605418, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151065340983605418, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151065340983605418, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077342531669817465, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Intensity
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077342531669817465, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077342531669817465, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LightlayersMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077342531669817465, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077342531669817465, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_VolumetricShadowDimmer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077342531669817465, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_UseContactShadow.m_UseOverride
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10559,6 +11116,91 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8388282465570404411, guid: cbf7d7f285556ef47a13870d45915edd, type: 3}
+--- !u!1 &1453232647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1453232648}
+  - component: {fileID: 1453232650}
+  - component: {fileID: 1453232649}
+  m_Layer: 0
+  m_Name: Light_Start (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1453232648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453232647}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 58.76, y: 1, z: 2.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 431224877}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1453232649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453232647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -267562443
+      Data2: 1256513712
+      Data3: -776859976
+      Data4: 1792221549
+    Path: event:/DOOR/DOOR_AMB
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1453232650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453232647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427d9fd8bc0564c39b2925a4c1873714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 896944852}
+  distLight: 0
+  FootstepsEvent:
+    Guid:
+      Data1: 580646586
+      Data2: 1134111386
+      Data3: -1517528911
+      Data4: -63546477
+    Path: event:/Player/PL_Footsteps
 --- !u!1 &1458681245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 366842933757269188, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
@@ -12759,8 +13401,8 @@ MonoBehaviour:
   materialMipBias: 0
   m_RenderingPathCustomFrameSettings:
     bitDatas:
-      data1: 140666587807565
-      data2: 13763000512783810584
+      data1: 140666587795205
+      data2: 13763000512515375128
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -12774,7 +13416,7 @@ MonoBehaviour:
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
-      data1: 32768
+      data1: 45056
       data2: 0
   defaultFrameSettings: 0
   m_Version: 9
@@ -12870,12 +13512,12 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -13200,7 +13842,7 @@ Transform:
   m_GameObject: {fileID: 2015210455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.81999993, y: 1.048, z: -0.8899994}
+  m_LocalPosition: {x: 0, y: 1.042, z: 0}
   m_LocalScale: {x: 0.4999, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13594,8 +14236,8 @@ MonoBehaviour:
   materialMipBias: 0
   m_RenderingPathCustomFrameSettings:
     bitDatas:
-      data1: 140666587807565
-      data2: 13763000512783810584
+      data1: 140666587795205
+      data2: 13763000512515375128
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -13609,7 +14251,7 @@ MonoBehaviour:
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
-      data1: 32768
+      data1: 45056
       data2: 0
   defaultFrameSettings: 0
   m_Version: 9
@@ -13705,12 +14347,12 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 80
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -18919,7 +19561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2628143188295359012, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: renderingPathCustomFrameSettingsOverrideMask.mask.data1
-      value: 1073741824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2628143188295359012, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: renderingPathCustomFrameSettingsOverrideMask.mask.data2
@@ -19069,6 +19711,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6972387873406524547, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7050977251827949695, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -19161,6 +19807,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 839718560956174982, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1383611271}
+    - targetCorrespondingSourceObject: {fileID: 8881082504797003072, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1453232648}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 366842933757269188, guid: e07987f9c485b8d4da57dd209b5b9997, type: 3}
       insertIndex: -1
