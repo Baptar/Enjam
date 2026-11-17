@@ -5499,7 +5499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f1c7f536f22824da1332c9cd3023c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bInteractable: 1
+  bInteractable: 0
   localizedTextInteraction:
     m_TableReference:
       m_TableCollectionName: InteractionsTable
