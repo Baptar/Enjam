@@ -36,11 +36,10 @@ public class ParcObj : MonoBehaviour
         // Shake cam    
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOMove(targetParcTransform.position, durationParcAppear).SetEase(easeParcAppear))
-            .Insert(0.0f, playerCam.transform.DOShakePosition(durationParcAppear, shakeStrengthPosition))
-            .SetEase(easeParcAppear)
+            .Insert(0.0f, playerCam.transform.DOShakePosition(durationParcAppear, shakeStrengthPosition)).SetEase(easeParcAppear)
+            .InsertCallback(durationParcAppear - 0.5f, ()=>onParcAppear?.Invoke())
             .OnComplete(() =>
             {
-                onParcAppear?.Invoke();
                 StartCoroutine(StartToc());
             });
     }
