@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Project/Scene/MainScene.unity
     guid: 1e3279db2bbfb3645a62c0ec58da030d
   - enabled: 1
+    path: Assets/Project/Scene/MenuScene2.unity
+    guid: cd3404c36110b9b469b1cfe70e50121f
+  - enabled: 1
     path: Assets/Project/Scene/JudasScenes/Judas1.unity
     guid: 359e39722fdbb17498ef4761eaf6d920
   - enabled: 1

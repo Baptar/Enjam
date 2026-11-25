@@ -1378,8 +1378,8 @@
     "m_ObjectId": "00d2a1c40c834b4da2958cb725bf72e9",
     "m_Title": "Swaying grass effect",
     "m_Position": {
-        "x": -4974.400390625,
-        "y": -1947.2001953125
+        "x": -4974.0,
+        "y": -1946.0
     }
 }
 
@@ -2095,8 +2095,8 @@
     "m_ObjectId": "114d5ee0136b42fd95777f8686223d12",
     "m_Title": "Color",
     "m_Position": {
-        "x": -2040.80029296875,
-        "y": -278.400146484375
+        "x": -2040.0,
+        "y": -277.0
     }
 }
 
@@ -4184,8 +4184,8 @@
     "m_ObjectId": "4b297574918b40fd97145030b1f3b9a6",
     "m_Title": "More Swaying through displace/ent",
     "m_Position": {
-        "x": -2352.00048828125,
-        "y": -2451.2001953125
+        "x": -2352.0,
+        "y": -2450.0
     }
 }
 
