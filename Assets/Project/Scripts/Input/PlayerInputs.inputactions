@@ -253,6 +253,17 @@
                 },
                 {
                     "name": "",
+                    "id": "43e76b91-4fce-4cd3-bbfa-06c07fd0da2c",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7705b4b2-d08b-4f5c-bcf1-8d0c99271bb5",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
