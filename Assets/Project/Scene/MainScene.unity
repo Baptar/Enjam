@@ -5080,9 +5080,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0055ddc5863173d46aa9bf4ced7ff9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: EndScene
+  endLevel: EndScene
   startPosition: {fileID: 0}
+  midPosition: {fileID: 0}
   endPosition: {fileID: 0}
+  durationToStart: 2
+  durationStartToMid: 3
+  durationMidToEnd: 4
+  delayAfterStart: 6
+  onDelayAfterStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartBathroom:
+    m_PersistentCalls:
+      m_Calls: []
+  creditsPositionEnd: {fileID: 0}
+  creditsGameObject: {fileID: 0}
+  durationCredit: 7
+  mainMenuScene: 
+  delayMainMenu: 2
 --- !u!4 &650307237
 Transform:
   m_ObjectHideFlags: 0
@@ -9420,6 +9436,10 @@ PrefabInstance:
     - target: {fileID: 3018269259253580015, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130207154214991559, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3136293008123043019, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
