@@ -5145,6 +5145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac41e1a9ebf66574c9c8a95f00e1e626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &684202359 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2603936877415205061, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+  m_PrefabInstance: {fileID: 1299777004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &708643910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5762,6 +5767,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739392655}
   m_Mesh: {fileID: 4300004, guid: 670e9ab602834f049b0dac77d6a298d8, type: 3}
+--- !u!23 &739835683 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8709515385730201819, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+  m_PrefabInstance: {fileID: 1299777004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &744079108
 GameObject:
   m_ObjectHideFlags: 0
@@ -8117,8 +8127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointA: {fileID: 1712562063}
-  pointB: {fileID: 1299777009}
+  pointB: {fileID: 684202359}
+  eyeRenderer: {fileID: 739835683}
   parameterValue: 0
+  intensityValue: 0
   isActivate: 0
 --- !u!4 &1069446674 stripped
 Transform:
@@ -9357,6 +9369,10 @@ PrefabInstance:
       propertyPath: m_UseContactShadow.m_UseOverride
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2512883939300990043, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2582253014972327852, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
       value: 7787.031
@@ -9364,6 +9380,14 @@ PrefabInstance:
     - target: {fileID: 2582253014972327852, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603936877415205061, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603936877415205061, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.23
       objectReference: {fileID: 0}
     - target: {fileID: 2779962085099927098, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
@@ -9557,6 +9581,10 @@ PrefabInstance:
       propertyPath: m_UseContactShadow.m_UseOverride
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 650307236}
     - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
       value: 40000
@@ -9737,9 +9765,13 @@ PrefabInstance:
       propertyPath: m_UseContactShadow.m_UseOverride
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6933098412591315530, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_Radius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7002095845924502983, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7010952204384272682, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
@@ -9756,6 +9788,30 @@ PrefabInstance:
     - target: {fileID: 7172039673058622068, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254053901118611569, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254053901118611569, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254053901118611569, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254053901118611569, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254053901118611569, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254053901118611569, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -54.39
       objectReference: {fileID: 0}
     - target: {fileID: 7309509420457539882, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
@@ -9920,11 +9976,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colliderTag: Player
---- !u!4 &1299777009 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7974265517796080088, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
-  m_PrefabInstance: {fileID: 1299777004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1324265429
 GameObject:
   m_ObjectHideFlags: 0
