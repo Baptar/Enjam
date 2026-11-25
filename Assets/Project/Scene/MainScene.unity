@@ -5615,6 +5615,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1063208601}
+        m_TargetAssemblyTypeName: EndCorridorAudioManager, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   eventOnInteractButNotInteractable:
     m_PersistentCalls:
       m_Calls:
@@ -8087,6 +8099,27 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &1063208600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3018269259253580015, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+  m_PrefabInstance: {fileID: 1299777004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1063208601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063208600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7d9ba6957bac141977968aab71bb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {fileID: 1712562063}
+  pointB: {fileID: 1299777009}
+  parameterValue: 0
+  isActivate: 0
 --- !u!4 &1069446674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3484373044176575777, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -9812,6 +9845,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3018269259253580015, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1063208601}
     - targetCorrespondingSourceObject: {fileID: 7002095845924502983, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1299777007}
@@ -9884,6 +9920,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colliderTag: Player
+--- !u!4 &1299777009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7974265517796080088, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+  m_PrefabInstance: {fileID: 1299777004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1324265429
 GameObject:
   m_ObjectHideFlags: 0
