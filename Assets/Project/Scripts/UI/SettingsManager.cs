@@ -163,7 +163,8 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeSFX", volumeSFXScrollbar.value);
         PlayerPrefs.Save();
         
-        // MAEL : update son
+        FMOD.Studio.VCA vca = FMODUnity.RuntimeManager.GetVCA("vca:/SFX");
+        vca.setVolume(volumeSFXScrollbar.value);
     }
     
     public void OnVolumeAmbReleased()
@@ -172,7 +173,8 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeAmb", volumeAmbScrollbar.value);
         PlayerPrefs.Save();
         
-        // MAEL : update son
+        FMOD.Studio.VCA vca = FMODUnity.RuntimeManager.GetVCA("vca:/AMB");
+        vca.setVolume(volumeAmbScrollbar.value);
     }
 
     public void LanguageButton()
@@ -392,10 +394,14 @@ public class SettingsManager : MonoBehaviour
             // Volume SFX
             volumeSFXScrollbar.SetValueWithoutNotify(
                 PlayerPrefs.GetFloat("VolumeSFX", volumeSFXScrollbar.value));
+            FMOD.Studio.VCA vcaSFX = FMODUnity.RuntimeManager.GetVCA("vca:/SFX");
+            vcaSFX.setVolume(volumeSFXScrollbar.value);
             
             // Volume Amb
             volumeAmbScrollbar.SetValueWithoutNotify(
                 PlayerPrefs.GetFloat("VolumeAmb", volumeAmbScrollbar.value));
+            FMOD.Studio.VCA vcaAMB = FMODUnity.RuntimeManager.GetVCA("vca:/AMB");
+            vcaAMB.setVolume(volumeAmbScrollbar.value);
 
             // Language
             var locales = LocalizationSettings.AvailableLocales.Locales;

@@ -1335,7 +1335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8836590124321481418, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_text
-      value: Volume
+      value: Volume Ambiance
       objectReference: {fileID: 0}
     - target: {fileID: 8836590124321481418, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_fontSize
@@ -2433,7 +2433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8836590124321481418, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_text
-      value: Volume
+      value: Volume SFX
       objectReference: {fileID: 0}
     - target: {fileID: 8836590124321481418, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_fontSize
