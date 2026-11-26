@@ -164,7 +164,7 @@ public class EndManager : MonoBehaviour
     public void StartCredit()
     {
         creditsGameObject.transform
-            .DOMove(creditsPositionEnd.position, durationCredit)
+            .DOLocalMoveY(creditsPositionEnd.localPosition.y, durationCredit)
             .SetLink(creditsGameObject);
     }
 
