@@ -158,7 +158,7 @@ public class EndManager : MonoBehaviour
     public void FadeAndUnlockEnding()
     {
         MainManager.instance.UIManager.FadeScreen(true, 0.75f);
-        SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_ENDING");
+        if (SteamManager.Initialized) SteamManager.Instance.UnlockAchievement("LAMAPADRIE_SUCCESS_ENDING");
     }
 
     public void StartCredit()

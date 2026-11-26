@@ -10,17 +10,39 @@ public class LigthsManager : MonoBehaviour
     
     [Space(10)]
     [Header("Parameters")]
+    [Tooltip("Nombre de cycles de clignotement")]
     [SerializeField] private int blinkCount = 3;
+    [Tooltip("Nombre de variations d'intensité aléatoires (entre 20 % et 85 %) avant chaque extinction")]
     [SerializeField] private int lightChangePerBlink = 3;
+    [Tooltip("Durée de base de l'extinction, du noir et du rallumage")]
     [SerializeField] private float blinkDuration = 0.05f;
     
     [Space(10)]
     [Header("Start")]
     [SerializeField] private bool startLightsOff = true;
+    [Tooltip("Attente avant l'intro. Le joueur ne peut ni bouger ni regarder pendant ce temps")]
     [SerializeField] private float startDelay = 1.0f;
+    [Tooltip("Durée du fondu de la première lumière")]
     [SerializeField] private float turnOnStartDuration = 1.0f;
+    [Tooltip("Courbe de ce fondu")]
     [SerializeField] private Ease startEase = Ease.InOutFlash;
+    [Tooltip("Écart entre les départs de deux lumières qui se suivent, sans attendre que la précédente ait fini")]
     [SerializeField] private float delayBetweenEachLight = 1.0f;
+    
+    [Space(10)]
+    [Header("Start Blink")]
+    [Tooltip("Nombre de tentatives d'allumage avant que la lumière prenne")]
+    [SerializeField] private Vector2Int startAttempts = new Vector2Int(2, 5);
+    [Tooltip("Pause après chaque tentative")]
+    [SerializeField] private Vector2 startPauseDuration = new Vector2(0.05f, 0.35f);
+    [Tooltip("Durée de la montée jusqu'à 80–90 % d'intensité, avant la stabilisation à 100 %")]
+    [SerializeField] private Vector2 startWarmUpDuration = new Vector2(0.25f, 0.8f);
+    [Tooltip("Avance ou retard aléatoire appliqué au départ de chaque lumière")]
+    [SerializeField] private float startTimeJitter = 0.25f;
+    
+    private const float FullIntensity = 40000.0f;
+    
+    private enum EBlinkStyle { Stutter, Struggle, Snap }
     
     private Sequence blinkSequence;
     private Sequence switchOnStartSequence;
@@ -52,7 +74,7 @@ public class LigthsManager : MonoBehaviour
         MainManager.instance.Player.SetCanMove(true);
         MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.Normal);
 
-        SwitchLightsSequenceIntro(true);
+        SwitchLightsSequenceIntro();
     }
 
     #region Switch Lights
@@ -165,13 +187,106 @@ public class LigthsManager : MonoBehaviour
     }
     #endregion
 
-    private void SwitchLightsSequenceIntro(bool enable)
+    private void SwitchLightsSequenceIntro()
     {
         switchOnStartSequence?.Kill(complete: true);
         switchOnStartSequence = DOTween.Sequence();
 
+        int previousStyle = -1;
+
         for (var i = 0; i < lights.Count; i++)
-            switchOnStartSequence.Insert(i * delayBetweenEachLight, lights[i].DOIntensity(40000.0f, turnOnStartDuration).SetEase(startEase));
+        {
+            // la première : fondu simple
+            if (i == 0)
+            {
+                switchOnStartSequence.Insert(0.0f,
+                    lights[i].DOIntensity(FullIntensity, turnOnStartDuration).SetEase(startEase));
+                continue;
+            }
+
+            // jamais deux fois le même style à la suite
+            int style = Random.Range(0, 3);
+            if (style == previousStyle) style = (style + Random.Range(1, 3)) % 3;
+            previousStyle = style;
+
+            float startTime = i * delayBetweenEachLight + Random.Range(-startTimeJitter, startTimeJitter);
+
+            switchOnStartSequence.Insert(Mathf.Max(0.0f, startTime),
+                CreateStartBlink(lights[i], (EBlinkStyle)style));
+        }
+    }
+
+    private Sequence CreateStartBlink(Light light, EBlinkStyle style)
+    {
+        Sequence sequence = DOTween.Sequence();
+        int attempts = Random.Range(startAttempts.x, startAttempts.y + 1);
+
+        for (int a = 0; a < attempts; a++)
+        {
+            switch (style)
+            {
+                // rafale de micro coupures, comme un néon qui s'amorce
+                case EBlinkStyle.Stutter:
+                    int sparks = Random.Range(2, 6);
+                    for (int s = 0; s < sparks; s++)
+                    {
+                        AppendFlash(sequence, light, Random.Range(0.15f, 0.75f), Random.Range(0.01f, 0.05f));
+                        AppendCut(sequence, light, 0.0f, Random.Range(0.02f, 0.07f));
+                    }
+                    break;
+
+                // faible lueur qui tremble et n'arrive pas à prendre
+                case EBlinkStyle.Struggle:
+                    float glow = Random.Range(0.05f, 0.25f);
+                    AppendFlash(sequence, light, glow, Random.Range(0.08f, 0.25f));
+                    AppendFlash(sequence, light, glow * Random.Range(0.4f, 0.7f), Random.Range(0.02f, 0.08f));
+                    AppendFlash(sequence, light, glow * Random.Range(1.5f, 2.5f), Random.Range(0.02f, 0.06f));
+                    AppendCut(sequence, light, 0.0f, 0.0f);
+                    break;
+
+                // éclair franc suivi d'une retombée
+                case EBlinkStyle.Snap:
+                    AppendFlash(sequence, light, Random.Range(0.7f, 1.1f), Random.Range(0.02f, 0.1f));
+                    AppendCut(sequence, light, Random.Range(0.05f, 0.15f), Random.Range(0.03f, 0.12f));
+                    AppendCut(sequence, light, 0.0f, 0.0f);
+                    break;
+            }
+
+            // pause irrégulière, parfois une longue hésitation
+            float pause = Random.Range(startPauseDuration.x, startPauseDuration.y);
+            if (Random.value < 0.2f) pause *= 2.0f;
+            sequence.AppendInterval(pause);
+        }
+
+        // la lumière prend enfin
+        AppendFlash(sequence, light, Random.Range(0.8f, 1.0f), Random.Range(0.03f, 0.08f));
+        AppendFlash(sequence, light, Random.Range(0.25f, 0.5f), Random.Range(0.03f, 0.1f));
+
+        // chauffe puis stabilisation
+        sequence.Append(light.DOIntensity(FullIntensity * Random.Range(0.8f, 0.9f),
+            Random.Range(startWarmUpDuration.x, startWarmUpDuration.y)).SetEase(Ease.OutQuad));
+
+        // dernier sursaut occasionnel
+        if (Random.value < 0.5f)
+            AppendFlash(sequence, light, Random.Range(0.45f, 0.65f), Random.Range(0.02f, 0.05f));
+
+        sequence.Append(light.DOIntensity(FullIntensity, Random.Range(0.1f, 0.3f)).SetEase(Ease.OutSine));
+
+        return sequence;
+    }
+
+    // montée quasi instantanée, puis maintien
+    private void AppendFlash(Sequence sequence, Light light, float ratio, float holdDuration)
+    {
+        sequence.Append(light.DOIntensity(FullIntensity * ratio, 0.01f).SetEase(Ease.Linear));
+        sequence.AppendInterval(holdDuration);
+    }
+
+    // extinction avec une légère rémanence, puis maintien
+    private void AppendCut(Sequence sequence, Light light, float ratio, float holdDuration)
+    {
+        sequence.Append(light.DOIntensity(FullIntensity * ratio, Random.Range(0.02f, 0.08f)).SetEase(Ease.OutExpo));
+        sequence.AppendInterval(holdDuration);
     }
 
     public void StopBlink()
