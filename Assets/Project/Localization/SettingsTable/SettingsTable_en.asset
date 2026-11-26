@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 57687416038051840
-    m_Localized: Volume
+    m_Localized: Volume SFX
     m_Metadata:
       m_Items: []
   - m_Id: 46875294316187648
@@ -88,6 +88,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 57720658434805760
     m_Localized: spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61965896725823488
+    m_Localized: Volume ambiance
     m_Metadata:
       m_Items: []
   references:

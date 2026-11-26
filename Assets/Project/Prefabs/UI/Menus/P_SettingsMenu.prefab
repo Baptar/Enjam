@@ -437,6 +437,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8007857660929754382, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 57685760990859264

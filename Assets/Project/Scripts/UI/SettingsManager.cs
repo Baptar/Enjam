@@ -8,15 +8,18 @@ using UnityEngine.UI;
 public class SettingsManager : MonoBehaviour
 {
     [Header("Sensibility")]
-    [SerializeField] private Button volumeButton;
     [SerializeField] private Scrollbar sensibilityScrollbar;
     [SerializeField] private GameObject sensibilityScrollbarContainer;
     
     [Header("Volume")]
     [SerializeField] private Button sensibilityButton;
     [SerializeField] private Button languageButton;
-    [SerializeField] private Scrollbar volumeScrollbar;
-    [SerializeField] private GameObject volumeScrollbarContainer;
+    [SerializeField] private Button volumeSFXButton;
+    [SerializeField] private Button volumeAmbButton;
+    [SerializeField] private Scrollbar volumeSFXScrollbar;
+    [SerializeField] private GameObject volumeSFXScrollbarContainer;
+    [SerializeField] private Scrollbar volumeAmbScrollbar;
+    [SerializeField] private GameObject volumeAmbScrollbarContainer;
     
     [Header("Language")]
     [SerializeField] private TMP_Text languageText;
@@ -69,35 +72,59 @@ public class SettingsManager : MonoBehaviour
         InputManager.Instance.SetSelected(sensibilityScrollbar.gameObject);
         
         // Update language button navigation
-        Navigation nav = volumeButton.navigation;
+        Navigation nav = volumeSFXButton.navigation;
         nav.selectOnUp = sensibilityScrollbar;
-        volumeButton.navigation = nav;
+        volumeSFXButton.navigation = nav;
         
         sensibilityScrollbarContainer.SetActive(true);
         sensibilityButton.gameObject.SetActive(false);
         
-        ResetVolumeScrollbarButton();
+        ResetVolumeSFXScrollbarButton();
+        ResetVolumeAmbScrollbarButton();
     }
 
-    public void VolumeButton()
+    public void VolumeSFXButton()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
-        InputManager.Instance.SetSelected(volumeScrollbar.gameObject);
+        InputManager.Instance.SetSelected(volumeSFXScrollbar.gameObject);
         
         // Update sensibility button navigation
         Navigation nav = sensibilityButton.navigation;
-        nav.selectOnDown = volumeScrollbar;
+        nav.selectOnDown = volumeSFXScrollbar;
         sensibilityButton.navigation = nav;
         
-        // Update language button navigation
-        nav = languageButton.navigation;
-        nav.selectOnUp = volumeScrollbar;
-        languageButton.navigation = nav;
+        // Update volume ambiance button navigation
+        nav = volumeAmbButton.navigation;
+        nav.selectOnUp = volumeSFXScrollbar;
+        volumeAmbButton.navigation = nav;
         
-        volumeScrollbarContainer.SetActive(true);
-        volumeButton.gameObject.SetActive(false);
+        volumeSFXScrollbarContainer.SetActive(true);
+        volumeSFXButton.gameObject.SetActive(false);
         
         ResetSensibilityScrollbarButton();
+        ResetVolumeAmbScrollbarButton();
+    }
+    
+    public void VolumeAmbButton()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        InputManager.Instance.SetSelected(volumeAmbScrollbar.gameObject);
+        
+        // Update volume sfx button navigation
+        Navigation nav = volumeSFXButton.navigation;
+        nav.selectOnDown = volumeAmbScrollbar;
+        volumeSFXButton.navigation = nav;
+        
+        // Update language navigation
+        nav = languageButton.navigation;
+        nav.selectOnUp = volumeAmbScrollbar;
+        languageButton.navigation = nav;
+        
+        volumeAmbScrollbarContainer.SetActive(true);
+        volumeAmbButton.gameObject.SetActive(false);
+        
+        ResetSensibilityScrollbarButton();
+        ResetVolumeSFXScrollbarButton();
     }
 
     public void OnSensibilityChanged()
@@ -108,9 +135,16 @@ public class SettingsManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
     }
     
-    public void OnVolumeChanged()
+    public void OnVolumeSFXChanged()
     {
-        PlayerPrefs.SetFloat("Volume", volumeScrollbar.value);
+        PlayerPrefs.SetFloat("VolumeSFX", volumeSFXScrollbar.value);
+        if (!InputManager.Instance.IsGamepad) return;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+    }
+    
+    public void OnVolumeAmbChanged()
+    {
+        PlayerPrefs.SetFloat("VolumeAmb", volumeAmbScrollbar.value);
         if (!InputManager.Instance.IsGamepad) return;
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
     }
@@ -123,10 +157,19 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void OnVolumeReleased()
+    public void OnVolumeSFXReleased()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
-        PlayerPrefs.SetFloat("Volume", volumeScrollbar.value);
+        PlayerPrefs.SetFloat("VolumeSFX", volumeSFXScrollbar.value);
+        PlayerPrefs.Save();
+        
+        // MAEL : update son
+    }
+    
+    public void OnVolumeAmbReleased()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        PlayerPrefs.SetFloat("VolumeAmb", volumeAmbScrollbar.value);
         PlayerPrefs.Save();
         
         // MAEL : update son
@@ -253,34 +296,51 @@ public class SettingsManager : MonoBehaviour
     private void ResetSensibilityScrollbarButton()
     {
         // Update language button navigation
-        Navigation nav = volumeButton.navigation;
+        Navigation nav = volumeSFXButton.navigation;
         nav.selectOnUp = sensibilityButton;
-        volumeButton.navigation = nav;
+        volumeSFXButton.navigation = nav;
         
         sensibilityScrollbarContainer.SetActive(false);
         sensibilityButton.gameObject.SetActive(true);
     }
     
-    private void ResetVolumeScrollbarButton()
+    private void ResetVolumeSFXScrollbarButton()
     {
         // Update sensibility button navigation
         Navigation nav = sensibilityButton.navigation;
-        nav.selectOnDown = volumeButton;
+        nav.selectOnDown = volumeSFXButton;
         sensibilityButton.navigation = nav;
         
         // Update language button navigation
+        nav = volumeAmbButton.navigation;
+        nav.selectOnUp = volumeSFXButton;
+        volumeAmbButton.navigation = nav;
+        
+        volumeSFXScrollbarContainer.SetActive(false);
+        volumeSFXButton.gameObject.SetActive(true);
+    }
+    
+    private void ResetVolumeAmbScrollbarButton()
+    {
+        // Update volume sfx button navigation
+        Navigation nav = volumeSFXButton.navigation;
+        nav.selectOnDown = volumeAmbButton;
+        volumeSFXButton.navigation = nav;
+        
+        // Update language button navigation
         nav = languageButton.navigation;
-        nav.selectOnUp = volumeButton;
+        nav.selectOnUp = volumeAmbButton;
         languageButton.navigation = nav;
         
-        volumeScrollbarContainer.SetActive(false);
-        volumeButton.gameObject.SetActive(true);
+        volumeAmbScrollbarContainer.SetActive(false);
+        volumeAmbButton.gameObject.SetActive(true);
     }
 
     public void ResetAllScrollbarButtons()
     {
         ResetSensibilityScrollbarButton();
-        ResetVolumeScrollbarButton();
+        ResetVolumeSFXScrollbarButton();
+        ResetVolumeAmbScrollbarButton();
     }
     
     #endregion
@@ -290,7 +350,8 @@ public class SettingsManager : MonoBehaviour
     private void SaveSettings()
     {
         PlayerPrefs.SetFloat("Sensibility", sensibilityScrollbar.value);
-        PlayerPrefs.SetFloat("Volume", volumeScrollbar.value);
+        PlayerPrefs.SetFloat("VolumeSFX", volumeSFXScrollbar.value);
+        PlayerPrefs.SetFloat("VolumeAmb", volumeAmbScrollbar.value);
 
         PlayerPrefs.SetInt("Language", language);
         PlayerPrefs.SetInt("VSync", vsyncEnabled ? 1 : 0);
@@ -307,7 +368,8 @@ public class SettingsManager : MonoBehaviour
             // First launch
             sensibility = 0.5f;
             sensibilityScrollbar.value = 0.5f;
-            volumeScrollbar.value = 1f;
+            volumeSFXScrollbar.value = 1f;
+            volumeAmbScrollbar.value = 1f;
             language = LocalizationSettings.AvailableLocales.Locales.IndexOf(
                 LocalizationSettings.SelectedLocale);
             vsyncEnabled = true;
@@ -327,9 +389,13 @@ public class SettingsManager : MonoBehaviour
             
             sensibility = sensibilityScrollbar.value;
 
-            // Volume
-            volumeScrollbar.SetValueWithoutNotify(
-                PlayerPrefs.GetFloat("Volume", volumeScrollbar.value));
+            // Volume SFX
+            volumeSFXScrollbar.SetValueWithoutNotify(
+                PlayerPrefs.GetFloat("VolumeSFX", volumeSFXScrollbar.value));
+            
+            // Volume Amb
+            volumeAmbScrollbar.SetValueWithoutNotify(
+                PlayerPrefs.GetFloat("VolumeAmb", volumeAmbScrollbar.value));
 
             // Language
             var locales = LocalizationSettings.AvailableLocales.Locales;
