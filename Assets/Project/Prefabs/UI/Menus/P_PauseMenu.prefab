@@ -156,9 +156,9 @@ MonoBehaviour:
   backgroundAlpha: 1
   pauseMenu: {fileID: 9201437644696830106}
   pauseAction: {fileID: 0}
+  backAction: {fileID: 0}
   playerManager: {fileID: 0}
   settingsManager: {fileID: 2981925855284863802}
-  inputManager: {fileID: 774277844523753224}
   resumeButton: {fileID: 8521336680450907281}
 --- !u!1 &6817397295790755536
 GameObject:
@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7612615775658543216, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.24545106
+      value: 0.18349813
       objectReference: {fileID: 0}
     - target: {fileID: 7612615775658543216, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_AnchorMin.x
@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7612615775658543216, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.0000038146973
+      value: -0.00000333786
       objectReference: {fileID: 0}
     - target: {fileID: 7612615775658543216, guid: ba7c3faddb3b85e47808bf72ff3e60bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2648293673993456793, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.94200003
+      value: 0.961
       objectReference: {fileID: 0}
     - target: {fileID: 2648293673993456793, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
       propertyPath: m_AnchorMin.x
@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2648293673993456793, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 0.000002861023
       objectReference: {fileID: 0}
     - target: {fileID: 2648293673993456793, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -639,6 +639,26 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 3501070398947618539}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520208774476795740, guid: 8834e0a497001bc4eb29894b30f33b79, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
