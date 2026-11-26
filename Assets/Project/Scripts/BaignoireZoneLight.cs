@@ -14,9 +14,18 @@ public class BaignoireZoneLight : MonoBehaviour
     [SerializeField] private Light directionalLight;
 
     private Coroutine transitionCoroutine;
+    
+    private bool isTriggered;
+
+    void Start()
+    {
+        isTriggered = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isTriggered) return; // Skip if already entered once
+        
         if (!other.CompareTag(colliderTag)) return;
         onZoneEnter?.Invoke();
         
@@ -24,6 +33,9 @@ public class BaignoireZoneLight : MonoBehaviour
         transitionCoroutine = StartCoroutine(SwitchToNightRoutine());
 
         enabled = false;
+        isTriggered = true;
+        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX_end_lightswitch");
     }
 
     private IEnumerator SwitchToNightRoutine()

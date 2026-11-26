@@ -48,6 +48,8 @@ public class EndManager : MonoBehaviour
         MainManager.instance.Player.SetLookMode(PlayerManager.ELookMode.CantLook);
         onStartBathroom?.Invoke();
 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX_BigEND");
+        
         Transform cam = MainManager.instance.Player.GetPlayerCamera().transform;
 
         Vector3 p0 = startPosition.position;
