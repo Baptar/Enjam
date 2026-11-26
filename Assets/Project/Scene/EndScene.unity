@@ -1121,7 +1121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_TagString
@@ -12733,7 +12733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4926335130456997946, guid: c4b969b9180f5c743a06a4d922e6312b, type: 3}
       propertyPath: m_TagString
@@ -13791,7 +13791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2697f40eaaa75894faa0ebbbe9b3e6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 1704457702}
+  playerManager: {fileID: 1999539601}
   audioManager: {fileID: 552828871}
   uiManager: {fileID: 1324265431}
   paperManager: {fileID: 0}
