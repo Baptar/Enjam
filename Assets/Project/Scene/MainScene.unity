@@ -2322,6 +2322,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 542283016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &455620140 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4236987679819381510, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
+  m_PrefabInstance: {fileID: 76334963100526906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &462957855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8354147638643632948, guid: 4b801c77df8c2f34faa683803546aeb6, type: 3}
@@ -13777,10 +13782,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
@@ -13788,15 +13801,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 900678339}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 455620140}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 552828871}
+      objectReference: {fileID: 1542491175}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
@@ -13806,7 +13839,11 @@ PrefabInstance:
     - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 918350096}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141857017238636058, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
+      propertyPath: onParcAppear.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3157730210636420578, guid: c1b10d8f3d160fd448c62544544dab07, type: 3}
       propertyPath: eventOnInteract.m_PersistentCalls.m_Calls.Array.size
       value: 2
