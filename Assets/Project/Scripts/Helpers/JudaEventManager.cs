@@ -110,6 +110,8 @@ public class JudaEventManager : MonoBehaviour
     // Used by final door not others doors
     public void OnInteractJudas(Transform camJudaTarget, Transform judasTransformTarget, String judasSceneName, float fovCam)
     {
+        MainManager.instance.AudioManager.PlaySound("event:/Secret Door Amb");
+        
         PlayerManager player = MainManager.instance.Player;
         UIManager uiManager = MainManager.instance.UIManager;
         if (!player || !playerCamera) return;
@@ -154,6 +156,8 @@ public class JudaEventManager : MonoBehaviour
 
     public IEnumerator ExitJudas()
     {
+        MainManager.instance.AudioManager.PlaySound("event:/Stop secret door amb");
+        
         // get managers ref
         UIManager uiManager = MainManager.instance.UIManager;
         PlayerManager player = MainManager.instance.Player;
