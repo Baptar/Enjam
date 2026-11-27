@@ -30,6 +30,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float lookXTopLimit = 45f;
     [SerializeField] private float lookXBotLimit = 55f;
     private float rotationY = 0f;
+    private bool _usingGamepad;
+    private const float GamepadReferenceFps = 60f;
     [Header("Look Smoothing")]
     [SerializeField] private float lookSmoothing = 10f;
     private float _pendingYaw;
@@ -267,9 +269,17 @@ public class PlayerManager : MonoBehaviour
     }
 
     #region Rotation
+    // Souris : déplacement depuis la dernière frame, déjà indépendant des FPS.
+    // Manette : position du stick (une vitesse), à multiplier par le temps écoulé.
+    private Vector2 GetLookDelta()
+    {
+        Vector2 look = playerInputController.Look;
+        return _usingGamepad ? look * (Time.deltaTime * GamepadReferenceFps) : look;
+    }
+
     private void HandleNormalRotation()
     {
-        Vector2 delta = playerInputController.Look;
+        Vector2 delta = GetLookDelta();
 
         _pendingYaw   += delta.x * lookSpeed;
         _pendingPitch -= delta.y * lookSpeed;
@@ -291,7 +301,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (peepholeRoot == null) return;
 
-        Vector2 look = playerInputController.Look;
+        Vector2 look = GetLookDelta();
 
         // get target rotation
         peepholeOffset += look * peepholeSensitivity;
@@ -373,10 +383,12 @@ public class PlayerManager : MonoBehaviour
 
         if (device is Gamepad)
         {
+            _usingGamepad = true;
             lookSpeed = settingsManager.Sensibility * gamepadLookSpeed;
         }
         else if (device is Mouse)
         {
+            _usingGamepad = false;
             lookSpeed = settingsManager.Sensibility * mouseLookSpeed;
         }
     }
