@@ -23,5 +23,8 @@ public class MainMenu2Manager : MonoBehaviour
             .SetDelay(delayStart)
             .SetEase(Ease.OutBounce)
             .SetLink(gameObject);
+        
+        Sequence seq = DOTween.Sequence();
+        seq.InsertCallback(delayStart, () => FMODUnity.RuntimeManager.PlayOneShot("event:/introlightswitch2"));
     }
 }
