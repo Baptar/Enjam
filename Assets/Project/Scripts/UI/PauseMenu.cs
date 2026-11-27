@@ -14,9 +14,27 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private SettingsManager settingsManager;
     [SerializeField] private GameObject resumeButton;
+    
+    private static PauseMenu m_instance;
+    public static PauseMenu Instance => m_instance;
 
 
     private bool isPaused;
+    
+    public bool IsPaused => isPaused;
+
+
+    private void Awake()
+    {
+        if (m_instance != null && m_instance != this)
+        {
+            Debug.LogWarning("Multiple PauseMenu instances in scene!");
+            Destroy(gameObject);
+            return;
+        }
+
+        m_instance = this;
+    }
     
     public void Show(bool show)
     {
