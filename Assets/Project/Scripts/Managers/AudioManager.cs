@@ -14,6 +14,11 @@ public class AudioManager : MonoBehaviour
         if (!eventLocName.IsNull) FMODUnity.RuntimeManager.PlayOneShot(eventLocName, soundTransform.position);
     }
     
+    public void PlaySound(string eventLocName)
+    {
+        if (eventLocName !="") FMODUnity.RuntimeManager.PlayOneShot(eventLocName);
+    }
+    
     public void PlayerSoundTocLittleDoor(Transform soundTransform)
     {
         //PlaySound("event:/Hall/DoorToc1ActiveTrig", soundTransform);

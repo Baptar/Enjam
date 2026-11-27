@@ -13,8 +13,6 @@ public class ZoneEvents : MonoBehaviour
     {
         if (!other.CompareTag(colliderTag)) return;
         onZoneEnter?.Invoke();
-        
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX_end transi");
     }
 
     private void OnTriggerExit(Collider other)

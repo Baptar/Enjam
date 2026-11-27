@@ -7159,9 +7159,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 650307236}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 552828871}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: event:/SFX_end transi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815898301490517354, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
+      propertyPath: onZoneEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4993133255823223406, guid: 39cea12c04a6b264ea55db33e7270877, type: 3}
       propertyPath: m_Intensity
       value: 40000
@@ -9683,6 +9715,11 @@ MonoBehaviour:
   startPauseDuration: {x: 0.05, y: 0.35}
   startWarmUpDuration: {x: 0.25, y: 0.8}
   startTimeJitter: 0.25
+  startLightSounds:
+  - 
+  - event:/introlightswitch1
+  - event:/introlightswitch2
+  - event:/introlightswitch3
 --- !u!4 &1636972967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7402115583597552738, guid: 4e6b32131e585a646810502cda8a4aec, type: 3}
