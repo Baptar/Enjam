@@ -106,6 +106,8 @@ public class JudasGenerator : MonoBehaviour
     [ContextMenu("Generate")]
     public void Generate()
     {
+        
+        GamepadVibration.Vibrate(0.7f, 0.3f, 2.2f);
         generateSequence?.Kill();
         generateSequence = DOTween.Sequence();
 
