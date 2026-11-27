@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_defaultSelected: {fileID: 8521336680450907281}
+  uiInputModule: {fileID: 2216714488130990669}
 --- !u!1001 &2070911959169807563
 PrefabInstance:
   m_ObjectHideFlags: 0

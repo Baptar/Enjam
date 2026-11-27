@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
         
         if (InputManager.Instance.IsGamepad && pause) return; // If gamepad is used, don't show the cursor on opening
         Cursor.visible = pause;
-        Cursor.lockState = pause ? CursorLockMode.None : CursorLockMode.Confined;
+        Cursor.lockState = pause ? CursorLockMode.None : CursorLockMode.Locked;
     }
     
     private void Update()

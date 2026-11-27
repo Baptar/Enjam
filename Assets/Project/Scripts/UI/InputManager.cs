@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
     public void ShowCursor(bool show)
     {
         Cursor.visible = show;
-        Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Confined;
+        Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Locked;
     }
     
     public void SetSelected(GameObject selected)
