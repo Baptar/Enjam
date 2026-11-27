@@ -5,9 +5,10 @@ using UnityEngine;
 public enum SoundMaterialEnum
 {
     Concrete,
-    Wood,
     Grass,
     Tapi,
+    Wood,
+    TapisSalon
 }
 public class SoundMaterial : MonoBehaviour
 {
