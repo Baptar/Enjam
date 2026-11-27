@@ -131,22 +131,31 @@ public class SettingsManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Sensibility", sensibilityScrollbar.value);
         sensibility = sensibilityScrollbar.value;
+        
+        // Gamepad
         if (!InputManager.Instance.IsGamepad) return;
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        OnSensibilityReleased();
     }
     
     public void OnVolumeSFXChanged()
     {
         PlayerPrefs.SetFloat("VolumeSFX", volumeSFXScrollbar.value);
+        
+        // Gamepade
         if (!InputManager.Instance.IsGamepad) return;
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        OnVolumeSFXReleased();
     }
     
     public void OnVolumeAmbChanged()
     {
         PlayerPrefs.SetFloat("VolumeAmb", volumeAmbScrollbar.value);
+        
+        // Gamepade
         if (!InputManager.Instance.IsGamepad) return;
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Click");
+        OnVolumeAmbReleased();
     }
     
     public void OnSensibilityReleased()
