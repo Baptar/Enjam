@@ -58,7 +58,7 @@ public class PauseMenu : MonoBehaviour
         {
             PauseGame(!isPaused);
         }
-        else if (backAction.action.WasPerformedThisFrame())
+        else if (backAction.action.WasPerformedThisFrame() && isPaused)
         {
             PauseGame(false);
         }
