@@ -40,6 +40,14 @@ public class LigthsManager : MonoBehaviour
     [Tooltip("Avance ou retard aléatoire appliqué au départ de chaque lumière")]
     [SerializeField] private float startTimeJitter = 0.25f;
     
+    [SerializeField] private string[] startLightSounds = new string[]
+    {
+        "",
+        "event:/introlightswitch1",
+        "event:/introlightswitch2",
+        "event:/introlightswitch3"
+    };
+    
     private const float FullIntensity = 40000.0f;
     
     private enum EBlinkStyle { Stutter, Struggle, Snap }
@@ -209,12 +217,21 @@ public class LigthsManager : MonoBehaviour
             if (style == previousStyle) style = (style + Random.Range(1, 3)) % 3;
             previousStyle = style;
 
-            float startTime = i * delayBetweenEachLight + Random.Range(-startTimeJitter, startTimeJitter);
+            float startTime = Mathf.Max(0.0f, i * delayBetweenEachLight + Random.Range(-startTimeJitter, startTimeJitter));
 
-            switchOnStartSequence.Insert(Mathf.Max(0.0f, startTime),
-                CreateStartBlink(lights[i], (EBlinkStyle)style));
+            switchOnStartSequence.Insert(startTime, CreateStartBlink(lights[i], (EBlinkStyle)style));
+
+// son au début du clignotement de la lumière i
+            if (i < startLightSounds.Length && !string.IsNullOrEmpty(startLightSounds[i]))
+            {
+                string sound = startLightSounds[i]; // copie locale pour la closure
+                switchOnStartSequence.InsertCallback(startTime, () => FMODUnity.RuntimeManager.PlayOneShot(sound));
+            }
+
         }
     }
+    
+    
 
     private Sequence CreateStartBlink(Light light, EBlinkStyle style)
     {
